@@ -100,3 +100,9 @@ directement `s3.storage:8333`, nom interne au cluster. Pour conserver le mode pr
 du cours, `.env` contient localement `MLFLOW_ENABLE_PROXY_MULTIPART_DOWNLOAD=false`.
 Charger `.env` avant les téléchargements avec le client Python. Aucun identifiant
 ni URL présignée n’est ajouté à Git.
+
+### Résultat final du 2026-10-19
+
+Branche personnelle publiée ; `make check-m0` : **19/19 vérifications OK — Lab 0 validé**.
+La sortie complète est conservée dans `reports/m0/check-m0-final.log`.
+Restent la capture à déposer, la comparaison avec Aziz et la PR de validation relue.

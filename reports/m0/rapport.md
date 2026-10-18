@@ -1,11 +1,11 @@
 # Lab 0 — compte rendu de Syrine
 
-## Résultat réel avant publication
+## Validation finale — 2026-10-19
 
-`make check-m0` : **18/19**, un échec : `Git : smoke_mlflow.py commité et poussé`.
-La sortie complète est dans [check-m0-before-push.log](check-m0-before-push.log).
-Ce résultat ne constitue pas encore une validation complète du Lab 0.
-Publication distante, capture finale et PR relue restent nécessaires.
+`make check-m0` exécuté après publication : **19/19 vérifications OK — Lab 0 validé.**
+La [sortie complète](check-m0-final.log) conserve les 19 contrôles réussis.
+Le [contrôle initial avant push](check-m0-before-push.log) reste disponible pour la trace.
+La capture à déposer et la PR de validation relue restent à faire.
 
 ## État initial et diagnostic
 
@@ -68,12 +68,15 @@ Fichiers : smoke test officiel `labs/m0-setup/smoke_mlflow.py`, `NOTES.md`,
 `Makefile`, manifest SeaweedFS et modes des deux scripts. `.env` reste local.
 
 Tous les commits du projet sont sur `work/syrine/m0` ; `main`, `lab/m0-setup`
-et les branches d’Aziz n’ont pas été modifiées. Aucun push ni fusion effectué.
+et les branches d’Aziz n’ont pas été modifiées. La branche personnelle a été
+publiée avec autorisation ; aucune fusion effectuée.
 Le premier commit est `e25af6e` (correctifs M0) ; les livrables sont dans
 le commit suivant, consultable avec `git log -2 --oneline`.
 
-Après accord de Syrine : publier sa branche, relancer `make check-m0`,
-conserver la vraie sortie 19/19 et faire une capture `Win + Maj + S`.
+Le push initial a été débloqué par Syrine dans son terminal WSL : démarrage
+d’un agent SSH et chargement de sa clé. La validation après push a réussi.
+Afficher `make check-m0` dans un terminal agrandi, puis faire une capture
+`Win + Maj + S` montrant les 19 contrôles et le récapitulatif.
 Ouvrir également MLflow et capturer le run et son artefact. Comparer avec
 Aziz puis préparer ensemble la PR `lab/m0-setup` vers main, à faire relire
 et approuver avant toute fusion. Voir `NOTES.md` pour les commandes.
