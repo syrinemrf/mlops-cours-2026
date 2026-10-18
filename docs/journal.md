@@ -13,17 +13,10 @@ Mode d'emploi (à garder en tête du fichier) :
   quand vous aurez écrit la vôtre.
 -->
 
-**Binôme :** [À compléter : @pseudo-github-1 (Prénom Nom), @pseudo-github-2 (Prénom Nom)]
-**Repo :** [À compléter : https://github.com/VOTRE_USER/mlops-cours-2026]
-**Dataset :** [À compléter : german-credit (fil rouge) ou nom du dataset validé + lien de l'issue]
+**Binôme :** Syrine (@syrinemrf) et Aziz (collaborateur ; pseudo à renseigner)
+**Repo :** https://github.com/syrinemrf/mlops-cours-2026
+**Dataset :** IBM HR Analytics Employee Attrition (validé par le professeur selon Syrine ; lien de l’issue à renseigner)
 **Extensions :** [À compléter à la S8 : @pseudo-1 → ext/<nom> · @pseudo-2 → ext/<nom>]
-
-## S0 — AAAA-MM-JJ — Exemple d'entrée (à supprimer)
-
-- **Pilote / copilote :** @alice / @bob
-- **Fait :** Lab 1 étapes 1 à 5 ; `dvc push` OK ; premier run MLflow dans l'expérience `scoring` (#3).
-- **Bloqué / appris :** `dvc push` refusé (identifiants absents de `.dvc/config.local`, corrigé).
-- **Prochaine étape :** Bob pilote le Lab 1 étapes 6-8 ; ouvrir l'ADR 0001 (métrique de promotion).
 
 <!-- Vos entrées commencent ici. Modèle :
 
@@ -35,3 +28,10 @@ Mode d'emploi (à garder en tête du fichier) :
 - **Prochaine étape :**
 
 -->
+
+## S1 — 2026-10-18 — Lab 0 : restauration et setup personnel
+
+- **Pilote :** Syrine (@syrinemrf), avec assistance Codex ; travail sur `work/syrine/m0`, à comparer avec Aziz.
+- **Fait :** trois conteneurs kind redémarrés sans recréation ; registry, SeaweedFS et MLflow déployés ; environnement uv/Python 3.12 vérifié hors ligne ; test DVC poussé et relu dans S3 (12 octets identiques).
+- **Bloqué / appris :** le kubeconfig était correct, mais les nœuds étaient arrêtés ; scripts non exécutables corrigés ; ancien MinIO conservé ; collision S3_PORT corrigée par enableServiceLinks=false ; make pf corrigé pour ne plus tuer son shell.
+- **Prochaine étape :** checklist 18/19 (seul commit/push restant), tests MLflow et DVC réussis ; publier après accord de Syrine, relancer la validation, capturer le résultat puis comparer et faire relire la PR par Aziz.

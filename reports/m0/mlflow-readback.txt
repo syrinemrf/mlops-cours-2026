@@ -1,0 +1,6 @@
+run_id=45e061c13292415c9dd1ef883d7b146b
+status=FINISHED
+framework=scikit-learn
+accuracy=0.42
+loss=1.337
+hello.txt relu via le proxy : contenu identique.
