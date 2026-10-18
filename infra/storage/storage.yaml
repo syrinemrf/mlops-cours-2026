@@ -78,6 +78,8 @@ spec:
       labels:
         app: seaweedfs
     spec:
+      # Le Service s3 injecterait S3_PORT=tcp://..., interprété comme s3.port par weed.
+      enableServiceLinks: false
       securityContext:
         runAsNonRoot: true
         runAsUser: 1000
