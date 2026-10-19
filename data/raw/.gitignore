@@ -1,0 +1,4 @@
+# Raw data and generated provenance stay local until DVC is configured.
+/dataset.csv
+/dataset.provenance.json
+/dataset.csv.tmp
