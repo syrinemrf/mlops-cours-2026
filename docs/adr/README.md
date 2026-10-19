@@ -34,6 +34,6 @@ pour le socle (une seule suffit, mais choisissez une vraie décision) :
 | N° | Titre | Statut | Périmètre | Auteur |
 |---|---|---|---|---|
 | [0000](0000-modele.md) | Modèle d'ADR (non compté) | — | — | — |
-| 0001 | [À compléter] | | | |
+| [0001](0001-pin-ibm-hr-ingestion.md) | Épingler l’ingestion IBM HR | Proposé | Socle M1 | @syrinemrf |
 | 0002 | [À compléter] | | | |
 | 0003 | [À compléter] | | | |

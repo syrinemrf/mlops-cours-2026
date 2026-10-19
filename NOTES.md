@@ -122,3 +122,31 @@ le dernier contrôle Git de `make check-m0` échouera tant que HEAD n’est pas 
 La preuve 19/19 obtenue sur la base publiée est conservée séparément : elle ne
 prouve pas la publication de la future branche d’intégration. Après autorisation
 ultérieure de push, relancer la checklist sur le HEAD publié et capturer son résultat.
+
+## Lab 1 — incrément IBM HR sur work/syrine/m1
+
+M0 est réellement fusionné dans main (PR #1, `7606b83`). Cela n’atteste pas d’une
+approbation GitHub d’Aziz. Nouveaux commits : anglais, `type(scope): description`,
+sans réécriture des commits historiques. Intégration future via `lab/m1-versioning`.
+
+```bash
+uv run --no-sync python -m src.download
+uv run --no-sync python -c 'from src.dataset_config import load_config; print(load_config())'
+uv run --no-sync pytest -q tests/test_hr_download.py
+```
+
+Le téléchargement public Kaggle version 1 est vérifié par SHA-256 du CSV source.
+L’export contient 32 colonnes, dont EmployeeNumber hors prédicteurs et trois
+sensibles d’audit. Consulter `docs/dataset-card.md`, ADR-0001 et `reports/m1/`.
+Coûts 1:1 et gate 0.70 sont des propositions de référence, pas des résultats RH.
+
+La suite officielle existante conserve un test spécifique à `personal_status` ;
+il échoue sur le contrat RH. Il n’a pas été modifié ni ignoré pour afficher du vert.
+Les nouveaux tests couvrent l’audit hors features sur les attributs réels du projet.
+
+Suite prévue : initialiser DVC et sa stage download en incluant `dataset.yaml`
+(section source comprise) dans les dépendances, puis le remote `s3://dvc-store/scoring`.
+Configurer `params.yaml` avec `prepare.id_column: EmployeeNumber` avant d’écrire le
+script prepare de l’énoncé : split stratifié 80/20 graine 42, fit sur train seulement.
+Conserver les noms `scoring` et `scoring-model`. Ne pas lancer de grid search ou de
+promotion tant que cette prochaine étape n’est pas demandée.

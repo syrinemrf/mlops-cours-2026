@@ -49,3 +49,11 @@ Mode d'emploi (à garder en tête du fichier) :
 - **Fait :** branches comparées après fetch ; `lab/m0-setup` avancée en fast-forward vers les trois commits validés ; option A déclarée, pseudo renseigné et brouillon de PR préparé.
 - **Vérifié :** `make check-m0` 19/19 sur la base `23b452e` ; preuve `reports/m0/check-m0-integration-base.log` ; exclusions et signatures de secrets vérifiées.
 - **Prochaine étape :** relire le commit documentaire local, autoriser ultérieurement sa publication, revalider le HEAD publié, capturer et déposer le résultat puis solliciter la revue réelle ; aucun push, PR, fusion ou Lab 1 à cette étape.
+
+## S4 — 2026-10-19 — Lab 1 : premier incrément IBM HR
+
+- **Pilote :** Syrine (@syrinemrf), avec assistance Codex ; aucune contribution ni approbation d’Aziz attestée ici.
+- **Préalable M0 :** `git fetch origin` confirme la fusion réelle de PR #1 dans `origin/main`, commit `7606b83` ; main mis à jour en fast-forward, branche personnelle `work/syrine/m1` créée depuis ce commit. Aucune approbation GitHub d’Aziz observée.
+- **Fait :** source Kaggle officielle version 1 et licence DbCL/ODbL vérifiées ; ingestion avec SHA-256 épinglé, schéma source 1 470 × 35 validé, export 1 470 × 32, identifiant hors modèle, constantes retirées et sensibles d’audit préservés ; dataset card et ADR-0001 proposé rédigés.
+- **Vérifié / appris :** 237 Yes / 1 233 No, zéro manquant/doublon ; split stratifié simulé 1 176/294 (190/47 Yes), sans préparation persistée ni entraînement. Tests ciblés ajoutés ; le test officiel `test_sensible_hors_features` reste spécifique au crédit (`personal_status`) et échoue sur le contrat RH, sans modification du vérificateur.
+- **Prochaine étape :** valider avec Syrine les coûts 1:1, gate ROC AUC 0.70 et sensibles/groupes ; configurer DVC (`s3://dvc-store/scoring`) puis préparer les données avec `prepare.id_column: EmployeeNumber`. Pas de push, PR, fusion, grid search, promotion ou Kubeflow dans cet incrément ; M1 non validé intégralement.
