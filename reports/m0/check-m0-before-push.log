@@ -1,0 +1,25 @@
+./labs/m0-*/check.sh
+Lab 0 — vérification de l'environnement (contexte kind-mlops-lab)
+
+✅ Docker : hello-world
+✅ Docker Compose (plugin v2+)
+✅ kubectl installé
+✅ helm installé (v3/v4)
+✅ k9s installé
+✅ kind : cluster mlops-lab présent
+✅ Cluster : 3 nœuds Ready
+✅ Contexte kubectl courant = kind-mlops-lab
+✅ Registry localhost:5001 répond
+✅ SeaweedFS : pod Running/Ready
+✅ MLflow : pod Running/Ready
+✅ S3 : buckets mlflow-artifacts, dvc-store, mlops-test
+✅ MLflow : http://localhost:5000/health = OK
+✅ MLflow : run hello-mlops (+ artefact hello.txt)
+✅ uv + Python 3.12 (venv du repo)
+✅ DVC 3.x installé
+✅ DVC : objet poussé dans mlops-test/dvcstore/
+✅ Git : remote origin = VOTRE_USER/mlops-cours-2026
+❌ Git : smoke_mlflow.py commité et poussé  →  git add/commit/push (étape 8.1)
+
+1 échec(s) sur 19 vérifications.
+make: *** [Makefile:111: check-m0] Error 1

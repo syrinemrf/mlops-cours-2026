@@ -13,17 +13,10 @@ Mode d'emploi (à garder en tête du fichier) :
   quand vous aurez écrit la vôtre.
 -->
 
-**Binôme :** [À compléter : @pseudo-github-1 (Prénom Nom), @pseudo-github-2 (Prénom Nom)]
-**Repo :** [À compléter : https://github.com/VOTRE_USER/mlops-cours-2026]
-**Dataset :** [À compléter : german-credit (fil rouge) ou nom du dataset validé + lien de l'issue]
+**Binôme :** Syrine (@syrinemrf) et Aziz (@MohamedAzizKouch, collaborateur)
+**Repo :** https://github.com/syrinemrf/mlops-cours-2026
+**Dataset :** IBM HR Analytics Employee Attrition (validé par le professeur selon Syrine ; lien de l’issue à renseigner)
 **Extensions :** [À compléter à la S8 : @pseudo-1 → ext/<nom> · @pseudo-2 → ext/<nom>]
-
-## S0 — AAAA-MM-JJ — Exemple d'entrée (à supprimer)
-
-- **Pilote / copilote :** @alice / @bob
-- **Fait :** Lab 1 étapes 1 à 5 ; `dvc push` OK ; premier run MLflow dans l'expérience `scoring` (#3).
-- **Bloqué / appris :** `dvc push` refusé (identifiants absents de `.dvc/config.local`, corrigé).
-- **Prochaine étape :** Bob pilote le Lab 1 étapes 6-8 ; ouvrir l'ADR 0001 (métrique de promotion).
 
 <!-- Vos entrées commencent ici. Modèle :
 
@@ -35,3 +28,24 @@ Mode d'emploi (à garder en tête du fichier) :
 - **Prochaine étape :**
 
 -->
+
+## S1 — 2026-10-18 — Lab 0 : restauration et setup personnel
+
+- **Pilote :** Syrine (@syrinemrf), avec assistance Codex ; travail sur `work/syrine/m0`, à comparer avec Aziz.
+- **Fait :** trois conteneurs kind redémarrés sans recréation ; registry, SeaweedFS et MLflow déployés ; environnement uv/Python 3.12 vérifié hors ligne ; test DVC poussé et relu dans S3 (12 octets identiques).
+- **Bloqué / appris :** le kubeconfig était correct, mais les nœuds étaient arrêtés ; scripts non exécutables corrigés ; ancien MinIO conservé ; collision S3_PORT corrigée par enableServiceLinks=false ; make pf corrigé pour ne plus tuer son shell.
+- **Prochaine étape :** checklist 18/19 (seul commit/push restant), tests MLflow et DVC réussis ; publier après accord de Syrine, relancer la validation, capturer le résultat puis comparer et faire relire la PR par Aziz.
+
+## S2 — 2026-10-19 — Lab 0 : publication et validation finale
+
+- **Pilote :** Syrine (@syrinemrf), avec assistance Codex.
+- **Fait :** branche personnelle publiée ; `make check-m0` exécuté avec succès, **19/19** ; preuve dans `reports/m0/check-m0-final.log`.
+- **Bloqué / appris :** le push nécessitait un agent SSH avec clé déverrouillée ; Syrine l’a chargé dans son terminal, sans partager sa phrase secrète.
+- **Prochaine étape :** capturer le résultat, déposer le livrable, comparer avec Aziz et préparer la PR `lab/m0-setup` relue ; aucune fusion automatique.
+
+## S3 — 2026-10-19 — Lab 0 : préparation locale de la clôture
+
+- **Pilote :** Syrine (@syrinemrf), avec assistance Codex ; Aziz (@MohamedAzizKouch) reste le relecteur à solliciter.
+- **Fait :** branches comparées après fetch ; `lab/m0-setup` avancée en fast-forward vers les trois commits validés ; option A déclarée, pseudo renseigné et brouillon de PR préparé.
+- **Vérifié :** `make check-m0` 19/19 sur la base `23b452e` ; preuve `reports/m0/check-m0-integration-base.log` ; exclusions et signatures de secrets vérifiées.
+- **Prochaine étape :** relire le commit documentaire local, autoriser ultérieurement sa publication, revalider le HEAD publié, capturer et déposer le résultat puis solliciter la revue réelle ; aucun push, PR, fusion ou Lab 1 à cette étape.
