@@ -2,7 +2,8 @@
 
 ## Lab 0 : environnement et organisation
 
-Binôme : Syrine et Aziz ; dépôt commun `syrinemrf/mlops-cours-2026`.
+Binôme (option A) : Syrine (@syrinemrf) et Aziz (@MohamedAzizKouch) ;
+dépôt commun `syrinemrf/mlops-cours-2026`.
 Travail individuel de Syrine sur `work/syrine/m0` avant comparaison avec Aziz.
 Dataset retenu : IBM HR Analytics Employee Attrition, validé par le professeur
 (information fournie par Syrine). Son adaptation appartient au Lab 1, après validation M0.
@@ -106,3 +107,18 @@ ni URL présignée n’est ajouté à Git.
 Branche personnelle publiée ; `make check-m0` : **19/19 vérifications OK — Lab 0 validé**.
 La sortie complète est conservée dans `reports/m0/check-m0-final.log`.
 Restent la capture à déposer, la comparaison avec Aziz et la PR de validation relue.
+
+### Préparation locale de la clôture
+
+`lab/m0-setup` existait au commit initial `d5a2aa1`, sans commit propre.
+Elle a été avancée en fast-forward jusqu’à `23b452e` : les trois commits M0
+et leurs auteurs sont conservés. `main` et `work/syrine/m0` restent inchangées.
+Le titre et le corps de la future PR sont dans `reports/m0/pr-title.txt` et
+`reports/m0/pr-description.md`. Aziz (@MohamedAzizKouch) sera sollicité pour
+une relecture réelle ; aucune approbation ni contribution ne lui est attribuée.
+
+Le commit documentaire de clôture restera local à cette étape. Après ce commit,
+le dernier contrôle Git de `make check-m0` échouera tant que HEAD n’est pas publié.
+La preuve 19/19 obtenue sur la base publiée est conservée séparément : elle ne
+prouve pas la publication de la future branche d’intégration. Après autorisation
+ultérieure de push, relancer la checklist sur le HEAD publié et capturer son résultat.

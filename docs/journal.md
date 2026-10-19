@@ -13,7 +13,7 @@ Mode d'emploi (à garder en tête du fichier) :
   quand vous aurez écrit la vôtre.
 -->
 
-**Binôme :** Syrine (@syrinemrf) et Aziz (collaborateur ; pseudo à renseigner)
+**Binôme :** Syrine (@syrinemrf) et Aziz (@MohamedAzizKouch, collaborateur)
 **Repo :** https://github.com/syrinemrf/mlops-cours-2026
 **Dataset :** IBM HR Analytics Employee Attrition (validé par le professeur selon Syrine ; lien de l’issue à renseigner)
 **Extensions :** [À compléter à la S8 : @pseudo-1 → ext/<nom> · @pseudo-2 → ext/<nom>]
@@ -42,3 +42,10 @@ Mode d'emploi (à garder en tête du fichier) :
 - **Fait :** branche personnelle publiée ; `make check-m0` exécuté avec succès, **19/19** ; preuve dans `reports/m0/check-m0-final.log`.
 - **Bloqué / appris :** le push nécessitait un agent SSH avec clé déverrouillée ; Syrine l’a chargé dans son terminal, sans partager sa phrase secrète.
 - **Prochaine étape :** capturer le résultat, déposer le livrable, comparer avec Aziz et préparer la PR `lab/m0-setup` relue ; aucune fusion automatique.
+
+## S3 — 2026-10-19 — Lab 0 : préparation locale de la clôture
+
+- **Pilote :** Syrine (@syrinemrf), avec assistance Codex ; Aziz (@MohamedAzizKouch) reste le relecteur à solliciter.
+- **Fait :** branches comparées après fetch ; `lab/m0-setup` avancée en fast-forward vers les trois commits validés ; option A déclarée, pseudo renseigné et brouillon de PR préparé.
+- **Vérifié :** `make check-m0` 19/19 sur la base `23b452e` ; preuve `reports/m0/check-m0-integration-base.log` ; exclusions et signatures de secrets vérifiées.
+- **Prochaine étape :** relire le commit documentaire local, autoriser ultérieurement sa publication, revalider le HEAD publié, capturer et déposer le résultat puis solliciter la revue réelle ; aucun push, PR, fusion ou Lab 1 à cette étape.

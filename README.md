@@ -10,6 +10,16 @@ une brique, et le résultat final est votre mini-projet.
 > (chacun crée le sien). Ajoutez votre partenaire et l'enseignant comme collaborateurs.
 > Détails : Lab 0, étape 3.
 
+## Organisation du binôme
+
+**Option A — un dépôt commun** : [syrinemrf/mlops-cours-2026](https://github.com/syrinemrf/mlops-cours-2026).
+Membres : Syrine ([@syrinemrf](https://github.com/syrinemrf)) et Aziz
+([@MohamedAzizKouch](https://github.com/MohamedAzizKouch)). Chacun utilise son propre cluster.
+Le travail M0 de Syrine est préparé dans `lab/m0-setup` à partir de `work/syrine/m0` ;
+la relecture d’Aziz est à solliciter avant la fusion vers `main`.
+Dataset retenu : IBM HR Analytics Employee Attrition, validé par le professeur
+selon Syrine ; adaptation prévue au Lab 1, après clôture du Lab 0.
+
 ## Démarrage
 
 ```bash

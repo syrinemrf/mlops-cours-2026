@@ -67,9 +67,11 @@ Fichiers : smoke test officiel `labs/m0-setup/smoke_mlflow.py`, `NOTES.md`,
 `docs/journal.md`, présent rapport et log ; correctifs dans `.gitignore`,
 `Makefile`, manifest SeaweedFS et modes des deux scripts. `.env` reste local.
 
-Tous les commits du projet sont sur `work/syrine/m0` ; `main`, `lab/m0-setup`
-et les branches d’Aziz n’ont pas été modifiées. La branche personnelle a été
-publiée avec autorisation ; aucune fusion effectuée.
+Les trois commits M0 sont publiés sur `work/syrine/m0`. Lors de la préparation
+de clôture, `lab/m0-setup` a été avancée localement de `d5a2aa1` vers `23b452e`
+en fast-forward, sans réécriture des commits ni de leurs auteurs. `main`,
+`work/syrine/m0` et les branches d’Aziz restent inchangées. Aucun push,
+ouverture de PR ou fusion vers main n’a lieu dans cette préparation.
 Le premier commit est `e25af6e` (correctifs M0) ; les livrables sont dans
 le commit suivant, consultable avec `git log -2 --oneline`.
 
@@ -87,3 +89,29 @@ SeaweedFS fournit S3 ; MLflow trace les expériences et leurs artefacts ; uv
 reproduit l’environnement Python ; DVC versionne les données avec Git et S3.
 Pour IBM HR Attrition, ce socle reliera plus tard chaque dataset à ses
 expériences de prédiction des départs, sans adapter le dataset durant M0.
+
+## Préparation locale de clôture — 2026-10-19
+
+Aucun AGENTS.md applicable trouvé dans le dépôt ou ses répertoires parents vérifiés.
+Après `git fetch origin`, les branches personnelles et main locales correspondaient
+à origin ; arbre de travail initial propre. `lab/m0-setup` ne contenait aucun commit
+propre et pointait sur le template initial, d’où une intégration par fast-forward.
+
+Sur `lab/m0-setup` au commit `23b452e`, nouvelle exécution réelle : **19/19**
+([preuve](check-m0-integration-base.log)). Docker et les trois nœuds étaient accessibles ;
+aucun redémarrage ni aucune recréation nécessaire. Les changements ajoutés ensuite
+portent uniquement sur la documentation et les preuves. Le nouveau commit reste
+local : le contrôle Git exigeant un HEAD publié devra être revalidé après publication
+ultérieure autorisée. Le log 19/19 indique donc la base testée, pas une publication
+anticipée de ce nouveau commit.
+
+Option A déclarée dans README ; membres Syrine (@syrinemrf) et Aziz
+(@MohamedAzizKouch). Le titre et la description prêts à relire sont dans
+[pr-title.txt](pr-title.txt) et [pr-description.md](pr-description.md).
+Aucune contribution ou revue d’Aziz n’est fabriquée ; sa relecture reste à solliciter.
+Les instructions utiles du cours sont conservées et aucun travail M1 n’est commencé.
+
+Contrôles de préparation : diff sans erreur de whitespace ; aucun fichier `.env`,
+`.venv/`, `.dvc/config.local` ou clé privée suivi ; aucune signature de jeton personnel
+ou clé privée détectée dans les fichiers suivis. Les identifiants publics de TP déjà
+fournis par le template restent présents dans ses exemples/manifests inchangés.
