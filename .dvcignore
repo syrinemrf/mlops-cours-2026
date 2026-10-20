@@ -1,0 +1,4 @@
+# Ignore environment and regenerated local stores during DVC discovery.
+.venv/
+features/data/
+mlruns/

@@ -1,0 +1,161 @@
+schema: '2.0'
+stages:
+  download:
+    cmd: python -m src.download
+    deps:
+    - path: src/dataset_config.py
+      hash: md5
+      md5: 3dfbc7152adfcc892ce94654d08a25e0
+      size: 8225
+    - path: src/download.py
+      hash: md5
+      md5: 035d69327fc463debc98ae3940f65dd4
+      size: 10054
+    params:
+      dataset.yaml:
+        features:
+          numeric:
+          - DailyRate
+          - DistanceFromHome
+          - HourlyRate
+          - MonthlyIncome
+          - MonthlyRate
+          - NumCompaniesWorked
+          - PercentSalaryHike
+          - TotalWorkingYears
+          - TrainingTimesLastYear
+          - YearsAtCompany
+          - YearsInCurrentRole
+          - YearsSinceLastPromotion
+          - YearsWithCurrManager
+          categorical:
+          - BusinessTravel
+          - Department
+          - EducationField
+          - JobRole
+          - OverTime
+          - Education
+          - EnvironmentSatisfaction
+          - JobInvolvement
+          - JobLevel
+          - JobSatisfaction
+          - PerformanceRating
+          - RelationshipSatisfaction
+          - StockOptionLevel
+          - WorkLifeBalance
+        raw_path: data/raw/dataset.csv
+        sensitive:
+        - column: Age
+          bins:
+          - 0
+          - 30
+          - 45
+          - 120
+          labels:
+          - <30
+          - 30-44
+          - '>=45'
+        - column: Gender
+        - column: MaritalStatus
+        source:
+          url: 
+            https://www.kaggle.com/datasets/pavansubhasht/ibm-hr-analytics-attrition-dataset
+          license: ODbL-1.0 (database) + DbCL-1.0 (contents)
+          citation: IBM data scientists (fictional dataset), distributed by 
+            pavansubhasht on Kaggle, version 1 (2017-03-31).
+          kaggle_ref: pavansubhasht/ibm-hr-analytics-attrition-dataset
+          version: 1
+          filename: WA_Fn-UseC_-HR-Employee-Attrition.csv
+          sha256: 
+            a5c31e38bd7fafc9bc333884eb181b06b41b8e5e488e8f7ccb27199fb3be7659
+        target:
+          column: Attrition
+          positive_class: Yes
+    outs:
+    - path: data/raw/dataset.csv
+      hash: md5
+      md5: 16e6acc1f69d648c4ec1d3b44efc0179
+      size: 328405
+  prepare:
+    cmd: python -m src.prepare
+    deps:
+    - path: data/raw/dataset.csv
+      hash: md5
+      md5: 16e6acc1f69d648c4ec1d3b44efc0179
+      size: 328405
+    - path: src/dataset_config.py
+      hash: md5
+      md5: 3dfbc7152adfcc892ce94654d08a25e0
+      size: 8225
+    - path: src/prepare.py
+      hash: md5
+      md5: 4883fb03d7c14356a681639f0af6a795
+      size: 2981
+    params:
+      params.yaml:
+        prepare:
+          id_column: EmployeeNumber
+          event_timestamp: '2026-01-01T00:00:00+00:00'
+      dataset.yaml:
+        features:
+          numeric:
+          - DailyRate
+          - DistanceFromHome
+          - HourlyRate
+          - MonthlyIncome
+          - MonthlyRate
+          - NumCompaniesWorked
+          - PercentSalaryHike
+          - TotalWorkingYears
+          - TrainingTimesLastYear
+          - YearsAtCompany
+          - YearsInCurrentRole
+          - YearsSinceLastPromotion
+          - YearsWithCurrManager
+          categorical:
+          - BusinessTravel
+          - Department
+          - EducationField
+          - JobRole
+          - OverTime
+          - Education
+          - EnvironmentSatisfaction
+          - JobInvolvement
+          - JobLevel
+          - JobSatisfaction
+          - PerformanceRating
+          - RelationshipSatisfaction
+          - StockOptionLevel
+          - WorkLifeBalance
+        sensitive:
+        - column: Age
+          bins:
+          - 0
+          - 30
+          - 45
+          - 120
+          labels:
+          - <30
+          - 30-44
+          - '>=45'
+        - column: Gender
+        - column: MaritalStatus
+        split:
+          test_size: 0.2
+          random_state: 42
+        target:
+          column: Attrition
+          positive_class: Yes
+    outs:
+    - path: data/processed/features.parquet
+      hash: md5
+      md5: a6c0eacf28225e59b818c9e855c47e16
+      size: 65118
+    - path: data/processed/test.csv
+      hash: md5
+      md5: c9a203d62f2029c7066a259c02da50da
+      size: 66084
+    - path: data/processed/train.csv
+      hash: md5
+      md5: 7eec6596ea2b1d84be50811de74cb9b8
+      size: 262799

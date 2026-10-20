@@ -1,0 +1,32 @@
+stages:
+  download:
+    cmd: python -m src.download
+    deps:
+    - src/dataset_config.py
+    - src/download.py
+    params:
+    - dataset.yaml:
+      - features
+      - raw_path
+      - sensitive
+      - source
+      - target
+    outs:
+    - data/raw/dataset.csv
+  prepare:
+    cmd: python -m src.prepare
+    deps:
+    - data/raw/dataset.csv
+    - src/dataset_config.py
+    - src/prepare.py
+    params:
+    - prepare
+    - dataset.yaml:
+      - features
+      - sensitive
+      - split
+      - target
+    outs:
+    - data/processed/features.parquet
+    - data/processed/test.csv
+    - data/processed/train.csv
