@@ -19,7 +19,22 @@ def test_threshold_uses_training_prevalence_only():
 def test_decisions_and_ranking_metrics_are_distinct():
     cfg = load_config()
     metrics = train.compute_metrics(cfg, [0, 0, 1, 1], [0.1, 0.8, 0.4, 0.9], 0.5)
-    assert metrics == pytest.approx(
+    assert {
+        k: metrics[k]
+        for k in (
+            "tn",
+            "fp",
+            "fn",
+            "tp",
+            "roc_auc",
+            "average_precision",
+            "precision",
+            "recall",
+            "f1",
+            "accuracy",
+            "business_cost",
+        )
+    } == pytest.approx(
         dict(
             tn=1,
             fp=1,

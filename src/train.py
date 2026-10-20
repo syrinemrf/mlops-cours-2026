@@ -18,6 +18,7 @@ import hashlib
 import os
 from importlib.metadata import version
 from pathlib import Path
+from time import perf_counter
 from uuid import uuid4
 
 import mlflow
@@ -30,9 +31,13 @@ from sklearn.ensemble import GradientBoostingClassifier, RandomForestClassifier
 from sklearn.linear_model import LogisticRegression
 from sklearn.metrics import (
     accuracy_score,
+    auc,
     average_precision_score,
+    brier_score_loss,
     confusion_matrix,
     f1_score,
+    log_loss,
+    precision_recall_curve,
     precision_score,
     recall_score,
     roc_auc_score,
@@ -69,7 +74,7 @@ def none_or(cast):
     return lambda value: None if str(value).lower() == "none" else cast(value)
 
 
-def parse_args() -> argparse.Namespace:
+def parse_args(argv=None) -> argparse.Namespace:
     defaults = yaml.safe_load(Path("params.yaml").read_text(encoding="utf-8"))["train"]
     parser = argparse.ArgumentParser(description="Entraîne un modèle et le trace dans MLflow")
     parser.add_argument("--model", choices=list(MODELS), default=defaults["model"])
@@ -81,7 +86,7 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument("--random_state", type=int, default=defaults["random_state"])
     # NB : argparse applique aussi `type` aux valeurs par défaut écrites en texte
     # (« none » dans params.yaml devient None).
-    return parser.parse_args()
+    return parser.parse_args(argv)
 
 
 def build_model(cfg: DatasetConfig, model_type: str, hyperparams: dict, seed: int) -> Pipeline:
@@ -108,12 +113,16 @@ def decision_threshold(cfg: DatasetConfig, class_weight, y_train: pd.Series) -> 
 def compute_metrics(cfg: DatasetConfig, y_true, proba, threshold: float) -> dict:
     """Métriques de classement (proba) et de décision au seuil donné, dont le coût métier."""
     y_pred = (np.asarray(proba) >= threshold).astype(int)
+    pr_precision, pr_recall, _ = precision_recall_curve(y_true, proba)
     tn, fp, fn, tp = confusion_matrix(y_true, y_pred, labels=[0, 1]).ravel()
     return {
         "tn": int(tn),
         "fp": int(fp),
         "fn": int(fn),
         "tp": int(tp),
+        "pr_auc_trapezoidal": auc(pr_recall, pr_precision),
+        "brier_score": brier_score_loss(y_true, proba),
+        "log_loss": log_loss(y_true, proba, labels=[0, 1]),
         "roc_auc": roc_auc_score(y_true, proba),
         "average_precision": average_precision_score(y_true, proba),
         "f1": f1_score(y_true, y_pred, zero_division=0),
@@ -150,8 +159,16 @@ def main() -> None:
     with mlflow.start_run(run_name=run_name) as run:
         mlflow.set_tags(
             {
+                "protocol": "A",
+                "data_version": str(
+                    yaml.safe_load(Path("dataset.yaml").read_text())["source"]["version"]
+                ),
                 "protocol_id": "mlops_A_v1",
-                "evaluation_role": "pedagogical_smoke_test",
+                "evaluation_role": (
+                    "pedagogical_grid_search"
+                    if launched_by == "grid_search"
+                    else "pedagogical_smoke_test"
+                ),
                 "cost_assumption": "experimental_FN_FP_1_1",
                 "train_sha256": hashlib.sha256(TRAIN_CSV.read_bytes()).hexdigest(),
                 "test_sha256": hashlib.sha256(TEST_CSV.read_bytes()).hexdigest(),
@@ -166,7 +183,9 @@ def main() -> None:
         mlflow.log_param("decision_threshold", threshold)
 
         model = build_model(cfg, args.model, hyperparams, args.random_state)
+        started = perf_counter()
         model.fit(X_train, y_train)
+        mlflow.log_metric("fit_seconds", perf_counter() - started)
 
         metrics = compute_metrics(cfg, y_test, model.predict_proba(X_test)[:, 1], threshold)
         mlflow.log_metrics(metrics)
@@ -187,20 +206,21 @@ def main() -> None:
             metadata={"decision_threshold": threshold},  # le seuil voyage avec le modèle
         )
 
-        # Copie locale (sortie du stage DVC train, relue par src/evaluate.py)
-        # Preserve previous local artefacts, including the first smoke model.
-        if MODEL_DIR.exists():
-            history = MODEL_DIR.parent / "smoke-history"
-            history.mkdir(parents=True, exist_ok=True)
-            MODEL_DIR.rename(history / str(uuid4()))
-        mlflow.sklearn.save_model(
-            model,
-            MODEL_DIR,
-            signature=signature,
-            pip_requirements=PIP_REQUIREMENTS,
-            skops_trusted_types=SKOPS_TRUSTED_TYPES,
-            metadata={"mlflow_run_id": run.info.run_id, "decision_threshold": threshold},
-        )
+        if launched_by != "grid_search":
+            # Copie locale (sortie du stage DVC train, relue par src/evaluate.py)
+            # Preserve previous local artefacts, including the first smoke model.
+            if MODEL_DIR.exists():
+                history = MODEL_DIR.parent / "smoke-history"
+                history.mkdir(parents=True, exist_ok=True)
+                MODEL_DIR.rename(history / str(uuid4()))
+            mlflow.sklearn.save_model(
+                model,
+                MODEL_DIR,
+                signature=signature,
+                pip_requirements=PIP_REQUIREMENTS,
+                skops_trusted_types=SKOPS_TRUSTED_TYPES,
+                metadata={"mlflow_run_id": run.info.run_id, "decision_threshold": threshold},
+            )
 
         summary = ", ".join(f"{k}={v:.3f}" for k, v in metrics.items() if k != "business_cost")
         cost = metrics["business_cost"]
