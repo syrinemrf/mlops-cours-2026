@@ -6,12 +6,12 @@
 | Source | [Kaggle, pavansubhasht](https://www.kaggle.com/datasets/pavansubhasht/ibm-hr-analytics-attrition-dataset) |
 | Licence Kaggle | `DbCL-1.0` : base ODbL 1.0, contenus DbCL 1.0 |
 | Obtention | `uv run --no-sync python -m src.download` ; source officielle uniquement |
-| Version suivie | Kaggle **1**, publiée le 2017-03-31 ; pas encore de DVC dans cet incrément |
+| Version suivie | Kaggle **1**, publiée le 2017-03-31 ; DVC initialisé, download et prepare verrouillés dans dvc.lock |
 | Taille source vérifiée | 1 470 lignes × 35 colonnes ; CSV source 227 977 octets |
 | Export | `data/raw/dataset.csv` : 1 470 × 32 ; 27 prédicteurs, 3 sensibles d’audit, cible, identifiant |
 | Tâche / cible | Classification binaire `Attrition`, `Yes` = 1, `No` = 0 |
 | Responsables | Syrine (@syrinemrf), Aziz (@MohamedAzizKouch) ; rédaction de cet incrément par Syrine avec Codex |
-| Mise à jour | 2026-10-19 ; décisions expérimentales proposées, revue du binôme non effectuée |
+| Mise à jour | 2026-10-20 ; choix validés par Syrine, revue GitHub du binôme non effectuée |
 
 ## 1. Motivation
 
@@ -51,7 +51,7 @@ des prédicteurs. Le lecteur officiel les gère via `extra_sensitive` ; le retra
 n’élimine pas les proxys potentiels (rôle, ancienneté, salaire…).
 
 - `Gender` : Female 588, Male 882 ; ce codage binaire source n’est pas une description exhaustive du genre.
-- `Age` : 18–60 ans ; groupes proposés `<30`, `30-39`, `40-49`, `>=50`, bornes gauches incluses.
+- `Age` : 18–60 ans ; groupes `<30`, `30-44`, `>=45`, bornes gauches incluses (effectifs 326, 830, 314).
 - `MaritalStatus` : Divorced, Married, Single ; attribut social d’audit, sans en déduire de statut juridique.
 
 Effectifs par groupe dans le rapport ; aucun groupe « nan » produit par le lecteur.
@@ -97,11 +97,11 @@ encodage appris sur le test. Le test ciblé vérifie que transform ne change pas
 les moyennes apprises sur le train ; aucun estimateur prédictif entraîné ici.
 
 Split opérationnel conservé : **80/20, graine 42, stratification sur la cible**,
-conformément au script de préparation fourni dans l’énoncé (pas encore créé).
-Simulation en mémoire : **1 176 train / 294 test**, **190 / 47 Yes**, aucun identifiant
-commun. À la prochaine étape, fixer `prepare.id_column: EmployeeNumber` dans
+conformément au script de préparation fourni dans l’énoncé, désormais implémenté.
+Sorties effectivement produites : **1 176 train / 294 test**, **190 / 47 Yes**, aucun identifiant
+commun. `prepare.id_column: EmployeeNumber` est fixé dans
 `params.yaml` pour que la préparation conserve la clé existante, sans la dupliquer.
-Le futur horodatage Feast sera un artifice technique fixe, pas une date réelle.
+L’horodatage Feast est un artifice technique fixe, pas une date réelle.
 Pour les choix de modèles/seuils, prévoir une validation croisée sur le train et
 réserver le test à l’évaluation ; éviter d’optimiser répétitivement sur le test.
 
@@ -111,7 +111,7 @@ Usage : démonstration pédagogique MLOps uniquement, sans décision individuell
 sans inférence causale et sans déploiement RH réel. Les noms techniques du cours
 restent `scoring`, `scoring-model` et `s3://dvc-store/scoring`.
 
-**Propositions à faire valider avant entraînement :**
+**Choix validés par Syrine le 2026-10-20 (coûts neutres et gate provisoire) :**
 
 - Primaire `roc_auc`, gate **0.70**, conservée du cours et fixée avant toute mesure
   de modèle ; elle mesure le classement, pas l’utilité RH. Ne pas l’abaisser pour
@@ -148,8 +148,8 @@ elle n’est ni une signature IBM/Kaggle ni une vérification indépendante d’
 Le ZIP peut changer de métadonnées de compression : le verrou porte sur le membre CSV.
 L’empreinte export est distincte et enregistrée dans le rapport de conformité.
 Aucun changement silencieux de version/hash : revue du code/contrat requise.
-Le futur stage DVC devra dépendre aussi des clés `source` du contrat ; le
-`dvc.lock` n’est pas encore créé. Le manifeste local généré est ignoré avec le CSV.
+Le stage DVC download dépend aussi des clés `source` et `sensitive` du contrat ;
+`dvc.lock` conserve les empreintes des quatre sorties download/prepare. Le manifeste local généré est ignoré avec le CSV.
 
 La [documentation officielle Kaggle](https://github.com/Kaggle/kaggle-cli/blob/main/docs/datasets_metadata.md)
 associe le libellé observé au slug `DbCL-1.0` :
@@ -172,3 +172,15 @@ https://www.kaggle.com/datasets/pavansubhasht/ibm-hr-analytics-attrition-dataset
 Licence et version observées le 2026-10-19 via l’API officielle ; extrait de
 métadonnées dans `reports/m1/source-metadata.json`. Décision technique proposée :
 [ADR-0001](adr/0001-pin-ibm-hr-ingestion.md).
+
+## Avancement DVC et préparation — 2026-10-20
+
+DVC `storage` pointe sur `s3://dvc-store/scoring` ; credentials dans config.local
+uniquement. Le pipeline de cet incrément s’arrête à prepare : aucun entraînement.
+CSV train/test : 1176 × 32 / 294 × 32 ; Parquet Feast : 1470 × 29 (27 features,
+identifiant, horodatage UTC fixe). Sensibles et cible absents du Parquet ; aucune
+imputation ou standardisation apprise à cette étape. La source Feast contient les
+features de toutes les lignes comme dans le cours, sans cible ; le futur modèle
+s’entraînera exclusivement à partir de train.csv.
+Les résultats à jour sont dans `reports/m1/phase1-validation.json` et
+`reports/m1/preparation-validation.json` ; le rapport du 19 octobre reste historique.

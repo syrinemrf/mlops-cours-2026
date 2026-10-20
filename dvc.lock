@@ -58,15 +58,15 @@ stages:
         - column: Gender
         - column: MaritalStatus
         source:
-          url: 
+          url:
             https://www.kaggle.com/datasets/pavansubhasht/ibm-hr-analytics-attrition-dataset
           license: ODbL-1.0 (database) + DbCL-1.0 (contents)
-          citation: IBM data scientists (fictional dataset), distributed by 
+          citation: IBM data scientists (fictional dataset), distributed by
             pavansubhasht on Kaggle, version 1 (2017-03-31).
           kaggle_ref: pavansubhasht/ibm-hr-analytics-attrition-dataset
           version: 1
           filename: WA_Fn-UseC_-HR-Employee-Attrition.csv
-          sha256: 
+          sha256:
             a5c31e38bd7fafc9bc333884eb181b06b41b8e5e488e8f7ccb27199fb3be7659
         target:
           column: Attrition

@@ -1,0 +1,34 @@
+{
+  "remote": "s3://dvc-store/scoring",
+  "objects_verified": [
+    {
+      "path": "data/raw/dataset.csv",
+      "bucket": "dvc-store",
+      "key": "scoring/files/md5/16/e6acc1f69d648c4ec1d3b44efc0179",
+      "size": 328405,
+      "content_matches_local": true
+    },
+    {
+      "path": "data/processed/features.parquet",
+      "bucket": "dvc-store",
+      "key": "scoring/files/md5/a6/c0eacf28225e59b818c9e855c47e16",
+      "size": 65118,
+      "content_matches_local": true
+    },
+    {
+      "path": "data/processed/test.csv",
+      "bucket": "dvc-store",
+      "key": "scoring/files/md5/c9/a203d62f2029c7066a259c02da50da",
+      "size": 66084,
+      "content_matches_local": true
+    },
+    {
+      "path": "data/processed/train.csv",
+      "bucket": "dvc-store",
+      "key": "scoring/files/md5/7e/ec6596ea2b1d84be50811de74cb9b8",
+      "size": 262799,
+      "content_matches_local": true
+    }
+  ],
+  "date": "2026-10-20"
+}

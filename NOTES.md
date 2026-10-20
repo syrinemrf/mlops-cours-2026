@@ -140,9 +140,10 @@ L’export contient 32 colonnes, dont EmployeeNumber hors prédicteurs et trois
 sensibles d’audit. Consulter `docs/dataset-card.md`, ADR-0001 et `reports/m1/`.
 Coûts 1:1 et gate 0.70 sont des propositions de référence, pas des résultats RH.
 
-La suite officielle existante conserve un test spécifique à `personal_status` ;
-il échoue sur le contrat RH. Il n’a pas été modifié ni ignoré pour afficher du vert.
-Les nouveaux tests couvrent l’audit hors features sur les attributs réels du projet.
+Le test initial spécifique à `personal_status` a été rendu générique le 2026-10-20
+avec une fixture synthétique, sur autorisation de Syrine. Son objectif reste vérifié,
+avec en plus séparation X/y et lecture d’équité ; aucun test supprimé, ignoré ou xfail.
+Les 32 tests de la phase 1 passent, puis 45 avec les tests de préparation.
 
 Suite prévue : initialiser DVC et sa stage download en incluant `dataset.yaml`
 (section source comprise) dans les dépendances, puis le remote `s3://dvc-store/scoring`.
@@ -150,3 +151,41 @@ Configurer `params.yaml` avec `prepare.id_column: EmployeeNumber` avant d’écr
 script prepare de l’énoncé : split stratifié 80/20 graine 42, fit sur train seulement.
 Conserver les noms `scoring` et `scoring-model`. Ne pas lancer de grid search ou de
 promotion tant que cette prochaine étape n’est pas demandée.
+
+## Lab 1 — DVC et préparation (2026-10-20)
+
+Les coûts neutres FN/FP 1:1, ROC AUC et gate provisoire 0.70 sont validés par Syrine.
+Précision, rappel, F1, matrice de confusion et AP (`average_precision`, résumé de la
+courbe précision-rappel ; distinct de l’intégrale trapézoïdale) seront suivis à l’entraînement.
+Age/Gender/MaritalStatus restent hors prédicteurs. Groupes d’âge : <30 (326),
+30–44 (830), >=45 (314), respectivement 91, 110, 36 Yes ; pas d’ajustement nécessaire
+pour ces effectifs globaux, mais intersections et test seront plus petits.
+
+Le pipeline DVC s’arrête à `download -> prepare`. `dvc repro` ne lance donc pas
+train/evaluate. L’extension source/sensitive des dépendances download est volontaire :
+version, empreinte ou colonnes d’audit modifiées doivent invalider sa sortie.
+La préparation reprend l’énoncé, ajoute des gardes d’identifiant/cible et convertit
+explicitement les catégories en chaînes pour le schéma String de Feast.
+
+```bash
+source .venv/bin/activate
+set -a && source .env && set +a
+make pf
+dvc repro
+dvc status
+dvc push
+dvc status --cloud
+make test
+make lint
+```
+
+Sur un autre clone, recréer localement les credentials avec `dvc remote modify --local`
+à partir des variables `.env` ; ne pas les copier dans `.dvc/config`. Un autre cluster
+possède son propre remote, à remplir avec `dvc repro` puis `dvc push`, comme dans le cours.
+Les CSV et le Parquet sont dans le cache DVC, jamais dans Git. Le timestamp UTC fixe
+est technique, pas un historique RH. Les CSV conservent les sensibles pour l’audit ;
+le Parquet Feast contient identifiant + 27 prédicteurs + timestamp, sans sensibles/cible.
+
+Suite exacte : implémenter src/train.py (étape 4.3), commencer par un smoke test
+régression logistique instrumenté dans `scoring`, puis évaluation ; ne lancer grid search
+et promotion qu’après demande. Cet incrément ne valide pas le Lab 1 complet.
