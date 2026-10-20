@@ -1,5 +1,5 @@
 # Coûts 1:1 : hypothèse expérimentale neutre, pas des coûts RH établis.
-# Gate ROC AUC 0.70 conservée du cours, proposition à valider avant entraînement.
+# Gate ROC AUC 0.70 conservée du cours, validée provisoirement le 2026-10-20.
 # Sensibles conservés pour audit, exclus des prédicteurs ; ordinaux encodés one-hot.
 name: ibm-hr-attrition
 description: Données synthétiques IBM de départ des employés ; usage pédagogique, sans causalité ni historique réel.
@@ -50,14 +50,12 @@ sensitive:
   bins:
   - 0
   - 30
-  - 40
-  - 50
+  - 45
   - 120
   labels:
   - <30
-  - 30-39
-  - 40-49
-  - '>=50'
+  - 30-44
+  - '>=45'
 - column: Gender
 - column: MaritalStatus
 metrics:
