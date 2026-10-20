@@ -65,3 +65,12 @@ Mode d'emploi (à garder en tête du fichier) :
 - **Phase 2 :** DVC initialisé ; remote storage vers s3://dvc-store/scoring, secrets uniquement dans config.local ; download et prepare exécutés, lock vérifié, 4 fichiers poussés et relus dans SeaweedFS ; repro suivante ignorée, cache/remote synchronisés.
 - **Préparation :** train/test 1176/294 lignes, 190/47 Yes ; ID préservé, aucun recouvrement ; sensibles et cible hors des 27 features ; source Feast 1470 × 29, float64/chaînes et timestamp UTC technique fixe. Tests globaux : 45 réussis, make lint réussi.
 - **Incidents / suite :** Docker Desktop initialement arrêté ; lancé par Syrine, trois conteneurs kind existants redémarrés sans recréation/volume supprimé. Push d’abord refusé faute d’endpoint, puis réussi ; un contrôle DVC simultané a rencontré un verrou, reprise séquentielle réussie. Prochaine étape : src/train.py instrumenté et smoke test limité, sans grid search ni promotion à ce stade. Aucun push Git, fusion ou validation complète M1.
+
+
+## S6 — 2026-10-20 — Cadrage scientifique et deux smoke tests A
+
+- **Pilote :** Syrine (@syrinemrf), avec assistance Codex ; cinq commits M1 antérieurs conservés, aucune contribution/revue d’Aziz inventée.
+- **Cadrage :** séparation A/B1/B2 et RQ1–RQ3 validées par Syrine ; audit Jia avec fichiers/lignes/preuves, deux défauts confirmés (partage des estimateurs, jointure des cohortes), divergence bootstrap et choix de grille réduite distingués. Code auteur non exécuté. Référence XP-Cube et originalité scientifique à approfondir.
+- **Fait :** src/train.py implémenté exclusivement A selon §4.3 ; deux commandes §4.5 exécutées successivement sous MLflow scoring, tag mlops_A_v1. LR AUC 0.8329744164 / AP 0.6392128739 ; RF 50 arbres/profondeur5 AUC 0.7845637006 / AP 0.4428401623. Seuil balanced train 0.8384353741, coûts expérimentaux 1:1 ; rappel 14/47 et 1/47, sans correction opportuniste du seuil.
+- **Vérifié :** 51 tests réussis, make lint réussi ; deux runs FINISHED, signatures 27 entrées, rechargement distant/local des deux modèles et métriques concordantes ; ancien modèle local conservé. Preuves dans reports/m1/training-smoke-validation.md et smoke-validation.json. Warning pip non épinglé dans conda.yaml généré, sans installation ni changement de lock.
+- **Suite :** arrêt pour revue des deux résultats avant la suite pédagogique. Aucun grid search, reproduction Jia, calibration, promotion, push, fusion ou check-m1 intégral ; Lab M1 non déclaré terminé.

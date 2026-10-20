@@ -2,8 +2,8 @@
 
 **Statut : séparation A / B1 / B2 validée par Syrine, 2026-10-20.** Audit documentaire et statique seulement.
 Aucun entraînement scientifique B1/B2, recherche d’hyperparamètres, calibration ou SHAP exécuté. Deux smoke tests pédagogiques A autorisés séparément.
-Aucune reproduction de résultat revendiquée. Architecture, dépendances verrouillées,
-contrat et pipeline DVC M1 restent inchangés. Aucun avis d’Aziz n’est supposé.
+Aucune reproduction de résultat revendiquée. L’architecture scientifique, les dépendances verrouillées,
+le contrat et le pipeline DVC M1 restent inchangés. Aucun avis d’Aziz n’est supposé.
 
 ## 1. Fiche critique et références vérifiées
 
@@ -442,11 +442,11 @@ comptabilisation entre modèles, seeds ou partitions. Employer des dimensions
 conformes et règles d’agrégation explicites, contrôler concordance SQL/CSV/cube.
 Aucun SSAS ni cube déployé dans cet incrément.
 
-### Validation demandée avant changement d’architecture
+### Décisions acquises et validations scientifiques restantes
 
 - Fournir la référence exacte XP-Cube et approfondir l’état de l’art des RQ validées.
-- Valider le maintien de A et l’isolation de B, puis le suivi séparé du mode fidèle
-  et du mode corrigé ; décider si une demande de clarification auteur est souhaitée.
+- Maintien de A et séparation B1/B2 validés ; décider ultérieurement si une demande
+  de clarification à l’auteur est souhaitée.
 - Maintenir les rôles train/CV/test explicites ; A limité aux deux smoke tests autorisés.
 - Autoriser séparément l’environnement de recherche et choisir un poste/budget RAM
   approprié. La baseline et la contribution ne seront pas développées implicitement
@@ -460,8 +460,9 @@ Cinq commits examinés ; arbre initial propre sur work/syrine/m1 ; pas d’AGENT
 applicable trouvé. Références Nature/Zenodo consultées ; archive et MD5 vérifiés ;
 22 AST parsés ; tables et en-têtes contrôlés. Diagnostics locaux sans fit : partage
 de références des objets Pipeline et divergence de jointure sur split70/30.
-Aucune exécution de code auteur, aucune modification d’architecture ou de lock,
-aucun résultat MLflow produit et aucun accès à SSAS. Ce document n’est ni une
+Au terme de cet audit initial : aucune exécution du code auteur, aucun résultat
+MLflow scientifique, aucune modification de lock ni accès à SSAS. Les deux smoke
+tests A ultérieurs sont consignés dans reports/m1/training-smoke-validation.md. Ce document n’est ni une
 reproduction achevée ni une validation intégrale du Lab M1.
 
 Empreintes SHA-256 de fichiers audités, relatifs à code/ dans [Z1] :
