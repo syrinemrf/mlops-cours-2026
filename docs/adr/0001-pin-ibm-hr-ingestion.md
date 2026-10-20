@@ -1,6 +1,6 @@
 # ADR-0001 — Épingler l’ingestion IBM HR et séparer identifiant, audit et prédiction
 
-- **Statut :** proposé
+- **Statut :** proposé à la revue du binôme ; décisions techniques validées par Syrine le 2026-10-20
 - **Date :** 2026-10-19
 - **Auteur(s) :** @syrinemrf (avec assistance Codex)
 - **Relu par :** personne à ce stade ; revue à solliciter auprès de @MohamedAzizKouch
@@ -9,7 +9,9 @@
 
 ## Contexte
 
-Le dataset IBM HR est validé par le professeur selon Syrine. Il faut conserver
+Le dataset IBM HR est validé par courriel du professeur selon Syrine ; référence/date
+du courriel non encore consignée, sans issue GitHub inventée. À l’incrément initial,
+il fallait conserver
 l’interface du cours sur un poste à RAM limitée, avec source reproductible et sans
 entraîner de modèle. Kaggle décrit des profils synthétiques, sans historique réel.
 La version 1 téléchargée contient 1 470 × 35, 237 Yes, zéro valeur manquante et zéro
@@ -34,7 +36,7 @@ avec libellés à rang explicite ; aucune distance arbitraire ni apprentissage �
 Garder le lecteur et check.sh inchangés ; rendre le test sensible hors features
 indépendant de German Credit avec une fixture synthétique, autorisation du 2026-10-20. Split 80/20 stratifié,
 graine 42 ; apprentissage des transformations sur le train uniquement.
-Proposer ROC AUC ≥ 0.70, gate inchangée, avec AP/rappel/précision/F1 en complément.
+Conserver ROC AUC ≥ 0.70, gate provisoire validée par Syrine, avec AP/rappel/précision/F1 en complément.
 Sans coûts RH fournis, utiliser 1:1 comme hypothèse expérimentale neutre validée par Syrine le 2026-10-20, pas 5:1.
 
 ## Conséquences
@@ -43,8 +45,10 @@ Sans coûts RH fournis, utiliser 1:1 comme hypothèse expérimentale neutre vali
   `extra_sensitive`, source et licences ODbL/DbCL documentées ; aucun entraînement requis.
 - **Négatives / dette acceptée :** perte de l’ordre dans le modèle one-hot ; exclusion
   des sensibles n’éliminant pas leurs proxys ; disponibilité Kaggle ; aucune généralisation
-  RH/causalité démontrée. Revoir coûts, gate et groupes avant entraînement avec Syrine,
-  sans les ajuster pour obtenir un résultat vert. DVC download/prepare est implémenté dans l’incrément suivant.
+  RH/causalité démontrée. Coûts1:1, gate0.70 et groupes d’âge validés pour A le
+  2026-10-20, sans les ajuster pour obtenir un résultat vert ; pertinence RH réelle
+  à confirmer. DVC possède désormais quatre stages et Feast est vérifié ;
+  voir [l’audit M1](../../reports/m1/pre-publication-audit.md). L’étape 8.4 reste en écart.
 - **Vérification :** téléchargement et relecture, empreintes source/export, contrôles
-  de types et domaines, tests ciblés, simulation stratifiée 1 176/294 (190/47 Yes).
+  de types et domaines, tests ciblés, split stratifié réel 1 176/294 (190/47 Yes).
   Le test auparavant spécifique à personal_status est rendu générique sans skip ni suppression.

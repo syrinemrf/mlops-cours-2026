@@ -15,8 +15,8 @@ Mode d'emploi (à garder en tête du fichier) :
 
 **Binôme :** Syrine (@syrinemrf) et Aziz (@MohamedAzizKouch, collaborateur)
 **Repo :** https://github.com/syrinemrf/mlops-cours-2026
-**Dataset :** IBM HR Analytics Employee Attrition (validé par le professeur selon Syrine ; lien de l’issue à renseigner)
-**Extensions :** [À compléter à la S8 : @pseudo-1 → ext/<nom> · @pseudo-2 → ext/<nom>]
+**Dataset :** IBM HR Analytics Employee Attrition (validé par courriel du professeur selon Syrine ; référence/date du courriel à consigner, aucune issue identifiée)
+**Extensions :** non déclarées à J0 ; déclaration individuelle prévue avant la fin S8.
 
 <!-- Vos entrées commencent ici. Modèle :
 
@@ -102,3 +102,10 @@ Mode d'emploi (à garder en tête du fichier) :
 - **Feast :** entité employee/EmployeeNumber, vue request_features, service scoring_v1 ;13float64/14String sans sensibles/cible. Apply et matérialisation réussis ; offline1176×30 avec27features conformes ; online1salarié/27features conformes. Snapshot UTC fixe synthétique, aucune prétention temporelle production.
 - **Vérifié :** 77 tests passent, un warning de dépendance Feast/NumPy ; lint réussi ; intermédiaire17/18 puis make check-m1 réel18/18 code0. Nouveau clone temporaire avec cache vide : pull/repro sans fit, métriques/lock identiques, Feast reconstruit, Git propre ; Python existant réutilisé, nouveau cluster et installation vierge non testés. Logs et détails dans reports/m1/final-validation.md.
 - **Registre et suite :** trois versions et alias v1 champion/v3 challenger conservés, Dummy v2 failed. Aucun appel de promotion DVC8.4 : conflit annoncé et options documentées. B1/B2/XP-Cube, split, variables et hyperparamètres inchangés ; aucun push/PR/merge/tag. Revue réelle par Syrine puis Aziz et intégration/PR/J0 uniquement après autorisation.
+
+## S10 — 2026-10-20 — Audit M1 avant publication et J0
+
+- **Pilote :** Syrine avec assistance Codex ; revue du guide 8–10 au HEAD d2ea3ca, arbre initial propre, aucun AGENTS.md applicable trouvé. Les 15 commits M1 restent intacts ; aucune contribution/revue d’Aziz supposée.
+- **Vérifié :** lecture GitHub : main 7606b83, seule PR M0 fusionnée, aucune branche/PR M1 ; lecture MLflow : 25 runs FINISHED, versions 1/2/3 et alias conservés ; DVC local/cloud à jour. Relecture des preuves 18/18, 77 tests et lint antérieures, sans réexécuter entraînement ni contrôle officiel pendant l’audit.
+- **Constats et documents :** divergence 8.4 confirmée ; alignement futur LR C=1 sans poids recommandé, à autoriser. Simulation du parseur sans fit : les neuf RF hériteraient aussi de none, poids balanced explicite recommandé pour préserver la grille. Preuves 8.5/10.3/10.4 encore incomplètes. README/card/ADR/NOTES et état A actualisés, rapports historiques conservés ; audit, résumé des contributions, checklist Aziz, brouillon de PR et procédure publication/J0 préparés dans reports/m1.
+- **Accord et suite :** Syrine confirme l’accord dataset par courriel du professeur ; message non retrouvé dans la recherche ciblée, date/objet à consigner sans inventer d’issue. Diagnostic droits Aziz inaccessible au connecteur (403, pas une preuve de droits insuffisants). Paramètres/registre/locks/dépendances inchangés ; aucun commit/push/PR/merge/tag pendant l’audit. Autoriser séparément corrections techniques puis publication et jalon.

@@ -1,9 +1,14 @@
 # Baseline Jia et protocoles scientifiques — cadrage A / B1 / B2
 
-**Statut : séparation A / B1 / B2 validée par Syrine, 2026-10-20.** Audit documentaire et statique seulement.
-Aucun entraînement scientifique B1/B2, recherche d’hyperparamètres, calibration ou SHAP exécuté. Deux smoke tests pédagogiques A autorisés séparément.
+**Statut : séparation A / B1 / B2 validée par Syrine, 2026-10-20.** Audit B1/B2 documentaire et statique seulement.
+Aucun entraînement scientifique B1/B2, recherche d’hyperparamètres scientifique,
+calibration ou SHAP exécuté. Pour A, les autorisations ultérieures ont couvert
+2 smoke tests, 22 configurations, le registre, DVC et Feast :
+[état technique d2ea3ca](../../reports/m1/final-validation.md),
+[écarts avant publication](../../reports/m1/pre-publication-audit.md).
 Aucune reproduction de résultat revendiquée. L’architecture scientifique, les dépendances verrouillées,
-le contrat et le pipeline DVC M1 restent inchangés. Aucun avis d’Aziz n’est supposé.
+le contrat et le pipeline DVC M1 ne sont pas modifiés par ce cadrage scientifique.
+Aucun avis d’Aziz n’est supposé.
 
 ## 1. Fiche critique et références vérifiées
 
@@ -251,7 +256,7 @@ nécessitera audit source/licence, contrôles d’imputation et budget séparés
 | Espace source | 27 prédicteurs ; 13 quantitatives, 14 catégories | 30 prédicteurs source, 49 colonnes encodées |
 | Sensibles | Age/Gender/MaritalStatus audit seulement | Inclus dans X, audit séparément |
 | Ordinaux | Libellés puis one-hot | Codes entiers conservés |
-| Imbalance | Defaults cours class_weight=balanced à évaluer | SMOTE dans CV, pas ajout silencieux de poids |
+| Imbalance | LR grille avec/sans poids ; RF balanced, GB/Dummy sans poids ; DVC balanced au snapshot d2ea3ca | SMOTE dans CV, pas ajout silencieux de poids |
 | Modèles | LR/RF/GradientBoosting sklearn/dummy | XGB/RF/LGB/LR |
 | Prétraitement | Imputation/standardisation/one-hot du lecteur | Encodage spécifique, LR scaler puis SMOTE |
 | Finalité | Checks pédagogiques, expérience scoring, modèle scoring-model | Reproduction scientifique, espace et registres distincts |
@@ -270,11 +275,12 @@ des données ; une ablation des sensibles doit se faire à split/budget constant
 | 9a83ee4 | DVC download/prepare, split80/20, source Feast : reste intégralement A. |
 | 01c2d44 | Preuves tests/S3/lock et documentation : reproductibilité MLOps, pas preuve de résultats scientifiques. |
 
-**Entraînement A autorisé :** étape 4.3 et les deux smoke tests fixes de 4.5,
-LR par défaut puis RF 50 arbres/profondeur 5. Tag `protocol_id=mlops_A_v1`, rôle
-`pedagogical_smoke_test`. Le test A 80/20 est exposé pour ces contrôles pédagogiques :
-résultats exploratoires, pas une preuve scientifique indépendante après sélection.
-Aucun choix d’hyperparamètre/seuil sur ces scores ; aucun grid search ni promotion.
+**Entraînement A réalisé après les autorisations successives :** deux smoke tests
+fixes de 4.5, puis 22 configurations officielles et un run DVC ; registre et Feast.
+Tag `protocol_id=mlops_A_v1`, rôles `pedagogical_smoke_test`,
+`pedagogical_grid_search` et `pedagogical_pipeline`. Les candidats A ont été retenus
+sur le test 80/20 consulté à répétition : résultats exploratoires, pas une estimation
+scientifique indépendante après sélection. Aucun seuil n’a été optimisé sur ce test.
 Le seuil analytique balanced du cours est calculé sur train uniquement : ce n’est
 pas une garantie de calibration. Coûts 1:1 expérimentaux, non économiques établis.
 Aucune évaluation des tests scientifiques B1/B2 dans cet incrément.
@@ -369,8 +375,9 @@ fortement utilisé. Le guide auteur recommande au moins 8 Go ; son temps annonc�
 n’est pas une estimation validée sur notre poste. Aucun réglage WSL/Docker permanent
 ni arrêt/destruction des services M0 sans décision de Syrine.
 
-1. **Maintenant :** document, inventaire, lecture des tables, AST22 et deux diagnostics
-   sans fit. Rien d’autre installé ou entraîné.
+1. **Audit scientifique initial réalisé :** document, inventaire, lecture des tables,
+   AST22 et deux diagnostics sans fit scientifique. L’avancement pédagogique A
+   ultérieur est distinct et référencé en tête du document.
 2. **Après validation du cadrage et autorisation d’environnement :** environnement
    isolé minimal à versions documentées, contrôle d’encodage/split49/30 et tests de
    jointure/clonage ; un smoke test LR puis XGB à paramètres déjà fournis, annoncés
@@ -447,7 +454,8 @@ Aucun SSAS ni cube déployé dans cet incrément.
 - Fournir la référence exacte XP-Cube et approfondir l’état de l’art des RQ validées.
 - Maintien de A et séparation B1/B2 validés ; décider ultérieurement si une demande
   de clarification à l’auteur est souhaitée.
-- Maintenir les rôles train/CV/test explicites ; A limité aux deux smoke tests autorisés.
+- Maintenir les rôles train/CV/test explicites ; les résultats A, incluant sa grille
+  et ses choix sur test répété, restent pédagogiques et distincts de B1/B2.
 - Autoriser séparément l’environnement de recherche et choisir un poste/budget RAM
   approprié. La baseline et la contribution ne seront pas développées implicitement
   dans les scripts du cours.
@@ -462,8 +470,9 @@ applicable trouvé. Références Nature/Zenodo consultées ; archive et MD5 vér
 de références des objets Pipeline et divergence de jointure sur split70/30.
 Au terme de cet audit initial : aucune exécution du code auteur, aucun résultat
 MLflow scientifique, aucune modification de lock ni accès à SSAS. Les deux smoke
-tests A ultérieurs sont consignés dans reports/m1/training-smoke-validation.md. Ce document n’est ni une
-reproduction achevée ni une validation intégrale du Lab M1.
+tests A ultérieurs sont consignés dans reports/m1/training-smoke-validation.md ;
+la finalisation pédagogique ultérieure dans reports/m1/final-validation.md.
+Ce document n’est ni une reproduction scientifique achevée ni une preuve des checks M1.
 
 Empreintes SHA-256 de fichiers audités, relatifs à code/ dans [Z1] :
 

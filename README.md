@@ -14,11 +14,59 @@ une brique, et le résultat final est votre mini-projet.
 
 **Option A — un dépôt commun** : [syrinemrf/mlops-cours-2026](https://github.com/syrinemrf/mlops-cours-2026).
 Membres : Syrine ([@syrinemrf](https://github.com/syrinemrf)) et Aziz
-([@MohamedAzizKouch](https://github.com/MohamedAzizKouch)). Chacun utilise son propre cluster.
-Le travail M0 de Syrine est préparé dans `lab/m0-setup` à partir de `work/syrine/m0` ;
-la relecture d’Aziz est à solliciter avant la fusion vers `main`.
+([@MohamedAzizKouch](https://github.com/MohamedAzizKouch)). Chaque membre doit rejouer
+le socle sur son propre cluster ; les preuves d’exécution d’Aziz restent à recueillir.
+M0 est fusionné dans `main` par la [PR #1](https://github.com/syrinemrf/mlops-cours-2026/pull/1),
+commit `7606b83`. Cette fusion ne constitue pas une approbation d’Aziz.
+M1 est validé techniquement sur la branche personnelle locale `work/syrine/m1`
+(`d2ea3ca`, 18/18 contrôles, 77 tests) ; son intégration et sa revue restent à faire.
 Dataset retenu : IBM HR Analytics Employee Attrition, validé par le professeur
-selon Syrine ; adaptation prévue au Lab 1, après clôture du Lab 0.
+par courriel selon Syrine ; référence du courriel encore à consigner, aucune issue
+de validation identifiée. Voir [l’audit avant publication](reports/m1/pre-publication-audit.md)
+et la [procédure de revue et J0](reports/m1/binome-review-publication.md).
+
+## Cas d’usage
+
+Prédiction pédagogique de `Attrition=Yes` sur les profils synthétiques IBM HR.
+Aucune décision RH réelle, représentativité ou relation causale démontrée.
+
+## Architecture actuelle
+
+WSL et Docker sur D:, cluster kind existant à trois nœuds, SeaweedFS pour S3/DVC
+et artefacts MLflow, registre `scoring-model`, Feast offline Parquet et online SQLite.
+Le pipeline DVC enchaîne `download -> prepare -> train -> evaluate` ; reprise avec
+`dvc pull` puis `dvc repro` sur le stockage déjà rempli, selon [NOTES.md](NOTES.md).
+Sur un cluster existant, vérifier les services et relancer les port-forwards avec
+`make pf`. Les commandes d’installation ci-dessous concernent un nouveau poste.
+
+## Données
+
+[Dataset card](docs/dataset-card.md) et [contrat](dataset.yaml) : Kaggle version 1,
+source 1 470 × 35, export 32 colonnes dont 27 prédicteurs ; split stratifié 80/20,
+seed 42. `EmployeeNumber` est une clé technique ; Age/Gender/MaritalStatus servent
+à l’audit et sont exclus des prédicteurs. Données et modèles binaires hors Git.
+
+## Modèle et résultats
+
+Au snapshot local `d2ea3ca`, champion du registre : LR C=1 sans poids, ROC AUC
+0,836851 ; modèle DVC : LR C=0,1 balanced, ROC AUC 0,832974. Leur divergence avec
+l’étape 8.4 reste à résoudre après autorisation. Ces scores du protocole A sont
+exploratoires sur test consulté à répétition, sans supériorité statistique démontrée.
+[Preuves techniques](reports/m1/final-validation.md) ;
+[protocoles scientifiques A/B1/B2 et RQ XP-Cube](docs/research/baseline-protocol.md).
+
+## Extensions
+
+Aucune extension individuelle déclarée ici. Les hypothèses XP-Cube RQ1–RQ3 ne
+constituent ni une extension validée par le professeur ni une innovation démontrée.
+La déclaration de chaque membre reste à faire avant la fin S8.
+
+## Démo
+
+La démonstration J0 porte sur les contrôles M0/M1, DVC, MLflow et Feast locaux.
+Le [journal complet M1](reports/m1/check-m1-final.log) est disponible ; la capture
+d’écran réelle du commit finalement publié reste à prendre. Aucune vidéo finale
+ni application publique n’est annoncée à ce stade.
 
 ## Démarrage
 
@@ -43,7 +91,7 @@ prévenez l'enseignant dès la première séance (poste de l'école, VM, ou bin�
 |---|---|
 | `labs/` | Énoncés des 10 labs (0 à 9) et du mini-projet, scripts `check.sh` ([sommaire](labs/README.md)) |
 | `infra/` | Installation des briques (`versions.env` = versions de référence) |
-| `dataset.yaml`, `src/` | Contrat de données et code socle (credit scoring par défaut) |
+| `dataset.yaml`, `src/` | Contrat de données et code socle adapté à IBM HR Attrition |
 | `docs/` | Gabarits du mini-projet : journal, ADR, dataset card, rapport, soutenance, syllabus |
 | `rag/` | Projet Python isolé du Lab 9 (LLMOps) |
 | `tools/` | Générateur PDF des énoncés, vérificateur énoncé ↔ fichiers |

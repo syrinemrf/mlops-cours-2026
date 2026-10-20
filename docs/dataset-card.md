@@ -6,7 +6,7 @@
 | Source | [Kaggle, pavansubhasht](https://www.kaggle.com/datasets/pavansubhasht/ibm-hr-analytics-attrition-dataset) |
 | Licence Kaggle | `DbCL-1.0` : base ODbL 1.0, contenus DbCL 1.0 |
 | Obtention | `uv run --no-sync python -m src.download` ; source officielle uniquement |
-| Version suivie | Kaggle **1**, publiée le 2017-03-31 ; DVC initialisé, download et prepare verrouillés dans dvc.lock |
+| Version suivie | Kaggle **1**, publiée le 2017-03-31 ; quatre stages DVC verrouillés dans dvc.lock |
 | Taille source vérifiée | 1 470 lignes × 35 colonnes ; CSV source 227 977 octets |
 | Export | `data/raw/dataset.csv` : 1 470 × 32 ; 27 prédicteurs, 3 sensibles d’audit, cible, identifiant |
 | Tâche / cible | Classification binaire `Attrition`, `Yes` = 1, `No` = 0 |
@@ -15,12 +15,14 @@
 
 ## 1. Motivation
 
-Jeu pédagogique synthétique de faible volume, validé par le professeur selon Syrine,
+Jeu pédagogique synthétique de faible volume, validé par courriel du professeur selon Syrine,
 pour apprendre le versionnement, la traçabilité, l’évaluation et l’équité d’une
 classification des départs. Les données sont décrites comme fictives, créées par
 les data scientists IBM dans la [description Kaggle](https://www.kaggle.com/api/v1/datasets/view/pavansubhasht/ibm-hr-analytics-attrition-dataset).
 Elles ne décrivent pas des observations vérifiées d’employés réels. Le projet ne
 permet ni décision RH opérationnelle ni conclusion causale sur les départs.
+La référence/date du courriel reste à consigner ; aucune issue de validation n’a
+été identifiée. L’accord n’est pas présenté comme une référence GitHub observée.
 
 ## 2. Composition
 
@@ -46,7 +48,7 @@ listes de colonnes, les effectifs et les types source ; aucune donnée brute dan
 
 ## 3. Attributs sensibles
 
-Choix proposé : conserver `Age`, `Gender`, `MaritalStatus` pour l’audit, les exclure
+Choix validé par Syrine : conserver `Age`, `Gender`, `MaritalStatus` pour l’audit, les exclure
 des prédicteurs. Le lecteur officiel les gère via `extra_sensitive` ; le retrait
 n’élimine pas les proxys potentiels (rôle, ancienneté, salaire…).
 
@@ -56,7 +58,8 @@ n’élimine pas les proxys potentiels (rôle, ancienneté, salaire…).
 
 Effectifs par groupe dans le rapport ; aucun groupe « nan » produit par le lecteur.
 L’usage des groupes, les petits effectifs et l’incertitude des métriques seront
-à examiner avant tout résultat d’équité. Aucun résultat de modèle calculé ici.
+à examiner avant tout résultat d’équité. Les modèles pédagogiques ont été entraînés ;
+aucun résultat d’équité par groupe n’est établi dans cet incrément.
 
 ## 4. Collecte et biais connus
 
@@ -90,11 +93,12 @@ Aucun paramètre n’est appris sur les données lors de cette transformation.
   documenté mais n’est pas exploité comme distance numérique ou contrainte monotone.
   Les libellés JobLevel/StockOptionLevel restent neutres, sans inventer leur sens RH.
 
-Le préprocesseur du cours prévoit médiane + standardisation des quantitatives,
-mode + one-hot (`handle_unknown=ignore`) des catégories. Il devra être **ajusté sur
-le train seulement**, puis appliqué au test. Pas de sélection, calibration ou
-encodage appris sur le test. Le test ciblé vérifie que transform ne change pas
-les moyennes apprises sur le train ; aucun estimateur prédictif entraîné ici.
+Le préprocesseur implémenté utilise médiane + standardisation des quantitatives,
+mode + one-hot (`handle_unknown=ignore`) des catégories. Il est **ajusté sur
+le train seulement**, puis appliqué au test dans la pipeline sklearn. Pas de
+calibration ni d’encodage appris sur le test. Le test ciblé vérifie que transform
+ne change pas les moyennes apprises sur le train. La sélection pédagogique des
+candidats s’est en revanche appuyée sur les scores du test répété : voir la limite ci-dessous.
 
 Split opérationnel conservé : **80/20, graine 42, stratification sur la cible**,
 conformément au script de préparation fourni dans l’énoncé, désormais implémenté.
@@ -102,8 +106,12 @@ Sorties effectivement produites : **1 176 train / 294 test**, **190 / 47 Yes**, 
 commun. `prepare.id_column: EmployeeNumber` est fixé dans
 `params.yaml` pour que la préparation conserve la clé existante, sans la dupliquer.
 L’horodatage Feast est un artifice technique fixe, pas une date réelle.
-Pour les choix de modèles/seuils, prévoir une validation croisée sur le train et
-réserver le test à l’évaluation ; éviter d’optimiser répétitivement sur le test.
+Le protocole A du cours a comparé 22 configurations sur ce test et retenu ses
+candidats à partir de ces scores : ce test n’est plus une estimation finale indépendante
+après sélection. Les seuils de décision n’ont pas été optimisés sur le test.
+Les sélections scientifiques futures nécessitent une CV sur le train et un test
+final distinct préservé, selon le cadrage séparé B1/B2 ; pas de comparaison de gains
+entre splits ou espaces de variables différents.
 
 ## 6. Usages
 
@@ -126,10 +134,13 @@ restent `scoring`, `scoring-model` et `s3://dvc-store/scoring`.
   Le ratio crédit 5:1 n’est pas repris. Avec probabilités calibrées et sans poids,
   cela correspondrait à un seuil de décision 0.5 ; ce seuil n’est pas la gate ROC AUC.
   La correction par poids du cours devra être vérifiée empiriquement/calibrée ;
-  les poids ne garantissent pas une correction exacte des probabilités.
+  les poids ne garantissent pas une correction exacte des probabilités. Le seuil
+  analytique balanced observé est 0,838435, calculé sur le train, sans calibration
+  apprise ni optimisation empirique sur le test ; voir [l’audit du seuil](../reports/m1/threshold-audit.md).
 - À valider : action RH envisagée, capacité d’intervention, coût relatif FN/FP,
-  budget de faux positifs, seuil de rappel, choix d’exclusion des sensibles et
-  pertinence des groupes d’âge. Aucune promotion lancée dans cet incrément.
+  budget de faux positifs et seuil de rappel. L’exclusion des sensibles et les
+  groupes d’âge sont validés pour A ; leur pertinence RH réelle reste à étudier.
+  Trois versions sont enregistrées ; champion et challenger sont pédagogiques.
 
 ## 7. Distribution et maintenance
 
@@ -149,7 +160,8 @@ Le ZIP peut changer de métadonnées de compression : le verrou porte sur le mem
 L’empreinte export est distincte et enregistrée dans le rapport de conformité.
 Aucun changement silencieux de version/hash : revue du code/contrat requise.
 Le stage DVC download dépend aussi des clés `source` et `sensitive` du contrat ;
-`dvc.lock` conserve les empreintes des quatre sorties download/prepare. Le manifeste local généré est ignoré avec le CSV.
+`dvc.lock` conserve les empreintes des quatre sorties download/prepare et du modèle
+train ; evaluate suit les métriques JSON dans Git. Le manifeste local est ignoré avec le CSV.
 
 La [documentation officielle Kaggle](https://github.com/Kaggle/kaggle-cli/blob/main/docs/datasets_metadata.md)
 associe le libellé observé au slug `DbCL-1.0` :
@@ -170,17 +182,23 @@ IBM data scientists, données fictives ; distribution Kaggle par **pavansubhasht
 https://www.kaggle.com/datasets/pavansubhasht/ibm-hr-analytics-attrition-dataset
 
 Licence et version observées le 2026-10-19 via l’API officielle ; extrait de
-métadonnées dans `reports/m1/source-metadata.json`. Décision technique proposée :
+métadonnées dans `reports/m1/source-metadata.json`. Décision technique mise en œuvre,
+proposée à la revue du binôme :
 [ADR-0001](adr/0001-pin-ibm-hr-ingestion.md).
 
-## Avancement DVC et préparation — 2026-10-20
+## État technique et limites — 2026-10-20, snapshot d2ea3ca
 
 DVC `storage` pointe sur `s3://dvc-store/scoring` ; credentials dans config.local
-uniquement. Le pipeline de cet incrément s’arrête à prepare : aucun entraînement.
+uniquement. Le pipeline possède download, prepare, train et evaluate.
 CSV train/test : 1176 × 32 / 294 × 32 ; Parquet Feast : 1470 × 29 (27 features,
 identifiant, horodatage UTC fixe). Sensibles et cible absents du Parquet ; aucune
 imputation ou standardisation apprise à cette étape. La source Feast contient les
-features de toutes les lignes comme dans le cours, sans cible ; le futur modèle
-s’entraînera exclusivement à partir de train.csv.
-Les résultats à jour sont dans `reports/m1/phase1-validation.json` et
-`reports/m1/preparation-validation.json` ; le rapport du 19 octobre reste historique.
+features de toutes les lignes comme dans le cours, sans cible ; les modèles
+s’entraînent exclusivement à partir de train.csv.
+25 runs MLflow terminés : 2 smoke, 22 grille, 1 DVC. Modèle DVC LR C=0,1 balanced,
+AUC 0,832974, seuil 0,838435 ; champion LR C=1 sans poids issu de la grille,
+AUC 0,836851, seuil 0,5. Ce désalignement de l’étape 8.4 est encore ouvert,
+malgré 18/18 contrôles, 77 tests et lint validé. Feast offline/online vérifié.
+[Preuves finales](../reports/m1/final-validation.md),
+[audit avant publication](../reports/m1/pre-publication-audit.md).
+Les anciens rapports décrivent leur incrément, sans remplacer l’état actuel.

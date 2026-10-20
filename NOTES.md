@@ -1,5 +1,15 @@
 # Mes notes du cours MLOps — Syrine
 
+**État de référence au 2026-10-20 :** M0 fusionné (`7606b83`), M1 local
+`d2ea3ca`, contrôles 18/18, 77 tests. Les sections successives ci-dessous sont
+chronologiques : les instructions anciennes « avant fusion M0 » ou « ingestion
+seulement » décrivent ces incréments. Pour reprendre, utiliser la section
+« Reprise actuelle » et [l’audit avant publication](reports/m1/pre-publication-audit.md).
+L’étape 8.4 reste en écart : champion issu de la grille, modèle DVC différent.
+[Revue du binôme, publication et J0](reports/m1/binome-review-publication.md).
+Dataset validé par courriel du professeur selon Syrine ; référence non encore
+consignée, aucune issue GitHub inventée.
+
 ## Lab 0 : environnement et organisation
 
 Binôme (option A) : Syrine (@syrinemrf) et Aziz (@MohamedAzizKouch) ;
@@ -190,7 +200,7 @@ Suite exacte : implémenter src/train.py (étape 4.3), commencer par un smoke te
 régression logistique instrumenté dans `scoring`, puis évaluation ; ne lancer grid search
 et promotion qu’après demande. Cet incrément ne valide pas le Lab 1 complet.
 
-## Reprise actuelle — Lab M1 finalisé (2026-10-20)
+## Reprise actuelle — Lab M1 techniquement validé, revue en attente (2026-10-20)
 
 Les sections M1 précédentes décrivent les incréments historiques. La procédure
 actuelle utilise les quatre stages `download -> prepare -> train -> evaluate`,
@@ -322,6 +332,12 @@ Options à discuter : conserver cet état (choix appliqué), enregistrer le run 
 modifier les alias via une opération dédiée à autoriser, ou convenir ultérieurement
 d’un nouveau paramétrage/recalcul et d’une promotion. Aucun choix silencieux.
 Le 18/18 ne signifie donc pas que le champion actuel a été produit par ce pipeline DVC.
+L’audit recommande désormais d’aligner DVC sur LR C=1 sans poids, puis d’enregistrer
+et promouvoir son nouveau run après autorisation. C’est une proposition, pas une
+opération réalisée. Le vérificateur local `src.verify_registry` devra alors accepter
+le nouvel identifiant ; ses assertions actuelles ciblent le snapshot v1/v3 de Syrine.
+Ne pas relancer la grille pour cet alignement : son identité inclut les octets de
+`dvc.lock` ; une nouvelle identité pourrait entraîner 22 runs supplémentaires.
 
 ### Revue, intégration et J0 — prochaines actions uniquement
 
