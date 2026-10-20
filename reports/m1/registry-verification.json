@@ -1,0 +1,36 @@
+{
+  "model_name": "scoring-model",
+  "versions_count": 3,
+  "aliases": {
+    "champion": {
+      "version": "1",
+      "run_id": "5ef49fc5f3e740f28c523b0dcc1ae8c1",
+      "roc_auc": 0.8368507192695321
+    },
+    "challenger": {
+      "version": "3",
+      "run_id": "139ae364aa6e4166b2bd19ef533f48e7",
+      "roc_auc": 0.8360754586958395
+    }
+  },
+  "dummy_rejected": true,
+  "uri": "models:/scoring-model@champion",
+  "decision_threshold": 0.5,
+  "decision_threshold_matches_run": true,
+  "feature_count": 27,
+  "probabilities_first_five": [
+    0.054739472931851135,
+    0.004567934055242384,
+    0.07695643206029057,
+    0.003461122499474431,
+    0.4529688832327809
+  ],
+  "predictions_first_five": [
+    0,
+    0,
+    0,
+    0,
+    0
+  ],
+  "pyfunc_predictions_match": true
+}

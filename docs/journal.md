@@ -83,3 +83,11 @@ Mode d'emploi (à garder en tête du fichier) :
 - **Vérifié :** 60 tests réussis, make lint ; relance effective réutilisant les22 mêmes run IDs sans fit ; quatre modèles distants rechargés, métriques concordantes à1e-12 ; LR .1 balanced concorde au smoke ; DVC status à jour. Rapports, tableaux complets et preuves sous reports/m1/grid-*. Registre vide, aucune promotion.
 - **Incident :** forte pression mémoire/disque et swap plein, perte du port-forward MLflow rétabli par make pf ; SeaweedFS redémarré avec ancien état Error, cause non établie. Docker info répondait au préflight puis timeout, Kubernetes/MLflow accessibles. Aucun cluster recréé, volume supprimé ou service tiers arrêté.
 - **Suite :** Syrine doit examiner les candidats et autoriser séparément l’étape7, en assumant le caractère pédagogique de la sélection sur test. Proposition CV train seule documentée pour la recherche future. Aucun push/merge, reproduction Jia, calibration ou validation complète M1.
+
+
+## S8 — 2026-10-20 — Registry A et promotion contrôlée
+
+- **Préalable :** diagnostics successifs stables : Docker28.4 répond, nœuds Ready sans MemoryPressure/DiskPressure, pods prêts et PVC Bound ; événements SeaweedFS indiquant liveness en échec puis kill exit137/Error, sans preuve OOMKilled. Aucun redémarrage ou changement d’infrastructure effectué. Snapshots avant/après : restartCount2 inchangé pour les deux pods.
+- **Fait :** src/promote.py conserve la gate officielle ROC AUC>=.70 et ajoute une affectation explicite challenger-only. scoring-model v1=LR C1 sans poids (champion), v2=Dummy .5 (failed), v3=LR C.1 sans poids (challenger), vrais run IDs vérifiés. Dummy n’a pas déplacé le champion ; deuxième passage sans version supplémentaire.
+- **Vérifié :** 72 tests réussis ; modèle champion distant et pyfunc chargés, cinq probabilités/predictions concordantes, seuil décision.5 identique au run et distinct de la gate.7 ; trois versions READY, alias finaux conformes. Preuves sous reports/m1/registry-*. Choix exploratoires sur test répété, aucune supériorité scientifique revendiquée.
+- **Suite :** étape7 vérifiée ; étapes8/9 non exécutées, aucune reproduction Jia, nouveau training, donnée brute/secret suivi, push ou merge. Conserver B1/B2, split et variables ; pipeline DVC final et Feast restent à faire après autorisation.
