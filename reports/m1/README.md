@@ -6,6 +6,7 @@ précédentes par les résultats ultérieurs.
 
 | Rapport | Portée et snapshot |
 |---|---|
+| [Alignement et reproductibilité](alignment-validation.md) | État courant : 85 tests, 18/18, DVC et champion v4 alignés ; exercices 8.5/10.3 vérifiés, 10.4 Aziz en attente |
 | [Audit avant publication](pre-publication-audit.md) | État d2ea3ca, écarts au guide, décisions encore requises |
 | [Revue/publication/J0](binome-review-publication.md) | Checklist et commandes futures ; aucune publication exécutée |
 | [Finalisation technique](final-validation.md) | Pipeline/Feast, 25 runs, trois versions, limites de reproduction ; preuves à ccf031f, checker reconfirmé à d2ea3ca |
@@ -22,8 +23,9 @@ Ils ne doivent pas être présentés comme la validation finale ni supprimés po
 masquer un échec. Les JSON/CSV contiennent les valeurs exactes et les manifests ;
 les tableaux Markdown peuvent arrondir les métriques.
 
-La divergence du champion avec le modèle DVC est toujours ouverte au snapshot
-d2ea3ca. Une future correction autorisée doit produire un nouveau rapport avec
-ses nouveaux run ID/version/commit, en conservant ces preuves historiques.
+La divergence du champion avec le modèle DVC était ouverte au snapshot d2ea3ca.
+Elle est résolue dans alignment-validation.md, avec ses nouveaux run ID/version/commit,
+sans modifier les preuves historiques. Les scripts de diagnostic acceptent un chemin
+de sortie explicite pour conserver les anciens rapports.
 Les scores A sont pédagogiques/exploratoires sur test consulté à répétition ;
 aucune reproduction scientifique Jia ni supériorité statistique revendiquée.

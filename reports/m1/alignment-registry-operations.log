@@ -1,0 +1,107 @@
+Registered model 'scoring-model' already exists. Creating a new version of this model...
+2026/10/20 16:29:48 INFO mlflow.store.model_registry.abstract_store: Waiting up to 300 seconds for model version to finish creation. Model name: scoring-model, version 4
+Created version '4' of model 'scoring-model'.
+{
+  "version_created": "4",
+  "candidate_run_id": "ef2d3f85ebe3432f9172275c34bbd6ac",
+  "version_count_before": 3,
+  "version_count_after": 4,
+  "versions": [
+    {
+      "version": "4",
+      "run_id": "ef2d3f85ebe3432f9172275c34bbd6ac",
+      "source": "models:/m-7db47a731a8f488eb67dc48ed89b1918",
+      "tags": {
+        "roc_auc": "0.8368507192695321",
+        "primary_metric": "roc_auc",
+        "promotion_threshold": "0.7",
+        "validation_status": "passed",
+        "source_run_id": "ef2d3f85ebe3432f9172275c34bbd6ac",
+        "data_md5": "16e6acc1f69d648c4ec1d3b44efc0179",
+        "data_sha256": "27e7bebda91c7e6d0b77e80128c2d9383d70a19a185b51ecfe3bb90f761d2a78",
+        "protocol": "A",
+        "protocol_id": "mlops_A_v1",
+        "dataset": "ibm-hr-attrition",
+        "data_version": "1",
+        "selection_scope": "pedagogical_test_exploratory",
+        "decision_threshold": "0.5"
+      }
+    },
+    {
+      "version": "3",
+      "run_id": "139ae364aa6e4166b2bd19ef533f48e7",
+      "source": "models:/m-66d466b6bdf3421cb1af8ed06129d5a9",
+      "tags": {
+        "roc_auc": "0.8360754586958395",
+        "primary_metric": "roc_auc",
+        "promotion_threshold": "0.7",
+        "validation_status": "passed",
+        "source_run_id": "139ae364aa6e4166b2bd19ef533f48e7",
+        "data_md5": "16e6acc1f69d648c4ec1d3b44efc0179",
+        "data_sha256": "27e7bebda91c7e6d0b77e80128c2d9383d70a19a185b51ecfe3bb90f761d2a78",
+        "protocol": "A",
+        "protocol_id": "mlops_A_v1",
+        "dataset": "ibm-hr-attrition",
+        "data_version": "1",
+        "selection_scope": "pedagogical_test_exploratory",
+        "decision_threshold": "0.5"
+      }
+    },
+    {
+      "version": "2",
+      "run_id": "0c42486a18f340ddb2db995d8797c70d",
+      "source": "models:/m-c15bbc24acc54800a9b7dcbcfec8fab7",
+      "tags": {
+        "roc_auc": "0.5",
+        "primary_metric": "roc_auc",
+        "promotion_threshold": "0.7",
+        "validation_status": "failed",
+        "source_run_id": "0c42486a18f340ddb2db995d8797c70d",
+        "data_md5": "16e6acc1f69d648c4ec1d3b44efc0179",
+        "data_sha256": "27e7bebda91c7e6d0b77e80128c2d9383d70a19a185b51ecfe3bb90f761d2a78",
+        "protocol": "A",
+        "protocol_id": "mlops_A_v1",
+        "dataset": "ibm-hr-attrition",
+        "data_version": "1",
+        "selection_scope": "pedagogical_test_exploratory",
+        "decision_threshold": "0.5"
+      }
+    },
+    {
+      "version": "1",
+      "run_id": "5ef49fc5f3e740f28c523b0dcc1ae8c1",
+      "source": "models:/m-709b4294d97c4bb29c5019bc86fdda09",
+      "tags": {
+        "roc_auc": "0.8368507192695321",
+        "primary_metric": "roc_auc",
+        "promotion_threshold": "0.7",
+        "validation_status": "passed",
+        "source_run_id": "5ef49fc5f3e740f28c523b0dcc1ae8c1",
+        "data_md5": "16e6acc1f69d648c4ec1d3b44efc0179",
+        "data_sha256": "27e7bebda91c7e6d0b77e80128c2d9383d70a19a185b51ecfe3bb90f761d2a78",
+        "protocol": "A",
+        "protocol_id": "mlops_A_v1",
+        "dataset": "ibm-hr-attrition",
+        "data_version": "1",
+        "selection_scope": "pedagogical_test_exploratory",
+        "decision_threshold": "0.5"
+      }
+    }
+  ],
+  "aliases": {
+    "champion": {
+      "version": "4",
+      "run_id": "ef2d3f85ebe3432f9172275c34bbd6ac"
+    },
+    "challenger": {
+      "version": "3",
+      "run_id": "139ae364aa6e4166b2bd19ef533f48e7"
+    }
+  },
+  "historical_versions_preserved": true,
+  "all_22_grid_runs_unchanged": true,
+  "experiment_total_runs": 29,
+  "all_runs_finished": true,
+  "idempotent_registration_verified": true,
+  "dummy_gate_rejection_verified": true
+}

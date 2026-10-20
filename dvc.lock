@@ -60,8 +60,8 @@ stages:
         source:
           url: https://www.kaggle.com/datasets/pavansubhasht/ibm-hr-analytics-attrition-dataset
           license: ODbL-1.0 (database) + DbCL-1.0 (contents)
-          citation: IBM data scientists (fictional dataset), distributed by pavansubhasht on
-            Kaggle, version 1 (2017-03-31).
+          citation: IBM data scientists (fictional dataset), distributed by pavansubhasht
+            on Kaggle, version 1 (2017-03-31).
           kaggle_ref: pavansubhasht/ibm-hr-analytics-attrition-dataset
           version: 1
           filename: WA_Fn-UseC_-HR-Employee-Attrition.csv
@@ -178,8 +178,8 @@ stages:
       size: 8225
     - path: src/train.py
       hash: md5
-      md5: d8d8b67e867d4925a7dd976821088abf
-      size: 10604
+      md5: a690165ce965d544d597df56f51f9834
+      size: 10696
     - path: uv.lock
       hash: md5
       md5: 9a37227d87999cc3d7c74e893ee539c6
@@ -188,8 +188,8 @@ stages:
       params.yaml:
         train:
           model: logistic_regression
-          C: 0.1
-          class_weight: balanced
+          C: 1.0
+          class_weight: none
           n_estimators: 200
           max_depth: 8
           learning_rate: 0.1
@@ -236,8 +236,8 @@ stages:
         source:
           url: https://www.kaggle.com/datasets/pavansubhasht/ibm-hr-analytics-attrition-dataset
           license: ODbL-1.0 (database) + DbCL-1.0 (contents)
-          citation: IBM data scientists (fictional dataset), distributed by pavansubhasht on
-            Kaggle, version 1 (2017-03-31).
+          citation: IBM data scientists (fictional dataset), distributed by pavansubhasht
+            on Kaggle, version 1 (2017-03-31).
           kaggle_ref: pavansubhasht/ibm-hr-analytics-attrition-dataset
           version: 1
           filename: WA_Fn-UseC_-HR-Employee-Attrition.csv
@@ -248,8 +248,8 @@ stages:
     outs:
     - path: models/model
       hash: md5
-      md5: f7f0b01e9d4369a07abbc1f33c0354fa.dir
-      size: 307101
+      md5: 46cf394ffbe298bf1e653379449c8f8f.dir
+      size: 307071
       nfiles: 5
   evaluate:
     cmd: python -m src.evaluate
@@ -260,8 +260,8 @@ stages:
       size: 66084
     - path: models/model
       hash: md5
-      md5: f7f0b01e9d4369a07abbc1f33c0354fa.dir
-      size: 307101
+      md5: 46cf394ffbe298bf1e653379449c8f8f.dir
+      size: 307071
       nfiles: 5
     - path: src/dataset_config.py
       hash: md5
@@ -273,8 +273,8 @@ stages:
       size: 1718
     - path: src/train.py
       hash: md5
-      md5: d8d8b67e867d4925a7dd976821088abf
-      size: 10604
+      md5: a690165ce965d544d597df56f51f9834
+      size: 10696
     - path: uv.lock
       hash: md5
       md5: 9a37227d87999cc3d7c74e893ee539c6
@@ -323,5 +323,5 @@ stages:
     outs:
     - path: reports/metrics.json
       hash: md5
-      md5: 0acc2a3e3509a8941770b44bc90e7688
-      size: 421
+      md5: 6ec2d85f8d42c96e4c6703046b217230
+      size: 416

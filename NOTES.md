@@ -1,11 +1,12 @@
 # Mes notes du cours MLOps — Syrine
 
-**État de référence au 2026-10-20 :** M0 fusionné (`7606b83`), M1 local
-`d2ea3ca`, contrôles 18/18, 77 tests. Les sections successives ci-dessous sont
+**État actuel au 2026-10-20 :** M0 fusionné (`7606b83`), M1 local aligné,
+contrôles 18/18, 85 tests. Champion v4 issu de DVC, challenger v3 préservé ;
+exercices 8.5 et 10.3 vérifiés, replay indépendant 10.4 en attente. Les sections sont
 chronologiques : les instructions anciennes « avant fusion M0 » ou « ingestion
 seulement » décrivent ces incréments. Pour reprendre, utiliser la section
-« Reprise actuelle » et [l’audit avant publication](reports/m1/pre-publication-audit.md).
-L’étape 8.4 reste en écart : champion issu de la grille, modèle DVC différent.
+« Reprise actuelle » et [la validation de l’alignement](reports/m1/alignment-validation.md).
+L’[audit initial](reports/m1/pre-publication-audit.md) conserve le constat antérieur.
 [Revue du binôme, publication et J0](reports/m1/binome-review-publication.md).
 Dataset validé par courriel du professeur selon Syrine ; référence non encore
 consignée, aucune issue GitHub inventée.
@@ -255,8 +256,9 @@ dvc status --cloud
 Remote imposé : `storage`, URL `s3://dvc-store/scoring`, endpoint local `:8333`.
 Sur le même remote déjà rempli, les quatre stages doivent être ignorés après pull.
 `reports/metrics.json` est suivi par Git ; données et modèle sont dans DVC, pas Git.
-Le modèle local DVC est LR C=.1 balanced, avec seuil décision .838435, différent du
-champion du registre. Les paramètres de `params.yaml` n’ont pas été changés.
+Le modèle local DVC et le champion v4 sont LR C=1 sans poids, seuil décision 0,5,
+run `ef2d3f85ebe3432f9172275c34bbd6ac`. Les autres paramètres/données sont inchangés.
+Les neuf RF gardent explicitement balanced, indépendamment de ces defaults DVC.
 
 ### Feast local : reconstruire les bases ignorées
 
@@ -265,7 +267,7 @@ cd features
 feast apply
 feast materialize-incremental "$(date -u +%Y-%m-%dT%H:%M:%S)"
 cd ..
-python -m src.verify_feast
+python -m src.verify_feast --output reports/m1/feast-current.json
 make test
 make lint
 make check-m1
@@ -288,6 +290,8 @@ n’a pas été testée dans notre essai de clone. Configurer ses credentials DV
 son propre `.dvc/config.local` ignoré, puis `dvc pull`, `dvc repro` et l’évaluation.
 Recréer Feast avec les commandes ci-dessus. Le test réel, son chemin temporaire,
 les commandes et les limites sont dans `reports/m1/final-clean-clone*.json`.
+Les exercices supplémentaires 8.5 et 10.3 sont désormais réellement exécutés dans
+un second clone isolé ; détails dans reports/m1/alignment-validation.md.
 Ne pas copier un registre Feast : les chemins de la source sont reconstruits pour
 chaque clone par `features/definitions.py`.
 
@@ -314,29 +318,26 @@ avant de continuer. Cette procédure ne présume aucune contribution ni revue d�
    `dvc repro --single-item --force --no-run-cache train`, puis `dvc repro evaluate`.
    Ce recalcul est une action explicite sur sa machine, pas exécutée ici.
 5. Pour la checklist complète sur son serveur, lancer sa grille pédagogique une fois
-   avec `python -m src.grid_search`, vérifier les22 runs, puis choisir ses propres run
-   IDs LR C=1 sans poids, LR C=.1 sans poids et Dummy. Utiliser `src.promote` avec ses
-   IDs : champion, Dummy (gate rejetée), challenger avec `--challenger-only`.
-   Les IDs inscrits dans `src.verify_registry.py` vérifient le serveur de Syrine ;
-   ils ne sont pas portables vers un MLflow vierge. Ne pas copier notre base SQLite
-   MLflow ni supposer que les numéros de versions seront identiques.
+   avec `python -m src.grid_search`, vérifier les 22 runs et relever ses propres IDs.
+   Utiliser `src.promote --run-id` avec **son run DVC** comme champion (si gate réussie),
+   son Dummy (gate rejetée), puis sa LR C=.1 sans poids avec `--challenger-only`.
+   Le diagnostic `src.verify_registry` lit le run du modèle local et accepte des
+   IDs/versions attendus en options : utiliser ceux de son serveur, pas ceux de Syrine.
+   Ne pas copier la base SQLite MLflow ni supposer des numéros de version identiques.
 6. Appliquer/matérialiser Feast, vérifier offline et online, tester, lint et
    `make check-m1` sur son poste. Remonter ses vrais résultats et différences.
 
-### Registre conservé et conflit avec l’étape 8.4
+### Registre aligné et étape 8.4 vérifiée
 
-L’état convenu reste v1 champion LR C=1 sans poids, v2 Dummy failed, v3 challenger
-LR C=.1 sans poids. `src.promote --filter "tags.launched_by = 'dvc'"` déplacerait
-les deux alias vers la LR .1 balanced du pipeline : cette commande n’a pas été exécutée.
-Options à discuter : conserver cet état (choix appliqué), enregistrer le run DVC sans
-modifier les alias via une opération dédiée à autoriser, ou convenir ultérieurement
-d’un nouveau paramétrage/recalcul et d’une promotion. Aucun choix silencieux.
-Le 18/18 ne signifie donc pas que le champion actuel a été produit par ce pipeline DVC.
-L’audit recommande désormais d’aligner DVC sur LR C=1 sans poids, puis d’enregistrer
-et promouvoir son nouveau run après autorisation. C’est une proposition, pas une
-opération réalisée. Le vérificateur local `src.verify_registry` devra alors accepter
-le nouvel identifiant ; ses assertions actuelles ciblent le snapshot v1/v3 de Syrine.
-Ne pas relancer la grille pour cet alignement : son identité inclut les octets de
+Après autorisation de Syrine : v1 conservée, v2 Dummy failed, v3 challenger et
+v4 champion issue du run DVC `ef2d3f85ebe3432f9172275c34bbd6ac`. Gate 0,70 passée
+à AUC 0,8368507193, enregistrement idempotent, rejet Dummy et réaffectation v3 vérifiés.
+Le chargement distant confirme signature, paramètres, seuil 0,5, probabilités et
+métriques du modèle local DVC ; voir reports/m1/alignment-registry-verification.json.
+Les archives skops ont des hashes distincts dus aux IDs d’objets/horodatages ZIP ;
+les payloads et le schéma normalisé sont identiques, sans divergence numérique.
+`src.verify_registry --output` permet de préserver les rapports historiques.
+Ne pas relancer la grille sur ce poste : son identité inclut les octets de
 `dvc.lock` ; une nouvelle identité pourrait entraîner 22 runs supplémentaires.
 
 ### Revue, intégration et J0 — prochaines actions uniquement

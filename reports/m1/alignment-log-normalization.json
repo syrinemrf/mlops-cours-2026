@@ -1,0 +1,8 @@
+{
+  "log": "reports/m1/alignment-reference-dag.log",
+  "normalization": "Only trailing ASCII diagram padding removed for Git whitespace checks",
+  "original_preserved_at": "/tmp/mlops-m1-reference-dag-original.log",
+  "original_sha256": "c459ac1e00ae0d9ebf3772e4a525505be9f3ec318747cadfdbd77b139afef4dc",
+  "normalized_sha256": "d38081af9073664ae0650133fb483245bb56f771b03564bc6481db7fc7fb229d",
+  "model_data_metrics_changed": false
+}

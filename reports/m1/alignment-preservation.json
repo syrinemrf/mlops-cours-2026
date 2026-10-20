@@ -1,0 +1,48 @@
+{
+  "all_historical_reports_byte_identical": true,
+  "protected_source_config_research_dependencies_unchanged": true,
+  "old_dvc_model_manifest_preserved_in_cache": "f7f0b01e9d4369a07abbc1f33c0354fa.dir",
+  "main_and_m0_branches_unchanged": true,
+  "node_conditions": {
+    "mlops-lab-control-plane": {
+      "MemoryPressure": "False",
+      "DiskPressure": "False",
+      "PIDPressure": "False",
+      "Ready": "True"
+    },
+    "mlops-lab-worker": {
+      "MemoryPressure": "False",
+      "DiskPressure": "False",
+      "PIDPressure": "False",
+      "Ready": "True"
+    },
+    "mlops-lab-worker2": {
+      "MemoryPressure": "False",
+      "DiskPressure": "False",
+      "PIDPressure": "False",
+      "Ready": "True"
+    }
+  },
+  "pods": [
+    {
+      "name": "seaweedfs-5bbbd77474-48qgf",
+      "restart_counts": {
+        "seaweedfs": 2
+      }
+    },
+    {
+      "name": "mlflow-785b85485c-n4d42",
+      "restart_counts": {
+        "mlflow": 2
+      }
+    }
+  ],
+  "pod_restart_counts_unchanged": true,
+  "memory": [
+    "MemTotal:        4012632 kB",
+    "MemFree:           76972 kB",
+    "MemAvailable:    1221076 kB",
+    "Buffers:           16864 kB",
+    "Cached:          1196616 kB"
+  ]
+}

@@ -5,22 +5,27 @@ non exécutée.** Aucun push, PR, merge, tag ou changement de registre pendant
 l’audit. Commencer par résoudre les décisions de [l’audit](pre-publication-audit.md).
 Les commandes ci-dessous supposent chaque autorisation obtenue au moment indiqué.
 
+Actualisation après autorisation : alignement 8.4 et exercices 8.5/10.3 exécutés,
+85 tests et 18/18 vérifiés ; voir [les résultats](alignment-validation.md).
+Les commandes de publication, comparaison, PR, fusion et tag restent futures.
+
 ## 1. Contributions observables de Syrine
 
-Les quinze commits M1 depuis `main@7606b83` portent tous l’auteur `syrinemrf`.
+Les quinze commits M1 initiaux audités à d2ea3ca depuis `main@7606b83` portent l’auteur `syrinemrf`.
 Cela décrit Git, sans attribuer de travail ni d’approbation à Aziz.
 
 | Domaine | Commits et livrables représentatifs | Ce qu’Aziz peut comparer |
 |---|---|---|
-| Source/contrat IBM HR | b380e15, c6541a2, 4cd1b01 ; download, contrat, tests, card/ADR | Source Kaggle1, hash, schémas35/32, ID et sensibles hors27 features |
+| Source/contrat IBM HR | b380e15, c6541a2, 4cd1b01 ; download, contrat, tests, card/ADR | Source Kaggle 1, hash, schémas35/32, ID et sensibles hors27 features |
 | DVC/préparation | 9a83ee4, 01c2d44 ; prepare, lock, preuves S3 | Split stratifié1176/294 seed 42, identifiants disjoints, types et hashes |
 | Cadrage scientifique | f81e2b5 ; baseline-protocol.md | A/B1/B2, quatre constats documentés, RQ1–RQ3 non démontrées |
 | Entraînement et grille A | 48c354e, cdead3f, 9c02057, fcc9cdb | 2 smoke +22 runs, paramètres, métriques/seuils, limites du test répété |
-| Registre A | 418d026, c51c992 | Gate0,70, Dummy rejeté, idempotence, alias et modèle distant |
+| Registre A | 418d026, c51c992 | Gate 0,70, Dummy rejeté, idempotence, alias et modèle distant |
 | Pipeline/Feast/preuves | 82f2cc7, ccf031f, d2ea3ca | 4 stages, évaluation locale, offline/online, 18/18, 77 tests, clone propre |
 
-Les correctifs documentaires de l’audit sont encore non commités. Ils ne doivent
-pas être attribués à un futur commit avant sa création. L’assistance Codex est
+Les correctifs documentaires de l’audit sont commités dans db871c8 ; alignement,
+isolation des paramètres et tests dans 49533e3. Les preuves supplémentaires sont
+consignées dans alignment-validation.md. L’assistance Codex est
 déclarée dans le journal ; aucune contribution du binôme n’est fabriquée.
 
 ## 2. Checklist de comparaison à remplir réellement par Aziz
@@ -31,9 +36,9 @@ déclarée dans le journal ; aucune contribution du binôme n’est fabriquée.
   retirées, Age/Gender/MaritalStatus conservés pour audit hors prédiction.
 - [ ] Vérifier source/version/licences et ancre SHA-256 ; distinguer35 colonnes
   source,32export et29dans le Parquet Feast. Retrouver l’accord par courriel.
-- [ ] Comparer split 80/20 stratifié seed 42,1176/294 lignes,190/47 Yes, zéro
+- [ ] Comparer split 80/20 stratifié seed 42,1176/294 lignes, 190/47 Yes, zéro
   identifiant partagé et prétraitement appris exclusivement sur train.
-- [ ] Relire le seuil balanced 0,838435, son application LR/RF, seuil0,5 sans
+- [ ] Relire le seuil balanced 0,838435, son application LR/RF, seuil 0,5 sans
   poids/GB/Dummy ; distinguer calibration, seuil de décision et gate 0,70.
 - [ ] Vérifier les 22 configurations par famille et les manifests historiques,
   sans relancer la grille à cause d’une identité de code/lock différente. Après
@@ -219,7 +224,7 @@ Ne pas présenter une ancienne sortie comme celle du commit fusionné. M0 peut
 dans les références distantes ; ce n’est pas un motif de modifier son checker.
 
 **Capture M1 :** terminal agrandi, affichage du SHA puis `make check-m1`, attendre
-la fin et le code0, capturer les18 lignes vertes et le récapitulatif avec
+la fin et le code 0, capturer les18 lignes vertes et le récapitulatif avec
 `Win + Maj + S`. Réduire la police si nécessaire, sans couper une ligne d’échec.
 Conserver par exemple `check-m1-<SHA>.png` et la sortie texte datée. Ne pas fabriquer
 une capture à partir d’un ancien log. Compléter avec l’interface MLflow montrant

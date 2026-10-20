@@ -48,7 +48,8 @@ Sans coûts RH fournis, utiliser 1:1 comme hypothèse expérimentale neutre vali
   RH/causalité démontrée. Coûts1:1, gate0.70 et groupes d’âge validés pour A le
   2026-10-20, sans les ajuster pour obtenir un résultat vert ; pertinence RH réelle
   à confirmer. DVC possède désormais quatre stages et Feast est vérifié ;
-  voir [l’audit M1](../../reports/m1/pre-publication-audit.md). L’étape 8.4 reste en écart.
+  voir [l’audit M1](../../reports/m1/pre-publication-audit.md). Son écart 8.4 est
+  résolu après autorisation de Syrine, voir [la validation](../../reports/m1/alignment-validation.md).
 - **Vérification :** téléchargement et relecture, empreintes source/export, contrôles
   de types et domaines, tests ciblés, split stratifié réel 1 176/294 (190/47 Yes).
   Le test auparavant spécifique à personal_status est rendu générique sans skip ni suppression.

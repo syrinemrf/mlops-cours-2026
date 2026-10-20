@@ -1,0 +1,393 @@
+[
+  {
+    "args": [
+      "git",
+      "clone",
+      "--no-hardlinks",
+      "--single-branch",
+      "--branch",
+      "work/syrine/m1",
+      "/home/syrine/mlops-cours-2026",
+      "/tmp/mlops-m1-alignment-9b53bahu/repo"
+    ],
+    "cwd": "/home/syrine/mlops-cours-2026",
+    "exit_code": 0,
+    "seconds": 0.922,
+    "resources_before_kib": {
+      "MemAvailable": 1267008,
+      "SwapFree": 222624
+    },
+    "log": "reports/m1/alignment-clone.log"
+  },
+  {
+    "args": [
+      "/home/syrine/mlops-cours-2026/.venv/bin/dvc",
+      "pull"
+    ],
+    "cwd": "/tmp/mlops-m1-alignment-9b53bahu/repo",
+    "exit_code": 0,
+    "seconds": 6.717,
+    "resources_before_kib": {
+      "MemAvailable": 1271088,
+      "SwapFree": 220668
+    },
+    "log": "reports/m1/alignment-clone-pull.log"
+  },
+  {
+    "args": [
+      "/home/syrine/mlops-cours-2026/.venv/bin/dvc",
+      "repro"
+    ],
+    "cwd": "/tmp/mlops-m1-alignment-9b53bahu/repo",
+    "exit_code": 0,
+    "seconds": 54.799,
+    "resources_before_kib": {
+      "MemAvailable": 1341908,
+      "SwapFree": 138492
+    },
+    "log": "reports/m1/alignment-clone-baseline-repro.log"
+  },
+  {
+    "args": [
+      "/home/syrine/mlops-cours-2026/.venv/bin/python",
+      "-c",
+      "import runpy; runpy.run_path('/tmp/mlops_m1_read_run.py', run_name='__main__')",
+      "/home/syrine/mlops-cours-2026/reports/m1/alignment-repro-baseline.json",
+      "/tmp/mlops-m1-alignment-9b53bahu/proof/repro-baseline.npy",
+      "isolated_8_5_baseline"
+    ],
+    "cwd": "/tmp/mlops-m1-alignment-9b53bahu/repo",
+    "exit_code": 0,
+    "seconds": 19.145,
+    "resources_before_kib": {
+      "MemAvailable": 1430368,
+      "SwapFree": 31328
+    },
+    "log": "reports/m1/alignment-repro-baseline-readback.log"
+  },
+  {
+    "args": [
+      "git",
+      "add",
+      "dvc.lock",
+      "reports/metrics.json"
+    ],
+    "cwd": "/tmp/mlops-m1-alignment-9b53bahu/repo",
+    "exit_code": 0,
+    "seconds": 0.217,
+    "resources_before_kib": {
+      "MemAvailable": 1498944,
+      "SwapFree": 368
+    },
+    "log": "reports/m1/alignment-clone-checkpoint-add.log"
+  },
+  {
+    "args": [
+      "git",
+      "commit",
+      "-m",
+      "test(m1): checkpoint isolated reproducibility baseline"
+    ],
+    "cwd": "/tmp/mlops-m1-alignment-9b53bahu/repo",
+    "exit_code": 0,
+    "seconds": 0.067,
+    "resources_before_kib": {
+      "MemAvailable": 1499352,
+      "SwapFree": 792
+    },
+    "log": "reports/m1/alignment-clone-checkpoint-commit.log"
+  },
+  {
+    "args": [
+      "/home/syrine/mlops-cours-2026/.venv/bin/dvc",
+      "status"
+    ],
+    "cwd": "/tmp/mlops-m1-alignment-9b53bahu/repo",
+    "exit_code": 0,
+    "seconds": 2.244,
+    "resources_before_kib": {
+      "MemAvailable": 1501812,
+      "SwapFree": 1276
+    },
+    "log": "reports/m1/alignment-section-8-5-status.log"
+  },
+  {
+    "args": [
+      "/home/syrine/mlops-cours-2026/.venv/bin/dvc",
+      "repro"
+    ],
+    "cwd": "/tmp/mlops-m1-alignment-9b53bahu/repo",
+    "exit_code": 0,
+    "seconds": 50.663,
+    "resources_before_kib": {
+      "MemAvailable": 1486088,
+      "SwapFree": 1172
+    },
+    "log": "reports/m1/alignment-section-8-5-variant-repro.log"
+  },
+  {
+    "args": [
+      "/home/syrine/mlops-cours-2026/.venv/bin/dvc",
+      "params",
+      "diff"
+    ],
+    "cwd": "/tmp/mlops-m1-alignment-9b53bahu/repo",
+    "exit_code": 0,
+    "seconds": 2.34,
+    "resources_before_kib": {
+      "MemAvailable": 1470724,
+      "SwapFree": 25656
+    },
+    "log": "reports/m1/alignment-section-8-5-params-diff.log"
+  },
+  {
+    "args": [
+      "/home/syrine/mlops-cours-2026/.venv/bin/dvc",
+      "metrics",
+      "diff",
+      "--all"
+    ],
+    "cwd": "/tmp/mlops-m1-alignment-9b53bahu/repo",
+    "exit_code": 0,
+    "seconds": 1.727,
+    "resources_before_kib": {
+      "MemAvailable": 1471748,
+      "SwapFree": 27196
+    },
+    "log": "reports/m1/alignment-section-8-5-metrics-diff.log"
+  },
+  {
+    "args": [
+      "/home/syrine/mlops-cours-2026/.venv/bin/python",
+      "-c",
+      "import runpy; runpy.run_path('/tmp/mlops_m1_read_run.py', run_name='__main__')",
+      "/home/syrine/mlops-cours-2026/reports/m1/alignment-repro-variant.json",
+      "/tmp/mlops-m1-alignment-9b53bahu/proof/repro-variant.npy",
+      "isolated_8_5_variant"
+    ],
+    "cwd": "/tmp/mlops-m1-alignment-9b53bahu/repo",
+    "exit_code": 0,
+    "seconds": 12.47,
+    "resources_before_kib": {
+      "MemAvailable": 1467360,
+      "SwapFree": 29596
+    },
+    "log": "reports/m1/alignment-repro-variant-readback.log"
+  },
+  {
+    "args": [
+      "/home/syrine/mlops-cours-2026/.venv/bin/dvc",
+      "repro"
+    ],
+    "cwd": "/tmp/mlops-m1-alignment-9b53bahu/repo",
+    "exit_code": 0,
+    "seconds": 3.537,
+    "resources_before_kib": {
+      "MemAvailable": 1486796,
+      "SwapFree": 3820
+    },
+    "log": "reports/m1/alignment-section-8-5-restored-repro.log"
+  },
+  {
+    "args": [
+      "/home/syrine/mlops-cours-2026/.venv/bin/python",
+      "-c",
+      "import runpy; runpy.run_path('/tmp/mlops_m1_read_run.py', run_name='__main__')",
+      "/home/syrine/mlops-cours-2026/reports/m1/alignment-repro-restored.json",
+      "/tmp/mlops-m1-alignment-9b53bahu/proof/repro-restored.npy",
+      "",
+      "/tmp/mlops-m1-alignment-9b53bahu/proof/repro-baseline.npy"
+    ],
+    "cwd": "/tmp/mlops-m1-alignment-9b53bahu/repo",
+    "exit_code": 0,
+    "seconds": 9.366,
+    "resources_before_kib": {
+      "MemAvailable": 1499156,
+      "SwapFree": 188
+    },
+    "log": "reports/m1/alignment-repro-restored-readback.log"
+  },
+  {
+    "args": [
+      "/home/syrine/mlops-cours-2026/.venv/bin/dvc",
+      "repro",
+      "--force"
+    ],
+    "cwd": "/tmp/mlops-m1-alignment-9b53bahu/repo",
+    "exit_code": 0,
+    "seconds": 48.086,
+    "resources_before_kib": {
+      "MemAvailable": 1501584,
+      "SwapFree": 1104
+    },
+    "log": "reports/m1/alignment-section-10-3-force.log"
+  },
+  {
+    "args": [
+      "/home/syrine/mlops-cours-2026/.venv/bin/python",
+      "-c",
+      "import runpy; runpy.run_path('/tmp/mlops_m1_read_run.py', run_name='__main__')",
+      "/home/syrine/mlops-cours-2026/reports/m1/alignment-repro-forced.json",
+      "/tmp/mlops-m1-alignment-9b53bahu/proof/repro-forced.npy",
+      "isolated_10_3_forced",
+      "/tmp/mlops-m1-alignment-9b53bahu/proof/repro-baseline.npy"
+    ],
+    "cwd": "/tmp/mlops-m1-alignment-9b53bahu/repo",
+    "exit_code": 0,
+    "seconds": 12.409,
+    "resources_before_kib": {
+      "MemAvailable": 1466840,
+      "SwapFree": 3060
+    },
+    "log": "reports/m1/alignment-repro-forced-readback.log"
+  },
+  {
+    "args": [
+      "/home/syrine/mlops-cours-2026/.venv/bin/dvc",
+      "metrics",
+      "diff",
+      "--all"
+    ],
+    "cwd": "/tmp/mlops-m1-alignment-9b53bahu/repo",
+    "exit_code": 0,
+    "seconds": 2.457,
+    "resources_before_kib": {
+      "MemAvailable": 1493464,
+      "SwapFree": 1012
+    },
+    "log": "reports/m1/alignment-section-10-3-metrics-diff.log"
+  },
+  {
+    "args": [
+      "git",
+      "diff",
+      "--stat"
+    ],
+    "cwd": "/tmp/mlops-m1-alignment-9b53bahu/repo",
+    "exit_code": 0,
+    "seconds": 0.037,
+    "resources_before_kib": {
+      "MemAvailable": 1473356,
+      "SwapFree": 14388
+    },
+    "log": "reports/m1/alignment-section-10-3-git-diff.log"
+  },
+  {
+    "args": [
+      "/home/syrine/mlops-cours-2026/.venv/bin/dvc",
+      "status"
+    ],
+    "cwd": "/tmp/mlops-m1-alignment-9b53bahu/repo",
+    "exit_code": 0,
+    "seconds": 1.224,
+    "resources_before_kib": {
+      "MemAvailable": 1474688,
+      "SwapFree": 15020
+    },
+    "log": "reports/m1/alignment-section-10-3-status.log"
+  },
+  {
+    "args": [
+      "/home/syrine/mlops-cours-2026/.venv/bin/dvc",
+      "dag"
+    ],
+    "cwd": "/home/syrine/mlops-cours-2026",
+    "exit_code": 0,
+    "seconds": 2.779,
+    "resources_before_kib": {
+      "MemAvailable": 1318060,
+      "SwapFree": 174908
+    },
+    "log": "reports/m1/alignment-reference-dag.log"
+  },
+  {
+    "args": [
+      "/home/syrine/mlops-cours-2026/.venv/bin/dvc",
+      "repro"
+    ],
+    "cwd": "/home/syrine/mlops-cours-2026",
+    "exit_code": 0,
+    "seconds": 34.88,
+    "resources_before_kib": {
+      "MemAvailable": 1335572,
+      "SwapFree": 144508
+    },
+    "log": "reports/m1/alignment-reference-repro.log"
+  },
+  {
+    "args": [
+      "/home/syrine/mlops-cours-2026/.venv/bin/python",
+      "-c",
+      "import runpy; runpy.run_path('/tmp/mlops_m1_read_run.py', run_name='__main__')",
+      "/home/syrine/mlops-cours-2026/reports/m1/alignment-reference.json",
+      "/tmp/mlops-m1-alignment-9b53bahu/proof/reference.npy",
+      "reference",
+      "/tmp/mlops-m1-alignment-9b53bahu/proof/repro-baseline.npy"
+    ],
+    "cwd": "/home/syrine/mlops-cours-2026",
+    "exit_code": 0,
+    "seconds": 11.375,
+    "resources_before_kib": {
+      "MemAvailable": 1452724,
+      "SwapFree": 8384
+    },
+    "log": "reports/m1/alignment-reference-readback.log"
+  },
+  {
+    "args": [
+      "/home/syrine/mlops-cours-2026/.venv/bin/dvc",
+      "push"
+    ],
+    "cwd": "/home/syrine/mlops-cours-2026",
+    "exit_code": 0,
+    "seconds": 4.19,
+    "resources_before_kib": {
+      "MemAvailable": 1496540,
+      "SwapFree": 5352
+    },
+    "log": "reports/m1/alignment-reference-push.log"
+  },
+  {
+    "args": [
+      "/home/syrine/mlops-cours-2026/.venv/bin/dvc",
+      "status"
+    ],
+    "cwd": "/home/syrine/mlops-cours-2026",
+    "exit_code": 0,
+    "seconds": 1.069,
+    "resources_before_kib": {
+      "MemAvailable": 1463220,
+      "SwapFree": 21852
+    },
+    "log": "reports/m1/alignment-reference-status.log"
+  },
+  {
+    "args": [
+      "/home/syrine/mlops-cours-2026/.venv/bin/dvc",
+      "status",
+      "--cloud"
+    ],
+    "cwd": "/home/syrine/mlops-cours-2026",
+    "exit_code": 0,
+    "seconds": 2.023,
+    "resources_before_kib": {
+      "MemAvailable": 1471700,
+      "SwapFree": 19016
+    },
+    "log": "reports/m1/alignment-reference-cloud.log"
+  },
+  {
+    "args": [
+      "/home/syrine/mlops-cours-2026/.venv/bin/dvc",
+      "repro"
+    ],
+    "cwd": "/home/syrine/mlops-cours-2026",
+    "exit_code": 0,
+    "seconds": 1.52,
+    "resources_before_kib": {
+      "MemAvailable": 1464232,
+      "SwapFree": 17432
+    },
+    "log": "reports/m1/alignment-reference-repeat.log"
+  }
+]

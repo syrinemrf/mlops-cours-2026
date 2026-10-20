@@ -1,0 +1,15 @@
+{
+  "same_member_names": false,
+  "member_count": 12,
+  "all_uncompressed_member_payloads_identical": false,
+  "differing_payload_members": [
+    "140541220768720.npy",
+    "140541220768144.npy",
+    "140541303059344.npy",
+    "schema.json",
+    "140541303525552.npy"
+  ],
+  "zip_timestamps_differ": true,
+  "local_sha256": "a3c7b04d8411bc1a55ab6306873e05df0fe1976d9a1f4ce5b58560afe0cdbd0e",
+  "registry_sha256": "8dcc208016214d691d22a7abcc893bce6d314c59bc741f8c49a772545a36e119"
+}

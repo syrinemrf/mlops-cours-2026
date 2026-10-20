@@ -1,0 +1,65 @@
+{
+  "run_id": "3dfc2408a966424fa9493d41f6992068",
+  "status": "FINISHED",
+  "params": {
+    "model": "logistic_regression",
+    "random_state": "42",
+    "C": "1.0",
+    "class_weight": "balanced",
+    "decision_threshold": "0.8384353741496599"
+  },
+  "tags": {
+    "mlflow.user": "syrine",
+    "mlflow.source.name": "/tmp/mlops-m1-alignment-9b53bahu/repo/src/train.py",
+    "mlflow.source.type": "LOCAL",
+    "mlflow.source.git.commit": "78fe7419ae64e8f80876a8ff3dfbb413d859ad1d",
+    "mlflow.source.git.branch": "work/syrine/m1",
+    "mlflow.source.git.repoURL": "/home/syrine/mlops-cours-2026",
+    "mlflow.runName": "logistic_regression-C=1.0-class_weight=balanced",
+    "protocol": "A",
+    "data_version": "1",
+    "protocol_id": "mlops_A_v1",
+    "evaluation_role": "pedagogical_pipeline",
+    "cost_assumption": "experimental_FN_FP_1_1",
+    "train_sha256": "9e91ffd059dfe67ae4860f7111a0cbebda0f24d59bc36f192782a891d642d3e5",
+    "test_sha256": "a3e82a637fbae6a3038141c49648b0400c4b61842daacaaf50c3e445bb5697d3",
+    "contract_sha256": "0579d914bcd7904dde8fb4be2b24a773e80e91061f729772ce11d54b59783ad3",
+    "model_type": "logistic_regression",
+    "dataset": "ibm-hr-attrition",
+    "data_md5": "16e6acc1f69d648c4ec1d3b44efc0179",
+    "data_sha256": "27e7bebda91c7e6d0b77e80128c2d9383d70a19a185b51ecfe3bb90f761d2a78",
+    "launched_by": "dvc",
+    "reproducibility_role": "isolated_8_5_variant",
+    "publication_candidate": "false"
+  },
+  "metrics": {
+    "fit_seconds": 1.0940551230014535,
+    "tn": 239.0,
+    "fp": 8.0,
+    "fn": 29.0,
+    "tp": 18.0,
+    "pr_auc_trapezoidal": 0.6100522510385386,
+    "brier_score": 0.14701543413697632,
+    "log_loss": 0.44875639600059775,
+    "roc_auc": 0.8280644327676803,
+    "average_precision": 0.6130693620666285,
+    "f1": 0.4931506849315068,
+    "precision": 0.6923076923076923,
+    "recall": 0.3829787234042553,
+    "accuracy": 0.8741496598639455,
+    "business_cost": 37.0
+  },
+  "experiment_total_runs": 27,
+  "probabilities_sha256": "9f0067139f24f10b75f27a09c8369b54e10ac91cb5cfea4a60d3ef66b8ba3f88",
+  "probabilities_shape": [
+    294
+  ],
+  "decision_threshold": 0.8384353741496599,
+  "local_model_files_sha256": {
+    "python_env.yaml": "18bdd3699d72a98448fad1d5a713676601276d078e3c65860fe18de14d40b3f7",
+    "conda.yaml": "aef6c003eccf6092cd13a5b2b614242da4fc48490489381afe26ea67a6bb0a5d",
+    "MLmodel": "fa51c240e637baadb9d19db965dec7cd50383d6f297728b36263fb2d1f9bd36d",
+    "model.skops": "5dc0f88b34b1a2203289b72bb5a6d51d45e2139f017cbfd8cc5b92ee7361484e",
+    "requirements.txt": "5ca2c827e2620dc6fa4dce1022f4f053e58b6cb762a1d9bc924edda97335517d"
+  }
+}

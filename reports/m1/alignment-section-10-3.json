@@ -1,0 +1,45 @@
+{
+  "workspace": "/tmp/mlops-m1-alignment-9b53bahu/repo",
+  "proof_dir": "/tmp/mlops-m1-alignment-9b53bahu/proof",
+  "code_commit": "49533e397af86350dbd7ec116c0d8fa4beb7ffa7",
+  "venv_reused": true,
+  "new_cluster_created": false,
+  "credentials_only_in_ignored_local_files": true,
+  "baseline_commit": "78fe7419ae64e8f80876a8ff3dfbb413d859ad1d",
+  "all_four_stages_forced": true,
+  "baseline_run_id": "6fa3c25ec6a343d385944deacf20e7bb",
+  "forced_run_id": "e6f07ea0ee5d47e48a283f6845f2346d",
+  "metrics_byte_identical": true,
+  "metric_deltas_excluding_fit_seconds": {
+    "tn": 0.0,
+    "fp": 0.0,
+    "fn": 0.0,
+    "tp": 0.0,
+    "pr_auc_trapezoidal": 0.0,
+    "brier_score": 0.0,
+    "log_loss": 0.0,
+    "roc_auc": 0.0,
+    "average_precision": 0.0,
+    "f1": 0.0,
+    "precision": 0.0,
+    "recall": 0.0,
+    "accuracy": 0.0,
+    "business_cost": 0.0
+  },
+  "max_probability_difference": 0.0,
+  "probability_bytes_identical": true,
+  "data_hashes": {
+    "data/raw/dataset.csv": "27e7bebda91c7e6d0b77e80128c2d9383d70a19a185b51ecfe3bb90f761d2a78",
+    "data/processed/train.csv": "9e91ffd059dfe67ae4860f7111a0cbebda0f24d59bc36f192782a891d642d3e5",
+    "data/processed/test.csv": "a3e82a637fbae6a3038141c49648b0400c4b61842daacaaf50c3e445bb5697d3",
+    "data/processed/features.parquet": "3bdaf918b088e053de35c0e2cc04c51ecb274327467ffeae6784274feb73da92"
+  },
+  "lock_changed": true,
+  "root_reference_files_untouched": true,
+  "notes": [
+    "Same cluster and existing locked Python environment reused",
+    "No validation run registered or promoted",
+    "Fresh model metadata contains a different run ID/UUID/time; fit_seconds may differ",
+    "Temporary workspace retained; original worktree not reset"
+  ]
+}

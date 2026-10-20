@@ -1,0 +1,17 @@
+{
+  "download_preserved_at": "/tmp/mlops-m1-serialization-yun0qacj",
+  "archive_member_names_differ": true,
+  "array_payload_multisets_identical": true,
+  "schema_identical_after_normalizing_object_ids_and_payload_filenames": true,
+  "normalized_schema_differing_paths": [],
+  "zip_timestamps_differ": true,
+  "schema_root_keys": [
+    "__class__",
+    "__module__",
+    "__loader__",
+    "content",
+    "__id__",
+    "protocol",
+    "_skops_version"
+  ]
+}

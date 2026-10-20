@@ -140,7 +140,7 @@ restent `scoring`, `scoring-model` et `s3://dvc-store/scoring`.
 - À valider : action RH envisagée, capacité d’intervention, coût relatif FN/FP,
   budget de faux positifs et seuil de rappel. L’exclusion des sensibles et les
   groupes d’âge sont validés pour A ; leur pertinence RH réelle reste à étudier.
-  Trois versions sont enregistrées ; champion et challenger sont pédagogiques.
+  Quatre versions sont enregistrées ; champion et challenger sont pédagogiques.
 
 ## 7. Distribution et maintenance
 
@@ -186,7 +186,7 @@ métadonnées dans `reports/m1/source-metadata.json`. Décision technique mise e
 proposée à la revue du binôme :
 [ADR-0001](adr/0001-pin-ibm-hr-ingestion.md).
 
-## État technique et limites — 2026-10-20, snapshot d2ea3ca
+## État technique et limites — alignement du 2026-10-20
 
 DVC `storage` pointe sur `s3://dvc-store/scoring` ; credentials dans config.local
 uniquement. Le pipeline possède download, prepare, train et evaluate.
@@ -195,10 +195,12 @@ identifiant, horodatage UTC fixe). Sensibles et cible absents du Parquet ; aucun
 imputation ou standardisation apprise à cette étape. La source Feast contient les
 features de toutes les lignes comme dans le cours, sans cible ; les modèles
 s’entraînent exclusivement à partir de train.csv.
-25 runs MLflow terminés : 2 smoke, 22 grille, 1 DVC. Modèle DVC LR C=0,1 balanced,
-AUC 0,832974, seuil 0,838435 ; champion LR C=1 sans poids issu de la grille,
-AUC 0,836851, seuil 0,5. Ce désalignement de l’étape 8.4 est encore ouvert,
-malgré 18/18 contrôles, 77 tests et lint validé. Feast offline/online vérifié.
-[Preuves finales](../reports/m1/final-validation.md),
+29 runs MLflow terminés : 2 smoke, 22 grille, ancien DVC et 4 nouveaux fits de
+reproductibilité/référence. Modèle DVC et champion v4 LR C=1 sans poids,
+AUC 0,836851, seuil 0,5 ; challenger v3 conservé. Écart 8.4 résolu, exercices 8.5
+et 10.3 réussis : données inchangées et probabilités reproduites exactement.
+18/18 contrôles, 85 tests et lint validés. Feast offline/online vérifié ;
+replay indépendant d’Aziz 10.4 encore requis.
+[Preuves de l’alignement](../reports/m1/alignment-validation.md),
 [audit avant publication](../reports/m1/pre-publication-audit.md).
 Les anciens rapports décrivent leur incrément, sans remplacer l’état actuel.

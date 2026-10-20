@@ -1,0 +1,76 @@
+{
+  "verified_objects": 10,
+  "all_single_part_etags_match_dvc_md5": true,
+  "objects": [
+    {
+      "path": "data/raw/dataset.csv",
+      "key": "scoring/files/md5/16/e6acc1f69d648c4ec1d3b44efc0179",
+      "content_length": 328405,
+      "etag": "16e6acc1f69d648c4ec1d3b44efc0179",
+      "expected_md5": "16e6acc1f69d648c4ec1d3b44efc0179"
+    },
+    {
+      "path": "data/processed/features.parquet",
+      "key": "scoring/files/md5/a6/c0eacf28225e59b818c9e855c47e16",
+      "content_length": 65118,
+      "etag": "a6c0eacf28225e59b818c9e855c47e16",
+      "expected_md5": "a6c0eacf28225e59b818c9e855c47e16"
+    },
+    {
+      "path": "data/processed/test.csv",
+      "key": "scoring/files/md5/c9/a203d62f2029c7066a259c02da50da",
+      "content_length": 66084,
+      "etag": "c9a203d62f2029c7066a259c02da50da",
+      "expected_md5": "c9a203d62f2029c7066a259c02da50da"
+    },
+    {
+      "path": "data/processed/train.csv",
+      "key": "scoring/files/md5/7e/ec6596ea2b1d84be50811de74cb9b8",
+      "content_length": 262799,
+      "etag": "7eec6596ea2b1d84be50811de74cb9b8",
+      "expected_md5": "7eec6596ea2b1d84be50811de74cb9b8"
+    },
+    {
+      "path": "models/model",
+      "key": "scoring/files/md5/46/cf394ffbe298bf1e653379449c8f8f.dir",
+      "content_length": 359,
+      "etag": "46cf394ffbe298bf1e653379449c8f8f",
+      "expected_md5": "46cf394ffbe298bf1e653379449c8f8f.dir"
+    },
+    {
+      "path": "models/model/MLmodel",
+      "key": "scoring/files/md5/0e/da7a7f72d0e9d59a2adc18ea2ba957",
+      "content_length": 2672,
+      "etag": "0eda7a7f72d0e9d59a2adc18ea2ba957",
+      "expected_md5": "0eda7a7f72d0e9d59a2adc18ea2ba957"
+    },
+    {
+      "path": "models/model/conda.yaml",
+      "key": "scoring/files/md5/00/c28336f9a0c49922b3d8d4ca651a2b",
+      "content_length": 181,
+      "etag": "00c28336f9a0c49922b3d8d4ca651a2b",
+      "expected_md5": "00c28336f9a0c49922b3d8d4ca651a2b"
+    },
+    {
+      "path": "models/model/model.skops",
+      "key": "scoring/files/md5/fd/aa1f4b7b54701166aea85bf6624bf5",
+      "content_length": 304036,
+      "etag": "fdaa1f4b7b54701166aea85bf6624bf5",
+      "expected_md5": "fdaa1f4b7b54701166aea85bf6624bf5"
+    },
+    {
+      "path": "models/model/python_env.yaml",
+      "key": "scoring/files/md5/36/14def203daab7f311471e338a86b77",
+      "content_length": 107,
+      "etag": "3614def203daab7f311471e338a86b77",
+      "expected_md5": "3614def203daab7f311471e338a86b77"
+    },
+    {
+      "path": "models/model/requirements.txt",
+      "key": "scoring/files/md5/15/a1a6acc8485f31219063e9b7232180",
+      "content_length": 75,
+      "etag": "15a1a6acc8485f31219063e9b7232180",
+      "expected_md5": "15a1a6acc8485f31219063e9b7232180"
+    }
+  ]
+}

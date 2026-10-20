@@ -18,12 +18,14 @@ Membres : Syrine ([@syrinemrf](https://github.com/syrinemrf)) et Aziz
 le socle sur son propre cluster ; les preuves d’exécution d’Aziz restent à recueillir.
 M0 est fusionné dans `main` par la [PR #1](https://github.com/syrinemrf/mlops-cours-2026/pull/1),
 commit `7606b83`. Cette fusion ne constitue pas une approbation d’Aziz.
-M1 est validé techniquement sur la branche personnelle locale `work/syrine/m1`
-(`d2ea3ca`, 18/18 contrôles, 77 tests) ; son intégration et sa revue restent à faire.
+M1 est aligné et validé techniquement sur la branche personnelle locale `work/syrine/m1`
+(18/18 contrôles, 85 tests) ; son intégration et sa revue restent à faire.
 Dataset retenu : IBM HR Analytics Employee Attrition, validé par le professeur
 par courriel selon Syrine ; référence du courriel encore à consigner, aucune issue
 de validation identifiée. Voir [l’audit avant publication](reports/m1/pre-publication-audit.md)
 et la [procédure de revue et J0](reports/m1/binome-review-publication.md).
+L’[alignement et les reproductions exécutés](reports/m1/alignment-validation.md)
+complètent les constats historiques de l’audit.
 
 ## Cas d’usage
 
@@ -48,9 +50,10 @@ seed 42. `EmployeeNumber` est une clé technique ; Age/Gender/MaritalStatus serv
 
 ## Modèle et résultats
 
-Au snapshot local `d2ea3ca`, champion du registre : LR C=1 sans poids, ROC AUC
-0,836851 ; modèle DVC : LR C=0,1 balanced, ROC AUC 0,832974. Leur divergence avec
-l’étape 8.4 reste à résoudre après autorisation. Ces scores du protocole A sont
+Champion v4 et modèle DVC : LR C=1 sans poids, ROC AUC 0,836851, seuil de décision 0,5,
+run `ef2d3f85ebe3432f9172275c34bbd6ac`. L’écart de l’étape 8.4 est résolu ;
+challenger v3 conservé. Exercices 8.5 et 10.3 vérifiés, replay d’Aziz 10.4 en attente.
+Ces scores du protocole A sont
 exploratoires sur test consulté à répétition, sans supériorité statistique démontrée.
 [Preuves techniques](reports/m1/final-validation.md) ;
 [protocoles scientifiques A/B1/B2 et RQ XP-Cube](docs/research/baseline-protocol.md).

@@ -1,5 +1,6 @@
 """Check synthetic snapshot joins and serving; publish only aggregate evidence."""
 
+import argparse
 import json
 from pathlib import Path
 
@@ -10,7 +11,12 @@ from feast import FeatureStore
 from src.dataset_config import load_config
 
 
-def main():
+def main(argv=None):
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument(
+        "--output", type=Path, default=Path("reports/m1/final-feast-verification.json")
+    )
+    options = parser.parse_args(argv)
     cfg = load_config()
     params = yaml.safe_load(Path("params.yaml").read_text())["prepare"]
     key = params["id_column"]
@@ -61,7 +67,8 @@ def main():
         "timestamp_role": "technical_synthetic_snapshot",
         "temporal_production_leakage_claim": False,
     }
-    Path("reports/m1/final-feast-verification.json").write_text(json.dumps(report, indent=2) + "\n")
+    options.output.parent.mkdir(parents=True, exist_ok=True)
+    options.output.write_text(json.dumps(report, indent=2) + "\n")
     print(json.dumps(report, indent=2))
 
 
