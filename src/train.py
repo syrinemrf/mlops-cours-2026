@@ -167,6 +167,8 @@ def main() -> None:
                 "evaluation_role": (
                     "pedagogical_grid_search"
                     if launched_by == "grid_search"
+                    else "pedagogical_pipeline"
+                    if launched_by == "dvc"
                     else "pedagogical_smoke_test"
                 ),
                 "cost_assumption": "experimental_FN_FP_1_1",

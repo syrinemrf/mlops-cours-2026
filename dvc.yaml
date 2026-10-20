@@ -30,3 +30,40 @@ stages:
     - data/processed/features.parquet
     - data/processed/test.csv
     - data/processed/train.csv
+  train:
+    cmd: python -m src.train
+    deps:
+    - src/dataset_config.py
+    - src/train.py
+    - uv.lock
+    - data/raw/dataset.csv
+    - data/processed/train.csv
+    - data/processed/test.csv
+    params:
+    - dataset.yaml:
+      - name
+      - features
+      - target
+      - raw_path
+      - source
+      - metrics
+    - train
+    outs:
+    - models/model
+  evaluate:
+    cmd: python -m src.evaluate
+    deps:
+    - src/dataset_config.py
+    - src/evaluate.py
+    - src/train.py
+    - uv.lock
+    - models/model
+    - data/processed/test.csv
+    params:
+    - dataset.yaml:
+      - features
+      - target
+      - metrics
+    metrics:
+    - reports/metrics.json:
+        cache: false
