@@ -1,0 +1,22 @@
+Lab 1 — vérification du projet (MLflow : http://localhost:5000)
+
+✅ dataset.yaml valide (src.dataset_config)
+✅ Données brutes conformes au contrat
+✅ Remote DVC 'storage' -> s3://dvc-store/scoring (défaut)
+✅ Identifiants S3 dans .dvc/config.local uniquement
+❌ dvc.yaml (download, prepare, train, evaluate) + params.yaml + dvc.lock  →  étapes 4.1 et 8
+✅ Code et pointeurs commités, données hors Git
+✅ dvc status : pipeline à jour
+✅ Remote S3 joignable, données poussées (dvc status --cloud)
+❌ reports/metrics.json contient la métrique primaire  →  dvc repro (étape 8)
+✅ MLflow : http://localhost:5000/health = OK
+✅ MLflow : ≥ 20 runs terminés dans 'scoring' (métrique + seuil)
+✅ MLflow : ≥ 3 types de modèles comparés
+❌ MLflow : un run DVC tracé avec le data_md5 de dvc.lock  →  dvc repro (étape 8.3)
+✅ Registry : 'scoring-model' a ≥ 3 versions
+✅ Registry : @champion avec métrique ≥ seuil de dataset.yaml
+✅ Registry : alias @challenger présent
+✅ Modèle @champion chargé et prédit sur le jeu de test
+❌ Feast : vue request_features appliquée et matérialisée  →  cd features && feast apply && feast materialize-incremental … (étape 9)
+
+4 échec(s) sur 18 vérifications.

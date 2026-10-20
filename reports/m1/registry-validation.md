@@ -117,3 +117,27 @@ attestent uniquement la gate pédagogique, pas une validation scientifique ou m�
 Les étapes8/9 ne sont pas exécutées : stages DVC train/evaluate, reports/metrics.json,
 reproduction/push et filiation runDVC restent à finaliser à l’étape8 ; configuration,
 application et matérialisation du feature store à l’étape9. Aucun push Git ni merge.
+
+## Diagnostic du vérificateur officiel après commit
+
+Sur le commit418d026 : `make check-m1` échoue au lancement (make exit2,
+recette Error126 / Permission denied). Le script labs/m1-versioning/check.sh est
+suivi en mode100644 et présent en644 ; contenu et droits laissés intacts.
+Preuve : [invocation make](check-m1-after-registry.log).
+
+Son exécution intacte avec `bash labs/m1-versioning/check.sh` termine avec le code4 :
+**14 contrôles réussis sur18**, quatre échecs réels attendus à ce stade :
+
+1. Pipeline DVC final incomplet : stages train/evaluate et lock associés absents.
+2. reports/metrics.json absent : évaluation finale du pipeline à produire à l’étape8.
+3. Aucun run lancé par DVC portant le data_md5 attendu : filiation à établir à l’étape8.
+4. Feature store Feast non appliqué/matérialisé : étape9 non exécutée.
+
+Les quatre contrôles officiels Registry réussissent : au moins3 versions, champion
+au-dessus du seuil, challenger présent, champion chargeable et prédiction réalisable.
+[Diagnostic complet via bash](check-m1-after-registry-bash.log).
+
+Pour obtenir un vrai `make check-m1`18/18 : finaliser les étapes8/9 après autorisation,
+puis corriger le droit de lancement du script officiel sans modifier ses critères,
+et relancer la commande make. Aucune étape8/9 ni correction du vérificateur réalisée
+pour ce diagnostic. **Étape7 validée ; Lab M1 global non validé.**
