@@ -1,4 +1,4 @@
-# Course names and training defaults preserved; no training runs in this increment.
+# Protocol A DVC candidate; grid families explicitly preserve their historical weights.
 prepare:
   id_column: EmployeeNumber
   # Technical reproducibility timestamp for Feast, not a real HR observation date.
@@ -6,8 +6,8 @@ prepare:
 
 train:
   model: logistic_regression
-  C: 0.1
-  class_weight: balanced
+  C: 1.0
+  class_weight: none
   n_estimators: 200
   max_depth: 8
   learning_rate: 0.1

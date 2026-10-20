@@ -28,7 +28,10 @@ CONFIGS = [
     ],
     # Random Forest : 3 x 3 = 9 runs
     *[
-        ("random_forest", ["--n_estimators", str(n), "--max_depth", str(d)])
+        (
+            "random_forest",
+            ["--n_estimators", str(n), "--max_depth", str(d), "--class_weight", "balanced"],
+        )
         for n, d in product([100, 200, 400], [4, 8, "none"])
     ],
     # Gradient Boosting : 2 x 2 = 4 runs

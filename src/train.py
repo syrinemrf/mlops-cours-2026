@@ -178,6 +178,7 @@ def main() -> None:
                 "model_type": args.model,
                 "dataset": cfg.name,
                 "data_md5": file_md5(cfg.raw_path),
+                "data_sha256": hashlib.sha256(Path(cfg.raw_path).read_bytes()).hexdigest(),
                 "launched_by": launched_by,
             }
         )
