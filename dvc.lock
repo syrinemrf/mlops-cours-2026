@@ -58,19 +58,17 @@ stages:
         - column: Gender
         - column: MaritalStatus
         source:
-          url:
-            https://www.kaggle.com/datasets/pavansubhasht/ibm-hr-analytics-attrition-dataset
+          url: https://www.kaggle.com/datasets/pavansubhasht/ibm-hr-analytics-attrition-dataset
           license: ODbL-1.0 (database) + DbCL-1.0 (contents)
-          citation: IBM data scientists (fictional dataset), distributed by
-            pavansubhasht on Kaggle, version 1 (2017-03-31).
+          citation: IBM data scientists (fictional dataset), distributed by pavansubhasht on
+            Kaggle, version 1 (2017-03-31).
           kaggle_ref: pavansubhasht/ibm-hr-analytics-attrition-dataset
           version: 1
           filename: WA_Fn-UseC_-HR-Employee-Attrition.csv
-          sha256:
-            a5c31e38bd7fafc9bc333884eb181b06b41b8e5e488e8f7ccb27199fb3be7659
+          sha256: a5c31e38bd7fafc9bc333884eb181b06b41b8e5e488e8f7ccb27199fb3be7659
         target:
           column: Attrition
-          positive_class: Yes
+          positive_class: 'Yes'
     outs:
     - path: data/raw/dataset.csv
       hash: md5
@@ -145,7 +143,7 @@ stages:
           random_state: 42
         target:
           column: Attrition
-          positive_class: Yes
+          positive_class: 'Yes'
     outs:
     - path: data/processed/features.parquet
       hash: md5
@@ -159,3 +157,171 @@ stages:
       hash: md5
       md5: 7eec6596ea2b1d84be50811de74cb9b8
       size: 262799
+  train:
+    cmd: python -m src.train
+    deps:
+    - path: data/processed/test.csv
+      hash: md5
+      md5: c9a203d62f2029c7066a259c02da50da
+      size: 66084
+    - path: data/processed/train.csv
+      hash: md5
+      md5: 7eec6596ea2b1d84be50811de74cb9b8
+      size: 262799
+    - path: data/raw/dataset.csv
+      hash: md5
+      md5: 16e6acc1f69d648c4ec1d3b44efc0179
+      size: 328405
+    - path: src/dataset_config.py
+      hash: md5
+      md5: 3dfbc7152adfcc892ce94654d08a25e0
+      size: 8225
+    - path: src/train.py
+      hash: md5
+      md5: d8d8b67e867d4925a7dd976821088abf
+      size: 10604
+    - path: uv.lock
+      hash: md5
+      md5: 9a37227d87999cc3d7c74e893ee539c6
+      size: 457694
+    params:
+      params.yaml:
+        train:
+          model: logistic_regression
+          C: 0.1
+          class_weight: balanced
+          n_estimators: 200
+          max_depth: 8
+          learning_rate: 0.1
+          random_state: 42
+      dataset.yaml:
+        features:
+          numeric:
+          - DailyRate
+          - DistanceFromHome
+          - HourlyRate
+          - MonthlyIncome
+          - MonthlyRate
+          - NumCompaniesWorked
+          - PercentSalaryHike
+          - TotalWorkingYears
+          - TrainingTimesLastYear
+          - YearsAtCompany
+          - YearsInCurrentRole
+          - YearsSinceLastPromotion
+          - YearsWithCurrManager
+          categorical:
+          - BusinessTravel
+          - Department
+          - EducationField
+          - JobRole
+          - OverTime
+          - Education
+          - EnvironmentSatisfaction
+          - JobInvolvement
+          - JobLevel
+          - JobSatisfaction
+          - PerformanceRating
+          - RelationshipSatisfaction
+          - StockOptionLevel
+          - WorkLifeBalance
+        metrics:
+          primary: roc_auc
+          promotion_threshold: 0.7
+          cost_matrix:
+            false_negative: 1
+            false_positive: 1
+        name: ibm-hr-attrition
+        raw_path: data/raw/dataset.csv
+        source:
+          url: https://www.kaggle.com/datasets/pavansubhasht/ibm-hr-analytics-attrition-dataset
+          license: ODbL-1.0 (database) + DbCL-1.0 (contents)
+          citation: IBM data scientists (fictional dataset), distributed by pavansubhasht on
+            Kaggle, version 1 (2017-03-31).
+          kaggle_ref: pavansubhasht/ibm-hr-analytics-attrition-dataset
+          version: 1
+          filename: WA_Fn-UseC_-HR-Employee-Attrition.csv
+          sha256: a5c31e38bd7fafc9bc333884eb181b06b41b8e5e488e8f7ccb27199fb3be7659
+        target:
+          column: Attrition
+          positive_class: 'Yes'
+    outs:
+    - path: models/model
+      hash: md5
+      md5: f7f0b01e9d4369a07abbc1f33c0354fa.dir
+      size: 307101
+      nfiles: 5
+  evaluate:
+    cmd: python -m src.evaluate
+    deps:
+    - path: data/processed/test.csv
+      hash: md5
+      md5: c9a203d62f2029c7066a259c02da50da
+      size: 66084
+    - path: models/model
+      hash: md5
+      md5: f7f0b01e9d4369a07abbc1f33c0354fa.dir
+      size: 307101
+      nfiles: 5
+    - path: src/dataset_config.py
+      hash: md5
+      md5: 3dfbc7152adfcc892ce94654d08a25e0
+      size: 8225
+    - path: src/evaluate.py
+      hash: md5
+      md5: 8e28f6596492c481f2ffd569332cd567
+      size: 1718
+    - path: src/train.py
+      hash: md5
+      md5: d8d8b67e867d4925a7dd976821088abf
+      size: 10604
+    - path: uv.lock
+      hash: md5
+      md5: 9a37227d87999cc3d7c74e893ee539c6
+      size: 457694
+    params:
+      dataset.yaml:
+        features:
+          numeric:
+          - DailyRate
+          - DistanceFromHome
+          - HourlyRate
+          - MonthlyIncome
+          - MonthlyRate
+          - NumCompaniesWorked
+          - PercentSalaryHike
+          - TotalWorkingYears
+          - TrainingTimesLastYear
+          - YearsAtCompany
+          - YearsInCurrentRole
+          - YearsSinceLastPromotion
+          - YearsWithCurrManager
+          categorical:
+          - BusinessTravel
+          - Department
+          - EducationField
+          - JobRole
+          - OverTime
+          - Education
+          - EnvironmentSatisfaction
+          - JobInvolvement
+          - JobLevel
+          - JobSatisfaction
+          - PerformanceRating
+          - RelationshipSatisfaction
+          - StockOptionLevel
+          - WorkLifeBalance
+        metrics:
+          primary: roc_auc
+          promotion_threshold: 0.7
+          cost_matrix:
+            false_negative: 1
+            false_positive: 1
+        target:
+          column: Attrition
+          positive_class: 'Yes'
+    outs:
+    - path: reports/metrics.json
+      hash: md5
+      md5: 0acc2a3e3509a8941770b44bc90e7688
+      size: 421

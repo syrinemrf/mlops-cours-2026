@@ -1,0 +1,66 @@
+F..                                                                      [100%]
+=================================== FAILURES ===================================
+______________ test_local_evaluation_uses_metadata_threshold[0.5] ______________
+
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x7fa885268cb0>
+tmp_path = PosixPath('/tmp/pytest-of-syrine/pytest-6/test_local_evaluation_uses_met0')
+threshold = 0.5
+
+    @pytest.mark.parametrize("threshold", [0.5, 0.85])
+    def test_local_evaluation_uses_metadata_threshold(monkeypatch, tmp_path, threshold):
+        cfg = load_config()
+        X = pd.DataFrame({"synthetic": [1, 2, 3, 4]})
+        y = pd.Series([0, 0, 1, 1])
+        model = NS(predict_proba=lambda _: np.array([[0.9, 0.1], [0.2, 0.8], [0.6, 0.4], [0.1, 0.9]]))
+        monkeypatch.setattr(
+            evaluate,
+            "load_config",
+            lambda: NS(
+                read_xy=lambda _: (X, y),
+                primary_metric=cfg.primary_metric,
+                business_cost=cfg.business_cost,
+            ),
+        )
+        monkeypatch.setattr(evaluate.mlflow.sklearn, "load_model", lambda _: model)
+        monkeypatch.setattr(
+            evaluate.Model, "load", lambda _: NS(metadata={"decision_threshold": threshold})
+        )
+        monkeypatch.setattr(evaluate, "METRICS_JSON", tmp_path / "metrics.json")
+>       evaluate.main()
+
+tests/test_evaluate.py:34:
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+src/evaluate.py:25: in main
+    model = mlflow.sklearn.load_model(str(MODEL_DIR))
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+.venv/lib/python3.12/site-packages/mlflow/sklearn/__init__.py:754: in load_model
+    flavor_conf = _get_flavor_configuration(model_path=local_model_path, flavor_name=FLAVOR_NAME)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+model_path = '/home/syrine/mlops-cours-2026/models/model'
+flavor_name = 'sklearn'
+
+    def _get_flavor_configuration(model_path, flavor_name):
+        """Obtains the configuration for the specified flavor from the specified
+        MLflow model path. If the model does not contain the specified flavor,
+        an exception will be thrown.
+
+        Args:
+            model_path: The path to the root directory of the MLflow model for which to load
+                the specified flavor configuration.
+            flavor_name: The name of the flavor configuration to load.
+
+        Returns:
+            The flavor configuration as a dictionary.
+
+        """
+        try:
+>           return Model.load(model_path).flavors[flavor_name]
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E           AttributeError: 'types.SimpleNamespace' object has no attribute 'flavors'
+
+.venv/lib/python3.12/site-packages/mlflow/utils/model_utils.py:114: AttributeError
+=========================== short test summary info ============================
+FAILED tests/test_evaluate.py::test_local_evaluation_uses_metadata_threshold[0.5]
+1 failed, 2 passed in 9.09s

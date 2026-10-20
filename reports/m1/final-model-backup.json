@@ -1,0 +1,11 @@
+{
+  "path": "models/smoke-history/before-dvc-a4d74859-2a5a-4154-b3c0-b59d1ccc81ff",
+  "run_id": "c944848ce3b44a2da935c28156f0abc6",
+  "files_sha256": {
+    "python_env.yaml": "18bdd3699d72a98448fad1d5a713676601276d078e3c65860fe18de14d40b3f7",
+    "conda.yaml": "aef6c003eccf6092cd13a5b2b614242da4fc48490489381afe26ea67a6bb0a5d",
+    "MLmodel": "4db2cad12c1e35be419f048df1958eee552b45c309c755ea76f3cdbb51d205e7",
+    "model.skops": "41918a80eb2a8969f2f07e4b9ab87504ac9670ef0c75acf36b850a7c187694dc",
+    "requirements.txt": "5ca2c827e2620dc6fa4dce1022f4f053e58b6cb762a1d9bc924edda97335517d"
+  }
+}

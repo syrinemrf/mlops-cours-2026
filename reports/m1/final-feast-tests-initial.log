@@ -1,0 +1,20 @@
+F.                                                                       [100%]
+=================================== FAILURES ===================================
+_______________________ test_entity_and_contract_schema ________________________
+
+    def test_entity_and_contract_schema():
+        assert d.employee.name == "employee"
+>       assert d.employee.join_keys == ["EmployeeNumber"]
+               ^^^^^^^^^^^^^^^^^^^^
+E       AttributeError: 'Entity' object has no attribute 'join_keys'. Did you mean: 'join_key'?
+
+tests/test_feast_definitions.py:13: AttributeError
+=============================== warnings summary ===============================
+.venv/lib/python3.12/site-packages/feast/type_map.py:72
+  /home/syrine/mlops-cours-2026/.venv/lib/python3.12/site-packages/feast/type_map.py:72: DeprecationWarning: The 'generic' unit for NumPy timedelta is deprecated, and will raise an error in the future. This includes implicit conversion of bare integers (e.g. `+ 1`). Please use a specific unit instead.
+    NULL_TIMESTAMP_INT_VALUE: int = np.datetime64("NaT").astype(int)
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+=========================== short test summary info ============================
+FAILED tests/test_feast_definitions.py::test_entity_and_contract_schema - Att...
+1 failed, 1 passed, 1 warning in 11.36s

@@ -1,0 +1,22 @@
+{
+  "protocol": "A",
+  "entity": "employee",
+  "entity_key": "EmployeeNumber",
+  "feature_view": "request_features",
+  "feature_service": "scoring_v1",
+  "source_rows": 1470,
+  "offline_shape": [
+    1176,
+    30
+  ],
+  "numeric_features": 13,
+  "categorical_features": 14,
+  "all_27_offline_features_match_train": true,
+  "three_before_snapshot_queries_have_only_missing_features": true,
+  "online_entities_checked": 1,
+  "online_features_checked": 27,
+  "all_online_features_match_prepared_values": true,
+  "timestamp": "2026-01-01T00:00:00+00:00",
+  "timestamp_role": "technical_synthetic_snapshot",
+  "temporal_production_leakage_claim": false
+}
