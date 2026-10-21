@@ -18,9 +18,9 @@ source:
     IBM HR Analytics Employee Attrition & Performance (jeu fictif créé par des data
     scientists d'IBM), publié sur Kaggle par l'utilisateur pavansubhasht.
     https://www.kaggle.com/datasets/pavansubhasht/ibm-hr-analytics-attrition-dataset
-  # Empreinte SHA-256 du CSV produit par src/download.py : à épingler après comparaison
-  # avec le CSV officiel de Kaggle (python -m src.download --from-file ...).
-  sha256: null
+  # Empreinte SHA-256 du CSV produit par src/download.py, relevée sur le CSV officiel Kaggle
+  # (python -m src.download --from-file ...). Toute source doit donner la même empreinte.
+  sha256: 55a08f109f1ec9ff6f45eaf1aee177eaddb5f13e5f8037ed0d1fc556d340aaec
   # Repères vérifiés par src/download.py sur les données brutes d'origine
   expected:
     rows: 1470
