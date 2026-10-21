@@ -34,6 +34,6 @@ pour le socle (une seule suffit, mais choisissez une vraie décision) :
 | N° | Titre | Statut | Périmètre | Auteur |
 |---|---|---|---|---|
 | [0000](0000-modele.md) | Modèle d'ADR (non compté) | — | — | — |
-| 0001 | [À compléter] | | | |
-| 0002 | [À compléter] | | | |
+| [0001](0001-dataset-rh-et-attributs-sensibles.md) | Dataset IBM HR, attributs sensibles hors du modèle | proposé | socle (Lab 1) | @MohamedAzizKouch |
+| [0002](0002-metrique-seuil-et-selection-du-modele.md) | Métrique, seuils et sélection du modèle | proposé | socle (Lab 1) | @MohamedAzizKouch |
 | 0003 | [À compléter] | | | |
