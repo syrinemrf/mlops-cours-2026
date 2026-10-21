@@ -83,10 +83,12 @@ def test_sensible_hors_features(tmp_path):
     import yaml
 
     data = yaml.safe_load((ROOT / "dataset.yaml").read_text(encoding="utf-8"))
-    data["features"]["categorical"].remove("personal_status")
+    col = data["features"]["categorical"][0]
+    data["sensitive"].append({"column": col})
+    data["features"]["categorical"].remove(col)
     path = tmp_path / "dataset.yaml"
-    path.write_text(yaml.safe_dump(data), encoding="utf-8")
+    path.write_text(yaml.safe_dump(data, allow_unicode=True), encoding="utf-8")
     cfg = load_config(path)
-    assert "personal_status" not in cfg.features
-    assert cfg.extra_sensitive == ["personal_status"]
-    assert "personal_status" in cfg.columns
+    assert col not in cfg.features
+    assert col in cfg.extra_sensitive
+    assert col in cfg.columns

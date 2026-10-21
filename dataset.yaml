@@ -1,68 +1,99 @@
 # =============================================================================
-# dataset.yaml — décrit VOTRE jeu de données. Tout le pipeline le lit :
-# préparation, entraînement, validation (GX), API de prédiction, équité,
-# monitoring et vérifications automatiques (make check-mX).
-#
-# Changer de dataset = réécrire CE fichier + src/download.py, pas le pipeline.
-# Garder exactement les mêmes clés ; seules les valeurs changent.
+# dataset.yaml — IBM HR Analytics Employee Attrition & Performance
+# Tout le pipeline lit ce fichier (voir src/dataset_config.py). Mêmes clés que le
+# gabarit du cours ; ajouts documentaires : source.{mirror_url,version,sha256,expected}
+# et excluded_columns (ignorés par load_config).
 # =============================================================================
-name: german-credit
-description: Demandes de crédit à la consommation d'une banque allemande (données 1973-1975, publiées à l'UCI en 1994)
+name: ibm-hr-attrition
+description: >-
+  Départ (Attrition) d'employés : 1 470 employés fictifs décrits par 35 variables, jeu
+  pédagogique créé par des data scientists d'IBM. Cas d'usage : repérer les employés à
+  risque de départ pour orienter des actions de rétention.
 source:
-  url: https://archive.ics.uci.edu/dataset/144/statlog+german+credit+data
-  license: CC BY 4.0
+  url: https://www.kaggle.com/datasets/pavansubhasht/ibm-hr-analytics-attrition-dataset
+  mirror_url: https://www.openml.org/d/43696   # copie publique, sans compte (src/download.py)
+  license: "À confirmer sur la page Kaggle (section License) — voir docs/dataset-card.md"
+  version: "À relever sur la page Kaggle"
   citation: >-
-    Hofmann, H. (1994). Statlog (German Credit Data). UCI Machine Learning Repository.
-    https://doi.org/10.24432/C5NC77
+    IBM HR Analytics Employee Attrition & Performance (jeu fictif créé par des data
+    scientists d'IBM), publié sur Kaggle par l'utilisateur pavansubhasht.
+    https://www.kaggle.com/datasets/pavansubhasht/ibm-hr-analytics-attrition-dataset
+  # Empreinte SHA-256 du CSV produit par src/download.py : à épingler après comparaison
+  # avec le CSV officiel de Kaggle (python -m src.download --from-file ...).
+  sha256: null
+  # Repères vérifiés par src/download.py sur les données brutes d'origine
+  expected:
+    rows: 1470
+    raw_columns: 35
+    positive_count: 237
+    missing_values: 0
+    duplicate_rows: 0
+    constant_columns: [EmployeeCount, Over18, StandardHours]
+    identifier_columns: [EmployeeNumber]
 
 # Fichier produit par src/download.py (versionné ensuite avec DVC)
 raw_path: data/raw/dataset.csv
 
-target:
-  column: credit_risk
-  positive_class: bad          # la classe « à risque » que le modèle doit détecter
+# Colonnes d'origine non retenues (vérifiées par src/download.py)
+excluded_columns:
+  EmployeeCount: constante (une seule valeur)
+  Over18: constante (une seule valeur)
+  StandardHours: constante (une seule valeur)
+  EmployeeNumber: identifiant d'employé (request_id est créé par src/prepare.py)
 
+target:
+  column: Attrition
+  positive_class: "Yes"        # entre guillemets : sinon YAML lit Yes comme le booléen true
+
+# Les échelles ordinales 1-4 / 1-5 (satisfaction, niveau...) sont gardées en numériques
+# (ordre significatif, peu de modalités).
 features:
   numeric:
-    - duration                 # durée du crédit (mois)
-    - credit_amount            # montant (DM)
-    - installment_commitment   # mensualité en % du revenu disponible (1-4)
-    - residence_since          # ancienneté dans le logement (1-4)
-    - age                      # âge (années)
-    - existing_credits         # crédits en cours dans la banque
-    - num_dependents           # personnes à charge
+    - DailyRate
+    - DistanceFromHome
+    - Education
+    - EnvironmentSatisfaction
+    - HourlyRate
+    - JobInvolvement
+    - JobLevel
+    - JobSatisfaction
+    - MonthlyIncome
+    - MonthlyRate
+    - NumCompaniesWorked
+    - PercentSalaryHike
+    - PerformanceRating
+    - RelationshipSatisfaction
+    - StockOptionLevel
+    - TotalWorkingYears
+    - TrainingTimesLastYear
+    - WorkLifeBalance
+    - YearsAtCompany
+    - YearsInCurrentRole
+    - YearsSinceLastPromotion
+    - YearsWithCurrManager
   categorical:
-    - checking_status
-    - credit_history
-    - purpose
-    - savings_status
-    - employment
-    - personal_status
-    - other_parties
-    - property_magnitude
-    - other_payment_plans
-    - housing
-    - job
-    - own_telephone
-    - foreign_worker
+    - BusinessTravel
+    - Department
+    - EducationField
+    - JobRole
+    - OverTime
 
-# Attributs sensibles : analysés au Lab 8 (équité) et surveillés au Lab 7.
-# « bins » : découpage d'un attribut numérique en groupes (bornes, labels).
+# Attributs sensibles : mesurés (Lab 8) mais NON appris par le modèle (hors features).
 sensitive:
-  - column: age
-    bins: [0, 25, 120]
-    labels: ["<25", ">=25"]
-  - column: personal_status
-  - column: foreign_worker
+  - column: Age
+    bins: [0, 40, 120]
+    labels: ["<40", ">=40"]
+  - column: Gender
+  - column: MaritalStatus
 
 metrics:
-  primary: roc_auc             # métrique de sélection et de promotion du modèle
-  promotion_threshold: 0.70    # gate : en dessous, le modèle n'est pas promu
-  # Coût métier d'une erreur (matrice de coûts fournie avec le dataset) :
-  # accorder un crédit à un mauvais payeur (faux négatif) coûte 5,
-  # refuser un bon payeur (faux positif) coûte 1.
+  primary: average_precision   # robuste au déséquilibre (16 % de départs)
+  # PROVISOIRE : 2 x la prévalence (237 / 1470 = 0,161), plancher d'un modèle utile.
+  # À confirmer après les 20 runs (ADR) ; un modèle naïf obtient ~0,161.
+  promotion_threshold: 0.32
+  # Aucune matrice de coûts dans le dataset : 1 / 1 (consigne du cours), pas de chiffre inventé.
   cost_matrix:
-    false_negative: 5
+    false_negative: 1
     false_positive: 1
 
 split:
