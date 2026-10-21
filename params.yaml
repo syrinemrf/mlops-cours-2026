@@ -6,7 +6,7 @@ prepare:
 
 train:
   model: logistic_regression  # logistic_regression | random_forest | gradient_boosting | dummy
-  C: 0.1  # régularisation (logistic_regression)
+  C: 0.01  # régularisation (logistic_regression)
   class_weight: balanced  # balanced | none (logistic_regression, random_forest)
   n_estimators: 200  # random_forest, gradient_boosting
   max_depth: 8  # entier ou none (random_forest, gradient_boosting)

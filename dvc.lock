@@ -52,3 +52,148 @@ stages:
       hash: md5
       md5: ff1c0fbd0344fb02ae5736714c66b5f5
       size: 209612
+  prepare:
+    cmd: python -m src.prepare
+    deps:
+    - path: data/raw/dataset.csv
+      hash: md5
+      md5: ff1c0fbd0344fb02ae5736714c66b5f5
+      size: 209612
+    - path: src/dataset_config.py
+      hash: md5
+      md5: 3dfbc7152adfcc892ce94654d08a25e0
+      size: 8225
+    - path: src/prepare.py
+      hash: md5
+      md5: 35268ed913de166733372c9020fa28c8
+      size: 2404
+    params:
+      params.yaml:
+        prepare:
+          id_column: request_id
+          event_timestamp: '2026-01-01T00:00:00+00:00'
+      dataset.yaml:
+        features:
+          numeric:
+          - DailyRate
+          - DistanceFromHome
+          - Education
+          - EnvironmentSatisfaction
+          - HourlyRate
+          - JobInvolvement
+          - JobLevel
+          - JobSatisfaction
+          - MonthlyIncome
+          - MonthlyRate
+          - NumCompaniesWorked
+          - PercentSalaryHike
+          - PerformanceRating
+          - RelationshipSatisfaction
+          - StockOptionLevel
+          - TotalWorkingYears
+          - TrainingTimesLastYear
+          - WorkLifeBalance
+          - YearsAtCompany
+          - YearsInCurrentRole
+          - YearsSinceLastPromotion
+          - YearsWithCurrManager
+          categorical:
+          - BusinessTravel
+          - Department
+          - EducationField
+          - JobRole
+          - OverTime
+        split:
+          test_size: 0.2
+          random_state: 42
+        target:
+          column: Attrition
+          positive_class: Yes
+    outs:
+    - path: data/processed/features.parquet
+      hash: md5
+      md5: b0ba7ac16f16a3a66673d97b03fddc8a
+      size: 65120
+    - path: data/processed/test.csv
+      hash: md5
+      md5: 4a59647f769a929fd87421ce852ef64a
+      size: 43576
+    - path: data/processed/train.csv
+      hash: md5
+      md5: 047f2d2bf1ab0df2ce63c2e141f64d22
+      size: 172764
+  train:
+    cmd: python -m src.train
+    deps:
+    - path: data/processed/test.csv
+      hash: md5
+      md5: 4a59647f769a929fd87421ce852ef64a
+      size: 43576
+    - path: data/processed/train.csv
+      hash: md5
+      md5: 047f2d2bf1ab0df2ce63c2e141f64d22
+      size: 172764
+    - path: src/dataset_config.py
+      hash: md5
+      md5: 3dfbc7152adfcc892ce94654d08a25e0
+      size: 8225
+    - path: src/train.py
+      hash: md5
+      md5: 885bcf047020b98001c44d2c58a2bd94
+      size: 9661
+    params:
+      params.yaml:
+        train:
+          model: logistic_regression
+          C: 0.01
+          class_weight: balanced
+          n_estimators: 200
+          max_depth: 8
+          learning_rate: 0.1
+          random_state: 42
+      dataset.yaml:
+        metrics:
+          primary: average_precision
+          promotion_threshold: 0.32
+          cost_matrix:
+            false_negative: 1
+            false_positive: 1
+    outs:
+    - path: models/model
+      hash: md5
+      md5: ad2d24105dda7daebae1cad028fc45e9.dir
+      size: 258873
+      nfiles: 5
+  evaluate:
+    cmd: python -m src.evaluate
+    deps:
+    - path: data/processed/test.csv
+      hash: md5
+      md5: 4a59647f769a929fd87421ce852ef64a
+      size: 43576
+    - path: models/model
+      hash: md5
+      md5: ad2d24105dda7daebae1cad028fc45e9.dir
+      size: 258873
+      nfiles: 5
+    - path: src/evaluate.py
+      hash: md5
+      md5: 8d64d35ed80879acb0732fa54c2d51f7
+      size: 1563
+    - path: src/train.py
+      hash: md5
+      md5: 885bcf047020b98001c44d2c58a2bd94
+      size: 9661
+    params:
+      dataset.yaml:
+        metrics:
+          primary: average_precision
+          promotion_threshold: 0.32
+          cost_matrix:
+            false_negative: 1
+            false_positive: 1
+    outs:
+    - path: reports/metrics.json
+      hash: md5
+      md5: ff52111be259673e10eaba7721fd53cc
+      size: 283
