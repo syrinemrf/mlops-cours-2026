@@ -1,0 +1,5 @@
+# Paramètres du pipeline, suivis par DVC (dvc params diff).
+# Le contrat des données (colonnes, cible, split, métriques, seuil) est dans dataset.yaml.
+prepare:
+  id_column: request_id  # identifiant de demande, créé s'il est absent (entité Feast)
+  event_timestamp: "2026-01-01T00:00:00+00:00"  # date de valeur des features (Feast)
