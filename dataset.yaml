@@ -12,11 +12,12 @@ description: >-
 source:
   url: https://www.kaggle.com/datasets/pavansubhasht/ibm-hr-analytics-attrition-dataset
   mirror_url: https://www.openml.org/d/43696   # copie publique, sans compte (src/download.py)
-  license: "À confirmer sur la page Kaggle (section License) — voir docs/dataset-card.md"
-  version: "À relever sur la page Kaggle"
+  license: "Database: Open Database, Contents: Database Contents (libellé Kaggle, 2026-10-21)"
+  version: "Version 1 (227,98 kB), WA_Fn-UseC_-HR-Employee-Attrition.csv, consultée le 2026-10-21"
   citation: >-
-    IBM HR Analytics Employee Attrition & Performance (jeu fictif créé par des data
-    scientists d'IBM), publié sur Kaggle par l'utilisateur pavansubhasht.
+    IBM HR Analytics Employee Attrition & Performance. Jeu décrit sur Kaggle comme
+    fictif et créé par des data scientists d'IBM ; la page ne documente ni auteur, ni
+    source, ni méthode de collecte, ni DOI. Propriétaire affiché : pavansubhash.
     https://www.kaggle.com/datasets/pavansubhasht/ibm-hr-analytics-attrition-dataset
   # Empreinte SHA-256 du CSV produit par src/download.py, relevée sur le CSV officiel Kaggle
   # (python -m src.download --from-file ...). Toute source doit donner la même empreinte.
