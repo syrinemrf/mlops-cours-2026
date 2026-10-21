@@ -57,9 +57,9 @@ Mode d'emploi (à garder en tête du fichier) :
 - **Bloqué / appris :** disque C: presque plein (nettoyage, `docker builder prune`) ; `aws-lab` ne joint pas SeaweedFS depuis WSL (réseau de Docker Desktop), remplacé par `boto3`.
 - **Prochaine étape :** Lab 1 sur `work/aziz/m1`.
 
-## S5 — 2026-10-21 — Lab 1 : versioning (branche work/aziz/m1, non publiée)
+## S5 — 2026-10-21 — Lab 1 : versioning (branche work/aziz/m1)
 
 - **Pilote :** Aziz (@MohamedAzizKouch), avec assistance Claude ; travail indépendant de la branche de Syrine.
 - **Fait :** contrat `dataset.yaml` pour IBM HR et ingestion vérifiée par SHA-256 ; DVC (remote local, 4 stages) ; 22 runs de grid search plus les essais ; registry (3 versions, `@champion` = version 3 tracée par DVC) ; Feast ; analyse de sensibilité ; ADR-0001 et ADR-0002 ; `check-m1` 18/18 lancé avec `bash` (le script du professeur n'est pas exécutable).
 - **Bloqué / appris :** OpenML injoignable depuis mon réseau (CSV Kaggle + `dvc commit`) ; le seuil de décision issu de la formule du cours ne signale presque personne (rappel 0,032 en hors-pli).
-- **Prochaine étape :** décider du seuil avec Syrine (ADR-0003), publier la branche après accord, puis comparer nos deux solutions.
+- **Prochaine étape :** branche publiée le 2026-10-21, sans pull request ; décider du seuil avec Syrine (ADR-0003), puis comparer nos deux solutions.
