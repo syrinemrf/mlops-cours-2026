@@ -1,0 +1,54 @@
+schema: '2.0'
+stages:
+  download:
+    cmd: python -m src.download
+    deps:
+    - path: src/dataset_config.py
+      hash: md5
+      md5: 3dfbc7152adfcc892ce94654d08a25e0
+      size: 8225
+    - path: src/download.py
+      hash: md5
+      md5: 835a045ece8c0ef56a913d32be1b04b7
+      size: 5397
+    params:
+      dataset.yaml:
+        features:
+          numeric:
+          - DailyRate
+          - DistanceFromHome
+          - Education
+          - EnvironmentSatisfaction
+          - HourlyRate
+          - JobInvolvement
+          - JobLevel
+          - JobSatisfaction
+          - MonthlyIncome
+          - MonthlyRate
+          - NumCompaniesWorked
+          - PercentSalaryHike
+          - PerformanceRating
+          - RelationshipSatisfaction
+          - StockOptionLevel
+          - TotalWorkingYears
+          - TrainingTimesLastYear
+          - WorkLifeBalance
+          - YearsAtCompany
+          - YearsInCurrentRole
+          - YearsSinceLastPromotion
+          - YearsWithCurrManager
+          categorical:
+          - BusinessTravel
+          - Department
+          - EducationField
+          - JobRole
+          - OverTime
+        raw_path: data/raw/dataset.csv
+        target:
+          column: Attrition
+          positive_class: Yes
+    outs:
+    - path: data/raw/dataset.csv
+      hash: md5
+      md5: ff1c0fbd0344fb02ae5736714c66b5f5
+      size: 209612
