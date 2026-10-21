@@ -49,3 +49,17 @@ Mode d'emploi (à garder en tête du fichier) :
 - **Fait :** branches comparées après fetch ; `lab/m0-setup` avancée en fast-forward vers les trois commits validés ; option A déclarée, pseudo renseigné et brouillon de PR préparé.
 - **Vérifié :** `make check-m0` 19/19 sur la base `23b452e` ; preuve `reports/m0/check-m0-integration-base.log` ; exclusions et signatures de secrets vérifiées.
 - **Prochaine étape :** relire le commit documentaire local, autoriser ultérieurement sa publication, revalider le HEAD publié, capturer et déposer le résultat puis solliciter la revue réelle ; aucun push, PR, fusion ou Lab 1 à cette étape.
+
+## S4 — 2026-10-20 — Lab 0 : environnement personnel d'Aziz
+
+- **Pilote :** Aziz (@MohamedAzizKouch), avec assistance Claude ; cluster `mlops-lab` existant (ancien support) réutilisé sans être recréé.
+- **Fait :** WSL2 / Ubuntu 24.04, Docker et outils du cours ; `make up` (SeaweedFS, MLflow, registry) ; smoke tests MLflow et DVC ; `make check-m0` 19/19 sur mon propre cluster.
+- **Bloqué / appris :** disque C: presque plein (nettoyage, `docker builder prune`) ; `aws-lab` ne joint pas SeaweedFS depuis WSL (réseau de Docker Desktop), remplacé par `boto3`.
+- **Prochaine étape :** Lab 1 sur `work/aziz/m1`.
+
+## S5 — 2026-10-21 — Lab 1 : versioning (branche work/aziz/m1, non publiée)
+
+- **Pilote :** Aziz (@MohamedAzizKouch), avec assistance Claude ; travail indépendant de la branche de Syrine.
+- **Fait :** contrat `dataset.yaml` pour IBM HR et ingestion vérifiée par SHA-256 ; DVC (remote local, 4 stages) ; 22 runs de grid search plus les essais ; registry (3 versions, `@champion` = version 3 tracée par DVC) ; Feast ; analyse de sensibilité ; ADR-0001 et ADR-0002 ; `check-m1` 18/18 lancé avec `bash` (le script du professeur n'est pas exécutable).
+- **Bloqué / appris :** OpenML injoignable depuis mon réseau (CSV Kaggle + `dvc commit`) ; le seuil de décision issu de la formule du cours ne signale presque personne (rappel 0,032 en hors-pli).
+- **Prochaine étape :** décider du seuil avec Syrine (ADR-0003), publier la branche après accord, puis comparer nos deux solutions.

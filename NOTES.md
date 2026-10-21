@@ -122,3 +122,16 @@ le dernier contrôle Git de `make check-m0` échouera tant que HEAD n’est pas 
 La preuve 19/19 obtenue sur la base publiée est conservée séparément : elle ne
 prouve pas la publication de la future branche d’intégration. Après autorisation
 ultérieure de push, relancer la checklist sur le HEAD publié et capturer son résultat.
+
+## Reproduire le projet (Lab 1) — ajout d'Aziz
+
+Cette procédure n'a pas encore été essayée sur un autre poste.
+
+- Cloner le dépôt, puis `cp .env.example .env`, `make up`, `make pf`, `uv sync` et `source .venv/bin/activate`. Le cluster et son MLflow sont propres à chaque poste.
+- Identifiants DVC (jamais dans Git) : `dvc remote modify --local storage access_key_id "$AWS_ACCESS_KEY_ID"` et `dvc remote modify --local storage secret_access_key "$AWS_SECRET_ACCESS_KEY"`.
+- Les données : `python -m src.download` (OpenML). Si le serveur est injoignable, télécharger `WA_Fn-UseC_-HR-Employee-Attrition.csv` sur Kaggle, puis `python -m src.download --from-file <fichier>` : le script refuse tout contenu dont le SHA-256 diffère de `dataset.yaml`. Ensuite `dvc commit -f download`.
+- `dvc repro` puis `dvc push` (le remote d'un autre cluster est vide : `dvc pull` ne suffit pas).
+- Runs et registre : `python -m src.grid_search`, `python -m src.promote`, `python -m src.promote --filter "params.model = 'dummy'"` puis `python -m src.promote --filter "tags.launched_by = 'dvc'"`.
+- Feast : `cd features && feast apply && feast materialize-incremental "$(date -u +%Y-%m-%dT%H:%M:%S)"`.
+- Contrôle : `bash labs/m1-versioning/check.sh` (le script est en mode 100644 chez le professeur : `make check-m1` répond « Permission denied »).
+- Ne pas commiter le `dvc.lock` régénéré : seul le hash de `models/model` change (il contient l'identifiant du run MLflow du poste).
