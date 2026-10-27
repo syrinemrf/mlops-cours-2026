@@ -1,0 +1,82 @@
+{
+  "dataset.yaml": {
+    "sha256": "0579d914bcd7904dde8fb4be2b24a773e80e91061f729772ce11d54b59783ad3",
+    "matches_d740ca5": true
+  },
+  "params.yaml": {
+    "sha256": "1aa7733dddfad1c070085b6a29bdddb883515337174be0aefebf7d7270d34030",
+    "matches_d740ca5": true
+  },
+  "dvc.yaml": {
+    "sha256": "5870549a5f3f90a65ca6482cf09bf4ad26df55708ce93d38d927155ccc5a1cd8",
+    "matches_d740ca5": true
+  },
+  "dvc.lock": {
+    "sha256": "fb0080a7b2ba250e86eb51ff65c2435e78a00274e070ce4479d9530a87edeedc",
+    "matches_d740ca5": true
+  },
+  "src/train.py": {
+    "sha256": "a93a55f17fead3f4409e3ef3478df5112abb69e2715005dbe50a5564f06decc6",
+    "matches_d740ca5": true
+  },
+  "src/prepare.py": {
+    "sha256": "c1db557d4686774164e8d6703e4ec14300f399860e1d3c6110eeea3380843eea",
+    "matches_d740ca5": true
+  },
+  "src/download.py": {
+    "sha256": "b2474b600d84dcef78f4552dc1e61c0288ca641a12c4ab242245357d1ac3cac3",
+    "matches_d740ca5": true
+  },
+  "src/dataset_config.py": {
+    "sha256": "ea3620e589a9a24d332e6d16e0c0e182281c6335fcee327911b59735b67d47b2",
+    "matches_d740ca5": true
+  },
+  "src/evaluate.py": {
+    "sha256": "6f77132f79a0081c2e8ef86652294aeaa3757a5dc5b9093b6748aa6b77e4ad29",
+    "matches_d740ca5": true
+  },
+  "src/grid_search.py": {
+    "sha256": "1fd93c54ad1bb464996c426a84967f7a28ffafd3bd203cffc592570bb21dc1e6",
+    "matches_d740ca5": true
+  },
+  "src/promote.py": {
+    "sha256": "a174872444ab964d00d2d633b19c2458c95a09d0f71ccac959bcf82ca0e03379",
+    "matches_d740ca5": true
+  },
+  "features/definitions.py": {
+    "sha256": "464202adac293801e056754f5ba2d7a0b428230d09abcd1e8cf3992f7e8827bf",
+    "matches_d740ca5": true
+  },
+  "features/feature_store.yaml": {
+    "sha256": "eae57f59c4fb5d0b5454e6252e1a9981a84d17f664ca8dcc49dcacb12869bfd3",
+    "matches_d740ca5": true
+  },
+  "reports/metrics.json": {
+    "sha256": "cf2d3c4a82bc841c9fa59615ce581e3f0c260c3b704a0c65ab164a1d5c7b50eb",
+    "matches_d740ca5": true
+  },
+  "uv.lock": {
+    "sha256": "c599c31080a364cd15c06d218fac01cfdbd39503f2f0237c5410477931776ade",
+    "matches_d740ca5": true
+  },
+  "pyproject.toml": {
+    "sha256": "73333dc922bae133120194cab5588cb463e8fb14b8978c0d5dc2b48bc56faf80",
+    "matches_d740ca5": true
+  },
+  "docs/research/baseline-protocol.md": {
+    "sha256": "b376eddc3af316e495d6a66994a3fc667914a5f035b5bbdb5fbdbea20862fb2f",
+    "matches_d740ca5": true
+  },
+  "README.md": {
+    "sha256": "08c171d3b48983da3dabea45daf61a57e065779aca83a80156082ef4a5c6e15f",
+    "matches_d740ca5": true
+  },
+  "NOTES.md": {
+    "sha256": "1607fcc8c4204c64ab164c8bab234189fbaeef3edae6f7b2ec4f773008f656da",
+    "matches_d740ca5": true
+  },
+  "labs/m1-versioning/check.sh": {
+    "sha256": "7981c0938907e541511dd5d4ea09b1e907f30d7320d3c91e557111dfe82c1a68",
+    "matches_d740ca5": true
+  }
+}

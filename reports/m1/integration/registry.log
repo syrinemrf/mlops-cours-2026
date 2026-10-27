@@ -1,0 +1,53 @@
+Downloading artifacts:   0%|          | 0/7 [00:00<?, ?it/s]Downloading artifacts:  14%|█▍        | 1/7 [00:00<00:03,  1.66it/s]Downloading artifacts:  14%|█▍        | 1/7 [00:00<00:03,  1.66it/s]Downloading artifacts:  29%|██▊       | 2/7 [00:00<00:03,  1.66it/s]Downloading artifacts:  43%|████▎     | 3/7 [00:00<00:02,  1.66it/s]Downloading artifacts:  57%|█████▋    | 4/7 [00:00<00:01,  1.66it/s]Downloading artifacts:  71%|███████▏  | 5/7 [00:02<00:01,  1.94it/s]Downloading artifacts:  71%|███████▏  | 5/7 [00:02<00:01,  1.94it/s]Downloading artifacts:  86%|████████▌ | 6/7 [00:02<00:00,  1.94it/s]Downloading artifacts: 100%|██████████| 7/7 [00:02<00:00,  1.94it/s]Downloading artifacts: 100%|██████████| 7/7 [00:02<00:00,  2.69it/s]
+{
+  "model_name": "scoring-model",
+  "versions_count": 4,
+  "aliases": {
+    "champion": {
+      "version": "4",
+      "run_id": "ef2d3f85ebe3432f9172275c34bbd6ac",
+      "roc_auc": 0.8368507192695321
+    },
+    "challenger": {
+      "version": "3",
+      "run_id": "139ae364aa6e4166b2bd19ef533f48e7",
+      "roc_auc": 0.8360754586958395
+    }
+  },
+  "dummy_rejected": true,
+  "uri": "models:/scoring-model@champion",
+  "dvc_run_id": "ef2d3f85ebe3432f9172275c34bbd6ac",
+  "data_md5": "16e6acc1f69d648c4ec1d3b44efc0179",
+  "data_sha256": "27e7bebda91c7e6d0b77e80128c2d9383d70a19a185b51ecfe3bb90f761d2a78",
+  "decision_threshold": 0.5,
+  "parameters": {
+    "model": "logistic_regression",
+    "random_state": "42",
+    "C": "1.0",
+    "class_weight": "None",
+    "decision_threshold": "0.5"
+  },
+  "signature_matches_dvc_model": true,
+  "all_test_probabilities_exactly_match_local": true,
+  "metrics_match_run_and_rounded_report": true,
+  "serialized_model_sha256": {
+    "dvc_local": "a3c7b04d8411bc1a55ab6306873e05df0fe1976d9a1f4ce5b58560afe0cdbd0e",
+    "registry": "8dcc208016214d691d22a7abcc893bce6d314c59bc741f8c49a772545a36e119"
+  },
+  "feature_count": 27,
+  "probabilities_first_five": [
+    0.054739472931851135,
+    0.004567934055242384,
+    0.07695643206029057,
+    0.003461122499474431,
+    0.4529688832327809
+  ],
+  "predictions_first_five": [
+    0,
+    0,
+    0,
+    0,
+    0
+  ],
+  "pyfunc_predictions_match": true
+}

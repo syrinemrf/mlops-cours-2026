@@ -6,9 +6,10 @@ précédentes par les résultats ultérieurs.
 
 | Rapport | Portée et snapshot |
 |---|---|
-| [Alignement et reproductibilité](alignment-validation.md) | État courant : 85 tests, 18/18, DVC et champion v4 alignés ; exercices 8.5/10.3 vérifiés, 10.4 Aziz en attente |
+| [Intégration collaborative](integration/final-integration.md) | Ajouts CV/OOF/ADR Aziz, validation propre et limites §10.4 ; voir preuves datées |
+| [Alignement et reproductibilité](alignment-validation.md) | Snapshot personnel avant intégration : 85 tests, 18/18, DVC et champion v4 alignés ; exercices 8.5/10.3 vérifiés, 10.4 Aziz en attente |
 | [Audit avant publication](pre-publication-audit.md) | État d2ea3ca, écarts au guide, décisions encore requises |
-| [Revue/publication/J0](binome-review-publication.md) | Checklist et commandes futures ; aucune publication exécutée |
+| [Revue/publication/J0](binome-review-publication.md) | Procédure historique ; branches personnelles publiées depuis, voir rapport d’intégration |
 | [Finalisation technique](final-validation.md) | Pipeline/Feast, 25 runs, trois versions, limites de reproduction ; preuves à ccf031f, checker reconfirmé à d2ea3ca |
 | [Checker final](check-m1-final.log), [tests](final-tests.log), [lint](final-lint.log) | 18/18 réels, 77 tests, lint valide lors de la finalisation |
 | [Registre](registry-validation.md) | Phase7 : 24 runs, v1/v2/v3, 72 tests, checkpoint14/18 ; état historique avant DVC/Feast |

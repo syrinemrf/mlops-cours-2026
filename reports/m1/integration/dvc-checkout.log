@@ -1,0 +1,10 @@
+2026-10-27 21:26:15,453 DEBUG: v3.67.1 (pip), CPython 3.12.14 on Linux-6.18.54.1-microsoft-standard-WSL2-x86_64-with-glibc2.35
+2026-10-27 21:26:15,453 DEBUG: command: /home/syrine/mlops-cours-2026/.venv/bin/dvc checkout -v
+A       models/model/
+A       data/processed/features.parquet
+A       data/processed/test.csv
+A       data/processed/train.csv
+A       data/raw/dataset.csv
+2026-10-27 21:26:16,796 DEBUG: Analytics is enabled.
+2026-10-27 21:26:16,840 DEBUG: Trying to spawn ['daemon', 'analytics', '/tmp/tmptmiwq3il', '-v']
+2026-10-27 21:26:16,849 DEBUG: Spawned ['daemon', 'analytics', '/tmp/tmptmiwq3il', '-v'] with pid 11612

@@ -117,3 +117,13 @@ Mode d'emploi (à garder en tête du fichier) :
 - **DVC/Registry :** run de référence ef2d3f85ebe3432f9172275c34bbd6ac, MD5 export 16e6acc1f69d648c4ec1d3b44efc0179, AUC 0,8368507193, seuil 0,5, coût 35. Trois objets poussés, dix objets S3 vérifiés ;29 runs FINISHED. Nouvelle v4 champion, v3 challenger réaffectée, versions 1/2/3 conservées, idempotence et rejet Dummy réels.
 - **Vérifié :**85 tests, un warning Feast/NumPy ; lint et check-m1 18/18 code0. Signature, paramètres, 294probabilités et métriques du modèle distant conformes au modèle DVC ; différence des archives skops expliquée par IDs/horodatages, payloads/schéma normalisé identiques. Feast offline/online conforme ; anciens rapports conservés, contrôles officiels inchangés.
 - **Limites / suite :** même cluster et venv existant ; mémoire limitée, aucune infrastructure recréée. Résultats pédagogiques sur test répété ; §10.4 à rejouer par Aziz avec ses IDs/versions, sans approbation supposée. Rapport reports/m1/alignment-validation.md ; attente de validation Syrine avant tout push Git/PR/merge/tag, capture/remise et J0 ultérieurs.
+
+
+## S12 — 2026-10-27 — Intégration collaborative M1
+
+- **Pilote :** Syrine avec assistance Codex ; contributions sources d’Aziz reprises sélectivement avec auteurs et commits tracés. Aucune revue humaine GitHub présumée.
+- **Fait :** branche lab/m1-versioning dans un worktree isolé depuis d740ca5 ; sensibilité/ADR cherry-pickés -x, CV extraite et adaptée dans des modules indépendants ; ADR0002/0003 renumérotés, ADR0004 ajouté. Contrat, préparation, modèle, lock, Feast, gate/seuil, B1/B2 et dépendances intacts.
+- **Mesuré :** 112tests, warning Feast/NumPy connu, lint vert, checker18/18 code0 sur intégration technique ; CVtrain ROC AUC0,854679982±0,029784770 et AP0,672947514±0,053510568 (écarts-types, pas IC). Deux diagnostics identiques octet pour octet, aucun seuil promu.
+- **Préservé :** DVC4stages ignorés, données/modèle conformes cache/lock/dépôt personnel ;29runs FINISHED,22runs grille inchangés, championv4DVC/challengerv3 vérifiés ; Feast offline/online reconstruit pour le worktree. Aucune nouvelle grille, promotion ou modification des branches personnelles.
+- **Incidents :** Docker Desktop arrêté, conteneurs existants redémarrés ; cacheDVC/tunnels rétablis sans recréation ni suppression. Échecs initiaux conservés.
+- **Suite :** vérifier encore le HEAD documentaire final, publier uniquement la branche d’intégration et PR brouillon sous autorisation reçue ; vraie revue Aziz, replay §10.4 du contrat commun, capture/remise et référence du courriel restent requis avant fusion/J0. Rapport reports/m1/integration/final-integration.md.

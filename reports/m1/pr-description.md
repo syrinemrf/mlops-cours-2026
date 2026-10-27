@@ -1,5 +1,10 @@
 # Brouillon de PR M1 — résultats locaux validés, intégration à préparer
 
+> Actualisation : les deux branches personnelles sont publiées. Ce document
+> conserve la préparation historique ; pour l’intégration actuelle et la PR
+> brouillon, voir [le rapport](integration/final-integration.md) et
+> [la description actualisée](integration/pr-description.md).
+
 Titre proposé : `lab/m1-versioning : pipeline DVC, registre et Feast pour IBM HR`.
 Base future main, branche future lab/m1-versioning. **PR non ouverte.**
 

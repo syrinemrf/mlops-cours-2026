@@ -18,8 +18,14 @@ Membres : Syrine ([@syrinemrf](https://github.com/syrinemrf)) et Aziz
 le socle sur son propre cluster ; les preuves d’exécution d’Aziz restent à recueillir.
 M0 est fusionné dans `main` par la [PR #1](https://github.com/syrinemrf/mlops-cours-2026/pull/1),
 commit `7606b83`. Cette fusion ne constitue pas une approbation d’Aziz.
-M1 est aligné et validé techniquement sur la branche personnelle locale `work/syrine/m1`
-(18/18 contrôles, 85 tests) ; son intégration et sa revue restent à faire.
+M1 est publié sur [work/syrine/m1](https://github.com/syrinemrf/mlops-cours-2026/tree/work/syrine/m1)
+au commit `d740ca5` (preuves du 2026-10-20 : 18/18 contrôles, 85 tests).
+La branche [work/aziz/m1](https://github.com/syrinemrf/mlops-cours-2026/tree/work/aziz/m1)
+est également publiée ; ses ajouts sont en cours de revue pour `lab/m1-versioning`.
+La branche commune `lab/m1-versioning` reprend leurs ajouts compatibles
+(112 tests, lint et 18 contrôles réussis sur le code intégré).
+Voir le [rapport d’intégration et ses preuves](reports/m1/integration/final-integration.md).
+La revue humaine et la reproduction indépendante §10.4 restent à effectuer.
 Dataset retenu : IBM HR Analytics Employee Attrition, validé par le professeur
 par courriel selon Syrine ; référence du courriel encore à consigner, aucune issue
 de validation identifiée. Voir [l’audit avant publication](reports/m1/pre-publication-audit.md)
@@ -40,6 +46,12 @@ Le pipeline DVC enchaîne `download -> prepare -> train -> evaluate` ; reprise a
 `dvc pull` puis `dvc repro` sur le stockage déjà rempli, selon [NOTES.md](NOTES.md).
 Sur un cluster existant, vérifier les services et relancer les port-forwards avec
 `make pf`. Les commandes d’installation ci-dessous concernent un nouveau poste.
+
+`src.cross_validation` et `src.sensitivity` apportent les analyses train-only d’Aziz,
+adaptées dans des modules indépendants : cinq plis stratifiés, prétraitement réappris
+par pli, ROC-AUC/AP et scénarios de coûts OOF. Elles ne modifient ni les quatre stages,
+ni le champion ou son seuil. Les variantes AP/0,32 et âge40 restent proposées
+dans les [ADR](docs/adr/README.md).
 
 ## Données
 
@@ -67,7 +79,7 @@ La déclaration de chaque membre reste à faire avant la fin S8.
 ## Démo
 
 La démonstration J0 porte sur les contrôles M0/M1, DVC, MLflow et Feast locaux.
-Le [journal complet M1](reports/m1/check-m1-final.log) est disponible ; la capture
+Le [journal M1 aligné](reports/m1/alignment-check-m1.log) est disponible ; la capture
 d’écran réelle du commit finalement publié reste à prendre. Aucune vidéo finale
 ni application publique n’est annoncée à ce stade.
 

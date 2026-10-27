@@ -1,7 +1,10 @@
 # Mes notes du cours MLOps — Syrine
 
-**État actuel au 2026-10-20 :** M0 fusionné (`7606b83`), M1 local aligné,
-contrôles 18/18, 85 tests. Champion v4 issu de DVC, challenger v3 préservé ;
+**État documentaire au 2026-10-27 :** M0 fusionné (`7606b83`), M1 Syrine publié
+à `d740ca5` ; preuves du 2026-10-20 : contrôles 18/18 et 85 tests.
+`work/aziz/m1` publié à `336964f` ; intégration locale `lab/m1-versioning` exécutée.
+Les preuves propres à cette intégration et leurs limites figurent dans
+[le rapport final](reports/m1/integration/final-integration.md). Champion v4 issu de DVC, challenger v3 préservé ;
 exercices 8.5 et 10.3 vérifiés, replay indépendant 10.4 en attente. Les sections sont
 chronologiques : les instructions anciennes « avant fusion M0 » ou « ingestion
 seulement » décrivent ces incréments. Pour reprendre, utiliser la section
@@ -284,7 +287,7 @@ ne démontre pas une absence de fuite temporelle dans un système RH en producti
 ### Clone propre sur le même poste
 
 Créer un nouveau dossier temporaire, sans supprimer de dossier existant, puis
-cloner le dépôt local validé (tant que la branche n’est pas publiée). Réutiliser
+cloner la branche publiée `work/syrine/m1` et vérifier son SHA (`d740ca5`). Réutiliser
 le Python existant par son chemin/PATH ; une nouvelle installation des dépendances
 n’a pas été testée dans notre essai de clone. Configurer ses credentials DVC dans
 son propre `.dvc/config.local` ignoré, puis `dvc pull`, `dvc repro` et l’évaluation.
@@ -342,12 +345,59 @@ Ne pas relancer la grille sur ce poste : son identité inclut les octets de
 
 ### Revue, intégration et J0 — prochaines actions uniquement
 
-Syrine relit les preuves et autorise séparément une publication. Comparer ensuite
-le travail d’Aziz et préparer l’intégration `lab/m1-versioning` selon l’état réel de
-ses branches, puis une PR vers main avec sa revue GitHub effective. Ne pas attribuer
+La branche personnelle de Syrine est publiée à `d740ca5`, celle d’Aziz à `336964f`.
+Comparer leurs contributions et valider les ajouts proposés avant de préparer
+l’intégration effective sur `lab/m1-versioning`, puis sa validation propre.
+Syrine autorise la publication de la seule branche d’intégration et une PR brouillon
+vers main après réussite des contrôles ; la revue GitHub humaine reste à effectuer. Ne pas attribuer
 une approbation à Aziz avant observation. Refaire la validation sur le commit retenu.
 Pour J0 (fin S3, énoncé M10), vérifier organisation optionA, dataset validé, socle
 M0/M1, dataset card, ADR et journal ; joindre les preuves et captures réelles. Le tag
-`j0`, la publication, la PR et la fusion nécessitent une autorisation ultérieure.
+`j0` et la fusion nécessitent une autorisation ultérieure. La publication de
+l’intégration et la PR brouillon sont autorisées sous réserve des contrôles finaux.
 Les résultats A restent exploratoires sur test répété ; B1/B2 et les RQ XP-Cube
 restent séparés et inchangés.
+
+
+## Intégration collaborative M1 — 2026-10-27
+
+Les contributions d’Aziz (CV, sensibilité et ADR) sont reprises sélectivement avec
+provenance Git ; pas de merge global de sa branche. Les ADR0002/0003 conservent ses
+propositions datées. ADR0004 documente le choix commun des diagnostics indépendants.
+Le contrat commun garde roc_auc/gate0,70, trois groupes d’âge, 27 features,
+EmployeeNumber technique, LR C1 sans poids et seuil0,5 ; aucune donnée ou préparation changée.
+
+Avec les sorties de données DVC présentes et l’environnement verrouillé installé :
+
+```bash
+export OPENBLAS_NUM_THREADS=1 OMP_NUM_THREADS=1 MKL_NUM_THREADS=1
+export MLFLOW_DISABLE_AGENT_HINT=1 DVC_NO_ANALYTICS=1 FEAST_USAGE=False
+uv run --no-sync python -m src.sensitivity
+```
+
+Cette commande calcule CV et sensibilité en une passe de cinq fits LR séquentiels,
+sur train uniquement. Elle écrit les agrégats dans
+`reports/m1/integration/train-diagnostics.json`, sans OOF individuelles, modèle local,
+run MLflow ni promotion. Pour comparer une autre famille à paramètres tracés,
+utiliser `--model` ; les hyperparamètres effectifs proviennent de params.yaml et
+sont exportés. Ne pas choisir à partir du test ni présenter ces diagnostics comme
+une reproduction Jia. Ne pas comparer nos chiffres à ceux d’Aziz sans aligner les
+encodages ordinaux et le contrat.
+
+La dispersion CV est un écart-type sur cinq scores (ddof=0), pas un IC95%. Les seuils
+optimisés sur les mêmes OOF ont des coûts optimistes ; ils n’altèrent pas le seuil
+opérationnel 0,5. Les coûts FN/FP sont des scénarios expérimentaux, pas des coûts RH.
+Le test officiel a déjà été consulté à répétition : son score reste exploratoire.
+
+Sur ce worktree isolé, le cache DVC de Syrine est réutilisé localement ; les secrets
+sont dans les seuls .env et .dvc/config.local ignorés en mode600. Les bases Feast
+ont été reconstruites pour ce chemin, pas copiées depuis le dépôt personnel.
+Après redémarrage des seuls conteneurs existants, garder les tunnels S3/MLflow actifs.
+Aucun make up, cluster ou volume recréé. Ne pas reprendre le cache.dir absolu de
+Syrine sur le poste d’Aziz : utiliser sa propre configuration locale ignorée.
+
+Avant fusion : Aziz doit rejouer réellement §10.4 sur son cluster et le contrat
+commun, documenter ses empreintes, métriques et nouveaux run IDs, vérifier son
+registre et Feast et soumettre sa revue GitHub. Son journal de branche déclare un
+check personnel 18/18 avec un autre contrat ; cela ne vaut pas reproduction de
+l’intégration commune. Aucun merge vers main ni tag j0 à ce stade.

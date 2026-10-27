@@ -1,4 +1,11 @@
-# ADR-0002 — Métrique, seuils et sélection du modèle
+# ADR-0003 — Métrique, seuils et sélection du modèle
+
+> **Intégration du 2026-10-27 : variante historique proposée.**
+> Texte d’Aziz conservé, ancien ADR-0002, commit source `39596be9db5bef8c5b6b2ae08197307c3f4d0ca5`.
+> Renumérotation et encadré par Syrine avec assistance Codex ; aucune approbation
+> GitHub du binôme n’est présumée. Les liens du texte original décrivent sa branche.
+> Le contrat commun reste roc_auc, gate 0,70, LR C=1 sans poids et seuil 0,5. AP/0,32 et one-SE restent des propositions alternatives. Les chiffres/versions ci-dessous sont ceux déclarés par Aziz sur son pipeline et son cluster, pas ceux du champion commun. La sensibilité est désormais un diagnostic indépendant, sans promotion.
+
 
 - **Statut :** proposé
 - **Date :** 2026-10-21

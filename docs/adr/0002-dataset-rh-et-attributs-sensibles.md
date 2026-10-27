@@ -1,4 +1,11 @@
-# ADR-0001 — Choisir le dataset IBM HR et laisser les attributs sensibles hors du modèle
+# ADR-0002 — Choisir le dataset IBM HR et laisser les attributs sensibles hors du modèle
+
+> **Intégration du 2026-10-27 : variante historique proposée.**
+> Texte d’Aziz conservé, ancien ADR-0001, commit source `ea374524e134ff9f63fdeece633a6ad8ac817fa1`.
+> Renumérotation et encadré par Syrine avec assistance Codex ; aucune approbation
+> GitHub du binôme n’est présumée. Les liens du texte original décrivent sa branche.
+> Le contrat commun garde Kaggle direct, EmployeeNumber et les trois groupes <30, 30–44, >=45. Le découpage âge40 et OpenML restent des variantes. L’accord professeur a été confirmé par courriel selon Syrine ; aucune issue de validation n’est inventée.
+
 
 - **Statut :** proposé
 - **Date :** 2026-10-21

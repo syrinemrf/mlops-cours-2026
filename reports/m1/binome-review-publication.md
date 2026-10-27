@@ -1,5 +1,10 @@
 # M1 — revue du binôme, intégration et préparation de J0
 
+> Actualisation : les deux branches personnelles sont publiées. Ce document
+> conserve la préparation historique ; pour l’intégration actuelle et la PR
+> brouillon, voir [le rapport](integration/final-integration.md) et
+> [la description actualisée](integration/pr-description.md).
+
 Préparé le 2026-10-20 depuis `work/syrine/m1@d2ea3ca`. **Procédure future,
 non exécutée.** Aucun push, PR, merge, tag ou changement de registre pendant
 l’audit. Commencer par résoudre les décisions de [l’audit](pre-publication-audit.md).

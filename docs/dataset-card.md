@@ -204,3 +204,16 @@ replay indépendant d’Aziz 10.4 encore requis.
 [Preuves de l’alignement](../reports/m1/alignment-validation.md),
 [audit avant publication](../reports/m1/pre-publication-audit.md).
 Les anciens rapports décrivent leur incrément, sans remplacer l’état actuel.
+
+
+## Complément d’intégration du 2026-10-27
+
+Les diagnostics CV/OOF d’Aziz sont adaptés dans des modules indépendants, sur le
+train et les 27 prédicteurs de ce contrat. Les propositions AP/gate0,32, deux groupes
+d’âge et encodage numérique des neuf échelles ordinales restent des variantes
+historiques proposées (ADR0002/0003), sans remplacer cette fiche de référence.
+La CV réajuste le prétraitement dans chaque pli ; les analyses de seuil sont
+exploratoires, avec coût optimiste quand elles choisissent/évaluent sur les mêmes OOF.
+Aucun coût économique, effet causal, statut juridique du seuil d’âge40 ou nouveauté
+scientifique n’est établi par ces ajouts. Accord dataset par courriel selon Syrine,
+référence/date du message restant à consigner. Voir le rapport d’intégration M1.
