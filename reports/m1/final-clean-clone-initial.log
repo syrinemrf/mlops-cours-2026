@@ -1,0 +1,4 @@
+Traceback (most recent call last):
+  File "/tmp/m1-clean-clone.py", line 33, in <module>
+    status=run(['git','status','--porcelain']);assert status=='',status
+AssertionError: ?? .venv

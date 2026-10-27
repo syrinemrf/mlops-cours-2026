@@ -82,11 +82,22 @@ def test_sensible_hors_features(tmp_path):
     """Un attribut sensible exclu du modèle reste mesurable (Lab 8)."""
     import yaml
 
-    data = yaml.safe_load((ROOT / "dataset.yaml").read_text(encoding="utf-8"))
-    data["features"]["categorical"].remove("personal_status")
+    # Fixture indépendante du dataset du projet : même propriété pour tout contrat.
+    data = {
+        "name": "synthetic-contract",
+        "raw_path": "unused.csv",
+        "target": {"column": "outcome", "positive_class": "yes"},
+        "features": {"numeric": ["value"], "categorical": ["audit_group"]},
+        "sensitive": [{"column": "audit_group"}],
+    }
+    data["features"]["categorical"].remove("audit_group")
     path = tmp_path / "dataset.yaml"
     path.write_text(yaml.safe_dump(data), encoding="utf-8")
     cfg = load_config(path)
-    assert "personal_status" not in cfg.features
-    assert cfg.extra_sensitive == ["personal_status"]
-    assert "personal_status" in cfg.columns
+    assert "audit_group" not in cfg.features
+    assert cfg.extra_sensitive == ["audit_group"]
+    assert "audit_group" in cfg.columns
+    df = pd.DataFrame({"value": [1], "audit_group": ["a"], "outcome": ["yes"]})
+    X, y = cfg.split_xy(df)
+    assert list(X) == ["value"] and y.tolist() == [1]
+    assert cfg.sensitive_frame(df)["audit_group"].tolist() == ["a"]

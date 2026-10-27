@@ -1,0 +1,31 @@
+{
+  "date": "2026-10-20",
+  "age_groups": {
+    "30-44": 830,
+    "<30": 326,
+    ">=45": 314
+  },
+  "age_positive_counts": {
+    "30-44": 110,
+    "<30": 91,
+    ">=45": 36
+  },
+  "shape": [
+    1470,
+    32
+  ],
+  "features": 27,
+  "target_positive": 237,
+  "id_unique": true,
+  "no_leakage": true,
+  "kaggle_metadata": {
+    "ref": "pavansubhasht/ibm-hr-analytics-attrition-dataset",
+    "currentVersionNumber": 1,
+    "licenseName": "Database: Open Database, Contents: Database Contents",
+    "lastUpdated": "2017-03-31T06:55:16.973Z"
+  },
+  "clean_directory_reproduction": true,
+  "credentials_used": false,
+  "export_sha256": "27e7bebda91c7e6d0b77e80128c2d9383d70a19a185b51ecfe3bb90f761d2a78",
+  "reproduction_scope": "fresh cwd and HOME with existing locked Python environment; not an actual second machine"
+}

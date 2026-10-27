@@ -1,0 +1,8 @@
+2026/10/20 12:40:34 INFO mlflow.tracking.fluent: Experiment with name 'scoring' does not exist. Creating a new experiment.
+2026/10/20 12:40:40 INFO mlflow.utils.uv_utils: Detected uv project: found uv.lock and pyproject.toml in /home/syrine/mlops-cours-2026
+2026/10/20 12:40:48 WARNING mlflow.utils.environment: Failed to resolve installed pip version. ``pip`` will be added to conda.yaml environment spec without a version specifier.
+2026/10/20 12:40:48 WARNING mlflow.utils.environment: Failed to resolve installed pip version. ``pip`` will be added to conda.yaml environment spec without a version specifier.
+logistic_regression-C=0.1-class_weight=balanced: seuil=0.838, tn=244.000, fp=3.000, fn=33.000, tp=14.000, roc_auc=0.833, average_precision=0.639, f1=0.438, precision=0.824, recall=0.298, accuracy=0.878, business_cost=36
+run_id : aa859327feef485ebad8d4992f558a3e
+🏃 View run logistic_regression-C=0.1-class_weight=balanced at: http://localhost:5000/#/experiments/2/runs/aa859327feef485ebad8d4992f558a3e
+🧪 View experiment at: http://localhost:5000/#/experiments/2

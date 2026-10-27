@@ -1,0 +1,18 @@
+{
+  "clone": "/tmp/mlops-m1-repro-2d_9ct98",
+  "commit": "ccf031ffde7a0b189b5747ec64d456a5c0e02a8d",
+  "empty_dvc_cache_before_initial_pull": true,
+  "all_four_stages_skipped_after_pull": true,
+  "metrics_byte_identical": true,
+  "lock_byte_identical": true,
+  "evaluation_without_accessible_tracking_server": true,
+  "feast_rebuilt_and_offline_online_verified": true,
+  "git_worktree_clean": true,
+  "mlflow_run_count_before": 25,
+  "mlflow_run_count_after": 25,
+  "venv_reused_via_external_bin_path": true,
+  "unnecessary_own_venv_symlink_removed": true,
+  "new_cluster_or_clean_dependency_install_tested": false,
+  "credentials_only_in_ignored_local_file": true,
+  "metrics_sha256": "af2e3b8e58170ef0527589d1a056fc08c7fd9fb93c896b3cbfffc27e5db70d38"
+}

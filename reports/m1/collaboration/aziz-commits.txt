@@ -1,0 +1,20 @@
+90e5676c38667a672bc2bf243f062160c98d9439 MohamedAzizKouch <mohamedaziz.kouch@itbs.tn> feat(m1): adapt dataset contract to IBM HR attrition
+632a17b375c3425f6c9bbd8e5005e95763bc58c2 MohamedAzizKouch <mohamedaziz.kouch@itbs.tn> feat(m1): add reproducible HR data ingestion with checksum
+9aec153f2987ad01e61d190754b32100d5cd7edb MohamedAzizKouch <mohamedaziz.kouch@itbs.tn> chore(m1): pin raw dataset checksum from the official Kaggle file
+1eca53b6ff23ea197d9efe15a875ee32feb362bc MohamedAzizKouch <mohamedaziz.kouch@itbs.tn> build(m1): initialize DVC with SeaweedFS remote
+ec166f7b9d91a51b9cbca45d03f56d1304ceb6c2 MohamedAzizKouch <mohamedaziz.kouch@itbs.tn> feat(m1): add DVC download stage
+c91c8006a2cb433e1e7cff80b9c29ab24f8e632e MohamedAzizKouch <mohamedaziz.kouch@itbs.tn> feat(m1): add reproducible data preparation
+7f9d1ede88f277f6bdcb513c5db4f28c3b4bd59d MohamedAzizKouch <mohamedaziz.kouch@itbs.tn> feat(m1): add MLflow-instrumented training with CV selection
+c702bac284ebcfada5f60fd007487ab0b3e71c6f MohamedAzizKouch <mohamedaziz.kouch@itbs.tn> feat(m1): add hyper-parameter grid search (22 runs)
+975ce4e621ecd191fb07f31ecdcb82b639d6328e MohamedAzizKouch <mohamedaziz.kouch@itbs.tn> feat(m1): add model registry promotion with one-standard-error rule
+5185ac0b1dfc40ac6f504fc587a37540f2f892a2 MohamedAzizKouch <mohamedaziz.kouch@itbs.tn> feat(m1): add evaluation stage producing versioned metrics
+7b7b33e511629247dc2bfb0b14a744643baabe69 MohamedAzizKouch <mohamedaziz.kouch@itbs.tn> feat(m1): add full DVC pipeline and register the DVC-traced champion
+6650783340dabbc99b88229bebce8de032a1aa82 MohamedAzizKouch <mohamedaziz.kouch@itbs.tn> feat(m1): add Feast feature store (request_features, scoring_v1)
+800a80b26d022eee7c37385f0f0d68d920a71668 MohamedAzizKouch <mohamedaziz.kouch@itbs.tn> docs(m1): record Kaggle license and version in the dataset contract
+104cf5cdec0bfdb7f1445b4425a4f7592789597a MohamedAzizKouch <mohamedaziz.kouch@itbs.tn> feat(m1): add decision threshold sensitivity analysis
+ea374524e134ff9f63fdeece633a6ad8ac817fa1 MohamedAzizKouch <mohamedaziz.kouch@itbs.tn> docs(m1): add ADR-0001 on dataset and sensitive attributes
+39596be9db5bef8c5b6b2ae08197307c3f4d0ca5 MohamedAzizKouch <mohamedaziz.kouch@itbs.tn> docs(m1): add ADR-0002 on metric, threshold and model selection
+6d1daef5ab9e666725a8ba993750e8042a9f2bdb MohamedAzizKouch <mohamedaziz.kouch@itbs.tn> docs(m1): index ADR-0001 and ADR-0002
+d466fbe1d90a75e54aa34cb2689f4974a768dbfd MohamedAzizKouch <mohamedaziz.kouch@itbs.tn> docs(m1): rewrite dataset card for IBM HR attrition
+4dcfd3bf29177437f32ed3f8fa971bfcb04b6d32 MohamedAzizKouch <mohamedaziz.kouch@itbs.tn> docs(m1): add journal entries and reproduction notes
+336964faa93f39db54895ee5db18122be2a9f38d MohamedAzizKouch <mohamedaziz.kouch@itbs.tn> docs(m1): update journal after publishing the branch

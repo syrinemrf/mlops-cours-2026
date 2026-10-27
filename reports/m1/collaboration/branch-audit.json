@@ -1,0 +1,276 @@
+{
+  "base": "7606b83e5afbddb30b7a2654d757190ec84e9e09",
+  "syrine": "d740ca5a596c38845b19fa2ce534dfda03cd580f",
+  "aziz": "336964faa93f39db54895ee5db18122be2a9f38d",
+  "syrine_commits": 18,
+  "aziz_commits": 20,
+  "changed_files_since_base": {
+    "syrine": 175,
+    "aziz": 35
+  },
+  "shared_changed_paths": [
+    ".dvc/.gitignore",
+    ".dvc/config",
+    ".dvcignore",
+    "NOTES.md",
+    "data/processed/.gitignore",
+    "data/raw/.gitignore",
+    "dataset.yaml",
+    "docs/adr/README.md",
+    "docs/dataset-card.md",
+    "docs/journal.md",
+    "dvc.lock",
+    "dvc.yaml",
+    "features/definitions.py",
+    "features/feature_store.yaml",
+    "models/.gitignore",
+    "params.yaml",
+    "reports/metrics.json",
+    "src/download.py",
+    "src/evaluate.py",
+    "src/grid_search.py",
+    "src/prepare.py",
+    "src/promote.py",
+    "src/train.py",
+    "tests/test_dataset_config.py",
+    "tests/test_evaluate.py",
+    "tests/test_prepare.py",
+    "tests/test_promote.py",
+    "tests/test_train.py"
+  ],
+  "aziz_only_changed_paths": [
+    "docs/adr/0001-dataset-rh-et-attributs-sensibles.md",
+    "docs/adr/0002-metrique-seuil-et-selection-du-modele.md",
+    "src/sensitivity.py",
+    "tests/test_download.py",
+    "tests/test_features.py",
+    "tests/test_raw_data.py",
+    "tests/test_sensitivity.py"
+  ],
+  "same_shared_file_blobs": [
+    ".dvc/.gitignore",
+    ".dvc/config",
+    "features/feature_store.yaml"
+  ],
+  "main": "7606b83e5afbddb30b7a2654d757190ec84e9e09",
+  "main_local": "7606b83e5afbddb30b7a2654d757190ec84e9e09",
+  "m0": "a60f58c19f3bc83b1c4742b5ac5f0db51f9a19e4",
+  "original_worktree_clean": true,
+  "merge_preview": {
+    "conflict_sections": [
+      {
+        "kind": "added in both",
+        "paths": [
+          ".dvcignore"
+        ]
+      },
+      {
+        "kind": "changed in both",
+        "paths": [
+          "NOTES.md"
+        ]
+      },
+      {
+        "kind": "added in both",
+        "paths": [
+          "data/processed/.gitignore"
+        ]
+      },
+      {
+        "kind": "added in both",
+        "paths": [
+          "data/raw/.gitignore"
+        ]
+      },
+      {
+        "kind": "changed in both",
+        "paths": [
+          "dataset.yaml"
+        ]
+      },
+      {
+        "kind": "changed in both",
+        "paths": [
+          "docs/adr/README.md"
+        ]
+      },
+      {
+        "kind": "changed in both",
+        "paths": [
+          "docs/dataset-card.md"
+        ]
+      },
+      {
+        "kind": "changed in both",
+        "paths": [
+          "docs/journal.md"
+        ]
+      },
+      {
+        "kind": "added in both",
+        "paths": [
+          "dvc.lock"
+        ]
+      },
+      {
+        "kind": "added in both",
+        "paths": [
+          "dvc.yaml"
+        ]
+      },
+      {
+        "kind": "added in both",
+        "paths": [
+          "features/definitions.py"
+        ]
+      },
+      {
+        "kind": "added in both",
+        "paths": [
+          "models/.gitignore"
+        ]
+      },
+      {
+        "kind": "added in both",
+        "paths": [
+          "params.yaml"
+        ]
+      },
+      {
+        "kind": "added in both",
+        "paths": [
+          "reports/metrics.json"
+        ]
+      },
+      {
+        "kind": "changed in both",
+        "paths": [
+          "src/download.py"
+        ]
+      },
+      {
+        "kind": "added in both",
+        "paths": [
+          "src/evaluate.py"
+        ]
+      },
+      {
+        "kind": "added in both",
+        "paths": [
+          "src/grid_search.py"
+        ]
+      },
+      {
+        "kind": "added in both",
+        "paths": [
+          "src/prepare.py"
+        ]
+      },
+      {
+        "kind": "added in both",
+        "paths": [
+          "src/promote.py"
+        ]
+      },
+      {
+        "kind": "added in both",
+        "paths": [
+          "src/train.py"
+        ]
+      },
+      {
+        "kind": "changed in both",
+        "paths": [
+          "tests/test_dataset_config.py"
+        ]
+      },
+      {
+        "kind": "added in both",
+        "paths": [
+          "tests/test_evaluate.py"
+        ]
+      },
+      {
+        "kind": "added in both",
+        "paths": [
+          "tests/test_prepare.py"
+        ]
+      },
+      {
+        "kind": "added in both",
+        "paths": [
+          "tests/test_promote.py"
+        ]
+      },
+      {
+        "kind": "added in both",
+        "paths": [
+          "tests/test_train.py"
+        ]
+      }
+    ],
+    "conflict_marker_count": 77,
+    "read_only": true,
+    "differing_sections_count": 25,
+    "conflicting_paths": [
+      ".dvcignore",
+      "NOTES.md",
+      "data/processed/.gitignore",
+      "data/raw/.gitignore",
+      "dataset.yaml",
+      "docs/adr/README.md",
+      "docs/dataset-card.md",
+      "docs/journal.md",
+      "dvc.lock",
+      "dvc.yaml",
+      "features/definitions.py",
+      "models/.gitignore",
+      "params.yaml",
+      "reports/metrics.json",
+      "src/download.py",
+      "src/evaluate.py",
+      "src/grid_search.py",
+      "src/prepare.py",
+      "src/promote.py",
+      "src/train.py",
+      "tests/test_dataset_config.py",
+      "tests/test_evaluate.py",
+      "tests/test_prepare.py",
+      "tests/test_promote.py",
+      "tests/test_train.py"
+    ],
+    "conflicting_path_count": 25,
+    "markers_by_path": {
+      ".dvcignore": 1,
+      "NOTES.md": 1,
+      "data/processed/.gitignore": 1,
+      "data/raw/.gitignore": 1,
+      "dataset.yaml": 1,
+      "docs/adr/README.md": 1,
+      "docs/dataset-card.md": 1,
+      "docs/journal.md": 1,
+      "dvc.lock": 15,
+      "dvc.yaml": 2,
+      "features/definitions.py": 4,
+      "models/.gitignore": 1,
+      "params.yaml": 1,
+      "reports/metrics.json": 1,
+      "src/download.py": 6,
+      "src/evaluate.py": 2,
+      "src/grid_search.py": 3,
+      "src/prepare.py": 3,
+      "src/promote.py": 5,
+      "src/train.py": 16,
+      "tests/test_dataset_config.py": 2,
+      "tests/test_evaluate.py": 2,
+      "tests/test_prepare.py": 2,
+      "tests/test_promote.py": 2,
+      "tests/test_train.py": 2
+    }
+  },
+  "worktree": "/tmp/mlops-m1-integration-review-20261027-ixvoXF",
+  "integration_branch": "lab/m1-versioning",
+  "integration_head": "d740ca5a596c38845b19fa2ce534dfda03cd580f",
+  "audit_date": "2026-10-27",
+  "no_merge_or_cherry_pick_performed": true
+}

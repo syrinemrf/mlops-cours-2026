@@ -1,0 +1,174 @@
+{
+  "scope": "Historical readback of the initial d2ea3ca audit, before the subsequently authorized alignment",
+  "audit_date": "2026-10-20",
+  "reference_branch": "work/syrine/m1",
+  "reference_head": "d2ea3ca4154ab4c963abc36ee717d776dc48c22e",
+  "worktree_clean_at_start": true,
+  "remote": {
+    "queried_on": "2026-10-20",
+    "branches": [
+      {
+        "name": "lab/m0-setup",
+        "sha": "a60f58c19f3bc83b1c4742b5ac5f0db51f9a19e4"
+      },
+      {
+        "name": "main",
+        "sha": "7606b83e5afbddb30b7a2654d757190ec84e9e09"
+      },
+      {
+        "name": "work/syrine/m0",
+        "sha": "23b452ec3e60c8e445b4ee6570512b453d10c904"
+      }
+    ],
+    "pulls": [
+      {
+        "number": 1,
+        "title": "lab/m0-setup : environnement validé et clôture du Lab 0",
+        "state": "closed",
+        "merged_at": "2026-10-19T10:26:44Z",
+        "merge_commit_sha": "7606b83e5afbddb30b7a2654d757190ec84e9e09",
+        "head": "lab/m0-setup",
+        "base": "main",
+        "url": "https://github.com/syrinemrf/mlops-cours-2026/pull/1"
+      }
+    ],
+    "public": true,
+    "github_fork": false,
+    "issues": []
+  },
+  "github_review_observation": {
+    "pull": 1,
+    "reviews": [
+      {
+        "user": "copilot-pull-request-reviewer[bot]",
+        "state": "COMMENTED"
+      }
+    ],
+    "aziz_approval_observed": false
+  },
+  "github_permission_check": {
+    "user": "MohamedAzizKouch",
+    "http_status": 403,
+    "message": "Resource not accessible by integration",
+    "aziz_effective_permission": "not verified"
+  },
+  "mlflow_live_readback": {
+    "experiment": "scoring",
+    "total_runs": 25,
+    "run_status_counts": {
+      "FINISHED": 25
+    },
+    "registered_model": "scoring-model",
+    "versions": [
+      {
+        "version": "1",
+        "run_id": "5ef49fc5f3e740f28c523b0dcc1ae8c1",
+        "validation_status": "passed"
+      },
+      {
+        "version": "2",
+        "run_id": "0c42486a18f340ddb2db995d8797c70d",
+        "validation_status": "failed"
+      },
+      {
+        "version": "3",
+        "run_id": "139ae364aa6e4166b2bd19ef533f48e7",
+        "validation_status": "passed"
+      }
+    ],
+    "aliases": {
+      "champion": {
+        "version": "1",
+        "run_id": "5ef49fc5f3e740f28c523b0dcc1ae8c1",
+        "C": 1,
+        "class_weight": null,
+        "roc_auc": 0.8368507192695321,
+        "decision_threshold": 0.5,
+        "launched_by": "grid_search"
+      },
+      "challenger": {
+        "version": "3",
+        "run_id": "139ae364aa6e4166b2bd19ef533f48e7",
+        "C": 0.1,
+        "class_weight": null,
+        "roc_auc": 0.8360754586958395,
+        "decision_threshold": 0.5,
+        "launched_by": "grid_search"
+      }
+    },
+    "local_dvc_model": {
+      "run_id": "b55a5e9846cb44aeac027426280053e8",
+      "C": 0.1,
+      "class_weight": "balanced",
+      "roc_auc": 0.8329744164010682,
+      "decision_threshold": 0.8384353741496599,
+      "data_md5": "16e6acc1f69d648c4ec1d3b44efc0179"
+    }
+  },
+  "dvc_readback": {
+    "local": "Data and pipelines are up to date.",
+    "cloud": "Cache and remote 'storage' are in sync."
+  },
+  "existing_validation_evidence": {
+    "check_m1": "18/18",
+    "pytest": "77 passed, 1 warning",
+    "lint": "passed",
+    "check_and_tests_rerun_in_documentary_audit": false
+  },
+  "dataset_approval": {
+    "source": "Syrine's confirmation in this session",
+    "channel": "professor email",
+    "email_independently_located": false,
+    "date_and_subject": "not supplied",
+    "github_issue_reference": null,
+    "private_email_exported": false
+  },
+  "mutations": {
+    "documentation_only": true,
+    "training": false,
+    "registry": false,
+    "parameters": false,
+    "dependencies": false,
+    "git_commit": false,
+    "push": false,
+    "pull_request": false,
+    "merge": false,
+    "tag": false
+  },
+  "local_security_review": {
+    "tracked_count": 219,
+    "forbidden_tracked_paths": [],
+    "targeted_secret_signature_hits": [],
+    "required_deliverables_all_tracked": true,
+    "m1_checker_blob": "592a04ba431d6314b8bf2787b573c64c91d6b6ee"
+  },
+  "protected_file_sha256_unchanged": {
+    "params.yaml": "815b9cbe925b9c2f58b92aefce977ce1f7ebc0a5e07c36529a6b7b730cfae5d1",
+    "dataset.yaml": "0579d914bcd7904dde8fb4be2b24a773e80e91061f729772ce11d54b59783ad3",
+    "dvc.yaml": "5870549a5f3f90a65ca6482cf09bf4ad26df55708ce93d38d927155ccc5a1cd8",
+    "dvc.lock": "fd5c94fbbe707f34bb8ff000b009da247a75dce36b835f0f926bc960cd5db2bc",
+    "reports/metrics.json": "af2e3b8e58170ef0527589d1a056fc08c7fd9fb93c896b3cbfffc27e5db70d38",
+    "uv.lock": "c599c31080a364cd15c06d218fac01cfdbd39503f2f0237c5410477931776ade",
+    "src/promote.py": "a174872444ab964d00d2d633b19c2458c95a09d0f71ccac959bcf82ca0e03379",
+    "src/verify_registry.py": "5dad8e85821c8f665460b0a73be2489c641d0b253aab4289c96468d9028c5a6a"
+  },
+  "documentation_checks": {
+    "git_diff_check_exit_code": 0,
+    "missing_local_markdown_links": [],
+    "json_parsing": "passed",
+    "lint": {
+      "command": "UV_FROZEN=true UV_CACHE_DIR=/tmp/mlops-m1-audit-uv-cache make lint",
+      "exit_code": 0,
+      "result": "Ruff check and format, yamllint passed; 61 files already formatted"
+    },
+    "python_tests_rerun": false,
+    "official_check_rerun": false
+  },
+  "in_memory_default_simulation": {
+    "method": "Mock YAML return for parse_args; no fit or file change",
+    "random_forest_configurations": 9,
+    "current_class_weight": "balanced",
+    "after_proposed_global_default": null,
+    "explicit_grid_weight_recommended": true
+  }
+}

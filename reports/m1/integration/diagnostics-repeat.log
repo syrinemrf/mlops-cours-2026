@@ -1,0 +1,14 @@
+{
+  "cv_roc_auc": 0.8546799817571925,
+  "cv_roc_auc_std": 0.029784769926053837,
+  "cv_average_precision": 0.6729475140048591,
+  "cv_average_precision_std": 0.05351056771215013
+}
+Scénarios HYPOTHÉTIQUES : coûts optimistes sur les mêmes OOF, aucun seuil promu.
+                    scenario  ratio  threshold  recall  precision  fn  fp  flagged  cost  cost_vs_nobody
+official_threshold_FN_FP_1_1      1     0.5000  0.4684     0.7607 101  28      117 129.0          0.6789
+      hypothetical_FN_FP_1_1      1     0.5349  0.4421     0.7925 106  22      106 128.0          0.6737
+      hypothetical_FN_FP_2_1      2     0.3433  0.6526     0.6108  66  79      203 211.0          0.5553
+      hypothetical_FN_FP_3_1      3     0.3279  0.6632     0.6000  64  84      210 276.0          0.4842
+      hypothetical_FN_FP_5_1      5     0.2225  0.7579     0.4800  46 156      300 386.0          0.4063
+     hypothetical_FN_FP_10_1     10     0.2225  0.7579     0.4800  46 156      300 616.0          0.3242

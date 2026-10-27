@@ -1,0 +1,2 @@
+Path                  accuracy    average_precision    brier_score    business_cost    confusion.fn    confusion.fp    confusion.tn    confusion.tp    decision_threshold    f1      fn    fp    log_loss    n_test    pr_auc_trapezoidal    precision    recall    roc_auc    tn     tp
+reports/metrics.json  0.8776      0.6392               0.1463         36.0             33              3               244             14              0.8384                0.4375  33.0  3.0   0.4508      294       0.6363                0.8235       0.2979    0.833      244.0  14.0

@@ -1,0 +1,31 @@
+2026/10/27 21:25:52 INFO mlflow.agent.hint: Load the `instrumenting-with-mlflow-tracing` skill at /home/syrine/mlops-cours-2026/.venv/lib/python3.12/site-packages/mlflow/assistant/skills/instrumenting-with-mlflow-tracing/SKILL.md before writing any tracing code; it ships with this MLflow install. Set MLFLOW_DISABLE_AGENT_HINT=1 to silence this.
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/tmp/mlops-m1-integration-review-20261027-ixvoXF/src/sensitivity.py", line 106, in <module>
+    main()
+  File "/tmp/mlops-m1-integration-review-20261027-ixvoXF/src/sensitivity.py", line 80, in main
+    report, y_arr, proba, current = evaluate_training(args.model)
+                                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/tmp/mlops-m1-integration-review-20261027-ixvoXF/src/cross_validation.py", line 122, in evaluate_training
+    X, y = cfg.read_xy(TRAIN_CSV)
+           ^^^^^^^^^^^^^^^^^^^^^^
+  File "/tmp/mlops-m1-integration-review-20261027-ixvoXF/src/dataset_config.py", line 156, in read_xy
+    X, y = self.split_xy(pd.read_csv(path))
+                         ^^^^^^^^^^^^^^^^^
+  File "/home/syrine/mlops-cours-2026/.venv/lib/python3.12/site-packages/pandas/io/parsers/readers.py", line 1026, in read_csv
+    return _read(filepath_or_buffer, kwds)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/syrine/mlops-cours-2026/.venv/lib/python3.12/site-packages/pandas/io/parsers/readers.py", line 620, in _read
+    parser = TextFileReader(filepath_or_buffer, **kwds)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/syrine/mlops-cours-2026/.venv/lib/python3.12/site-packages/pandas/io/parsers/readers.py", line 1620, in __init__
+    self._engine = self._make_engine(f, self.engine)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/syrine/mlops-cours-2026/.venv/lib/python3.12/site-packages/pandas/io/parsers/readers.py", line 1880, in _make_engine
+    self.handles = get_handle(
+                   ^^^^^^^^^^^
+  File "/home/syrine/mlops-cours-2026/.venv/lib/python3.12/site-packages/pandas/io/common.py", line 873, in get_handle
+    handle = open(
+             ^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: 'data/processed/train.csv'

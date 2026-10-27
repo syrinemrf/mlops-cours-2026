@@ -1,0 +1,64 @@
+{
+  "run_id": "b55a5e9846cb44aeac027426280053e8",
+  "status": "FINISHED",
+  "tags": {
+    "mlflow.user": "syrine",
+    "mlflow.source.name": "/home/syrine/mlops-cours-2026/src/train.py",
+    "mlflow.source.type": "LOCAL",
+    "mlflow.source.git.commit": "82f2cc7ce857b9f5ba557b5d8db3b2484111a8a1",
+    "mlflow.source.git.branch": "work/syrine/m1",
+    "mlflow.source.git.repoURL": "git@github.com:syrinemrf/mlops-cours-2026.git",
+    "mlflow.runName": "logistic_regression-C=0.1-class_weight=balanced",
+    "protocol": "A",
+    "data_version": "1",
+    "protocol_id": "mlops_A_v1",
+    "evaluation_role": "pedagogical_pipeline",
+    "cost_assumption": "experimental_FN_FP_1_1",
+    "train_sha256": "9e91ffd059dfe67ae4860f7111a0cbebda0f24d59bc36f192782a891d642d3e5",
+    "test_sha256": "a3e82a637fbae6a3038141c49648b0400c4b61842daacaaf50c3e445bb5697d3",
+    "contract_sha256": "0579d914bcd7904dde8fb4be2b24a773e80e91061f729772ce11d54b59783ad3",
+    "model_type": "logistic_regression",
+    "dataset": "ibm-hr-attrition",
+    "data_md5": "16e6acc1f69d648c4ec1d3b44efc0179",
+    "launched_by": "dvc"
+  },
+  "params": {
+    "model": "logistic_regression",
+    "random_state": "42",
+    "C": "0.1",
+    "class_weight": "balanced",
+    "decision_threshold": "0.8384353741496599"
+  },
+  "metrics": {
+    "fit_seconds": 0.33504536699911114,
+    "tn": 244.0,
+    "fp": 3.0,
+    "fn": 33.0,
+    "tp": 14.0,
+    "pr_auc_trapezoidal": 0.6363349923161913,
+    "brier_score": 0.14632320355576361,
+    "log_loss": 0.450791484839959,
+    "roc_auc": 0.8329744164010682,
+    "average_precision": 0.6392128739124473,
+    "f1": 0.4375,
+    "precision": 0.8235294117647058,
+    "recall": 0.2978723404255319,
+    "accuracy": 0.8775510204081632,
+    "business_cost": 36.0
+  },
+  "dvc_raw_md5": "16e6acc1f69d648c4ec1d3b44efc0179",
+  "local_model_md5": "f7f0b01e9d4369a07abbc1f33c0354fa.dir",
+  "local_decision_threshold": 0.8384353741496599,
+  "registry_aliases": {
+    "champion": {
+      "version": "1",
+      "run_id": "5ef49fc5f3e740f28c523b0dcc1ae8c1"
+    },
+    "challenger": {
+      "version": "3",
+      "run_id": "139ae364aa6e4166b2bd19ef533f48e7"
+    }
+  },
+  "registry_versions": 3,
+  "report_metrics_match_mlflow_with_rounding": true
+}

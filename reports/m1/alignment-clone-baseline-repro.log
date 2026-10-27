@@ -1,0 +1,26 @@
+Stage 'download' didn't change, skipping
+Stage 'prepare' didn't change, skipping
+Running stage 'train':
+> python -m src.train
+2026/10/20 16:22:41 INFO mlflow.utils.uv_utils: Detected uv project: found uv.lock and pyproject.toml in /tmp/mlops-m1-alignment-9b53bahu/repo
+2026/10/20 16:22:52 WARNING mlflow.utils.environment: Failed to resolve installed pip version. ``pip`` will be added to conda.yaml environment spec without a version specifier.
+2026/10/20 16:22:55 WARNING mlflow.utils.environment: Failed to resolve installed pip version. ``pip`` will be added to conda.yaml environment spec without a version specifier.
+logistic_regression-C=1.0-class_weight=None: seuil=0.500, tn=239.000, fp=8.000, fn=27.000, tp=20.000, pr_auc_trapezoidal=0.644, brier_score=0.091, log_loss=0.328, roc_auc=0.837, average_precision=0.647, f1=0.533, precision=0.714, recall=0.426, accuracy=0.881, business_cost=35
+run_id : 6fa3c25ec6a343d385944deacf20e7bb
+🏃 View run logistic_regression-C=1.0-class_weight=None at: http://localhost:5000/#/experiments/2/runs/6fa3c25ec6a343d385944deacf20e7bb
+🧪 View experiment at: http://localhost:5000/#/experiments/2
+Updating lock file 'dvc.lock'
+
+Running stage 'evaluate':
+> python -m src.evaluate
+roc_auc = 0.8369 -> reports/metrics.json
+Updating lock file 'dvc.lock'
+
+To track the changes with git, run:
+
+	git add dvc.lock
+
+To enable auto staging, run:
+
+	dvc config core.autostage true
+Use `dvc push` to send your updates to remote storage.

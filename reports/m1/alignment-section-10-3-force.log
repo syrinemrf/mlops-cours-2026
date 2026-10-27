@@ -1,0 +1,33 @@
+Running stage 'download':
+> python -m src.download
+Source: 1470 x 35; export: 1470 x 32 -> data/raw/dataset.csv
+Predictors: 27; Attrition=Yes: 237/1470; SHA-256: 27e7bebda91c7e6d0b77e80128c2d9383d70a19a185b51ecfe3bb90f761d2a78
+
+Running stage 'prepare':
+> python -m src.prepare
+Train: 1176 / Test: 294; positive 'Yes': 16.2% / 16.0%
+
+Running stage 'train':
+> python -m src.train
+2026/10/20 16:25:18 INFO mlflow.utils.uv_utils: Detected uv project: found uv.lock and pyproject.toml in /tmp/mlops-m1-alignment-9b53bahu/repo
+2026/10/20 16:25:28 WARNING mlflow.utils.environment: Failed to resolve installed pip version. ``pip`` will be added to conda.yaml environment spec without a version specifier.
+2026/10/20 16:25:30 WARNING mlflow.utils.environment: Failed to resolve installed pip version. ``pip`` will be added to conda.yaml environment spec without a version specifier.
+logistic_regression-C=1.0-class_weight=None: seuil=0.500, tn=239.000, fp=8.000, fn=27.000, tp=20.000, pr_auc_trapezoidal=0.644, brier_score=0.091, log_loss=0.328, roc_auc=0.837, average_precision=0.647, f1=0.533, precision=0.714, recall=0.426, accuracy=0.881, business_cost=35
+run_id : e6f07ea0ee5d47e48a283f6845f2346d
+🏃 View run logistic_regression-C=1.0-class_weight=None at: http://localhost:5000/#/experiments/2/runs/e6f07ea0ee5d47e48a283f6845f2346d
+🧪 View experiment at: http://localhost:5000/#/experiments/2
+Updating lock file 'dvc.lock'
+
+Running stage 'evaluate':
+> python -m src.evaluate
+roc_auc = 0.8369 -> reports/metrics.json
+Updating lock file 'dvc.lock'
+
+To track the changes with git, run:
+
+	git add dvc.lock
+
+To enable auto staging, run:
+
+	dvc config core.autostage true
+Use `dvc push` to send your updates to remote storage.

@@ -1,0 +1,13 @@
+{
+  "tests": 112,
+  "pytest_exit_code": 0,
+  "lint_exit_code": 0,
+  "official_checks": 18,
+  "official_check_exit_code": 0,
+  "code_commit": "2fdc4f5298a301f6a49bdc06eb3bcd7b0665ae47",
+  "documentation_only_commit_follows": true,
+  "no_official_checker_criteria_changed": true,
+  "no_skips_added": true,
+  "new_tests": 27,
+  "diagnostic_replay_byte_identical": true
+}

@@ -1,0 +1,12 @@
+{
+  "run_id": "ef2d3f85ebe3432f9172275c34bbd6ac",
+  "params": {
+    "model": "logistic_regression",
+    "random_state": "42",
+    "C": "1.0",
+    "class_weight": "None",
+    "decision_threshold": "0.5"
+  },
+  "experiment_total_runs": 29,
+  "probabilities_sha256": "3dfdfd069b2fc978395c88bbf62ec60f614044e827b9a874e16ddfaf1157fda3"
+}

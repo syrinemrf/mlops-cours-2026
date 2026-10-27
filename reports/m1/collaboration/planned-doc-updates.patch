@@ -1,0 +1,63 @@
+--- a/README.md
++++ b/README.md
+@@ -18,8 +18,11 @@
+ le socle sur son propre cluster ; les preuves d’exécution d’Aziz restent à recueillir.
+ M0 est fusionné dans `main` par la [PR #1](https://github.com/syrinemrf/mlops-cours-2026/pull/1),
+ commit `7606b83`. Cette fusion ne constitue pas une approbation d’Aziz.
+-M1 est aligné et validé techniquement sur la branche personnelle locale `work/syrine/m1`
+-(18/18 contrôles, 85 tests) ; son intégration et sa revue restent à faire.
++M1 est publié sur [work/syrine/m1](https://github.com/syrinemrf/mlops-cours-2026/tree/work/syrine/m1)
++au commit `d740ca5` (preuves du 2026-10-20 : 18/18 contrôles, 85 tests).
++La branche [work/aziz/m1](https://github.com/syrinemrf/mlops-cours-2026/tree/work/aziz/m1)
++est également publiée ; ses ajouts sont en cours de revue pour `lab/m1-versioning`.
++La nouvelle intégration n’est pas encore validée.
+ Dataset retenu : IBM HR Analytics Employee Attrition, validé par le professeur
+ par courriel selon Syrine ; référence du courriel encore à consigner, aucune issue
+ de validation identifiée. Voir [l’audit avant publication](reports/m1/pre-publication-audit.md)
+@@ -67,7 +70,7 @@
+ ## Démo
+ 
+ La démonstration J0 porte sur les contrôles M0/M1, DVC, MLflow et Feast locaux.
+-Le [journal complet M1](reports/m1/check-m1-final.log) est disponible ; la capture
++Le [journal M1 aligné](reports/m1/alignment-check-m1.log) est disponible ; la capture
+ d’écran réelle du commit finalement publié reste à prendre. Aucune vidéo finale
+ ni application publique n’est annoncée à ce stade.
+ 
+--- a/NOTES.md
++++ b/NOTES.md
+@@ -1,7 +1,9 @@
+ # Mes notes du cours MLOps — Syrine
+ 
+-**État actuel au 2026-10-20 :** M0 fusionné (`7606b83`), M1 local aligné,
+-contrôles 18/18, 85 tests. Champion v4 issu de DVC, challenger v3 préservé ;
++**État documentaire au 2026-10-27 :** M0 fusionné (`7606b83`), M1 Syrine publié
++à `d740ca5` ; preuves du 2026-10-20 : contrôles 18/18 et 85 tests.
++`work/aziz/m1` publié à `336964f` ; intégration `lab/m1-versioning` en préparation,
++sans nouvelle validation technique à ce stade. Champion v4 issu de DVC, challenger v3 préservé ;
+ exercices 8.5 et 10.3 vérifiés, replay indépendant 10.4 en attente. Les sections sont
+ chronologiques : les instructions anciennes « avant fusion M0 » ou « ingestion
+ seulement » décrivent ces incréments. Pour reprendre, utiliser la section
+@@ -284,7 +286,7 @@
+ ### Clone propre sur le même poste
+ 
+ Créer un nouveau dossier temporaire, sans supprimer de dossier existant, puis
+-cloner le dépôt local validé (tant que la branche n’est pas publiée). Réutiliser
++cloner la branche publiée `work/syrine/m1` et vérifier son SHA (`d740ca5`). Réutiliser
+ le Python existant par son chemin/PATH ; une nouvelle installation des dépendances
+ n’a pas été testée dans notre essai de clone. Configurer ses credentials DVC dans
+ son propre `.dvc/config.local` ignoré, puis `dvc pull`, `dvc repro` et l’évaluation.
+@@ -342,9 +344,11 @@
+ 
+ ### Revue, intégration et J0 — prochaines actions uniquement
+ 
+-Syrine relit les preuves et autorise séparément une publication. Comparer ensuite
+-le travail d’Aziz et préparer l’intégration `lab/m1-versioning` selon l’état réel de
+-ses branches, puis une PR vers main avec sa revue GitHub effective. Ne pas attribuer
++La branche personnelle de Syrine est publiée à `d740ca5`, celle d’Aziz à `336964f`.
++Comparer leurs contributions et valider les ajouts proposés avant de préparer
++l’intégration effective sur `lab/m1-versioning`, puis sa validation propre.
++La publication de cette branche et une PR vers main avec revue GitHub effective
++restent soumises à autorisation. Ne pas attribuer
+ une approbation à Aziz avant observation. Refaire la validation sur le commit retenu.
+ Pour J0 (fin S3, énoncé M10), vérifier organisation optionA, dataset validé, socle
+ M0/M1, dataset card, ADR et journal ; joindre les preuves et captures réelles. Le tag

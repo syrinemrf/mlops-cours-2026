@@ -1,0 +1,126 @@
+{
+  "protocol_id": "mlops_A_v1",
+  "role": "pedagogical_smoke_test",
+  "train_rows": 1176,
+  "test_rows": 294,
+  "test_positive": 47,
+  "features": 27,
+  "code_commit": "48c354e734e773dc88302f2906875566bc6b45a6",
+  "files": {
+    "dataset.yaml": "0579d914bcd7904dde8fb4be2b24a773e80e91061f729772ce11d54b59783ad3",
+    "params.yaml": "815b9cbe925b9c2f58b92aefce977ce1f7ebc0a5e07c36529a6b7b730cfae5d1",
+    "dvc.lock": "57ff140a3a5f179c32d22e394bcde6c4cb224053031ccb118fdf41d6fe0b77fa",
+    "uv.lock": "c599c31080a364cd15c06d218fac01cfdbd39503f2f0237c5410477931776ade",
+    "data/processed/train.csv": "9e91ffd059dfe67ae4860f7111a0cbebda0f24d59bc36f192782a891d642d3e5",
+    "data/processed/test.csv": "a3e82a637fbae6a3038141c49648b0400c4b61842daacaaf50c3e445bb5697d3"
+  },
+  "runs": [
+    {
+      "model": "logistic_regression",
+      "run_id": "aa859327feef485ebad8d4992f558a3e",
+      "model_id": "m-c5336dddd46942ed92b6d84d302da8b0",
+      "decision_threshold": 0.8384353741496599,
+      "metrics": {
+        "tn": 244,
+        "fp": 3,
+        "fn": 33,
+        "tp": 14,
+        "roc_auc": 0.8329744164010682,
+        "average_precision": 0.6392128739124473,
+        "f1": 0.4375,
+        "precision": 0.8235294117647058,
+        "recall": 0.2978723404255319,
+        "accuracy": 0.8775510204081632,
+        "business_cost": 36.0
+      },
+      "params": {
+        "model": "logistic_regression",
+        "random_state": "42",
+        "C": "0.1",
+        "class_weight": "balanced",
+        "decision_threshold": "0.8384353741496599"
+      },
+      "tags": {
+        "mlflow.user": "syrine",
+        "mlflow.source.name": "/home/syrine/mlops-cours-2026/src/train.py",
+        "mlflow.source.type": "LOCAL",
+        "mlflow.source.git.commit": "48c354e734e773dc88302f2906875566bc6b45a6",
+        "mlflow.source.git.branch": "work/syrine/m1",
+        "mlflow.source.git.repoURL": "git@github.com:syrinemrf/mlops-cours-2026.git",
+        "mlflow.runName": "logistic_regression-C=0.1-class_weight=balanced",
+        "protocol_id": "mlops_A_v1",
+        "evaluation_role": "pedagogical_smoke_test",
+        "cost_assumption": "experimental_FN_FP_1_1",
+        "train_sha256": "9e91ffd059dfe67ae4860f7111a0cbebda0f24d59bc36f192782a891d642d3e5",
+        "test_sha256": "a3e82a637fbae6a3038141c49648b0400c4b61842daacaaf50c3e445bb5697d3",
+        "contract_sha256": "0579d914bcd7904dde8fb4be2b24a773e80e91061f729772ce11d54b59783ad3",
+        "model_type": "logistic_regression",
+        "dataset": "ibm-hr-attrition",
+        "data_md5": "16e6acc1f69d648c4ec1d3b44efc0179",
+        "launched_by": "manual"
+      },
+      "status": "FINISHED",
+      "model_reload": "remote skops: metrics identical to logged values"
+    },
+    {
+      "model": "random_forest",
+      "run_id": "c944848ce3b44a2da935c28156f0abc6",
+      "model_id": "m-cbdd6e2f66724e658480f93ca0e24989",
+      "decision_threshold": 0.8384353741496599,
+      "metrics": {
+        "tn": 246,
+        "fp": 1,
+        "fn": 46,
+        "tp": 1,
+        "roc_auc": 0.7845637005771384,
+        "average_precision": 0.4428401622810668,
+        "f1": 0.04081632653061224,
+        "precision": 0.5,
+        "recall": 0.02127659574468085,
+        "accuracy": 0.8401360544217688,
+        "business_cost": 47.0
+      },
+      "params": {
+        "model": "random_forest",
+        "random_state": "42",
+        "n_estimators": "50",
+        "max_depth": "5",
+        "class_weight": "balanced",
+        "decision_threshold": "0.8384353741496599"
+      },
+      "tags": {
+        "mlflow.user": "syrine",
+        "mlflow.source.name": "/home/syrine/mlops-cours-2026/src/train.py",
+        "mlflow.source.type": "LOCAL",
+        "mlflow.source.git.commit": "48c354e734e773dc88302f2906875566bc6b45a6",
+        "mlflow.source.git.branch": "work/syrine/m1",
+        "mlflow.source.git.repoURL": "git@github.com:syrinemrf/mlops-cours-2026.git",
+        "mlflow.runName": "random_forest-n_estimators=50-max_depth=5-class_weight=balanced",
+        "protocol_id": "mlops_A_v1",
+        "evaluation_role": "pedagogical_smoke_test",
+        "cost_assumption": "experimental_FN_FP_1_1",
+        "train_sha256": "9e91ffd059dfe67ae4860f7111a0cbebda0f24d59bc36f192782a891d642d3e5",
+        "test_sha256": "a3e82a637fbae6a3038141c49648b0400c4b61842daacaaf50c3e445bb5697d3",
+        "contract_sha256": "0579d914bcd7904dde8fb4be2b24a773e80e91061f729772ce11d54b59783ad3",
+        "model_type": "random_forest",
+        "dataset": "ibm-hr-attrition",
+        "data_md5": "16e6acc1f69d648c4ec1d3b44efc0179",
+        "launched_by": "manual"
+      },
+      "status": "FINISHED",
+      "model_reload": "remote skops: metrics identical to logged values"
+    }
+  ],
+  "local_artifacts": [
+    {
+      "path": "models/model",
+      "run_id": "c944848ce3b44a2da935c28156f0abc6",
+      "reload": "identical metrics"
+    },
+    {
+      "path": "models/smoke-history/e1ccefb0-0454-4bc2-89f7-286a6f9ca041",
+      "run_id": "aa859327feef485ebad8d4992f558a3e",
+      "reload": "identical metrics"
+    }
+  ]
+}

@@ -1,0 +1,13 @@
+{
+  "id": 1067,
+  "ref": "pavansubhasht/ibm-hr-analytics-attrition-dataset",
+  "title": "IBM HR Analytics Employee Attrition & Performance",
+  "currentVersionNumber": 1,
+  "lastUpdated": "2017-03-31T06:55:16.973Z",
+  "totalBytes": 227977,
+  "licenseName": "Database: Open Database, Contents: Database Contents",
+  "checked_on": "2026-10-19",
+  "metadata_url": "https://www.kaggle.com/api/v1/datasets/view/pavansubhasht/ibm-hr-analytics-attrition-dataset",
+  "kaggle_license_slug": "DbCL-1.0",
+  "license_mapping_source": "https://github.com/Kaggle/kaggle-cli/blob/main/docs/datasets_metadata.md"
+}

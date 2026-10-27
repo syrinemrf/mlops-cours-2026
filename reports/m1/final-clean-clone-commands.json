@@ -1,0 +1,126 @@
+{
+  "clone": "/tmp/mlops-m1-repro-2d_9ct98",
+  "commands": [
+    {
+      "command": [
+        "git",
+        "clone",
+        "--local",
+        "--no-hardlinks",
+        "--branch",
+        "work/syrine/m1",
+        "/home/syrine/mlops-cours-2026",
+        "/tmp/mlops-m1-repro-2d_9ct98"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "Cloning into '/tmp/mlops-m1-repro-2d_9ct98'...\ndone.\n"
+    },
+    {
+      "command": [
+        "/home/syrine/mlops-cours-2026/.venv/bin/dvc",
+        "pull"
+      ],
+      "returncode": 0,
+      "stdout": "A       models/model/\nA       data/processed/features.parquet\nA       data/processed/test.csv\nA       data/processed/train.csv\nA       data/raw/dataset.csv\n10 files fetched and 9 files added\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "/home/syrine/mlops-cours-2026/.venv/bin/dvc",
+        "repro"
+      ],
+      "returncode": 0,
+      "stdout": "Stage 'download' didn't change, skipping\nStage 'prepare' didn't change, skipping\nStage 'train' didn't change, skipping\nStage 'evaluate' didn't change, skipping\nData and pipelines are up to date.\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "/home/syrine/mlops-cours-2026/.venv/bin/python",
+        "-m",
+        "src.evaluate"
+      ],
+      "returncode": 0,
+      "stdout": "roc_auc = 0.833 -> reports/metrics.json\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "/home/syrine/mlops-cours-2026/.venv/bin/feast",
+        "apply"
+      ],
+      "returncode": 0,
+      "stdout": "Applying changes for project scoring\nCreated project scoring\nCreated entity employee\nCreated feature view request_features\nCreated feature service scoring_v1\n\nCreated sqlite table scoring_request_features\n\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "/home/syrine/mlops-cours-2026/.venv/bin/feast",
+        "materialize-incremental",
+        "2026-10-20T13:49:28.720668+00:00"
+      ],
+      "returncode": 0,
+      "stdout": "Materializing \u001b[1m\u001b[32m1\u001b[0m feature views to \u001b[1m\u001b[32m2026-10-20 13:49:28+00:00\u001b[0m into the \u001b[1m\u001b[32msqlite\u001b[0m online store.\n\n\u001b[1m\u001b[32mrequest_features\u001b[0m from \u001b[1m\u001b[32m2016-10-22 13:49:43+00:00\u001b[0m to \u001b[1m\u001b[32m2026-10-20 13:49:28+00:00\u001b[0m:\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "/home/syrine/mlops-cours-2026/.venv/bin/python",
+        "-m",
+        "src.verify_feast"
+      ],
+      "returncode": 0,
+      "stdout": "{\n  \"protocol\": \"A\",\n  \"entity\": \"employee\",\n  \"entity_key\": \"EmployeeNumber\",\n  \"feature_view\": \"request_features\",\n  \"feature_service\": \"scoring_v1\",\n  \"source_rows\": 1470,\n  \"offline_shape\": [\n    1176,\n    30\n  ],\n  \"numeric_features\": 13,\n  \"categorical_features\": 14,\n  \"all_27_offline_features_match_train\": true,\n  \"three_before_snapshot_queries_have_only_missing_features\": true,\n  \"online_entities_checked\": 1,\n  \"online_features_checked\": 27,\n  \"all_online_features_match_prepared_values\": true,\n  \"timestamp\": \"2026-01-01T00:00:00+00:00\",\n  \"timestamp_role\": \"technical_synthetic_snapshot\",\n  \"temporal_production_leakage_claim\": false\n}\n",
+      "stderr": "/tmp/mlops-m1-repro-2d_9ct98/src/verify_feast.py:35: DeprecationWarning: The 'generic' unit for NumPy timedelta is deprecated, and will raise an error in the future. This includes implicit conversion of bare integers (e.g. `+ 1`). Please use a specific unit instead.\n  before[\"event_timestamp\"] = snapshot - pd.Timedelta(seconds=1)\n"
+    },
+    {
+      "command": [
+        "git",
+        "status",
+        "--porcelain"
+      ],
+      "returncode": 0,
+      "stdout": "?? .venv\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "/home/syrine/mlops-cours-2026/.venv/bin/dvc",
+        "repro"
+      ],
+      "returncode": 0,
+      "stdout": "Stage 'download' didn't change, skipping\nStage 'prepare' didn't change, skipping\nStage 'train' didn't change, skipping\nStage 'evaluate' didn't change, skipping\nData and pipelines are up to date.\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "/home/syrine/mlops-cours-2026/.venv/bin/python",
+        "-m",
+        "src.evaluate"
+      ],
+      "returncode": 0,
+      "stdout": "roc_auc = 0.833 -> reports/metrics.json\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "git",
+        "status",
+        "--porcelain"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "git",
+        "rev-parse",
+        "HEAD"
+      ],
+      "returncode": 0,
+      "stdout": "ccf031ffde7a0b189b5747ec64d456a5c0e02a8d\n",
+      "stderr": ""
+    }
+  ]
+}

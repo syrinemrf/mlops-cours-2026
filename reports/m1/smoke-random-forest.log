@@ -1,0 +1,7 @@
+2026/10/20 12:41:07 INFO mlflow.utils.uv_utils: Detected uv project: found uv.lock and pyproject.toml in /home/syrine/mlops-cours-2026
+2026/10/20 12:41:14 WARNING mlflow.utils.environment: Failed to resolve installed pip version. ``pip`` will be added to conda.yaml environment spec without a version specifier.
+2026/10/20 12:41:16 WARNING mlflow.utils.environment: Failed to resolve installed pip version. ``pip`` will be added to conda.yaml environment spec without a version specifier.
+random_forest-n_estimators=50-max_depth=5-class_weight=balanced: seuil=0.838, tn=246.000, fp=1.000, fn=46.000, tp=1.000, roc_auc=0.785, average_precision=0.443, f1=0.041, precision=0.500, recall=0.021, accuracy=0.840, business_cost=47
+run_id : c944848ce3b44a2da935c28156f0abc6
+🏃 View run random_forest-n_estimators=50-max_depth=5-class_weight=balanced at: http://localhost:5000/#/experiments/2/runs/c944848ce3b44a2da935c28156f0abc6
+🧪 View experiment at: http://localhost:5000/#/experiments/2

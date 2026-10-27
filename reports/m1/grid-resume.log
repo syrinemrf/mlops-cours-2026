@@ -1,0 +1,24 @@
+Lancement de 22 configurations séquentielles
+[1/22] reused dummy 0c42486a18f340ddb2db995d8797c70d
+[2/22] reused logistic_regression 143c10a416e7465baceaa9a744e47719
+[3/22] reused logistic_regression 0d56caf189dd4735ac4d599ce038d9ea
+[4/22] reused logistic_regression 139ae364aa6e4166b2bd19ef533f48e7
+[5/22] reused logistic_regression c154f9026ebc49598a87a93dc858e927
+[6/22] reused logistic_regression 5ef49fc5f3e740f28c523b0dcc1ae8c1
+[7/22] reused logistic_regression 2fcbbda9ff3149868c671854209ff2ab
+[8/22] reused logistic_regression d001c6ceab184505b583a32c8286ad71
+[9/22] reused logistic_regression 7c2b0f8fba6645fc8405069817597dbc
+[10/22] reused random_forest 4c76aa0956cf4c5bbe9747f8329532c2
+[11/22] reused random_forest 9a21733765164a74ba36ad3e766ee3ed
+[12/22] reused random_forest b1308f7cda524fa7b3e8c4dcacf9a562
+[13/22] reused random_forest b3a9ed172b2e432abf84b2e84842b2cc
+[14/22] reused random_forest 1e37e362a928430c864f16e2fde27cf1
+[15/22] reused random_forest 37df33057d294770b4342ec0e65435b0
+[16/22] reused random_forest a8b78d8dd2db46b99980a31c1de5be35
+[17/22] reused random_forest 2fdfff9cdb934b4985e211d7e6613a59
+[18/22] reused random_forest d1c17a8d81f943879a6a707401d3e5a0
+[19/22] reused gradient_boosting 756efdfce5114e6a9b1b1613cbb217e1
+[20/22] reused gradient_boosting ffa7277146d04927a9248ac5506c7e73
+[21/22] reused gradient_boosting ce38de16ba6943aba4ddb1b460c7f82c
+[22/22] reused gradient_boosting 4fb0586f12c94b15a24ba00a42501c6b
+✓ 22 configurations verified; no model promoted.

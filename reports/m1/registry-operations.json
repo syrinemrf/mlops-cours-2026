@@ -1,0 +1,185 @@
+{
+  "model_name": "scoring-model",
+  "metric": "roc_auc",
+  "promotion_threshold": 0.7,
+  "before_versions": [],
+  "operations": [
+    {
+      "iteration": 1,
+      "role": "champion",
+      "version": "1",
+      "run_id": "5ef49fc5f3e740f28c523b0dcc1ae8c1",
+      "created": true,
+      "metric": "roc_auc",
+      "score": 0.8368507192695321,
+      "promotion_threshold": 0.7,
+      "validation_status": "passed",
+      "challenger_only": false,
+      "champion_updated": true,
+      "alias_run_ids": {
+        "champion": "5ef49fc5f3e740f28c523b0dcc1ae8c1",
+        "challenger": "5ef49fc5f3e740f28c523b0dcc1ae8c1"
+      }
+    },
+    {
+      "iteration": 1,
+      "role": "negative_control",
+      "version": "2",
+      "run_id": "0c42486a18f340ddb2db995d8797c70d",
+      "created": true,
+      "metric": "roc_auc",
+      "score": 0.5,
+      "promotion_threshold": 0.7,
+      "validation_status": "failed",
+      "challenger_only": false,
+      "champion_updated": false,
+      "alias_run_ids": {
+        "champion": "5ef49fc5f3e740f28c523b0dcc1ae8c1",
+        "challenger": "0c42486a18f340ddb2db995d8797c70d"
+      }
+    },
+    {
+      "iteration": 1,
+      "role": "challenger",
+      "version": "3",
+      "run_id": "139ae364aa6e4166b2bd19ef533f48e7",
+      "created": true,
+      "metric": "roc_auc",
+      "score": 0.8360754586958395,
+      "promotion_threshold": 0.7,
+      "validation_status": "passed",
+      "challenger_only": true,
+      "champion_updated": false,
+      "alias_run_ids": {
+        "champion": "5ef49fc5f3e740f28c523b0dcc1ae8c1",
+        "challenger": "139ae364aa6e4166b2bd19ef533f48e7"
+      }
+    },
+    {
+      "iteration": 2,
+      "role": "champion",
+      "version": "1",
+      "run_id": "5ef49fc5f3e740f28c523b0dcc1ae8c1",
+      "created": false,
+      "metric": "roc_auc",
+      "score": 0.8368507192695321,
+      "promotion_threshold": 0.7,
+      "validation_status": "passed",
+      "challenger_only": false,
+      "champion_updated": true,
+      "alias_run_ids": {
+        "champion": "5ef49fc5f3e740f28c523b0dcc1ae8c1",
+        "challenger": "5ef49fc5f3e740f28c523b0dcc1ae8c1"
+      }
+    },
+    {
+      "iteration": 2,
+      "role": "negative_control",
+      "version": "2",
+      "run_id": "0c42486a18f340ddb2db995d8797c70d",
+      "created": false,
+      "metric": "roc_auc",
+      "score": 0.5,
+      "promotion_threshold": 0.7,
+      "validation_status": "failed",
+      "challenger_only": false,
+      "champion_updated": false,
+      "alias_run_ids": {
+        "champion": "5ef49fc5f3e740f28c523b0dcc1ae8c1",
+        "challenger": "0c42486a18f340ddb2db995d8797c70d"
+      }
+    },
+    {
+      "iteration": 2,
+      "role": "challenger",
+      "version": "3",
+      "run_id": "139ae364aa6e4166b2bd19ef533f48e7",
+      "created": false,
+      "metric": "roc_auc",
+      "score": 0.8360754586958395,
+      "promotion_threshold": 0.7,
+      "validation_status": "passed",
+      "challenger_only": true,
+      "champion_updated": false,
+      "alias_run_ids": {
+        "champion": "5ef49fc5f3e740f28c523b0dcc1ae8c1",
+        "challenger": "139ae364aa6e4166b2bd19ef533f48e7"
+      }
+    }
+  ],
+  "versions": [
+    {
+      "version": "1",
+      "run_id": "5ef49fc5f3e740f28c523b0dcc1ae8c1",
+      "status": "READY",
+      "tags": {
+        "roc_auc": "0.8368507192695321",
+        "primary_metric": "roc_auc",
+        "promotion_threshold": "0.7",
+        "validation_status": "passed",
+        "source_run_id": "5ef49fc5f3e740f28c523b0dcc1ae8c1",
+        "data_md5": "16e6acc1f69d648c4ec1d3b44efc0179",
+        "data_sha256": "27e7bebda91c7e6d0b77e80128c2d9383d70a19a185b51ecfe3bb90f761d2a78",
+        "protocol": "A",
+        "protocol_id": "mlops_A_v1",
+        "dataset": "ibm-hr-attrition",
+        "data_version": "1",
+        "selection_scope": "pedagogical_test_exploratory",
+        "decision_threshold": "0.5"
+      },
+      "search_api_aliases": [],
+      "resolved_aliases": [
+        "champion"
+      ]
+    },
+    {
+      "version": "2",
+      "run_id": "0c42486a18f340ddb2db995d8797c70d",
+      "status": "READY",
+      "tags": {
+        "roc_auc": "0.5",
+        "primary_metric": "roc_auc",
+        "promotion_threshold": "0.7",
+        "validation_status": "failed",
+        "source_run_id": "0c42486a18f340ddb2db995d8797c70d",
+        "data_md5": "16e6acc1f69d648c4ec1d3b44efc0179",
+        "data_sha256": "27e7bebda91c7e6d0b77e80128c2d9383d70a19a185b51ecfe3bb90f761d2a78",
+        "protocol": "A",
+        "protocol_id": "mlops_A_v1",
+        "dataset": "ibm-hr-attrition",
+        "data_version": "1",
+        "selection_scope": "pedagogical_test_exploratory",
+        "decision_threshold": "0.5"
+      },
+      "search_api_aliases": [],
+      "resolved_aliases": []
+    },
+    {
+      "version": "3",
+      "run_id": "139ae364aa6e4166b2bd19ef533f48e7",
+      "status": "READY",
+      "tags": {
+        "roc_auc": "0.8360754586958395",
+        "primary_metric": "roc_auc",
+        "promotion_threshold": "0.7",
+        "validation_status": "passed",
+        "source_run_id": "139ae364aa6e4166b2bd19ef533f48e7",
+        "data_md5": "16e6acc1f69d648c4ec1d3b44efc0179",
+        "data_sha256": "27e7bebda91c7e6d0b77e80128c2d9383d70a19a185b51ecfe3bb90f761d2a78",
+        "protocol": "A",
+        "protocol_id": "mlops_A_v1",
+        "dataset": "ibm-hr-attrition",
+        "data_version": "1",
+        "selection_scope": "pedagogical_test_exploratory",
+        "decision_threshold": "0.5"
+      },
+      "search_api_aliases": [],
+      "resolved_aliases": [
+        "challenger"
+      ]
+    }
+  ],
+  "idempotence": "same versions after second execution; no version created in second pass",
+  "negative_control": "dummy ROC AUC 0.5 failed gate 0.7 twice; champion unchanged",
+  "alias_verification": "get_model_version_by_alias; search_model_versions returns empty alias lists here"
+}

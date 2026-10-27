@@ -1,0 +1,9 @@
+{
+  "workspace": "/tmp/mlops-m1-alignment-9b53bahu/repo",
+  "proof_dir": "/tmp/mlops-m1-alignment-9b53bahu/proof",
+  "code_commit": "49533e397af86350dbd7ec116c0d8fa4beb7ffa7",
+  "venv_reused": true,
+  "new_cluster_created": false,
+  "credentials_only_in_ignored_local_files": true,
+  "baseline_commit": "78fe7419ae64e8f80876a8ff3dfbb413d859ad1d"
+}

@@ -1,0 +1,47 @@
+{
+  "date": "2026-10-20",
+  "train_shape": [
+    1176,
+    32
+  ],
+  "test_shape": [
+    294,
+    32
+  ],
+  "feast_shape": [
+    1470,
+    29
+  ],
+  "train_yes": 190,
+  "test_yes": 47,
+  "identifier_overlap": 0,
+  "source_values_preserved": true,
+  "predictors": 27,
+  "sensitive_and_target_excluded_from_feast": true,
+  "feast_numeric_dtype": "float64",
+  "feast_categorical_dtype": "string values",
+  "event_timestamp": "2026-01-01 00:00:00+00:00",
+  "timestamp_is_synthetic": true,
+  "lock_matches_files": {
+    "data/raw/dataset.csv": {
+      "md5": "16e6acc1f69d648c4ec1d3b44efc0179",
+      "size": 328405,
+      "sha256": "27e7bebda91c7e6d0b77e80128c2d9383d70a19a185b51ecfe3bb90f761d2a78"
+    },
+    "data/processed/features.parquet": {
+      "md5": "a6c0eacf28225e59b818c9e855c47e16",
+      "size": 65118,
+      "sha256": "3bdaf918b088e053de35c0e2cc04c51ecb274327467ffeae6784274feb73da92"
+    },
+    "data/processed/test.csv": {
+      "md5": "c9a203d62f2029c7066a259c02da50da",
+      "size": 66084,
+      "sha256": "a3e82a637fbae6a3038141c49648b0400c4b61842daacaaf50c3e445bb5697d3"
+    },
+    "data/processed/train.csv": {
+      "md5": "7eec6596ea2b1d84be50811de74cb9b8",
+      "size": 262799,
+      "sha256": "9e91ffd059dfe67ae4860f7111a0cbebda0f24d59bc36f192782a891d642d3e5"
+    }
+  }
+}

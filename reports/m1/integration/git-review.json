@@ -1,0 +1,14 @@
+{
+  "reviewed_paths": 45,
+  "json_valid": true,
+  "missing_document_links": [],
+  "secret_signature_hits": [],
+  "credentials_ignored_mode_600": true,
+  "raw_data_models_and_local_databases_not_tracked": true,
+  "official_checker_matches_d740ca5": true,
+  "raw_evidence_whitespace_exceptions": {
+    "reports/m1/collaboration/planned-doc-updates.patch": "Preserve valid unified-diff blank context lines, including their required single space.",
+    "reports/m1/integration/feast-apply.log": "Preserve actual Feast stdout, including its final blank line."
+  },
+  "all_other_staged_changes_diff_check_pass": true
+}

@@ -1,0 +1,22 @@
+{
+  "workspace": "/tmp/mlops-m1-alignment-9b53bahu/repo",
+  "proof_dir": "/tmp/mlops-m1-alignment-9b53bahu/proof",
+  "code_commit": "49533e397af86350dbd7ec116c0d8fa4beb7ffa7",
+  "venv_reused": true,
+  "new_cluster_created": false,
+  "credentials_only_in_ignored_local_files": true,
+  "baseline_commit": "78fe7419ae64e8f80876a8ff3dfbb413d859ad1d",
+  "temporary_parameter": "train.class_weight",
+  "baseline_value": "none",
+  "temporary_value": "balanced",
+  "baseline_run_id": "6fa3c25ec6a343d385944deacf20e7bb",
+  "variant_run_id": "3dfc2408a966424fa9493d41f6992068",
+  "restored_run_id": "6fa3c25ec6a343d385944deacf20e7bb",
+  "train_cache_reused": true,
+  "experiment_count_before_restore": 27,
+  "experiment_count_after_restore": 27,
+  "restored_metrics_byte_identical": true,
+  "restored_lock_byte_identical": true,
+  "restored_params_byte_identical": true,
+  "data_hashes_unchanged": true
+}

@@ -1,0 +1,156 @@
+Lancement de 22 configurations séquentielles
+[1/22] -m src.train --model dummy run_id=0c42486a18f340ddb2db995d8797c70d
+2026/10/20 12:55:51 INFO mlflow.utils.uv_utils: Detected uv project: found uv.lock and pyproject.toml in /home/syrine/mlops-cours-2026
+2026/10/20 12:55:59 WARNING mlflow.utils.environment: Failed to resolve installed pip version. ``pip`` will be added to conda.yaml environment spec without a version specifier.
+dummy: seuil=0.500, tn=247.000, fp=0.000, fn=47.000, tp=0.000, pr_auc_trapezoidal=0.580, brier_score=0.134, log_loss=0.439, roc_auc=0.500, average_precision=0.160, f1=0.000, precision=0.000, recall=0.000, accuracy=0.840, business_cost=47
+run_id : 0c42486a18f340ddb2db995d8797c70d
+🏃 View run dummy at: http://localhost:5000/#/experiments/2/runs/0c42486a18f340ddb2db995d8797c70d
+🧪 View experiment at: http://localhost:5000/#/experiments/2
+[2/22] -m src.train --model logistic_regression --C 0.01 --class_weight none run_id=143c10a416e7465baceaa9a744e47719
+2026/10/20 12:56:13 INFO mlflow.utils.uv_utils: Detected uv project: found uv.lock and pyproject.toml in /home/syrine/mlops-cours-2026
+2026/10/20 12:56:25 WARNING mlflow.utils.environment: Failed to resolve installed pip version. ``pip`` will be added to conda.yaml environment spec without a version specifier.
+logistic_regression-C=0.01-class_weight=None: seuil=0.500, tn=247.000, fp=0.000, fn=45.000, tp=2.000, pr_auc_trapezoidal=0.630, brier_score=0.109, log_loss=0.368, roc_auc=0.811, average_precision=0.633, f1=0.082, precision=1.000, recall=0.043, accuracy=0.847, business_cost=45
+run_id : 143c10a416e7465baceaa9a744e47719
+🏃 View run logistic_regression-C=0.01-class_weight=None at: http://localhost:5000/#/experiments/2/runs/143c10a416e7465baceaa9a744e47719
+🧪 View experiment at: http://localhost:5000/#/experiments/2
+[3/22] -m src.train --model logistic_regression --C 0.01 --class_weight balanced run_id=0d56caf189dd4735ac4d599ce038d9ea
+2026/10/20 12:56:48 INFO mlflow.utils.uv_utils: Detected uv project: found uv.lock and pyproject.toml in /home/syrine/mlops-cours-2026
+2026/10/20 12:56:55 WARNING mlflow.utils.environment: Failed to resolve installed pip version. ``pip`` will be added to conda.yaml environment spec without a version specifier.
+logistic_regression-C=0.01-class_weight=balanced: seuil=0.838, tn=247.000, fp=0.000, fn=44.000, tp=3.000, pr_auc_trapezoidal=0.652, brier_score=0.173, log_loss=0.526, roc_auc=0.823, average_precision=0.655, f1=0.120, precision=1.000, recall=0.064, accuracy=0.850, business_cost=44
+run_id : 0d56caf189dd4735ac4d599ce038d9ea
+🏃 View run logistic_regression-C=0.01-class_weight=balanced at: http://localhost:5000/#/experiments/2/runs/0d56caf189dd4735ac4d599ce038d9ea
+🧪 View experiment at: http://localhost:5000/#/experiments/2
+[4/22] -m src.train --model logistic_regression --C 0.1 --class_weight none run_id=139ae364aa6e4166b2bd19ef533f48e7
+2026/10/20 12:57:11 INFO mlflow.utils.uv_utils: Detected uv project: found uv.lock and pyproject.toml in /home/syrine/mlops-cours-2026
+2026/10/20 12:57:20 WARNING mlflow.utils.environment: Failed to resolve installed pip version. ``pip`` will be added to conda.yaml environment spec without a version specifier.
+logistic_regression-C=0.1-class_weight=None: seuil=0.500, tn=243.000, fp=4.000, fn=30.000, tp=17.000, pr_auc_trapezoidal=0.665, brier_score=0.090, log_loss=0.321, roc_auc=0.836, average_precision=0.667, f1=0.500, precision=0.810, recall=0.362, accuracy=0.884, business_cost=34
+run_id : 139ae364aa6e4166b2bd19ef533f48e7
+🏃 View run logistic_regression-C=0.1-class_weight=None at: http://localhost:5000/#/experiments/2/runs/139ae364aa6e4166b2bd19ef533f48e7
+🧪 View experiment at: http://localhost:5000/#/experiments/2
+[5/22] -m src.train --model logistic_regression --C 0.1 --class_weight balanced run_id=c154f9026ebc49598a87a93dc858e927
+2026/10/20 12:57:50 INFO mlflow.utils.uv_utils: Detected uv project: found uv.lock and pyproject.toml in /home/syrine/mlops-cours-2026
+2026/10/20 12:58:07 WARNING mlflow.utils.environment: Failed to resolve installed pip version. ``pip`` will be added to conda.yaml environment spec without a version specifier.
+logistic_regression-C=0.1-class_weight=balanced: seuil=0.838, tn=244.000, fp=3.000, fn=33.000, tp=14.000, pr_auc_trapezoidal=0.636, brier_score=0.146, log_loss=0.451, roc_auc=0.833, average_precision=0.639, f1=0.438, precision=0.824, recall=0.298, accuracy=0.878, business_cost=36
+run_id : c154f9026ebc49598a87a93dc858e927
+🏃 View run logistic_regression-C=0.1-class_weight=balanced at: http://localhost:5000/#/experiments/2/runs/c154f9026ebc49598a87a93dc858e927
+🧪 View experiment at: http://localhost:5000/#/experiments/2
+[6/22] -m src.train --model logistic_regression --C 1.0 --class_weight none run_id=5ef49fc5f3e740f28c523b0dcc1ae8c1
+2026/10/20 12:58:30 INFO mlflow.utils.uv_utils: Detected uv project: found uv.lock and pyproject.toml in /home/syrine/mlops-cours-2026
+2026/10/20 12:58:41 WARNING mlflow.utils.environment: Failed to resolve installed pip version. ``pip`` will be added to conda.yaml environment spec without a version specifier.
+logistic_regression-C=1.0-class_weight=None: seuil=0.500, tn=239.000, fp=8.000, fn=27.000, tp=20.000, pr_auc_trapezoidal=0.644, brier_score=0.091, log_loss=0.328, roc_auc=0.837, average_precision=0.647, f1=0.533, precision=0.714, recall=0.426, accuracy=0.881, business_cost=35
+run_id : 5ef49fc5f3e740f28c523b0dcc1ae8c1
+🏃 View run logistic_regression-C=1.0-class_weight=None at: http://localhost:5000/#/experiments/2/runs/5ef49fc5f3e740f28c523b0dcc1ae8c1
+🧪 View experiment at: http://localhost:5000/#/experiments/2
+[7/22] -m src.train --model logistic_regression --C 1.0 --class_weight balanced run_id=2fcbbda9ff3149868c671854209ff2ab
+2026/10/20 12:59:01 INFO mlflow.utils.uv_utils: Detected uv project: found uv.lock and pyproject.toml in /home/syrine/mlops-cours-2026
+2026/10/20 12:59:11 WARNING mlflow.utils.environment: Failed to resolve installed pip version. ``pip`` will be added to conda.yaml environment spec without a version specifier.
+logistic_regression-C=1.0-class_weight=balanced: seuil=0.838, tn=239.000, fp=8.000, fn=29.000, tp=18.000, pr_auc_trapezoidal=0.610, brier_score=0.147, log_loss=0.449, roc_auc=0.828, average_precision=0.613, f1=0.493, precision=0.692, recall=0.383, accuracy=0.874, business_cost=37
+run_id : 2fcbbda9ff3149868c671854209ff2ab
+🏃 View run logistic_regression-C=1.0-class_weight=balanced at: http://localhost:5000/#/experiments/2/runs/2fcbbda9ff3149868c671854209ff2ab
+🧪 View experiment at: http://localhost:5000/#/experiments/2
+[8/22] -m src.train --model logistic_regression --C 10.0 --class_weight none run_id=d001c6ceab184505b583a32c8286ad71
+2026/10/20 12:59:27 INFO mlflow.utils.uv_utils: Detected uv project: found uv.lock and pyproject.toml in /home/syrine/mlops-cours-2026
+2026/10/20 12:59:36 WARNING mlflow.utils.environment: Failed to resolve installed pip version. ``pip`` will be added to conda.yaml environment spec without a version specifier.
+logistic_regression-C=10.0-class_weight=None: seuil=0.500, tn=237.000, fp=10.000, fn=27.000, tp=20.000, pr_auc_trapezoidal=0.633, brier_score=0.094, log_loss=0.341, roc_auc=0.833, average_precision=0.636, f1=0.519, precision=0.667, recall=0.426, accuracy=0.874, business_cost=37
+run_id : d001c6ceab184505b583a32c8286ad71
+🏃 View run logistic_regression-C=10.0-class_weight=None at: http://localhost:5000/#/experiments/2/runs/d001c6ceab184505b583a32c8286ad71
+🧪 View experiment at: http://localhost:5000/#/experiments/2
+[9/22] -m src.train --model logistic_regression --C 10.0 --class_weight balanced run_id=7c2b0f8fba6645fc8405069817597dbc
+2026/10/20 12:59:56 INFO mlflow.utils.uv_utils: Detected uv project: found uv.lock and pyproject.toml in /home/syrine/mlops-cours-2026
+2026/10/20 13:00:12 WARNING mlflow.utils.environment: Failed to resolve installed pip version. ``pip`` will be added to conda.yaml environment spec without a version specifier.
+logistic_regression-C=10.0-class_weight=balanced: seuil=0.838, tn=237.000, fp=10.000, fn=29.000, tp=18.000, pr_auc_trapezoidal=0.594, brier_score=0.151, log_loss=0.458, roc_auc=0.823, average_precision=0.597, f1=0.480, precision=0.643, recall=0.383, accuracy=0.867, business_cost=39
+run_id : 7c2b0f8fba6645fc8405069817597dbc
+🏃 View run logistic_regression-C=10.0-class_weight=balanced at: http://localhost:5000/#/experiments/2/runs/7c2b0f8fba6645fc8405069817597dbc
+🧪 View experiment at: http://localhost:5000/#/experiments/2
+[10/22] -m src.train --model random_forest --n_estimators 100 --max_depth 4 run_id=4c76aa0956cf4c5bbe9747f8329532c2
+2026/10/20 13:02:53 INFO mlflow.utils.uv_utils: Detected uv project: found uv.lock and pyproject.toml in /home/syrine/mlops-cours-2026
+2026/10/20 13:05:38 WARNING mlflow.utils.environment: Failed to resolve installed pip version. ``pip`` will be added to conda.yaml environment spec without a version specifier.
+random_forest-n_estimators=100-max_depth=4-class_weight=balanced: seuil=0.838, tn=247.000, fp=0.000, fn=45.000, tp=2.000, pr_auc_trapezoidal=0.405, brier_score=0.191, log_loss=0.572, roc_auc=0.776, average_precision=0.412, f1=0.082, precision=1.000, recall=0.043, accuracy=0.847, business_cost=45
+run_id : 4c76aa0956cf4c5bbe9747f8329532c2
+🏃 View run random_forest-n_estimators=100-max_depth=4-class_weight=balanced at: http://localhost:5000/#/experiments/2/runs/4c76aa0956cf4c5bbe9747f8329532c2
+🧪 View experiment at: http://localhost:5000/#/experiments/2
+[11/22] -m src.train --model random_forest --n_estimators 100 --max_depth 8 run_id=9a21733765164a74ba36ad3e766ee3ed
+2026/10/20 13:09:47 INFO mlflow.utils.uv_utils: Detected uv project: found uv.lock and pyproject.toml in /home/syrine/mlops-cours-2026
+2026/10/20 13:09:55 WARNING mlflow.utils.environment: Failed to resolve installed pip version. ``pip`` will be added to conda.yaml environment spec without a version specifier.
+random_forest-n_estimators=100-max_depth=8-class_weight=balanced: seuil=0.838, tn=247.000, fp=0.000, fn=45.000, tp=2.000, pr_auc_trapezoidal=0.456, brier_score=0.144, log_loss=0.461, roc_auc=0.793, average_precision=0.463, f1=0.082, precision=1.000, recall=0.043, accuracy=0.847, business_cost=45
+run_id : 9a21733765164a74ba36ad3e766ee3ed
+🏃 View run random_forest-n_estimators=100-max_depth=8-class_weight=balanced at: http://localhost:5000/#/experiments/2/runs/9a21733765164a74ba36ad3e766ee3ed
+🧪 View experiment at: http://localhost:5000/#/experiments/2
+[12/22] -m src.train --model random_forest --n_estimators 100 --max_depth none run_id=b1308f7cda524fa7b3e8c4dcacf9a562
+2026/10/20 13:10:12 INFO mlflow.utils.uv_utils: Detected uv project: found uv.lock and pyproject.toml in /home/syrine/mlops-cours-2026
+2026/10/20 13:10:18 WARNING mlflow.utils.environment: Failed to resolve installed pip version. ``pip`` will be added to conda.yaml environment spec without a version specifier.
+random_forest-n_estimators=100-max_depth=None-class_weight=balanced: seuil=0.838, tn=246.000, fp=1.000, fn=44.000, tp=3.000, pr_auc_trapezoidal=0.459, brier_score=0.120, log_loss=0.396, roc_auc=0.798, average_precision=0.466, f1=0.118, precision=0.750, recall=0.064, accuracy=0.847, business_cost=45
+run_id : b1308f7cda524fa7b3e8c4dcacf9a562
+🏃 View run random_forest-n_estimators=100-max_depth=None-class_weight=balanced at: http://localhost:5000/#/experiments/2/runs/b1308f7cda524fa7b3e8c4dcacf9a562
+🧪 View experiment at: http://localhost:5000/#/experiments/2
+[13/22] -m src.train --model random_forest --n_estimators 200 --max_depth 4 run_id=b3a9ed172b2e432abf84b2e84842b2cc
+2026/10/20 13:10:33 INFO mlflow.utils.uv_utils: Detected uv project: found uv.lock and pyproject.toml in /home/syrine/mlops-cours-2026
+2026/10/20 13:10:41 WARNING mlflow.utils.environment: Failed to resolve installed pip version. ``pip`` will be added to conda.yaml environment spec without a version specifier.
+random_forest-n_estimators=200-max_depth=4-class_weight=balanced: seuil=0.838, tn=247.000, fp=0.000, fn=45.000, tp=2.000, pr_auc_trapezoidal=0.420, brier_score=0.189, log_loss=0.567, roc_auc=0.782, average_precision=0.427, f1=0.082, precision=1.000, recall=0.043, accuracy=0.847, business_cost=45
+run_id : b3a9ed172b2e432abf84b2e84842b2cc
+🏃 View run random_forest-n_estimators=200-max_depth=4-class_weight=balanced at: http://localhost:5000/#/experiments/2/runs/b3a9ed172b2e432abf84b2e84842b2cc
+🧪 View experiment at: http://localhost:5000/#/experiments/2
+[14/22] -m src.train --model random_forest --n_estimators 200 --max_depth 8 run_id=1e37e362a928430c864f16e2fde27cf1
+2026/10/20 13:10:59 INFO mlflow.utils.uv_utils: Detected uv project: found uv.lock and pyproject.toml in /home/syrine/mlops-cours-2026
+2026/10/20 13:11:08 WARNING mlflow.utils.environment: Failed to resolve installed pip version. ``pip`` will be added to conda.yaml environment spec without a version specifier.
+random_forest-n_estimators=200-max_depth=8-class_weight=balanced: seuil=0.838, tn=246.000, fp=1.000, fn=45.000, tp=2.000, pr_auc_trapezoidal=0.462, brier_score=0.142, log_loss=0.457, roc_auc=0.799, average_precision=0.470, f1=0.080, precision=0.667, recall=0.043, accuracy=0.844, business_cost=46
+run_id : 1e37e362a928430c864f16e2fde27cf1
+🏃 View run random_forest-n_estimators=200-max_depth=8-class_weight=balanced at: http://localhost:5000/#/experiments/2/runs/1e37e362a928430c864f16e2fde27cf1
+🧪 View experiment at: http://localhost:5000/#/experiments/2
+[15/22] -m src.train --model random_forest --n_estimators 200 --max_depth none run_id=37df33057d294770b4342ec0e65435b0
+2026/10/20 13:11:40 INFO mlflow.utils.uv_utils: Detected uv project: found uv.lock and pyproject.toml in /home/syrine/mlops-cours-2026
+2026/10/20 13:11:52 WARNING mlflow.utils.environment: Failed to resolve installed pip version. ``pip`` will be added to conda.yaml environment spec without a version specifier.
+random_forest-n_estimators=200-max_depth=None-class_weight=balanced: seuil=0.838, tn=246.000, fp=1.000, fn=45.000, tp=2.000, pr_auc_trapezoidal=0.462, brier_score=0.120, log_loss=0.396, roc_auc=0.796, average_precision=0.466, f1=0.080, precision=0.667, recall=0.043, accuracy=0.844, business_cost=46
+run_id : 37df33057d294770b4342ec0e65435b0
+🏃 View run random_forest-n_estimators=200-max_depth=None-class_weight=balanced at: http://localhost:5000/#/experiments/2/runs/37df33057d294770b4342ec0e65435b0
+🧪 View experiment at: http://localhost:5000/#/experiments/2
+[16/22] -m src.train --model random_forest --n_estimators 400 --max_depth 4 run_id=a8b78d8dd2db46b99980a31c1de5be35
+2026/10/20 13:13:26 INFO mlflow.utils.uv_utils: Detected uv project: found uv.lock and pyproject.toml in /home/syrine/mlops-cours-2026
+2026/10/20 13:13:36 WARNING mlflow.utils.environment: Failed to resolve installed pip version. ``pip`` will be added to conda.yaml environment spec without a version specifier.
+random_forest-n_estimators=400-max_depth=4-class_weight=balanced: seuil=0.838, tn=247.000, fp=0.000, fn=45.000, tp=2.000, pr_auc_trapezoidal=0.417, brier_score=0.189, log_loss=0.566, roc_auc=0.784, average_precision=0.425, f1=0.082, precision=1.000, recall=0.043, accuracy=0.847, business_cost=45
+run_id : a8b78d8dd2db46b99980a31c1de5be35
+🏃 View run random_forest-n_estimators=400-max_depth=4-class_weight=balanced at: http://localhost:5000/#/experiments/2/runs/a8b78d8dd2db46b99980a31c1de5be35
+🧪 View experiment at: http://localhost:5000/#/experiments/2
+[17/22] -m src.train --model random_forest --n_estimators 400 --max_depth 8 run_id=2fdfff9cdb934b4985e211d7e6613a59
+2026/10/20 13:14:00 INFO mlflow.utils.uv_utils: Detected uv project: found uv.lock and pyproject.toml in /home/syrine/mlops-cours-2026
+2026/10/20 13:14:12 WARNING mlflow.utils.environment: Failed to resolve installed pip version. ``pip`` will be added to conda.yaml environment spec without a version specifier.
+random_forest-n_estimators=400-max_depth=8-class_weight=balanced: seuil=0.838, tn=247.000, fp=0.000, fn=45.000, tp=2.000, pr_auc_trapezoidal=0.465, brier_score=0.142, log_loss=0.456, roc_auc=0.800, average_precision=0.473, f1=0.082, precision=1.000, recall=0.043, accuracy=0.847, business_cost=45
+run_id : 2fdfff9cdb934b4985e211d7e6613a59
+🏃 View run random_forest-n_estimators=400-max_depth=8-class_weight=balanced at: http://localhost:5000/#/experiments/2/runs/2fdfff9cdb934b4985e211d7e6613a59
+🧪 View experiment at: http://localhost:5000/#/experiments/2
+[18/22] -m src.train --model random_forest --n_estimators 400 --max_depth none run_id=d1c17a8d81f943879a6a707401d3e5a0
+2026/10/20 13:14:37 INFO mlflow.utils.uv_utils: Detected uv project: found uv.lock and pyproject.toml in /home/syrine/mlops-cours-2026
+2026/10/20 13:14:52 WARNING mlflow.utils.environment: Failed to resolve installed pip version. ``pip`` will be added to conda.yaml environment spec without a version specifier.
+random_forest-n_estimators=400-max_depth=None-class_weight=balanced: seuil=0.838, tn=247.000, fp=0.000, fn=45.000, tp=2.000, pr_auc_trapezoidal=0.466, brier_score=0.119, log_loss=0.395, roc_auc=0.798, average_precision=0.472, f1=0.082, precision=1.000, recall=0.043, accuracy=0.847, business_cost=45
+run_id : d1c17a8d81f943879a6a707401d3e5a0
+🏃 View run random_forest-n_estimators=400-max_depth=None-class_weight=balanced at: http://localhost:5000/#/experiments/2/runs/d1c17a8d81f943879a6a707401d3e5a0
+🧪 View experiment at: http://localhost:5000/#/experiments/2
+[19/22] -m src.train --model gradient_boosting --n_estimators 100 --max_depth 2 run_id=756efdfce5114e6a9b1b1613cbb217e1
+2026/10/20 13:15:30 INFO mlflow.utils.uv_utils: Detected uv project: found uv.lock and pyproject.toml in /home/syrine/mlops-cours-2026
+2026/10/20 13:15:43 WARNING mlflow.utils.environment: Failed to resolve installed pip version. ``pip`` will be added to conda.yaml environment spec without a version specifier.
+gradient_boosting-n_estimators=100-max_depth=2-learning_rate=0.1: seuil=0.500, tn=242.000, fp=5.000, fn=38.000, tp=9.000, pr_auc_trapezoidal=0.497, brier_score=0.105, log_loss=0.346, roc_auc=0.814, average_precision=0.505, f1=0.295, precision=0.643, recall=0.191, accuracy=0.854, business_cost=43
+run_id : 756efdfce5114e6a9b1b1613cbb217e1
+🏃 View run gradient_boosting-n_estimators=100-max_depth=2-learning_rate=0.1 at: http://localhost:5000/#/experiments/2/runs/756efdfce5114e6a9b1b1613cbb217e1
+🧪 View experiment at: http://localhost:5000/#/experiments/2
+[20/22] -m src.train --model gradient_boosting --n_estimators 100 --max_depth 3 run_id=ffa7277146d04927a9248ac5506c7e73
+2026/10/20 13:16:35 INFO mlflow.utils.uv_utils: Detected uv project: found uv.lock and pyproject.toml in /home/syrine/mlops-cours-2026
+2026/10/20 13:16:50 WARNING mlflow.utils.environment: Failed to resolve installed pip version. ``pip`` will be added to conda.yaml environment spec without a version specifier.
+gradient_boosting-n_estimators=100-max_depth=3-learning_rate=0.1: seuil=0.500, tn=240.000, fp=7.000, fn=36.000, tp=11.000, pr_auc_trapezoidal=0.490, brier_score=0.107, log_loss=0.351, roc_auc=0.813, average_precision=0.497, f1=0.338, precision=0.611, recall=0.234, accuracy=0.854, business_cost=43
+run_id : ffa7277146d04927a9248ac5506c7e73
+🏃 View run gradient_boosting-n_estimators=100-max_depth=3-learning_rate=0.1 at: http://localhost:5000/#/experiments/2/runs/ffa7277146d04927a9248ac5506c7e73
+🧪 View experiment at: http://localhost:5000/#/experiments/2
+[21/22] -m src.train --model gradient_boosting --n_estimators 200 --max_depth 2 run_id=ce38de16ba6943aba4ddb1b460c7f82c
+2026/10/20 13:18:17 INFO mlflow.utils.uv_utils: Detected uv project: found uv.lock and pyproject.toml in /home/syrine/mlops-cours-2026
+2026/10/20 13:18:30 WARNING mlflow.utils.environment: Failed to resolve installed pip version. ``pip`` will be added to conda.yaml environment spec without a version specifier.
+gradient_boosting-n_estimators=200-max_depth=2-learning_rate=0.1: seuil=0.500, tn=243.000, fp=4.000, fn=34.000, tp=13.000, pr_auc_trapezoidal=0.523, brier_score=0.103, log_loss=0.348, roc_auc=0.814, average_precision=0.530, f1=0.406, precision=0.765, recall=0.277, accuracy=0.871, business_cost=38
+run_id : ce38de16ba6943aba4ddb1b460c7f82c
+🏃 View run gradient_boosting-n_estimators=200-max_depth=2-learning_rate=0.1 at: http://localhost:5000/#/experiments/2/runs/ce38de16ba6943aba4ddb1b460c7f82c
+🧪 View experiment at: http://localhost:5000/#/experiments/2
+[22/22] -m src.train --model gradient_boosting --n_estimators 200 --max_depth 3 run_id=4fb0586f12c94b15a24ba00a42501c6b
+2026/10/20 13:18:50 INFO mlflow.utils.uv_utils: Detected uv project: found uv.lock and pyproject.toml in /home/syrine/mlops-cours-2026
+2026/10/20 13:19:02 WARNING mlflow.utils.environment: Failed to resolve installed pip version. ``pip`` will be added to conda.yaml environment spec without a version specifier.
+gradient_boosting-n_estimators=200-max_depth=3-learning_rate=0.1: seuil=0.500, tn=239.000, fp=8.000, fn=32.000, tp=15.000, pr_auc_trapezoidal=0.508, brier_score=0.108, log_loss=0.367, roc_auc=0.805, average_precision=0.514, f1=0.429, precision=0.652, recall=0.319, accuracy=0.864, business_cost=40
+run_id : 4fb0586f12c94b15a24ba00a42501c6b
+🏃 View run gradient_boosting-n_estimators=200-max_depth=3-learning_rate=0.1 at: http://localhost:5000/#/experiments/2/runs/4fb0586f12c94b15a24ba00a42501c6b
+🧪 View experiment at: http://localhost:5000/#/experiments/2
+✓ 22 configurations verified; no model promoted.

@@ -1,0 +1,170 @@
+{
+  "source": {
+    "rows": 1470,
+    "columns": 35,
+    "missing_values": 0,
+    "duplicate_rows": 0,
+    "unique_identifiers": true,
+    "target_counts": {
+      "No": 1233,
+      "Yes": 237
+    },
+    "constants": {
+      "EmployeeCount": 1,
+      "Over18": "Y",
+      "StandardHours": 80
+    },
+    "dtypes": {
+      "Age": "int64",
+      "Attrition": "object",
+      "BusinessTravel": "object",
+      "DailyRate": "int64",
+      "Department": "object",
+      "DistanceFromHome": "int64",
+      "Education": "int64",
+      "EducationField": "object",
+      "EmployeeCount": "int64",
+      "EmployeeNumber": "int64",
+      "EnvironmentSatisfaction": "int64",
+      "Gender": "object",
+      "HourlyRate": "int64",
+      "JobInvolvement": "int64",
+      "JobLevel": "int64",
+      "JobRole": "object",
+      "JobSatisfaction": "int64",
+      "MaritalStatus": "object",
+      "MonthlyIncome": "int64",
+      "MonthlyRate": "int64",
+      "NumCompaniesWorked": "int64",
+      "Over18": "object",
+      "OverTime": "object",
+      "PercentSalaryHike": "int64",
+      "PerformanceRating": "int64",
+      "RelationshipSatisfaction": "int64",
+      "StandardHours": "int64",
+      "StockOptionLevel": "int64",
+      "TotalWorkingYears": "int64",
+      "TrainingTimesLastYear": "int64",
+      "WorkLifeBalance": "int64",
+      "YearsAtCompany": "int64",
+      "YearsInCurrentRole": "int64",
+      "YearsSinceLastPromotion": "int64",
+      "YearsWithCurrManager": "int64"
+    },
+    "source_sha256": "a5c31e38bd7fafc9bc333884eb181b06b41b8e5e488e8f7ccb27199fb3be7659",
+    "export_columns": [
+      "EmployeeNumber",
+      "DailyRate",
+      "DistanceFromHome",
+      "HourlyRate",
+      "MonthlyIncome",
+      "MonthlyRate",
+      "NumCompaniesWorked",
+      "PercentSalaryHike",
+      "TotalWorkingYears",
+      "TrainingTimesLastYear",
+      "YearsAtCompany",
+      "YearsInCurrentRole",
+      "YearsSinceLastPromotion",
+      "YearsWithCurrManager",
+      "BusinessTravel",
+      "Department",
+      "EducationField",
+      "JobRole",
+      "OverTime",
+      "Education",
+      "EnvironmentSatisfaction",
+      "JobInvolvement",
+      "JobLevel",
+      "JobSatisfaction",
+      "PerformanceRating",
+      "RelationshipSatisfaction",
+      "StockOptionLevel",
+      "WorkLifeBalance",
+      "Age",
+      "Gender",
+      "MaritalStatus",
+      "Attrition"
+    ],
+    "predictor_count": 27,
+    "dataset_ref": "pavansubhasht/ibm-hr-analytics-attrition-dataset",
+    "version": 1,
+    "download_url": "https://www.kaggle.com/api/v1/datasets/download/pavansubhasht/ibm-hr-analytics-attrition-dataset?datasetVersionNumber=1",
+    "export_sha256": "27e7bebda91c7e6d0b77e80128c2d9383d70a19a185b51ecfe3bb90f761d2a78",
+    "integrity_anchor": "first observation; not independent authentication"
+  },
+  "export_shape": [
+    1470,
+    32
+  ],
+  "export_missing": 0,
+  "export_duplicates": 0,
+  "quantitative_features": [
+    "DailyRate",
+    "DistanceFromHome",
+    "HourlyRate",
+    "MonthlyIncome",
+    "MonthlyRate",
+    "NumCompaniesWorked",
+    "PercentSalaryHike",
+    "TotalWorkingYears",
+    "TrainingTimesLastYear",
+    "YearsAtCompany",
+    "YearsInCurrentRole",
+    "YearsSinceLastPromotion",
+    "YearsWithCurrManager"
+  ],
+  "categorical_features": [
+    "BusinessTravel",
+    "Department",
+    "EducationField",
+    "JobRole",
+    "OverTime",
+    "Education",
+    "EnvironmentSatisfaction",
+    "JobInvolvement",
+    "JobLevel",
+    "JobSatisfaction",
+    "PerformanceRating",
+    "RelationshipSatisfaction",
+    "StockOptionLevel",
+    "WorkLifeBalance"
+  ],
+  "audit_only": [
+    "Age",
+    "Gender",
+    "MaritalStatus"
+  ],
+  "target_counts": {
+    "No": 1233,
+    "Yes": 237
+  },
+  "positive_fraction": 0.16122448979591836,
+  "split": {
+    "train_rows": 1176,
+    "test_rows": 294,
+    "train_positive": 190,
+    "test_positive": 47,
+    "id_overlap": 0,
+    "stratify": "encoded Attrition",
+    "random_state": 42
+  },
+  "sensitive_groups": {
+    "Age_group": {
+      "30-39": 622,
+      "40-49": 349,
+      "<30": 326,
+      ">=50": 173
+    },
+    "Gender": {
+      "Male": 882,
+      "Female": 588
+    },
+    "MaritalStatus": {
+      "Married": 673,
+      "Single": 470,
+      "Divorced": 327
+    }
+  },
+  "export_sha256": "27e7bebda91c7e6d0b77e80128c2d9383d70a19a185b51ecfe3bb90f761d2a78"
+}

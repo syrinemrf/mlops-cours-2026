@@ -1,0 +1,19 @@
+{
+  "scanned_files": 281,
+  "forbidden_tracked_or_new_paths": [],
+  "targeted_secret_signature_hits": [],
+  "new_and_modified_json_valid": true,
+  "missing_local_document_links": [],
+  "official_checker_blob_unchanged": "592a04ba431d6314b8bf2787b573c64c91d6b6ee",
+  "local_credentials_ignored": true,
+  "local_file_modes": {
+    ".env": "0o600",
+    ".dvc/config.local": "0o600"
+  },
+  "scan_limit": "Targeted paths and high-confidence signatures; not an exhaustive secret detector",
+  "local_env_permissions_tightened": {
+    "before": "0o644",
+    "after": "0o600",
+    "contents_unchanged": true
+  }
+}

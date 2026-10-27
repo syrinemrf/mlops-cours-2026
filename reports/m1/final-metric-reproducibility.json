@@ -1,0 +1,8 @@
+{
+  "previous_smoke_run_id": "aa859327feef485ebad8d4992f558a3e",
+  "dvc_run_id": "b55a5e9846cb44aeac027426280053e8",
+  "common_metrics_identical_within_1e_12": true,
+  "contract_parameters_environment_and_splits_unchanged": true,
+  "second_evaluation_byte_identical": true,
+  "cached_repro_skipped_all_stages": true
+}

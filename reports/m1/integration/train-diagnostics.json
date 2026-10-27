@@ -1,0 +1,187 @@
+{
+  "summary": {
+    "cv_roc_auc": 0.8546799817571925,
+    "cv_roc_auc_std": 0.029784769926053837,
+    "cv_average_precision": 0.6729475140048591,
+    "cv_average_precision_std": 0.05351056771215013
+  },
+  "folds": [
+    {
+      "fold": 1,
+      "train_rows": 940,
+      "validation_rows": 236,
+      "validation_positives": 38,
+      "roc_auc": 0.824428495481127,
+      "average_precision": 0.7202720468215338
+    },
+    {
+      "fold": 2,
+      "train_rows": 941,
+      "validation_rows": 235,
+      "validation_positives": 38,
+      "roc_auc": 0.837429869088966,
+      "average_precision": 0.588820534129851
+    },
+    {
+      "fold": 3,
+      "train_rows": 941,
+      "validation_rows": 235,
+      "validation_positives": 38,
+      "roc_auc": 0.8896606999732835,
+      "average_precision": 0.689631989504463
+    },
+    {
+      "fold": 4,
+      "train_rows": 941,
+      "validation_rows": 235,
+      "validation_positives": 38,
+      "roc_auc": 0.891931605663906,
+      "average_precision": 0.7305417815371525
+    },
+    {
+      "fold": 5,
+      "train_rows": 941,
+      "validation_rows": 235,
+      "validation_positives": 38,
+      "roc_auc": 0.8299492385786802,
+      "average_precision": 0.6354712180312945
+    }
+  ],
+  "cv_folds": 5,
+  "fold_assignments_sha256": "6fc438c8929f094b6bd9feb4f29fbc0c3c52ab3db0eb7e8ac40cac636981acd9",
+  "std_definition": "population standard deviation of five fold scores (ddof=0), not a CI",
+  "oof_rows": 1176,
+  "oof_predictions_per_row": 1,
+  "fits": 5,
+  "n_jobs": 1,
+  "blas_threads": 1,
+  "protocol": "A",
+  "evaluation_role": "train_cv_diagnostic",
+  "promotion_eligible": false,
+  "dataset": "ibm-hr-attrition",
+  "model": "logistic_regression",
+  "hyperparameters": {
+    "C": 1.0,
+    "class_weight": null
+  },
+  "random_state": 42,
+  "train_sha256": "9e91ffd059dfe67ae4860f7111a0cbebda0f24d59bc36f192782a891d642d3e5",
+  "contract_sha256": "0579d914bcd7904dde8fb4be2b24a773e80e91061f729772ce11d54b59783ad3",
+  "params_sha256": "1aa7733dddfad1c070085b6a29bdddb883515337174be0aefebf7d7270d34030",
+  "packages": {
+    "scikit-learn": "1.9.1",
+    "numpy": "2.5.3",
+    "pandas": "2.3.3"
+  },
+  "predictors": [
+    "DailyRate",
+    "DistanceFromHome",
+    "HourlyRate",
+    "MonthlyIncome",
+    "MonthlyRate",
+    "NumCompaniesWorked",
+    "PercentSalaryHike",
+    "TotalWorkingYears",
+    "TrainingTimesLastYear",
+    "YearsAtCompany",
+    "YearsInCurrentRole",
+    "YearsSinceLastPromotion",
+    "YearsWithCurrManager",
+    "BusinessTravel",
+    "Department",
+    "EducationField",
+    "JobRole",
+    "OverTime",
+    "Education",
+    "EnvironmentSatisfaction",
+    "JobInvolvement",
+    "JobLevel",
+    "JobSatisfaction",
+    "PerformanceRating",
+    "RelationshipSatisfaction",
+    "StockOptionLevel",
+    "WorkLifeBalance"
+  ],
+  "sensitive_and_identifier_used_as_predictors": false,
+  "test_used": false,
+  "official_model_modified": false,
+  "selection_limitation": "CV used for selection is not an independent final estimate",
+  "official_decision_threshold": 0.5,
+  "sensitivity": [
+    {
+      "scenario": "official_threshold_FN_FP_1_1",
+      "ratio": 1,
+      "threshold": 0.5,
+      "recall": 0.46842105263157896,
+      "precision": 0.7606837606837606,
+      "fn": 101,
+      "fp": 28,
+      "flagged": 117,
+      "cost": 129.0,
+      "cost_vs_nobody": 0.6789473684210526
+    },
+    {
+      "scenario": "hypothetical_FN_FP_1_1",
+      "ratio": 1,
+      "threshold": 0.5348943876130682,
+      "recall": 0.4421052631578947,
+      "precision": 0.7924528301886793,
+      "fn": 106,
+      "fp": 22,
+      "flagged": 106,
+      "cost": 128.0,
+      "cost_vs_nobody": 0.6736842105263158
+    },
+    {
+      "scenario": "hypothetical_FN_FP_2_1",
+      "ratio": 2,
+      "threshold": 0.3432870883848653,
+      "recall": 0.6526315789473685,
+      "precision": 0.6108374384236454,
+      "fn": 66,
+      "fp": 79,
+      "flagged": 203,
+      "cost": 211.0,
+      "cost_vs_nobody": 0.5552631578947368
+    },
+    {
+      "scenario": "hypothetical_FN_FP_3_1",
+      "ratio": 3,
+      "threshold": 0.32788787295713673,
+      "recall": 0.6631578947368421,
+      "precision": 0.6,
+      "fn": 64,
+      "fp": 84,
+      "flagged": 210,
+      "cost": 276.0,
+      "cost_vs_nobody": 0.4842105263157895
+    },
+    {
+      "scenario": "hypothetical_FN_FP_5_1",
+      "ratio": 5,
+      "threshold": 0.22249593940665066,
+      "recall": 0.7578947368421053,
+      "precision": 0.48,
+      "fn": 46,
+      "fp": 156,
+      "flagged": 300,
+      "cost": 386.0,
+      "cost_vs_nobody": 0.4063157894736842
+    },
+    {
+      "scenario": "hypothetical_FN_FP_10_1",
+      "ratio": 10,
+      "threshold": 0.22249593940665066,
+      "recall": 0.7578947368421053,
+      "precision": 0.48,
+      "fn": 46,
+      "fp": 156,
+      "flagged": 300,
+      "cost": 616.0,
+      "cost_vs_nobody": 0.32421052631578945
+    }
+  ],
+  "cost_assumption": "experimental scenarios, not established economic HR costs",
+  "threshold_selection_bias": "Optimized and evaluated on the same OOF: optimistic cost",
+  "official_threshold_changed": false
+}
