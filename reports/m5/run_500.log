@@ -1,0 +1,30 @@
+[2026-11-08 20:57:18,770] LAPTOP-PKILQ9OR/INFO/locust.main: Starting Locust 2.46.6
+[2026-11-08 20:57:18,861] LAPTOP-PKILQ9OR/INFO/locust.runners: LAPTOP-PKILQ9OR_fec26a1a9cbd42b4adb819517ed0be8d (index 0) reported as ready. 1 workers connected.
+[2026-11-08 20:57:19,844] LAPTOP-PKILQ9OR/INFO/locust.main: Run time limit set to 180 seconds
+[2026-11-08 20:57:19,845] LAPTOP-PKILQ9OR/INFO/locust.runners: Sending spawn jobs of 500 users at 50.00 spawn rate to 1 ready workers
+[2026-11-08 20:57:29,089] LAPTOP-PKILQ9OR/INFO/locust.runners: All users spawned: {"PredictUser": 500} (500 total users)
+[2026-11-08 21:00:18,028] LAPTOP-PKILQ9OR/INFO/locust.main: --run-time limit reached, shutting down
+[2026-11-08 21:00:18,161] LAPTOP-PKILQ9OR/INFO/locust.runners: Got quit message from master, shutting down...
+[2026-11-08 21:00:20,065] LAPTOP-PKILQ9OR/INFO/locust.main: Shutting down (exit code 1)
+Type     Name                                                                          # reqs      # fails |    Avg     Min     Max    Med |   req/s  failures/s
+--------|----------------------------------------------------------------------------|-------|-------------|-------|-------|-------|-------|--------|-----------
+POST     /predict                                                                       24866     8(0.03%) |   3283       7   42285   2500 |  139.78        0.04
+--------|----------------------------------------------------------------------------|-------|-------------|-------|-------|-------|-------|--------|-----------
+         Aggregated                                                                     24866     8(0.03%) |   3283       7   42285   2500 |  139.78        0.04
+
+Response time percentiles (approximated)
+Type     Name                                                                                  50%    66%    75%    80%    90%    95%    98%    99%  99.9% 99.99%   100% # reqs
+--------|--------------------------------------------------------------------------------|--------|------|------|------|------|------|------|------|------|------|------|------
+POST     /predict                                                                             2500   3000   3400   3800   5400   7600  15000  20000  39000  42000  42000  24866
+--------|--------------------------------------------------------------------------------|--------|------|------|------|------|------|------|------|------|------|------|------
+         Aggregated                                                                           2500   3000   3400   3800   5400   7600  15000  20000  39000  42000  42000  24866
+
+Error report
+# occurrences      Error                                                                                               
+------------------|---------------------------------------------------------------------------------------------------------------------------------------------
+8                  POST /predict: HTTPError('502 Server Error: Bad Gateway for url: /predict')                         
+------------------|---------------------------------------------------------------------------------------------------------------------------------------------
+
+[2026-11-08 21:00:22,691] LAPTOP-PKILQ9OR/INFO/locust.main: Shutting down (exit code 0)
+mémoire VM disponible min : 2033 Mio ; pods predictor prêts max : 2
+palier 500 terminé normalement
