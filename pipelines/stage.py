@@ -97,10 +97,7 @@ def pull(workspace: str, work: Path) -> None:
 def snapshot(work: Path) -> dict[Path, int]:
     """Fichiers de sortie présents et leur date de modification."""
     return {
-        p: p.stat().st_mtime_ns
-        for d in OUTPUT_DIRS
-        for p in (work / d).rglob("*")
-        if p.is_file()
+        p: p.stat().st_mtime_ns for d in OUTPUT_DIRS for p in (work / d).rglob("*") if p.is_file()
     }
 
 
