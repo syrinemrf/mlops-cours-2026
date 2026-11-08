@@ -11,6 +11,12 @@ RUN pip install --no-cache-dir --target=/deps -r requirements.txt
 
 # --- Stage 2 : runtime — uniquement ce qui sert à répondre aux requêtes ---------------
 FROM python:3.12-slim AS runtime
+# Trivy (2026-11-08) : seules 2 HIGH de l'image ont un correctif Debian publié, toutes deux
+# dans zlib1g (CVE-2026-76844, CVE-2026-85091 -> 1:1.3.dfsg+really1.3.1-1+deb13u1) : mise à
+# jour ciblée, sans autre paquet. Les autres HIGH n'ont pas de correctif (reports/m4/).
+RUN apt-get update \
+    && apt-get install -y --no-install-recommends --only-upgrade zlib1g \
+    && rm -rf /var/lib/apt/lists/*
 # UID fixe : Kubernetes (runAsNonRoot) exige un USER numérique pour vérifier le non-root.
 RUN groupadd --gid 10001 ml \
     && useradd --uid 10001 --gid ml --no-create-home --shell /usr/sbin/nologin ml
