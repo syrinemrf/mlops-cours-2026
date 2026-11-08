@@ -76,3 +76,29 @@ def test_unknown_column_is_422(client):
 def test_null_is_imputed(client):
     row = rows(1)[0] | {CFG.numeric[0]: None, CFG.categorical[0]: None}
     assert client.post("/predict", json={"instances": [row]}).status_code == 200
+
+
+def test_version_defaults_to_lab4_image(client):
+    """Sans APP_VERSION (image 1.0.0 du Lab 4, tests locaux) : version 1.0.0."""
+    exported = json.loads(MODEL.with_name("metadata.json").read_text())
+    body = client.get("/version").json()
+    assert body == {"version": "1.0.0", "model_version": exported["model_version"]}
+    assert client.get("/metadata").json()["api_version"] == "1.0.0"
+
+
+def test_version_reads_app_version(monkeypatch):
+    """APP_VERSION (posée par ENV dans l'image) est la version servie par /version."""
+    import importlib
+
+    from fastapi.testclient import TestClient
+
+    sys.path.insert(0, str(ROOT / "packaging"))
+    import app.serve as serve
+
+    monkeypatch.setenv("APP_VERSION", "2.0.0")
+    try:
+        reloaded = importlib.reload(serve)
+        assert TestClient(reloaded.app).get("/version").json()["version"] == "2.0.0"
+    finally:
+        monkeypatch.delenv("APP_VERSION")
+        importlib.reload(serve)

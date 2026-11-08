@@ -1,0 +1,17 @@
+NAME            URL                                                  READY   PREV   LATEST   PREVROLLEDOUTREVISION           LATESTREADYREVISION             AGE
+scoring-model   http://scoring-model-predictor.scoring.example.com   True    90     10       scoring-model-predictor-00002   scoring-model-predictor-00003   42m
+
+NAME                                                         CONFIG NAME               GENERATION   READY   REASON   ACTUAL REPLICAS   DESIRED REPLICAS
+revision.serving.knative.dev/scoring-model-predictor-00001   scoring-model-predictor   1            True             0                 0
+revision.serving.knative.dev/scoring-model-predictor-00002   scoring-model-predictor   2            True             1                 1
+revision.serving.knative.dev/scoring-model-predictor-00003   scoring-model-predictor   3            True             1                 1
+
+NAME                                                                           DESIREDSCALE   ACTUALSCALE   READY   REASON
+podautoscaler.autoscaling.internal.knative.dev/scoring-model-predictor-00001   0              0             False   NoTraffic
+podautoscaler.autoscaling.internal.knative.dev/scoring-model-predictor-00002   1              1             True    
+podautoscaler.autoscaling.internal.knative.dev/scoring-model-predictor-00003   1              1             True    
+
+latest scoring-model-predictor-00003 10%
+prev scoring-model-predictor-00002 90%
+NAME            URL                                                  READY   PREV   LATEST   PREVROLLEDOUTREVISION   LATESTREADYREVISION             AGE
+scoring-model   http://scoring-model-predictor.scoring.example.com   True           100                              scoring-model-predictor-00003   43m

@@ -1,0 +1,44 @@
+[2026-11-08 21:01:03,299] LAPTOP-PKILQ9OR/INFO/locust.main: Starting Locust 2.46.6
+[2026-11-08 21:01:03,390] LAPTOP-PKILQ9OR/INFO/locust.runners: LAPTOP-PKILQ9OR_3ffeb0d300bd47d6abb63912195fde5e (index 0) reported as ready. 1 workers connected.
+[2026-11-08 21:01:04,378] LAPTOP-PKILQ9OR/INFO/locust.main: Run time limit set to 180 seconds
+[2026-11-08 21:01:04,379] LAPTOP-PKILQ9OR/INFO/locust.runners: Sending spawn jobs of 1000 users at 100.00 spawn rate to 1 ready workers
+[2026-11-08 21:01:14,035] LAPTOP-PKILQ9OR/INFO/locust.runners: All users spawned: {"PredictUser": 1000} (1000 total users)
+[2026-11-08 21:04:03,584] LAPTOP-PKILQ9OR/INFO/locust.main: --run-time limit reached, shutting down
+[2026-11-08 21:04:03,967] LAPTOP-PKILQ9OR/INFO/locust.runners: Got quit message from master, shutting down...
+[2026-11-08 21:04:07,739] LAPTOP-PKILQ9OR/INFO/locust.main: Shutting down (exit code 1)
+Type     Name                                                                          # reqs      # fails |    Avg     Min     Max    Med |   req/s  failures/s
+--------|----------------------------------------------------------------------------|-------|-------------|-------|-------|-------|-------|--------|-----------
+POST     /predict                                                                       10356    63(0.61%) |  14790       7  165231   3400 |   58.34        0.35
+--------|----------------------------------------------------------------------------|-------|-------------|-------|-------|-------|-------|--------|-----------
+         Aggregated                                                                     10356    63(0.61%) |  14790       7  165231   3400 |   58.34        0.35
+
+Response time percentiles (approximated)
+Type     Name                                                                                  50%    66%    75%    80%    90%    95%    98%    99%  99.9% 99.99%   100% # reqs
+--------|--------------------------------------------------------------------------------|--------|------|------|------|------|------|------|------|------|------|------|------
+POST     /predict                                                                             3400   8900  15000  27000  48000  57000  99000 108000 164000 165000 165000  10356
+--------|--------------------------------------------------------------------------------|--------|------|------|------|------|------|------|------|------|------|------|------
+         Aggregated                                                                           3400   8900  15000  27000  48000  57000  99000 108000 164000 165000 165000  10356
+
+Error report
+# occurrences      Error                                                                                               
+------------------|---------------------------------------------------------------------------------------------------------------------------------------------
+63                 POST /predict: HTTPError('502 Server Error: Bad Gateway for url: /predict')                         
+------------------|---------------------------------------------------------------------------------------------------------------------------------------------
+
+Traceback (most recent call last):
+  File "src/gevent/greenlet.py", line 912, in gevent._gevent_cgreenlet.Greenlet.run
+  File "/home/syrine/mlops-cours-2026/.venv/lib/python3.12/site-packages/locust/stats.py", line 1166, in stats_writer
+    self.requests_csv_filehandle.seek(requests_csv_data_start)
+ValueError: I/O operation on closed file.
+2026-11-08T20:04:10Z <Greenlet at 0x76515d505440: <bound method StatsCSVFileWriter.stats_writer of <locust.stats.StatsCSVFileWriter object at 0x765166082ba0>>> failed with ValueError
+
+[2026-11-08 21:04:10,517] LAPTOP-PKILQ9OR/CRITICAL/locust.main: Unhandled exception in greenlet: <Greenlet at 0x76515d505440: <bound method StatsCSVFileWriter.stats_writer of <locust.stats.StatsCSVFileWriter object at 0x765166082ba0>>>
+Traceback (most recent call last):
+  File "src/gevent/greenlet.py", line 912, in gevent._gevent_cgreenlet.Greenlet.run
+  File "/home/syrine/mlops-cours-2026/.venv/lib/python3.12/site-packages/locust/stats.py", line 1166, in stats_writer
+    self.requests_csv_filehandle.seek(requests_csv_data_start)
+    ^^^^^^^^^^^^^^^^^
+ValueError: I/O operation on closed file.
+[2026-11-08 21:04:21,353] LAPTOP-PKILQ9OR/INFO/locust.main: Shutting down (exit code 0)
+mémoire VM disponible min : 1990 Mio ; pods predictor prêts max : 3
+palier 1000 terminé normalement
