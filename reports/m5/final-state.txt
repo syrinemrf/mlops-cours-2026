@@ -1,0 +1,101 @@
+# État final avant suppression — 2026-11-08T20:08:33Z
+NAME                                               URL                                                  READY   PREV   LATEST   PREVROLLEDOUTREVISION   LATESTREADYREVISION             AGE
+inferenceservice.serving.kserve.io/scoring-model   http://scoring-model-predictor.scoring.example.com   True           100                              scoring-model-predictor-00003   44m
+
+NAME                                                         CONFIG NAME               GENERATION   READY   REASON   ACTUAL REPLICAS   DESIRED REPLICAS
+revision.serving.knative.dev/scoring-model-predictor-00001   scoring-model-predictor   1            True             0                 0
+revision.serving.knative.dev/scoring-model-predictor-00002   scoring-model-predictor   2            True             0                 0
+revision.serving.knative.dev/scoring-model-predictor-00003   scoring-model-predictor   3            True             1                 1
+
+NAME                                                                           DESIREDSCALE   ACTUALSCALE   READY   REASON
+podautoscaler.autoscaling.internal.knative.dev/scoring-model-predictor-00001   0              0             False   NoTraffic
+podautoscaler.autoscaling.internal.knative.dev/scoring-model-predictor-00002   0              0             False   NoTraffic
+podautoscaler.autoscaling.internal.knative.dev/scoring-model-predictor-00003   1              1             True    
+
+NAME                                                           READY   STATUS    RESTARTS   AGE    IP            NODE               NOMINATED NODE   READINESS GATES
+pod/scoring-model-predictor-00003-deployment-586485f77-zd7ps   2/2     Running   0          3m6s   10.244.2.32   mlops-lab-worker   <none>           <none>
+
+spec:
+  predictor:
+    canaryTrafficPercent: 100
+    containers:
+    - image: localhost:5001/scoring-api:2.0.0
+      imagePullPolicy: IfNotPresent
+      name: kserve-container
+      ports:
+      - containerPort: 8000
+        protocol: TCP
+      readinessProbe:
+        httpGet:
+          path: /health
+          port: 8000
+      resources:
+        limits:
+          cpu: "1"
+          memory: 512Mi
+        requests:
+          cpu: 200m
+          memory: 256Mi
+    maxReplicas: 5
+    minReplicas: 1
+    scaleMetric: rps
+    scaleTarget: 200
+status:
+  address:
+    url: http://scoring-model-predictor.scoring.svc.cluster.local
+  components:
+    predictor:
+      address:
+        url: http://scoring-model-predictor.scoring.svc.cluster.local
+      latestCreatedRevision: scoring-model-predictor-00003
+      latestReadyRevision: scoring-model-predictor-00003
+      latestRolledoutRevision: scoring-model-predictor-00003
+      previousRolledoutRevision: scoring-model-predictor-00002
+      traffic:
+      - latestRevision: true
+        percent: 100
+        revisionName: scoring-model-predictor-00003
+        tag: latest
+        url: http://latest-scoring-model-predictor.scoring.example.com
+      url: http://scoring-model-predictor.scoring.example.com
+  conditions:
+  - lastTransitionTime: "2026-11-08T19:24:17Z"
+    status: "True"
+    type: IngressReady
+  - lastTransitionTime: "2026-11-08T20:05:44Z"
+    severity: Info
+    status: "True"
+    type: LatestDeploymentReady
+  - lastTransitionTime: "2026-11-08T20:05:44Z"
+    severity: Info
+    status: "True"
+    type: PredictorConfigurationReady
+  - lastTransitionTime: "2026-11-08T20:06:53Z"
+    status: "True"
+    type: PredictorReady
+  - lastTransitionTime: "2026-11-08T20:06:53Z"
+    severity: Info
+    status: "True"
+    type: PredictorRouteReady
+  - lastTransitionTime: "2026-11-08T20:06:53Z"
+    status: "True"
+    type: Ready
+  - lastTransitionTime: "2026-11-08T20:06:53Z"
+    severity: Info
+    status: "True"
+    type: RoutesReady
+  - lastTransitionTime: "2026-11-08T19:23:58Z"
+    severity: Info
+    status: "False"
+    type: Stopped
+  deploymentMode: Knative
+  modelStatus:
+    copies:
+      failedCopies: 0
+      totalCopies: 1
+    states:
+      activeModelState: Loaded
+      targetModelState: Loaded
+    transitionStatus: UpToDate
+  observedGeneration: 4
+  url: http://scoring-model-predictor.scoring.example.com
