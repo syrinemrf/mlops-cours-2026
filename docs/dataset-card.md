@@ -248,3 +248,11 @@ les erreurs grossières (unité, recodage, cible manquante), pas les déplacemen
 population, qui relèvent de la détection de drift (`src/detect_drift.py`). Les modalités
 absentes du train (ex. PerformanceRating 1–2) seraient refusées : régénérer la suite est
 une décision versionnée, pas un ajustement silencieux.
+
+**État du registre au 2026-11-08 (lecture MLflow).** `@champion` est sur la **v7** de
+`scoring-model` (run `ef5f2ec9…`, tag `launched_by=airflow`), pas sur la v4 citée par les
+sections datées du 2026-10-20 et du 2026-10-27, qui restent vraies à leur date. La v7 a la
+même configuration (LR C=1 sans poids, seuil 0,5) et la même ROC AUC de test
+(0,8368507193) que la v4 ; l'identité binaire des deux modèles n'a pas été vérifiée. Le run
+`scoring-pipeline` du Lab 3 a enregistré la v8 en `@challenger` seulement
+(`challenger_only=True`), sans déplacer `@champion`.

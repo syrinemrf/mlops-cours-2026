@@ -1,7 +1,9 @@
 # Attentes comportementales du modèle IBM HR (attrition), lues par
 # tests/test_model_behavior.py. Changer de dataset = réécrire ce fichier.
 # Attentes fixées a priori d'après le domaine RH (pas d'après les sorties du modèle),
-# puis mesurées sur le champion v4 (LR C=1, seuil 0,5) le 2026-11-08 : toutes tenues.
+# puis mesurées le 2026-11-08 sur le modèle DVC local (run ef2d3f85, version 4 du registre,
+# LR C=1, seuil 0,5) : toutes tenues. @champion est sur la v7, même configuration et même
+# ROC AUC de test (0,8368507193) que la v4.
 # Rien ici n'est causal : on teste la cohérence du modèle, pas un effet RH réel.
 
 # Seuil de décision : coûts 1:1 (dataset.yaml) => seuil analytique 0,5 ; il voyage dans
