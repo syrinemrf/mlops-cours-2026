@@ -1,0 +1,2 @@
+before: load 2.08 3.34 3.00, MemAvailable 3521 MiB
+after: load 2.74 3.37 3.02, MemAvailable 3511 MiB
