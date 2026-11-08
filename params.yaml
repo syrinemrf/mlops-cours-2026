@@ -26,3 +26,35 @@ validation:
   - [YearsAtCompany, YearsWithCurrManager]
   - [YearsAtCompany, YearsSinceLastPromotion]
   - [Age, TotalWorkingYears]
+
+# Lab 3 : lots simulés (src/simulate.py ; pipelines test_bad_data et drift_demo).
+simulation:
+  sample_frac: 0.5  # lot sain : moitié des salariés, tirés sans remise
+  # Lot corrompu : trois bugs « silencieux » d'un SIRH fournisseur
+  corrupt:
+    unit_scale:  # salaire mensuel exporté en annuel
+      MonthlyIncome: 12
+    unknown_code:  # nouveau code de département non déclaré, sur 10 % des lignes
+      column: Department
+      value: Unknown
+      rate: 0.10
+    missing_target_rate: 0.05  # statut de départ non renseigné
+
+# Lab 3 : détection de drift (src/detect_drift.py, pipelines KFP)
+drift:
+  ks_alpha: 0.05  # significativité : p-value du test (KS numérique, chi2 catégorielle)
+  psi_threshold: 0.25  # magnitude : PSI à partir duquel le déplacement compte
+  drift_share: 0.1  # gate : le lot dérive dès que 10 % des colonnes dérivent
+  # Scénario simulé, propre au dataset : vague d'embauches plus jeunes, plus éloignées,
+  # moins payées et plus souvent en heures supplémentaires. Données valides (contrat GX
+  # respecté), mais population déplacée.
+  simulation:
+    scale:  # facteurs multiplicatifs
+      DistanceFromHome: 1.5
+      MonthlyIncome: 0.8
+    shift:  # décalages, bornés au domaine observé
+      Age: -6
+    reassign:  # part des lignes qui reçoivent la modalité
+      OverTime:
+        value: "Yes"
+        rate: 0.4
