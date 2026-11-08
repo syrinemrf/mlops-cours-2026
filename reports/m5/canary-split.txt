@@ -1,0 +1,8 @@
+# Canary 90/10 mesuré — 2026-11-08T20:06:20Z
+1000 requêtes GET /metadata via la passerelle (Host scoring-model-predictor.scoring.example.com), erreurs : 0
+api_version 1.0.0 : 891 (89.1 %)
+api_version 2.0.0 : 109 (10.9 %)
+latest-… : {'version': '2.0.0', 'model_version': '7'}
+prev-… /metadata api_version : 1.0.0
+Parité v1 (prev) / v2 (latest) sur 50 lignes de test : max |écart| = 0.00e+00, décisions identiques : 50/50, seuils 0.5 / 0.5, model_version 7 / 7
+Après promotion (canaryTrafficPercent 100, 20:07:01Z) : 200 requêtes /metadata -> {'2.0.0': 200}
