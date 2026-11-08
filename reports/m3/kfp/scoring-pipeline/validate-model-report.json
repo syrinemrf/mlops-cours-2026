@@ -1,0 +1,102 @@
+{
+  "success": true,
+  "n_checks": 18,
+  "n_failed": 0,
+  "failed": [],
+  "roc_auc": 0.8369,
+  "average_precision": 0.647,
+  "base_rate": 0.1599,
+  "decision_threshold": 0.5,
+  "evidently": [
+    {
+      "name": "RocAuc metric: Equal 0.894 ± 0.179",
+      "success": true
+    },
+    {
+      "name": "RocAuc metric: Greater or Equal 0.700",
+      "success": true
+    }
+  ],
+  "behavior": [
+    {
+      "name": "test_metrique_primaire_au_gate",
+      "success": true,
+      "skipped": false
+    },
+    {
+      "name": "test_precision_moyenne_au_dessus_du_taux_de_base",
+      "success": true,
+      "skipped": false
+    },
+    {
+      "name": "test_seuil_de_decision_documente",
+      "success": true,
+      "skipped": false
+    },
+    {
+      "name": "test_cout_metier_inferieur_aux_politiques_naives",
+      "success": true,
+      "skipped": false
+    },
+    {
+      "name": "test_performance_par_sous_groupe[Age]",
+      "success": true,
+      "skipped": false
+    },
+    {
+      "name": "test_performance_par_sous_groupe[Gender]",
+      "success": true,
+      "skipped": false
+    },
+    {
+      "name": "test_performance_par_sous_groupe[MaritalStatus]",
+      "success": true,
+      "skipped": false
+    },
+    {
+      "name": "test_invariance[HourlyRate]",
+      "success": true,
+      "skipped": false
+    },
+    {
+      "name": "test_invariance[MonthlyRate]",
+      "success": true,
+      "skipped": false
+    },
+    {
+      "name": "test_directionnel[OverTime:No->Yes]",
+      "success": true,
+      "skipped": false
+    },
+    {
+      "name": "test_directionnel[BusinessTravel:Non-Travel->Travel_Frequently]",
+      "success": true,
+      "skipped": false
+    },
+    {
+      "name": "test_directionnel[EnvironmentSatisfaction:1: Low->4: Very High]",
+      "success": true,
+      "skipped": false
+    },
+    {
+      "name": "test_directionnel[JobSatisfaction:1: Low->4: Very High]",
+      "success": true,
+      "skipped": false
+    },
+    {
+      "name": "test_directionnel[MonthlyIncome:x1.5]",
+      "success": true,
+      "skipped": false
+    },
+    {
+      "name": "test_directionnel[TotalWorkingYears:x1.5]",
+      "success": true,
+      "skipped": false
+    },
+    {
+      "name": "test_directionnel[DistanceFromHome:x2.0]",
+      "success": true,
+      "skipped": false
+    }
+  ]
+}

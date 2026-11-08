@@ -1,0 +1,1 @@
+{"read_at": "2026-11-08T18:13:49+00:00", "aliases": {"challenger": "8", "champion": "7"}, "versions": [1, 2, 3, 4, 5, 6, 7, 8], "latest": {"version": "8", "run_id": "432c8310a0714df6856a31fff40f579d", "kfp_run_id": "2e33d31b-8dca-4269-ab82-42194ef57094", "launched_by": "kfp", "roc_auc": 0.8368507192695321, "validation_status": "passed"}}

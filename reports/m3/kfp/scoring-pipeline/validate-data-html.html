@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="fr"><head><meta charset="utf-8"><title>Validation des données</title>
+<style>body{font-family:sans-serif;margin:2em} table{border-collapse:collapse}
+td,th{border:1px solid #ccc;padding:4px 8px;text-align:left}
+.ok td:last-child{color:#1a7f37} .ko td:last-child{color:#cf222e;font-weight:bold}</style>
+</head><body><h1>Suite scoring_contract : 0 échec(s) sur 103</h1>
+<p>1470 lignes, part de la classe positive : 0.1612</p>
+<table><tr><th>Expectation</th><th>Attendu</th><th>Observé</th><th>Statut</th></tr>
+<tr class='ok'><td>expect_table_columns_to_match_set</td><td>column_set=[&#x27;DailyRate&#x27;, &#x27;DistanceFromHome&#x27;, &#x27;HourlyRate&#x27;, &#x27;MonthlyIncome&#x27;, &#x27;MonthlyRate&#x27;, , exact_match=False</td><td>[&#x27;Age&#x27;, &#x27;Attrition&#x27;, &#x27;BusinessTravel&#x27;, &#x27;DailyRate&#x27;, &#x27;Department&#x27;, &#x27;DistanceFromHome&#x27;, &#x27;Education&#x27;, &#x27;EducationField&#x27;, &#x27;EmployeeNumber&#x27;, &#x27;EnvironmentSatisfaction&#x27;, &#x27;Gender&#x27;, &#x27;HourlyRate&#x27;, &#x27;JobInvolvement&#x27;, &#x27;JobLevel&#x27;, &#x27;JobRole&#x27;, &#x27;JobSatisfaction&#x27;, &#x27;MaritalStatus&#x27;, &#x27;MonthlyIncome&#x27;, &#x27;MonthlyRate&#x27;, &#x27;NumCompaniesWorked&#x27;, &#x27;OverTime&#x27;, &#x27;PercentSalaryHike&#x27;, &#x27;PerformanceRating&#x27;, &#x27;RelationshipSatisfaction&#x27;, &#x27;StockOptionLevel&#x27;, &#x27;TotalWorkingYears&#x27;, &#x27;TrainingTimesLastYear&#x27;, &#x27;WorkLifeBalance&#x27;, &#x27;YearsAtCompany&#x27;, &#x27;YearsInCurrentRole&#x27;, &#x27;YearsSinceLastPromotion&#x27;, &#x27;YearsWithCurrManager&#x27;]</td><td>OK</td></tr>
+<tr class='ok'><td>expect_table_row_count_to_be_between</td><td>min_value=117</td><td>1470</td><td>OK</td></tr>
+<tr class='ok'><td>expect_column_pair_values_a_to_be_greater_than_b(TotalWorkingYears, YearsAtCompany) : Règle métier : TotalWorkingYears &gt;= YearsAtCompany</td><td>mostly=0.99, or_equal=True</td><td>0 hors contrat (0.0 %)</td><td>OK</td></tr>
+<tr class='ok'><td>expect_column_pair_values_a_to_be_greater_than_b(YearsAtCompany, YearsInCurrentRole) : Règle métier : YearsAtCompany &gt;= YearsInCurrentRole</td><td>mostly=0.99, or_equal=True</td><td>0 hors contrat (0.0 %)</td><td>OK</td></tr>
+<tr class='ok'><td>expect_column_pair_values_a_to_be_greater_than_b(YearsAtCompany, YearsWithCurrManager) : Règle métier : YearsAtCompany &gt;= YearsWithCurrManager</td><td>mostly=0.99, or_equal=True</td><td>0 hors contrat (0.0 %)</td><td>OK</td></tr>
+<tr class='ok'><td>expect_column_pair_values_a_to_be_greater_than_b(YearsAtCompany, YearsSinceLastPromotion) : Règle métier : YearsAtCompany &gt;= YearsSinceLastPromotion</td><td>mostly=0.99, or_equal=True</td><td>0 hors contrat (0.0 %)</td><td>OK</td></tr>
+<tr class='ok'><td>expect_column_pair_values_a_to_be_greater_than_b(Age, TotalWorkingYears) : Règle métier : Age &gt;= TotalWorkingYears</td><td>mostly=0.99, or_equal=True</td><td>0 hors contrat (0.0 %)</td><td>OK</td></tr>
+<tr class='ok'><td>expect_column_values_to_be_unique(EmployeeNumber)</td><td></td><td>0 hors contrat (0.0 %)</td><td>OK</td></tr>
+<tr class='ok'><td>expect_column_values_to_not_be_null(DailyRate)</td><td></td><td>0 hors contrat (0.0 %)</td><td>OK</td></tr>
+<tr class='ok'><td>expect_column_values_to_be_in_type_list(DailyRate)</td><td>type_list=[&#x27;int64&#x27;, &#x27;int32&#x27;, &#x27;float64&#x27;, &#x27;float32&#x27;, &#x27;Int64&#x27;, &#x27;Float64&#x27;]</td><td>int64</td><td>OK</td></tr>
+<tr class='ok'><td>expect_column_values_to_be_between(DailyRate)</td><td>mostly=0.99, min_value=0.0, max_value=2895.0</td><td>0 hors contrat (0.0 %)</td><td>OK</td></tr>
+<tr class='ok'><td>expect_column_values_to_not_be_null(DistanceFromHome)</td><td></td><td>0 hors contrat (0.0 %)</td><td>OK</td></tr>
+<tr class='ok'><td>expect_column_values_to_be_in_type_list(DistanceFromHome)</td><td>type_list=[&#x27;int64&#x27;, &#x27;int32&#x27;, &#x27;float64&#x27;, &#x27;float32&#x27;, &#x27;Int64&#x27;, &#x27;Float64&#x27;]</td><td>int64</td><td>OK</td></tr>
+<tr class='ok'><td>expect_column_values_to_be_between(DistanceFromHome)</td><td>mostly=0.99, min_value=0.0, max_value=57.0</td><td>0 hors contrat (0.0 %)</td><td>OK</td></tr>
+<tr class='ok'><td>expect_column_values_to_not_be_null(HourlyRate)</td><td></td><td>0 hors contrat (0.0 %)</td><td>OK</td></tr>
+<tr class='ok'><td>expect_column_values_to_be_in_type_list(HourlyRate)</td><td>type_list=[&#x27;int64&#x27;, &#x27;int32&#x27;, &#x27;float64&#x27;, &#x27;float32&#x27;, &#x27;Int64&#x27;, &#x27;Float64&#x27;]</td><td>int64</td><td>OK</td></tr>
+<tr class='ok'><td>expect_column_values_to_be_between(HourlyRate)</td><td>mostly=0.99, min_value=0.0, max_value=170.0</td><td>0 hors contrat (0.0 %)</td><td>OK</td></tr>
+<tr class='ok'><td>expect_column_values_to_not_be_null(MonthlyIncome)</td><td></td><td>0 hors contrat (0.0 %)</td><td>OK</td></tr>
+<tr class='ok'><td>expect_column_values_to_be_in_type_list(MonthlyIncome)</td><td>type_list=[&#x27;int64&#x27;, &#x27;int32&#x27;, &#x27;float64&#x27;, &#x27;float32&#x27;, &#x27;Int64&#x27;, &#x27;Float64&#x27;]</td><td>int64</td><td>OK</td></tr>
+<tr class='ok'><td>expect_column_values_to_be_between(MonthlyIncome)</td><td>mostly=0.99, min_value=0.0, max_value=38937.0</td><td>0 hors contrat (0.0 %)</td><td>OK</td></tr>
+<tr class='ok'><td>expect_column_values_to_not_be_null(MonthlyRate)</td><td></td><td>0 hors contrat (0.0 %)</td><td>OK</td></tr>
+<tr class='ok'><td>expect_column_values_to_be_in_type_list(MonthlyRate)</td><td>type_list=[&#x27;int64&#x27;, &#x27;int32&#x27;, &#x27;float64&#x27;, &#x27;float32&#x27;, &#x27;Int64&#x27;, &#x27;Float64&#x27;]</td><td>int64</td><td>OK</td></tr>
+<tr class='ok'><td>expect_column_values_to_be_between(MonthlyRate)</td><td>mostly=0.99, min_value=0.0, max_value=51904.0</td><td>0 hors contrat (0.0 %)</td><td>OK</td></tr>
+<tr class='ok'><td>expect_column_values_to_not_be_null(NumCompaniesWorked)</td><td></td><td>0 hors contrat (0.0 %)</td><td>OK</td></tr>
+<tr class='ok'><td>expect_column_values_to_be_in_type_list(NumCompaniesWorked)</td><td>type_list=[&#x27;int64&#x27;, &#x27;int32&#x27;, &#x27;float64&#x27;, &#x27;float32&#x27;, &#x27;Int64&#x27;, &#x27;Float64&#x27;]</td><td>int64</td><td>OK</td></tr>
+<tr class='ok'><td>expect_column_values_to_be_between(NumCompaniesWorked)</td><td>mostly=0.99, min_value=0.0, max_value=18.0</td><td>0 hors contrat (0.0 %)</td><td>OK</td></tr>
+<tr class='ok'><td>expect_column_values_to_not_be_null(PercentSalaryHike)</td><td></td><td>0 hors contrat (0.0 %)</td><td>OK</td></tr>
+<tr class='ok'><td>expect_column_values_to_be_in_type_list(PercentSalaryHike)</td><td>type_list=[&#x27;int64&#x27;, &#x27;int32&#x27;, &#x27;float64&#x27;, &#x27;float32&#x27;, &#x27;Int64&#x27;, &#x27;Float64&#x27;]</td><td>int64</td><td>OK</td></tr>
+<tr class='ok'><td>expect_column_values_to_be_between(PercentSalaryHike)</td><td>mostly=0.99, min_value=0.0, max_value=39.0</td><td>0 hors contrat (0.0 %)</td><td>OK</td></tr>
+<tr class='ok'><td>expect_column_values_to_not_be_null(TotalWorkingYears)</td><td></td><td>0 hors contrat (0.0 %)</td><td>OK</td></tr>
+<tr class='ok'><td>expect_column_values_to_be_in_type_list(TotalWorkingYears)</td><td>type_list=[&#x27;int64&#x27;, &#x27;int32&#x27;, &#x27;float64&#x27;, &#x27;float32&#x27;, &#x27;Int64&#x27;, &#x27;Float64&#x27;]</td><td>int64</td><td>OK</td></tr>
+<tr class='ok'><td>expect_column_values_to_be_between(TotalWorkingYears)</td><td>mostly=0.99, min_value=0.0, max_value=80.0</td><td>0 hors contrat (0.0 %)</td><td>OK</td></tr>
+<tr class='ok'><td>expect_column_values_to_not_be_null(TrainingTimesLastYear)</td><td></td><td>0 hors contrat (0.0 %)</td><td>OK</td></tr>
+<tr class='ok'><td>expect_column_values_to_be_in_type_list(TrainingTimesLastYear)</td><td>type_list=[&#x27;int64&#x27;, &#x27;int32&#x27;, &#x27;float64&#x27;, &#x27;float32&#x27;, &#x27;Int64&#x27;, &#x27;Float64&#x27;]</td><td>int64</td><td>OK</td></tr>
+<tr class='ok'><td>expect_column_values_to_be_between(TrainingTimesLastYear)</td><td>mostly=0.99, min_value=0.0, max_value=12.0</td><td>0 hors contrat (0.0 %)</td><td>OK</td></tr>
+<tr class='ok'><td>expect_column_values_to_not_be_null(YearsAtCompany)</td><td></td><td>0 hors contrat (0.0 %)</td><td>OK</td></tr>
+<tr class='ok'><td>expect_column_values_to_be_in_type_list(YearsAtCompany)</td><td>type_list=[&#x27;int64&#x27;, &#x27;int32&#x27;, &#x27;float64&#x27;, &#x27;float32&#x27;, &#x27;Int64&#x27;, &#x27;Float64&#x27;]</td><td>int64</td><td>OK</td></tr>
+<tr class='ok'><td>expect_column_values_to_be_between(YearsAtCompany)</td><td>mostly=0.99, min_value=0.0, max_value=74.0</td><td>0 hors contrat (0.0 %)</td><td>OK</td></tr>
+<tr class='ok'><td>expect_column_values_to_not_be_null(YearsInCurrentRole)</td><td></td><td>0 hors contrat (0.0 %)</td><td>OK</td></tr>
+<tr class='ok'><td>expect_column_values_to_be_in_type_list(YearsInCurrentRole)</td><td>type_list=[&#x27;int64&#x27;, &#x27;int32&#x27;, &#x27;float64&#x27;, &#x27;float32&#x27;, &#x27;Int64&#x27;, &#x27;Float64&#x27;]</td><td>int64</td><td>OK</td></tr>
+<tr class='ok'><td>expect_column_values_to_be_between(YearsInCurrentRole)</td><td>mostly=0.99, min_value=0.0, max_value=34.0</td><td>0 hors contrat (0.0 %)</td><td>OK</td></tr>
+<tr class='ok'><td>expect_column_values_to_not_be_null(YearsSinceLastPromotion)</td><td></td><td>0 hors contrat (0.0 %)</td><td>OK</td></tr>
+<tr class='ok'><td>expect_column_values_to_be_in_type_list(YearsSinceLastPromotion)</td><td>type_list=[&#x27;int64&#x27;, &#x27;int32&#x27;, &#x27;float64&#x27;, &#x27;float32&#x27;, &#x27;Int64&#x27;, &#x27;Float64&#x27;]</td><td>int64</td><td>OK</td></tr>
+<tr class='ok'><td>expect_column_values_to_be_between(YearsSinceLastPromotion)</td><td>mostly=0.99, min_value=0.0, max_value=30.0</td><td>0 hors contrat (0.0 %)</td><td>OK</td></tr>
+<tr class='ok'><td>expect_column_values_to_not_be_null(YearsWithCurrManager)</td><td></td><td>0 hors contrat (0.0 %)</td><td>OK</td></tr>
+<tr class='ok'><td>expect_column_values_to_be_in_type_list(YearsWithCurrManager)</td><td>type_list=[&#x27;int64&#x27;, &#x27;int32&#x27;, &#x27;float64&#x27;, &#x27;float32&#x27;, &#x27;Int64&#x27;, &#x27;Float64&#x27;]</td><td>int64</td><td>OK</td></tr>
+<tr class='ok'><td>expect_column_values_to_be_between(YearsWithCurrManager)</td><td>mostly=0.99, min_value=0.0, max_value=34.0</td><td>0 hors contrat (0.0 %)</td><td>OK</td></tr>
+<tr class='ok'><td>expect_column_values_to_not_be_null(BusinessTravel)</td><td></td><td>0 hors contrat (0.0 %)</td><td>OK</td></tr>
+<tr class='ok'><td>expect_column_values_to_be_in_type_list(BusinessTravel)</td><td>type_list=[&#x27;object&#x27;, &#x27;str&#x27;, &#x27;string&#x27;, &#x27;category&#x27;]</td><td>0 hors contrat (0.0 %)</td><td>OK</td></tr>
+<tr class='ok'><td>expect_column_values_to_be_in_set(BusinessTravel)</td><td>mostly=0.99, value_set=[&#x27;Non-Travel&#x27;, &#x27;Travel_Frequently&#x27;, &#x27;Travel_Rarely&#x27;]</td><td>0 hors contrat (0.0 %)</td><td>OK</td></tr>
+<tr class='ok'><td>expect_column_values_to_not_be_null(Department)</td><td></td><td>0 hors contrat (0.0 %)</td><td>OK</td></tr>
+<tr class='ok'><td>expect_column_values_to_be_in_type_list(Department)</td><td>type_list=[&#x27;object&#x27;, &#x27;str&#x27;, &#x27;string&#x27;, &#x27;category&#x27;]</td><td>0 hors contrat (0.0 %)</td><td>OK</td></tr>
+<tr class='ok'><td>expect_column_values_to_be_in_set(Department)</td><td>mostly=0.99, value_set=[&#x27;Human Resources&#x27;, &#x27;Research &amp; Development&#x27;, &#x27;Sales&#x27;]</td><td>0 hors contrat (0.0 %)</td><td>OK</td></tr>
+<tr class='ok'><td>expect_column_values_to_not_be_null(EducationField)</td><td></td><td>0 hors contrat (0.0 %)</td><td>OK</td></tr>
+<tr class='ok'><td>expect_column_values_to_be_in_type_list(EducationField)</td><td>type_list=[&#x27;object&#x27;, &#x27;str&#x27;, &#x27;string&#x27;, &#x27;category&#x27;]</td><td>0 hors contrat (0.0 %)</td><td>OK</td></tr>
+<tr class='ok'><td>expect_column_values_to_be_in_set(EducationField)</td><td>mostly=0.99, value_set=[&#x27;Human Resources&#x27;, &#x27;Life Sciences&#x27;, &#x27;Marketing&#x27;, &#x27;Medical&#x27;, &#x27;Other&#x27;, &#x27;Technical</td><td>0 hors contrat (0.0 %)</td><td>OK</td></tr>
+<tr class='ok'><td>expect_column_values_to_not_be_null(JobRole)</td><td></td><td>0 hors contrat (0.0 %)</td><td>OK</td></tr>
+<tr class='ok'><td>expect_column_values_to_be_in_type_list(JobRole)</td><td>type_list=[&#x27;object&#x27;, &#x27;str&#x27;, &#x27;string&#x27;, &#x27;category&#x27;]</td><td>0 hors contrat (0.0 %)</td><td>OK</td></tr>
+<tr class='ok'><td>expect_column_values_to_be_in_set(JobRole)</td><td>mostly=0.99, value_set=[&#x27;Healthcare Representative&#x27;, &#x27;Human Resources&#x27;, &#x27;Laboratory Technician&#x27;, &#x27;Manag</td><td>0 hors contrat (0.0 %)</td><td>OK</td></tr>
+<tr class='ok'><td>expect_column_values_to_not_be_null(OverTime)</td><td></td><td>0 hors contrat (0.0 %)</td><td>OK</td></tr>
+<tr class='ok'><td>expect_column_values_to_be_in_type_list(OverTime)</td><td>type_list=[&#x27;object&#x27;, &#x27;str&#x27;, &#x27;string&#x27;, &#x27;category&#x27;]</td><td>0 hors contrat (0.0 %)</td><td>OK</td></tr>
+<tr class='ok'><td>expect_column_values_to_be_in_set(OverTime)</td><td>mostly=0.99, value_set=[&#x27;No&#x27;, &#x27;Yes&#x27;]</td><td>0 hors contrat (0.0 %)</td><td>OK</td></tr>
+<tr class='ok'><td>expect_column_values_to_not_be_null(Education)</td><td></td><td>0 hors contrat (0.0 %)</td><td>OK</td></tr>
+<tr class='ok'><td>expect_column_values_to_be_in_type_list(Education)</td><td>type_list=[&#x27;object&#x27;, &#x27;str&#x27;, &#x27;string&#x27;, &#x27;category&#x27;]</td><td>0 hors contrat (0.0 %)</td><td>OK</td></tr>
+<tr class='ok'><td>expect_column_values_to_be_in_set(Education)</td><td>mostly=0.99, value_set=[&#x27;1: Below College&#x27;, &#x27;2: College&#x27;, &#x27;3: Bachelor&#x27;, &#x27;4: Master&#x27;, &#x27;5: Doctor&#x27;]</td><td>0 hors contrat (0.0 %)</td><td>OK</td></tr>
+<tr class='ok'><td>expect_column_values_to_not_be_null(EnvironmentSatisfaction)</td><td></td><td>0 hors contrat (0.0 %)</td><td>OK</td></tr>
+<tr class='ok'><td>expect_column_values_to_be_in_type_list(EnvironmentSatisfaction)</td><td>type_list=[&#x27;object&#x27;, &#x27;str&#x27;, &#x27;string&#x27;, &#x27;category&#x27;]</td><td>0 hors contrat (0.0 %)</td><td>OK</td></tr>
+<tr class='ok'><td>expect_column_values_to_be_in_set(EnvironmentSatisfaction)</td><td>mostly=0.99, value_set=[&#x27;1: Low&#x27;, &#x27;2: Medium&#x27;, &#x27;3: High&#x27;, &#x27;4: Very High&#x27;]</td><td>0 hors contrat (0.0 %)</td><td>OK</td></tr>
+<tr class='ok'><td>expect_column_values_to_not_be_null(JobInvolvement)</td><td></td><td>0 hors contrat (0.0 %)</td><td>OK</td></tr>
+<tr class='ok'><td>expect_column_values_to_be_in_type_list(JobInvolvement)</td><td>type_list=[&#x27;object&#x27;, &#x27;str&#x27;, &#x27;string&#x27;, &#x27;category&#x27;]</td><td>0 hors contrat (0.0 %)</td><td>OK</td></tr>
+<tr class='ok'><td>expect_column_values_to_be_in_set(JobInvolvement)</td><td>mostly=0.99, value_set=[&#x27;1: Low&#x27;, &#x27;2: Medium&#x27;, &#x27;3: High&#x27;, &#x27;4: Very High&#x27;]</td><td>0 hors contrat (0.0 %)</td><td>OK</td></tr>
+<tr class='ok'><td>expect_column_values_to_not_be_null(JobLevel)</td><td></td><td>0 hors contrat (0.0 %)</td><td>OK</td></tr>
+<tr class='ok'><td>expect_column_values_to_be_in_type_list(JobLevel)</td><td>type_list=[&#x27;object&#x27;, &#x27;str&#x27;, &#x27;string&#x27;, &#x27;category&#x27;]</td><td>0 hors contrat (0.0 %)</td><td>OK</td></tr>
+<tr class='ok'><td>expect_column_values_to_be_in_set(JobLevel)</td><td>mostly=0.99, value_set=[&#x27;1: Level 1&#x27;, &#x27;2: Level 2&#x27;, &#x27;3: Level 3&#x27;, &#x27;4: Level 4&#x27;, &#x27;5: Level 5&#x27;]</td><td>0 hors contrat (0.0 %)</td><td>OK</td></tr>
+<tr class='ok'><td>expect_column_values_to_not_be_null(JobSatisfaction)</td><td></td><td>0 hors contrat (0.0 %)</td><td>OK</td></tr>
+<tr class='ok'><td>expect_column_values_to_be_in_type_list(JobSatisfaction)</td><td>type_list=[&#x27;object&#x27;, &#x27;str&#x27;, &#x27;string&#x27;, &#x27;category&#x27;]</td><td>0 hors contrat (0.0 %)</td><td>OK</td></tr>
+<tr class='ok'><td>expect_column_values_to_be_in_set(JobSatisfaction)</td><td>mostly=0.99, value_set=[&#x27;1: Low&#x27;, &#x27;2: Medium&#x27;, &#x27;3: High&#x27;, &#x27;4: Very High&#x27;]</td><td>0 hors contrat (0.0 %)</td><td>OK</td></tr>
+<tr class='ok'><td>expect_column_values_to_not_be_null(PerformanceRating)</td><td></td><td>0 hors contrat (0.0 %)</td><td>OK</td></tr>
+<tr class='ok'><td>expect_column_values_to_be_in_type_list(PerformanceRating)</td><td>type_list=[&#x27;object&#x27;, &#x27;str&#x27;, &#x27;string&#x27;, &#x27;category&#x27;]</td><td>0 hors contrat (0.0 %)</td><td>OK</td></tr>
+<tr class='ok'><td>expect_column_values_to_be_in_set(PerformanceRating)</td><td>mostly=0.99, value_set=[&#x27;3: Excellent&#x27;, &#x27;4: Outstanding&#x27;]</td><td>0 hors contrat (0.0 %)</td><td>OK</td></tr>
+<tr class='ok'><td>expect_column_values_to_not_be_null(RelationshipSatisfaction)</td><td></td><td>0 hors contrat (0.0 %)</td><td>OK</td></tr>
+<tr class='ok'><td>expect_column_values_to_be_in_type_list(RelationshipSatisfaction)</td><td>type_list=[&#x27;object&#x27;, &#x27;str&#x27;, &#x27;string&#x27;, &#x27;category&#x27;]</td><td>0 hors contrat (0.0 %)</td><td>OK</td></tr>
+<tr class='ok'><td>expect_column_values_to_be_in_set(RelationshipSatisfaction)</td><td>mostly=0.99, value_set=[&#x27;1: Low&#x27;, &#x27;2: Medium&#x27;, &#x27;3: High&#x27;, &#x27;4: Very High&#x27;]</td><td>0 hors contrat (0.0 %)</td><td>OK</td></tr>
+<tr class='ok'><td>expect_column_values_to_not_be_null(StockOptionLevel)</td><td></td><td>0 hors contrat (0.0 %)</td><td>OK</td></tr>
+<tr class='ok'><td>expect_column_values_to_be_in_type_list(StockOptionLevel)</td><td>type_list=[&#x27;object&#x27;, &#x27;str&#x27;, &#x27;string&#x27;, &#x27;category&#x27;]</td><td>0 hors contrat (0.0 %)</td><td>OK</td></tr>
+<tr class='ok'><td>expect_column_values_to_be_in_set(StockOptionLevel)</td><td>mostly=0.99, value_set=[&#x27;0: Level 0&#x27;, &#x27;1: Level 1&#x27;, &#x27;2: Level 2&#x27;, &#x27;3: Level 3&#x27;]</td><td>0 hors contrat (0.0 %)</td><td>OK</td></tr>
+<tr class='ok'><td>expect_column_values_to_not_be_null(WorkLifeBalance)</td><td></td><td>0 hors contrat (0.0 %)</td><td>OK</td></tr>
+<tr class='ok'><td>expect_column_values_to_be_in_type_list(WorkLifeBalance)</td><td>type_list=[&#x27;object&#x27;, &#x27;str&#x27;, &#x27;string&#x27;, &#x27;category&#x27;]</td><td>0 hors contrat (0.0 %)</td><td>OK</td></tr>
+<tr class='ok'><td>expect_column_values_to_be_in_set(WorkLifeBalance)</td><td>mostly=0.99, value_set=[&#x27;1: Bad&#x27;, &#x27;2: Good&#x27;, &#x27;3: Better&#x27;, &#x27;4: Best&#x27;]</td><td>0 hors contrat (0.0 %)</td><td>OK</td></tr>
+<tr class='ok'><td>expect_column_values_to_not_be_null(Age)</td><td></td><td>0 hors contrat (0.0 %)</td><td>OK</td></tr>
+<tr class='ok'><td>expect_column_values_to_be_in_type_list(Age)</td><td>type_list=[&#x27;int64&#x27;, &#x27;int32&#x27;, &#x27;float64&#x27;, &#x27;float32&#x27;, &#x27;Int64&#x27;, &#x27;Float64&#x27;]</td><td>int64</td><td>OK</td></tr>
+<tr class='ok'><td>expect_column_values_to_be_between(Age)</td><td>mostly=0.99, min_value=0.0, max_value=102.0</td><td>0 hors contrat (0.0 %)</td><td>OK</td></tr>
+<tr class='ok'><td>expect_column_values_to_not_be_null(Gender)</td><td></td><td>0 hors contrat (0.0 %)</td><td>OK</td></tr>
+<tr class='ok'><td>expect_column_values_to_be_in_type_list(Gender)</td><td>type_list=[&#x27;object&#x27;, &#x27;str&#x27;, &#x27;string&#x27;, &#x27;category&#x27;]</td><td>0 hors contrat (0.0 %)</td><td>OK</td></tr>
+<tr class='ok'><td>expect_column_values_to_be_in_set(Gender)</td><td>mostly=0.99, value_set=[&#x27;Female&#x27;, &#x27;Male&#x27;]</td><td>0 hors contrat (0.0 %)</td><td>OK</td></tr>
+<tr class='ok'><td>expect_column_values_to_not_be_null(MaritalStatus)</td><td></td><td>0 hors contrat (0.0 %)</td><td>OK</td></tr>
+<tr class='ok'><td>expect_column_values_to_be_in_type_list(MaritalStatus)</td><td>type_list=[&#x27;object&#x27;, &#x27;str&#x27;, &#x27;string&#x27;, &#x27;category&#x27;]</td><td>0 hors contrat (0.0 %)</td><td>OK</td></tr>
+<tr class='ok'><td>expect_column_values_to_be_in_set(MaritalStatus)</td><td>mostly=0.99, value_set=[&#x27;Divorced&#x27;, &#x27;Married&#x27;, &#x27;Single&#x27;]</td><td>0 hors contrat (0.0 %)</td><td>OK</td></tr>
+<tr class='ok'><td>expect_column_values_to_not_be_null(Attrition)</td><td></td><td>0 hors contrat (0.0 %)</td><td>OK</td></tr>
+<tr class='ok'><td>expect_column_values_to_be_in_type_list(Attrition)</td><td>type_list=[&#x27;object&#x27;, &#x27;str&#x27;, &#x27;string&#x27;, &#x27;category&#x27;]</td><td>0 hors contrat (0.0 %)</td><td>OK</td></tr>
+<tr class='ok'><td>expect_column_values_to_be_in_set(Attrition)</td><td>value_set=[&#x27;No&#x27;, &#x27;Yes&#x27;]</td><td>0 hors contrat (0.0 %)</td><td>OK</td></tr>
+<tr class='ok'><td>expect_column_values_to_be_in_set(Attrition) : Au moins 8.1% de « Yes »</td><td>mostly=0.081, value_set=[&#x27;Yes&#x27;]</td><td>1233 hors contrat (83.9 %)</td><td>OK</td></tr>
+<tr class='ok'><td>expect_column_values_to_be_in_set(Attrition) : Au plus 32.3% de « Yes »</td><td>mostly=0.677, value_set=[&#x27;No&#x27;]</td><td>237 hors contrat (16.1 %)</td><td>OK</td></tr>
+</table>
+</body></html>

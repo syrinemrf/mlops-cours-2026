@@ -1,0 +1,38 @@
+[KFP Executor 2026-11-08 18:15:52,325 INFO]: Looking for component `ingest_data` in --component_module_path `/tmp/tmp.QBe3jdllgS/ephemeral_component.py`
+[KFP Executor 2026-11-08 18:15:52,325 INFO]: Loading KFP component "ingest_data" from /tmp/tmp.QBe3jdllgS/ephemeral_component.py (directory "/tmp/tmp.QBe3jdllgS" and module name "ephemeral_component")
+[KFP Executor 2026-11-08 18:15:52,328 INFO]: Got executor_input:
+{
+    "inputs": {},
+    "outputs": {
+        "artifacts": {
+            "executor-logs": {
+                "artifacts": [
+                    {
+                        "name": "executor-logs",
+                        "type": {
+                            "schemaTitle": "system.Artifact"
+                        },
+                        "uri": "minio://mlpipeline/v2/artifacts/scoring-drift-demo/d73fd533-9b35-4fdf-b304-5b5a564bd8b3/ingest-data/631503bd-f735-486e-99cb-183e8a058a08/executor-logs-0"
+                    }
+                ]
+            },
+            "raw_data": {
+                "artifacts": [
+                    {
+                        "name": "raw_data",
+                        "type": {
+                            "schemaTitle": "system.Dataset",
+                            "schemaVersion": "0.0.1"
+                        },
+                        "uri": "minio://mlpipeline/v2/artifacts/scoring-drift-demo/d73fd533-9b35-4fdf-b304-5b5a564bd8b3/ingest-data/631503bd-f735-486e-99cb-183e8a058a08/raw_data"
+                    }
+                ]
+            }
+        },
+        "outputFile": "/minio/mlpipeline/v2/artifacts/scoring-drift-demo/d73fd533-9b35-4fdf-b304-5b5a564bd8b3/ingest-data/631503bd-f735-486e-99cb-183e8a058a08/output_metadata.json"
+    }
+}
++ /usr/local/bin/python3 -m src.download
+Source: 1470 x 35; export: 1470 x 32 -> data/raw/dataset.csv
+Predictors: 27; Attrition=Yes: 237/1470; SHA-256: 27e7bebda91c7e6d0b77e80128c2d9383d70a19a185b51ecfe3bb90f761d2a78
+[KFP Executor 2026-11-08 18:16:05,173 INFO]: Wrote executor output file to /minio/mlpipeline/v2/artifacts/scoring-drift-demo/d73fd533-9b35-4fdf-b304-5b5a564bd8b3/ingest-data/631503bd-f735-486e-99cb-183e8a058a08/output_metadata.json.

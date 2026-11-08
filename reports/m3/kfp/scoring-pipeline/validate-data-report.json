@@ -1,0 +1,9 @@
+{
+  "success": true,
+  "n_checks": 103,
+  "n_failed": 0,
+  "failed": [],
+  "rows": 1470,
+  "positive_rate": 0.1612,
+  "suite": "scoring_contract"
+}

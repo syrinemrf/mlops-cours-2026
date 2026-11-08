@@ -1,0 +1,70 @@
+[KFP Executor 2026-11-08 18:16:34,104 INFO]: Looking for component `prepare_features` in --component_module_path `/tmp/tmp.a1neqtvVSJ/ephemeral_component.py`
+[KFP Executor 2026-11-08 18:16:34,104 INFO]: Loading KFP component "prepare_features" from /tmp/tmp.a1neqtvVSJ/ephemeral_component.py (directory "/tmp/tmp.a1neqtvVSJ" and module name "ephemeral_component")
+[KFP Executor 2026-11-08 18:16:34,107 INFO]: Got executor_input:
+{
+    "inputs": {
+        "artifacts": {
+            "raw_data": {
+                "artifacts": [
+                    {
+                        "name": "70",
+                        "type": {
+                            "instanceSchema": ""
+                        },
+                        "uri": "minio://mlpipeline/v2/artifacts/scoring-drift-demo/d73fd533-9b35-4fdf-b304-5b5a564bd8b3/ingest-data/631503bd-f735-486e-99cb-183e8a058a08/raw_data",
+                        "metadata": {
+                            "dataset": "ibm-hr-attrition",
+                            "display_name": "raw_data",
+                            "md5": "16e6acc1f69d648c4ec1d3b44efc0179",
+                            "rows": 1470,
+                            "store_session_info": "{\"Provider\":\"minio\",\"Params\":{\"accessKeyKey\":\"accesskey\",\"disableSSL\":\"true\",\"endpoint\":\"seaweedfs.kubeflow:9000\",\"fromEnv\":\"false\",\"maxRetries\":\"5\",\"region\":\"minio\",\"secretKeyKey\":\"secretkey\",\"secretName\":\"mlpipeline-minio-artifact\"}}"
+                        }
+                    }
+                ]
+            }
+        }
+    },
+    "outputs": {
+        "artifacts": {
+            "executor-logs": {
+                "artifacts": [
+                    {
+                        "name": "executor-logs",
+                        "type": {
+                            "schemaTitle": "system.Artifact"
+                        },
+                        "uri": "minio://mlpipeline/v2/artifacts/scoring-drift-demo/d73fd533-9b35-4fdf-b304-5b5a564bd8b3/prepare-features/8ee1fa1a-0ad4-4b70-8f19-45a08238b37f/executor-logs-0"
+                    }
+                ]
+            },
+            "test_data": {
+                "artifacts": [
+                    {
+                        "name": "test_data",
+                        "type": {
+                            "schemaTitle": "system.Dataset",
+                            "schemaVersion": "0.0.1"
+                        },
+                        "uri": "minio://mlpipeline/v2/artifacts/scoring-drift-demo/d73fd533-9b35-4fdf-b304-5b5a564bd8b3/prepare-features/8ee1fa1a-0ad4-4b70-8f19-45a08238b37f/test_data"
+                    }
+                ]
+            },
+            "train_data": {
+                "artifacts": [
+                    {
+                        "name": "train_data",
+                        "type": {
+                            "schemaTitle": "system.Dataset",
+                            "schemaVersion": "0.0.1"
+                        },
+                        "uri": "minio://mlpipeline/v2/artifacts/scoring-drift-demo/d73fd533-9b35-4fdf-b304-5b5a564bd8b3/prepare-features/8ee1fa1a-0ad4-4b70-8f19-45a08238b37f/train_data"
+                    }
+                ]
+            }
+        },
+        "outputFile": "/minio/mlpipeline/v2/artifacts/scoring-drift-demo/d73fd533-9b35-4fdf-b304-5b5a564bd8b3/prepare-features/8ee1fa1a-0ad4-4b70-8f19-45a08238b37f/output_metadata.json"
+    }
+}
++ /usr/local/bin/python3 -m src.prepare
+Train: 1176 / Test: 294; positive 'Yes': 16.2% / 16.0%
+[KFP Executor 2026-11-08 18:16:43,991 INFO]: Wrote executor output file to /minio/mlpipeline/v2/artifacts/scoring-drift-demo/d73fd533-9b35-4fdf-b304-5b5a564bd8b3/prepare-features/8ee1fa1a-0ad4-4b70-8f19-45a08238b37f/output_metadata.json.
