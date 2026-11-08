@@ -1,0 +1,81 @@
+# Relevé avant Lab 5 — 2026-11-08T19:09:40Z
+## WSL free -m
+               total        used        free      shared  buff/cache   available
+Mem:            7944        4151          87          12        3705        3587
+Swap:           4096        1068        3027
+## Docker VM
+4 CPU, MemTotal 8330493952 bytes
+## docker stats (nœuds kind)
+mlops-lab-control-plane 958.7MiB / 7.758GiB 26.40%
+mlops-lab-worker 919.8MiB / 7.758GiB 8.98%
+mlops-lab-worker2 1.838GiB / 7.758GiB 12.88%
+## kubectl get nodes
+NAME                      STATUS   ROLES           AGE   VERSION
+mlops-lab-control-plane   Ready    control-plane   39d   v1.37.0
+mlops-lab-worker          Ready    <none>          39d   v1.37.0
+mlops-lab-worker2         Ready    <none>          39d   v1.37.0
+## kubectl get pods -A
+NAMESPACE            NAME                                                             READY   STATUS      RESTARTS       AGE
+kube-system          coredns-559f6c778d-2jckh                                         1/1     Running     10 (97m ago)   39d
+kube-system          coredns-559f6c778d-j4j2w                                         1/1     Running     10 (97m ago)   39d
+kube-system          etcd-mlops-lab-control-plane                                     1/1     Running     4 (97m ago)    19d
+kube-system          kindnet-4zsss                                                    1/1     Running     10 (97m ago)   39d
+kube-system          kindnet-czf5t                                                    1/1     Running     10 (97m ago)   39d
+kube-system          kindnet-wrb5z                                                    1/1     Running     10 (97m ago)   39d
+kube-system          kube-apiserver-mlops-lab-control-plane                           1/1     Running     10 (97m ago)   19d
+kube-system          kube-controller-manager-mlops-lab-control-plane                  1/1     Running     62 (97m ago)   39d
+kube-system          kube-proxy-5vhrv                                                 1/1     Running     10 (97m ago)   39d
+kube-system          kube-proxy-9w52c                                                 1/1     Running     10 (97m ago)   39d
+kube-system          kube-proxy-t7vrq                                                 1/1     Running     10 (97m ago)   39d
+kube-system          kube-scheduler-mlops-lab-control-plane                           1/1     Running     60 (97m ago)   39d
+kubeflow             cache-deployer-deployment-5687cffc9f-dgngm                       1/1     Running     3 (97m ago)    6d9h
+kubeflow             cache-server-869fc558b-mc9fq                                     1/1     Running     13 (97m ago)   6d9h
+kubeflow             metadata-envoy-deployment-c7ddf7497-c9bck                        1/1     Running     2 (97m ago)    6d9h
+kubeflow             metadata-grpc-deployment-5c87d7f487-g2lgm                        1/1     Running     1 (97m ago)    5d21h
+kubeflow             metadata-writer-6cfdd75bcc-jbmmk                                 1/1     Running     1 (97m ago)    6d9h
+kubeflow             ml-pipeline-8699f6f6d-7npcz                                      1/1     Running     1 (97m ago)    6d9h
+kubeflow             ml-pipeline-persistenceagent-76c6b49b9-285rk                     1/1     Running     1 (97m ago)    6d9h
+kubeflow             ml-pipeline-scheduledworkflow-78d9dcc8b6-k4ppn                   1/1     Running     1 (97m ago)    6d9h
+kubeflow             ml-pipeline-ui-c44664957-gx295                                   1/1     Running     38 (97m ago)   6d9h
+kubeflow             ml-pipeline-viewer-crd-66c8fd8c97-twnlw                          1/1     Running     2 (97m ago)    6d9h
+kubeflow             ml-pipeline-visualizationserver-688b466b44-84xtq                 1/1     Running     9 (97m ago)    6d9h
+kubeflow             mysql-f75686969-dt7hv                                            1/1     Running     2 (97m ago)    6d9h
+kubeflow             scoring-bad-data-test-87vxn-system-container-driver-1408682931   0/2     Completed   0              55m
+kubeflow             scoring-bad-data-test-87vxn-system-container-driver-1563678644   0/2     Completed   0              55m
+kubeflow             scoring-bad-data-test-87vxn-system-container-driver-3962437633   0/2     Completed   0              54m
+kubeflow             scoring-bad-data-test-87vxn-system-container-impl-2903599022     0/2     Error       0              54m
+kubeflow             scoring-bad-data-test-87vxn-system-container-impl-3011886856     0/2     Completed   0              55m
+kubeflow             scoring-bad-data-test-87vxn-system-container-impl-3022544489     0/2     Completed   0              54m
+kubeflow             scoring-bad-data-test-87vxn-system-dag-driver-1149106191         0/2     Completed   0              55m
+kubeflow             scoring-drift-demo-gcb9n-system-container-driver-1988249807      0/2     Completed   0              52m
+kubeflow             scoring-drift-demo-gcb9n-system-container-driver-2756793367      0/2     Completed   0              53m
+kubeflow             scoring-drift-demo-gcb9n-system-container-driver-3818677546      0/2     Completed   0              52m
+kubeflow             scoring-drift-demo-gcb9n-system-container-driver-899972145       0/2     Completed   0              55m
+kubeflow             scoring-drift-demo-gcb9n-system-container-impl-1569194174        0/2     Completed   0              55m
+kubeflow             scoring-drift-demo-gcb9n-system-container-impl-3773207948        0/2     Completed   0              52m
+kubeflow             scoring-drift-demo-gcb9n-system-container-impl-3977050868        0/2     Completed   0              53m
+kubeflow             scoring-drift-demo-gcb9n-system-container-impl-808341271         0/2     Completed   0              52m
+kubeflow             scoring-drift-demo-gcb9n-system-dag-driver-883159249             0/2     Completed   0              55m
+kubeflow             scoring-pipeline-tcrdp-retry-system-container-impl-1356420239    0/2     Completed   0              63m
+kubeflow             scoring-pipeline-tcrdp-system-container-driver-1107469665        0/2     Completed   0              59m
+kubeflow             scoring-pipeline-tcrdp-system-container-driver-1857068599        0/2     Completed   0              60m
+kubeflow             scoring-pipeline-tcrdp-system-container-driver-1980098346        0/2     Completed   0              56m
+kubeflow             scoring-pipeline-tcrdp-system-container-driver-2104225570        0/2     Completed   0              63m
+kubeflow             scoring-pipeline-tcrdp-system-container-driver-3745562656        0/2     Completed   0              59m
+kubeflow             scoring-pipeline-tcrdp-system-container-driver-3761174282        0/2     Completed   0              60m
+kubeflow             scoring-pipeline-tcrdp-system-container-driver-4199618850        0/2     Completed   0              61m
+kubeflow             scoring-pipeline-tcrdp-system-container-driver-445434408         0/2     Completed   0              62m
+kubeflow             scoring-pipeline-tcrdp-system-container-impl-1745769103          0/2     Completed   0              61m
+kubeflow             scoring-pipeline-tcrdp-system-container-impl-1750189109          0/2     Completed   0              61m
+kubeflow             scoring-pipeline-tcrdp-system-container-impl-2053957495          0/2     Completed   0              60m
+kubeflow             scoring-pipeline-tcrdp-system-container-impl-3348780311          0/2     Completed   0              56m
+kubeflow             scoring-pipeline-tcrdp-system-container-impl-42789646            0/2     Completed   0              57m
+kubeflow             scoring-pipeline-tcrdp-system-container-impl-876974797           0/2     Completed   0              59m
+kubeflow             scoring-pipeline-tcrdp-system-container-impl-976006804           0/2     Completed   0              60m
+kubeflow             scoring-pipeline-tcrdp-system-dag-driver-3112763412              0/2     Completed   0              63m
+kubeflow             seaweedfs-655cfcfbc4-cpvgz                                       1/1     Running     2 (97m ago)    6d9h
+kubeflow             workflow-controller-5d7cdf74d9-9k2t4                             1/1     Running     37 (96m ago)   6d9h
+local-path-storage   local-path-provisioner-75f7fc7dc5-98625                          1/1     Running     19 (96m ago)   39d
+minio                minio-587bb9cc57-l5gj5                                           1/1     Running     10 (97m ago)   39d
+mlflow               mlflow-785b85485c-n4d42                                          1/1     Running     8 (97m ago)    20d
+storage              seaweedfs-5bbbd77474-48qgf                                       1/1     Running     16 (97m ago)   20d
