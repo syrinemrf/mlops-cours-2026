@@ -1,0 +1,162 @@
+[KFP Executor 2026-11-08 18:09:47,494 INFO]: Looking for component `train_model` in --component_module_path `/tmp/tmp.yohtMFR0LA/ephemeral_component.py`
+[KFP Executor 2026-11-08 18:09:47,494 INFO]: Loading KFP component "train_model" from /tmp/tmp.yohtMFR0LA/ephemeral_component.py (directory "/tmp/tmp.yohtMFR0LA" and module name "ephemeral_component")
+[KFP Executor 2026-11-08 18:09:47,497 INFO]: Got executor_input:
+{
+    "inputs": {
+        "artifacts": {
+            "raw_data": {
+                "artifacts": [
+                    {
+                        "name": "38",
+                        "type": {
+                            "instanceSchema": ""
+                        },
+                        "uri": "minio://mlpipeline/v2/artifacts/scoring-pipeline/2e33d31b-8dca-4269-ab82-42194ef57094/ingest-data/e5a19028-b7aa-4487-93fe-bc26d2d647ef/raw_data",
+                        "metadata": {
+                            "dataset": "ibm-hr-attrition",
+                            "display_name": "raw_data",
+                            "md5": "16e6acc1f69d648c4ec1d3b44efc0179",
+                            "rows": 1470,
+                            "store_session_info": "{\"Provider\":\"minio\",\"Params\":{\"accessKeyKey\":\"accesskey\",\"disableSSL\":\"true\",\"endpoint\":\"seaweedfs.kubeflow:9000\",\"fromEnv\":\"false\",\"maxRetries\":\"5\",\"region\":\"minio\",\"secretKeyKey\":\"secretkey\",\"secretName\":\"mlpipeline-minio-artifact\"}}"
+                        }
+                    }
+                ]
+            },
+            "test_data": {
+                "artifacts": [
+                    {
+                        "name": "44",
+                        "type": {
+                            "instanceSchema": ""
+                        },
+                        "uri": "minio://mlpipeline/v2/artifacts/scoring-pipeline/2e33d31b-8dca-4269-ab82-42194ef57094/prepare-features/bd04b302-3f6a-450a-9c35-fffc46ef0641/test_data",
+                        "metadata": {
+                            "display_name": "test_data",
+                            "positive_rate": 0.1599,
+                            "rows": 294,
+                            "store_session_info": "{\"Provider\":\"minio\",\"Params\":{\"accessKeyKey\":\"accesskey\",\"disableSSL\":\"true\",\"endpoint\":\"seaweedfs.kubeflow:9000\",\"fromEnv\":\"false\",\"maxRetries\":\"5\",\"region\":\"minio\",\"secretKeyKey\":\"secretkey\",\"secretName\":\"mlpipeline-minio-artifact\"}}"
+                        }
+                    }
+                ]
+            },
+            "train_data": {
+                "artifacts": [
+                    {
+                        "name": "45",
+                        "type": {
+                            "instanceSchema": ""
+                        },
+                        "uri": "minio://mlpipeline/v2/artifacts/scoring-pipeline/2e33d31b-8dca-4269-ab82-42194ef57094/prepare-features/bd04b302-3f6a-450a-9c35-fffc46ef0641/train_data",
+                        "metadata": {
+                            "display_name": "train_data",
+                            "positive_rate": 0.1616,
+                            "rows": 1176,
+                            "store_session_info": "{\"Provider\":\"minio\",\"Params\":{\"accessKeyKey\":\"accesskey\",\"disableSSL\":\"true\",\"endpoint\":\"seaweedfs.kubeflow:9000\",\"fromEnv\":\"false\",\"maxRetries\":\"5\",\"region\":\"minio\",\"secretKeyKey\":\"secretkey\",\"secretName\":\"mlpipeline-minio-artifact\"}}"
+                        }
+                    }
+                ]
+            }
+        },
+        "parameterValues": {
+            "C": 1,
+            "class_weight": "none",
+            "kfp_run_id": "2e33d31b-8dca-4269-ab82-42194ef57094",
+            "learning_rate": 0.1,
+            "max_depth": "8",
+            "mlflow_uri": "http://mlflow.mlflow:5000",
+            "model_type": "logistic_regression",
+            "n_estimators": 200,
+            "random_state": 42
+        }
+    },
+    "outputs": {
+        "parameters": {
+            "Output": {
+                "outputFile": "/tmp/kfp/outputs/Output"
+            }
+        },
+        "artifacts": {
+            "executor-logs": {
+                "artifacts": [
+                    {
+                        "name": "executor-logs",
+                        "type": {
+                            "schemaTitle": "system.Artifact"
+                        },
+                        "uri": "minio://mlpipeline/v2/artifacts/scoring-pipeline/2e33d31b-8dca-4269-ab82-42194ef57094/train-model/434be2e3-c151-487e-b3c6-5d55915c7783/executor-logs-0"
+                    }
+                ]
+            },
+            "model": {
+                "artifacts": [
+                    {
+                        "name": "model",
+                        "type": {
+                            "schemaTitle": "system.Model",
+                            "schemaVersion": "0.0.1"
+                        },
+                        "uri": "minio://mlpipeline/v2/artifacts/scoring-pipeline/2e33d31b-8dca-4269-ab82-42194ef57094/train-model/434be2e3-c151-487e-b3c6-5d55915c7783/model"
+                    }
+                ]
+            }
+        },
+        "outputFile": "/minio/mlpipeline/v2/artifacts/scoring-pipeline/2e33d31b-8dca-4269-ab82-42194ef57094/train-model/434be2e3-c151-487e-b3c6-5d55915c7783/output_metadata.json"
+    }
+}
++ /usr/local/bin/python3 -m src.train --model logistic_regression --C 1 --class_weight none --n_estimators 200 --max_depth 8 --learning_rate 0.1 --random_state 42
+2026/11/08 18:09:57 WARNING mlflow.utils.git_utils: Failed to import Git (the Git executable is probably not on your PATH), so Git SHA is not available. Error: Failed to initialize: Bad git executable.
+The git executable must be specified in one of the following ways:
+    - be included in your $PATH
+    - be set via $GIT_PYTHON_GIT_EXECUTABLE
+    - explicitly set via git.refresh(<full-path-to-git-executable>)
+
+All git commands will error until this is rectified.
+
+This initial message can be silenced or aggravated in the future by setting the
+$GIT_PYTHON_REFRESH environment variable. Use one of the following values:
+    - quiet|q|silence|s|silent|none|n|0: for no message or exception
+    - warn|w|warning|log|l|1: for a warning message (logging level CRITICAL, displayed by default)
+    - error|e|exception|raise|r|2: for a raised exception
+
+Example:
+    export GIT_PYTHON_REFRESH=quiet
+
+2026/11/08 18:09:57 WARNING mlflow.utils.git_utils: Failed to import Git (the Git executable is probably not on your PATH), so Git branch is not available. Error: Failed to initialize: Bad git executable.
+The git executable must be specified in one of the following ways:
+    - be included in your $PATH
+    - be set via $GIT_PYTHON_GIT_EXECUTABLE
+    - explicitly set via git.refresh(<full-path-to-git-executable>)
+
+All git commands will error until this is rectified.
+
+This initial message can be silenced or aggravated in the future by setting the
+$GIT_PYTHON_REFRESH environment variable. Use one of the following values:
+    - quiet|q|silence|s|silent|none|n|0: for no message or exception
+    - warn|w|warning|log|l|1: for a warning message (logging level CRITICAL, displayed by default)
+    - error|e|exception|raise|r|2: for a raised exception
+
+Example:
+    export GIT_PYTHON_REFRESH=quiet
+
+2026/11/08 18:09:57 WARNING mlflow.utils.git_utils: Failed to import Git (the Git executable is probably not on your PATH), so Git repository URL is not available. Error: Failed to initialize: Bad git executable.
+The git executable must be specified in one of the following ways:
+    - be included in your $PATH
+    - be set via $GIT_PYTHON_GIT_EXECUTABLE
+    - explicitly set via git.refresh(<full-path-to-git-executable>)
+
+All git commands will error until this is rectified.
+
+This initial message can be silenced or aggravated in the future by setting the
+$GIT_PYTHON_REFRESH environment variable. Use one of the following values:
+    - quiet|q|silence|s|silent|none|n|0: for no message or exception
+    - warn|w|warning|log|l|1: for a warning message (logging level CRITICAL, displayed by default)
+    - error|e|exception|raise|r|2: for a raised exception
+
+Example:
+    export GIT_PYTHON_REFRESH=quiet
+
+logistic_regression-C=1.0-class_weight=None: seuil=0.500, tn=239.000, fp=8.000, fn=27.000, tp=20.000, pr_auc_trapezoidal=0.644, brier_score=0.091, log_loss=0.328, roc_auc=0.837, average_precision=0.647, f1=0.533, precision=0.714, recall=0.426, accuracy=0.881, business_cost=35
+run_id : 432c8310a0714df6856a31fff40f579d
+🏃 View run logistic_regression-C=1.0-class_weight=None at: http://mlflow.mlflow:5000/#/experiments/2/runs/432c8310a0714df6856a31fff40f579d
+🧪 View experiment at: http://mlflow.mlflow:5000/#/experiments/2
+[KFP Executor 2026-11-08 18:10:03,916 INFO]: Wrote executor output file to /minio/mlpipeline/v2/artifacts/scoring-pipeline/2e33d31b-8dca-4269-ab82-42194ef57094/train-model/434be2e3-c151-487e-b3c6-5d55915c7783/output_metadata.json.

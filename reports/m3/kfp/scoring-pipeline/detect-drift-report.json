@@ -1,0 +1,270 @@
+{
+  "drift_detected": false,
+  "n_columns": 31,
+  "n_drifted": 0,
+  "share_drifted": 0.0,
+  "drifted": [],
+  "thresholds": {
+    "ks_alpha": 0.05,
+    "psi_threshold": 0.25,
+    "drift_share": 0.1
+  },
+  "rows": {
+    "reference": 1176,
+    "current": 294
+  },
+  "evidently": {
+    "drifted_columns": 3,
+    "share": 0.0968
+  },
+  "columns": [
+    {
+      "column": "DailyRate",
+      "test": "KS",
+      "p_value": 0.7371914584525542,
+      "psi": 0.02635463078396076,
+      "wasserstein": 0.03941309099634297,
+      "drift": false
+    },
+    {
+      "column": "DistanceFromHome",
+      "test": "KS",
+      "p_value": 0.18658286007428398,
+      "psi": 0.05126314185897051,
+      "wasserstein": 0.1028125475884172,
+      "drift": false
+    },
+    {
+      "column": "HourlyRate",
+      "test": "KS",
+      "p_value": 0.34978763389853107,
+      "psi": 0.034638158767429574,
+      "wasserstein": 0.09716587307023246,
+      "drift": false
+    },
+    {
+      "column": "MonthlyIncome",
+      "test": "KS",
+      "p_value": 0.16634089727696985,
+      "psi": 0.045963821911503326,
+      "wasserstein": 0.08943150516155486,
+      "drift": false
+    },
+    {
+      "column": "MonthlyRate",
+      "test": "KS",
+      "p_value": 0.3019422125974145,
+      "psi": 0.05677458830736547,
+      "wasserstein": 0.0793594981672262,
+      "drift": false
+    },
+    {
+      "column": "NumCompaniesWorked",
+      "test": "KS",
+      "p_value": 0.9939523903696472,
+      "psi": 0.06288911643514754,
+      "wasserstein": 0.05028001022613647,
+      "drift": false
+    },
+    {
+      "column": "PercentSalaryHike",
+      "test": "KS",
+      "p_value": 0.9960030628061465,
+      "psi": 0.011873080227398983,
+      "wasserstein": 0.043452135226151385,
+      "drift": false
+    },
+    {
+      "column": "TotalWorkingYears",
+      "test": "KS",
+      "p_value": 0.40234853310613206,
+      "psi": 0.05868694009885872,
+      "wasserstein": 0.061366169921274694,
+      "drift": false
+    },
+    {
+      "column": "TrainingTimesLastYear",
+      "test": "KS",
+      "p_value": 0.13928762457632599,
+      "psi": 0.05232600451118657,
+      "wasserstein": 0.1908805331363727,
+      "drift": false
+    },
+    {
+      "column": "YearsAtCompany",
+      "test": "KS",
+      "p_value": 0.3667923207311882,
+      "psi": 0.03781716181524806,
+      "wasserstein": 0.05546354001256439,
+      "drift": false
+    },
+    {
+      "column": "YearsInCurrentRole",
+      "test": "KS",
+      "p_value": 0.9708114374208848,
+      "psi": 0.025490938139913318,
+      "wasserstein": 0.07051420838333344,
+      "drift": false
+    },
+    {
+      "column": "YearsSinceLastPromotion",
+      "test": "KS",
+      "p_value": 1.0,
+      "psi": 0.003578886525504188,
+      "wasserstein": 0.020892566755152636,
+      "drift": false
+    },
+    {
+      "column": "YearsWithCurrManager",
+      "test": "KS",
+      "p_value": 0.45935825297645144,
+      "psi": 0.020771680204337523,
+      "wasserstein": 0.11616813995139309,
+      "drift": false
+    },
+    {
+      "column": "BusinessTravel",
+      "test": "chi2",
+      "p_value": 0.6436256072551542,
+      "psi": 0.003826336668256038,
+      "wasserstein": null,
+      "drift": false
+    },
+    {
+      "column": "Department",
+      "test": "chi2",
+      "p_value": 0.48487461775409635,
+      "psi": 0.006096172759742023,
+      "wasserstein": null,
+      "drift": false
+    },
+    {
+      "column": "EducationField",
+      "test": "chi2",
+      "p_value": 0.15234497757044482,
+      "psi": 0.03786073531741718,
+      "wasserstein": null,
+      "drift": false
+    },
+    {
+      "column": "JobRole",
+      "test": "chi2",
+      "p_value": 0.13092390053895803,
+      "psi": 0.05176059486477477,
+      "wasserstein": null,
+      "drift": false
+    },
+    {
+      "column": "OverTime",
+      "test": "chi2",
+      "p_value": 0.3321191084518584,
+      "psi": 0.0047166957253550025,
+      "wasserstein": null,
+      "drift": false
+    },
+    {
+      "column": "Education",
+      "test": "chi2",
+      "p_value": 0.9076282136172302,
+      "psi": 0.004375348697614755,
+      "wasserstein": null,
+      "drift": false
+    },
+    {
+      "column": "EnvironmentSatisfaction",
+      "test": "chi2",
+      "p_value": 0.19870759098292187,
+      "psi": 0.020169154484244715,
+      "wasserstein": null,
+      "drift": false
+    },
+    {
+      "column": "JobInvolvement",
+      "test": "chi2",
+      "p_value": 0.5615106361005964,
+      "psi": 0.008623357584597488,
+      "wasserstein": null,
+      "drift": false
+    },
+    {
+      "column": "JobLevel",
+      "test": "chi2",
+      "p_value": 0.0336583421751029,
+      "psi": 0.04447634000034741,
+      "wasserstein": null,
+      "drift": false
+    },
+    {
+      "column": "JobSatisfaction",
+      "test": "chi2",
+      "p_value": 0.37272434185665254,
+      "psi": 0.013448914704951355,
+      "wasserstein": null,
+      "drift": false
+    },
+    {
+      "column": "PerformanceRating",
+      "test": "chi2",
+      "p_value": 0.5035840358415206,
+      "psi": 0.0025260484423490982,
+      "wasserstein": null,
+      "drift": false
+    },
+    {
+      "column": "RelationshipSatisfaction",
+      "test": "chi2",
+      "p_value": 0.04374766736222151,
+      "psi": 0.03635293898954616,
+      "wasserstein": null,
+      "drift": false
+    },
+    {
+      "column": "StockOptionLevel",
+      "test": "chi2",
+      "p_value": 0.8761873829403346,
+      "psi": 0.0028856694659753685,
+      "wasserstein": null,
+      "drift": false
+    },
+    {
+      "column": "WorkLifeBalance",
+      "test": "chi2",
+      "p_value": 0.30049421561594014,
+      "psi": 0.017864054666082277,
+      "wasserstein": null,
+      "drift": false
+    },
+    {
+      "column": "Age",
+      "test": "KS",
+      "p_value": 0.7994854511013587,
+      "psi": 0.040869108334685364,
+      "wasserstein": 0.05169780370702426,
+      "drift": false
+    },
+    {
+      "column": "Gender",
+      "test": "chi2",
+      "p_value": 0.883598354908264,
+      "psi": 0.00019315638512403864,
+      "wasserstein": null,
+      "drift": false
+    },
+    {
+      "column": "MaritalStatus",
+      "test": "chi2",
+      "p_value": 0.9135123487524278,
+      "psi": 0.0007650043497556876,
+      "wasserstein": null,
+      "drift": false
+    },
+    {
+      "column": "Attrition",
+      "test": "chi2",
+      "p_value": 1.0,
+      "psi": 2.144294638736313e-05,
+      "wasserstein": null,
+      "drift": false
+    }
+  ]
+}

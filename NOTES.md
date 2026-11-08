@@ -4,7 +4,7 @@
 à `d740ca5` ; preuves du 2026-10-20 : contrôles 18/18 et 85 tests.
 `work/aziz/m1` publié à `336964f` ; intégration locale `lab/m1-versioning` exécutée.
 Les preuves propres à cette intégration et leurs limites figurent dans
-[le rapport final](reports/m1/integration/final-integration.md). Champion v4 issu de DVC, challenger v3 préservé ;
+[le rapport final](reports/m1/integration/final-integration.md). Champion v4 issu de DVC (alors v4 ; v7 depuis), challenger v3 préservé (alors v3 ; v8 depuis le Lab 3) ;
 exercices 8.5 et 10.3 vérifiés, replay indépendant 10.4 en attente. Les sections sont
 chronologiques : les instructions anciennes « avant fusion M0 » ou « ingestion
 seulement » décrivent ces incréments. Pour reprendre, utiliser la section
@@ -259,7 +259,7 @@ dvc status --cloud
 Remote imposé : `storage`, URL `s3://dvc-store/scoring`, endpoint local `:8333`.
 Sur le même remote déjà rempli, les quatre stages doivent être ignorés après pull.
 `reports/metrics.json` est suivi par Git ; données et modèle sont dans DVC, pas Git.
-Le modèle local DVC et le champion v4 sont LR C=1 sans poids, seuil décision 0,5,
+Le modèle local DVC et le champion v4 (alors v4 ; v7 depuis) sont LR C=1 sans poids, seuil décision 0,5,
 run `ef2d3f85ebe3432f9172275c34bbd6ac`. Les autres paramètres/données sont inchangés.
 Les neuf RF gardent explicitement balanced, indépendamment de ces defaults DVC.
 
@@ -333,7 +333,7 @@ avant de continuer. Cette procédure ne présume aucune contribution ni revue d�
 ### Registre aligné et étape 8.4 vérifiée
 
 Après autorisation de Syrine : v1 conservée, v2 Dummy failed, v3 challenger et
-v4 champion issue du run DVC `ef2d3f85ebe3432f9172275c34bbd6ac`. Gate 0,70 passée
+v4 champion (alors v4 ; v7 depuis) issue du run DVC `ef2d3f85ebe3432f9172275c34bbd6ac`. Gate 0,70 passée
 à AUC 0,8368507193, enregistrement idempotent, rejet Dummy et réaffectation v3 vérifiés.
 Le chargement distant confirme signature, paramètres, seuil 0,5, probabilités et
 métriques du modèle local DVC ; voir reports/m1/alignment-registry-verification.json.
