@@ -12,3 +12,17 @@ train:
   max_depth: 8
   learning_rate: 0.1
   random_state: 42
+
+# Lab 3 : contrat de données Great Expectations (src/validate_data.py --build-suite).
+# La suite est construite sur data/processed/train.csv UNIQUEMENT (split avant toute
+# statistique : aucune information du jeu de test dans les domaines du contrat).
+validation:
+  mostly: 0.99  # tolérance des contrôles de valeurs : au plus 1 % hors domaine
+  # Règles métier IBM HR (A >= B), vérifiées sans exception sur les 1470 lignes brutes
+  # le 2026-11-08 : une ancienneté ne peut pas dépasser celle qui la contient.
+  column_pairs:
+  - [TotalWorkingYears, YearsAtCompany]
+  - [YearsAtCompany, YearsInCurrentRole]
+  - [YearsAtCompany, YearsWithCurrManager]
+  - [YearsAtCompany, YearsSinceLastPromotion]
+  - [Age, TotalWorkingYears]

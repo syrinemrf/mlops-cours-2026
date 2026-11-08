@@ -1,0 +1,1372 @@
+{
+  "expectations": [
+    {
+      "id": "39662be1-0442-487e-960b-376617dc179c",
+      "kwargs": {
+        "column_set": [
+          "DailyRate",
+          "DistanceFromHome",
+          "HourlyRate",
+          "MonthlyIncome",
+          "MonthlyRate",
+          "NumCompaniesWorked",
+          "PercentSalaryHike",
+          "TotalWorkingYears",
+          "TrainingTimesLastYear",
+          "YearsAtCompany",
+          "YearsInCurrentRole",
+          "YearsSinceLastPromotion",
+          "YearsWithCurrManager",
+          "BusinessTravel",
+          "Department",
+          "EducationField",
+          "JobRole",
+          "OverTime",
+          "Education",
+          "EnvironmentSatisfaction",
+          "JobInvolvement",
+          "JobLevel",
+          "JobSatisfaction",
+          "PerformanceRating",
+          "RelationshipSatisfaction",
+          "StockOptionLevel",
+          "WorkLifeBalance",
+          "Age",
+          "Gender",
+          "MaritalStatus",
+          "Attrition"
+        ],
+        "exact_match": false
+      },
+      "meta": {},
+      "severity": "critical",
+      "type": "expect_table_columns_to_match_set"
+    },
+    {
+      "id": "e5212874-4b2d-4009-96c1-389278fc9846",
+      "kwargs": {
+        "min_value": 117
+      },
+      "meta": {},
+      "severity": "critical",
+      "type": "expect_table_row_count_to_be_between"
+    },
+    {
+      "id": "ab5ccc00-fa48-4b0d-bcfc-0f7f29edf8c9",
+      "kwargs": {
+        "column": "EmployeeNumber"
+      },
+      "meta": {},
+      "severity": "critical",
+      "type": "expect_column_values_to_be_unique"
+    },
+    {
+      "id": "9a82c6e9-17c7-4e12-b22d-19643df95e17",
+      "kwargs": {
+        "column": "DailyRate"
+      },
+      "meta": {},
+      "severity": "critical",
+      "type": "expect_column_values_to_not_be_null"
+    },
+    {
+      "id": "2a81de4b-5457-41cd-88ac-5490305dce7a",
+      "kwargs": {
+        "column": "DailyRate",
+        "type_list": [
+          "int64",
+          "int32",
+          "float64",
+          "float32",
+          "Int64",
+          "Float64"
+        ]
+      },
+      "meta": {},
+      "severity": "critical",
+      "type": "expect_column_values_to_be_in_type_list"
+    },
+    {
+      "id": "3be1dd2e-719f-40b5-94b9-518687b88665",
+      "kwargs": {
+        "column": "DistanceFromHome"
+      },
+      "meta": {},
+      "severity": "critical",
+      "type": "expect_column_values_to_not_be_null"
+    },
+    {
+      "id": "d3f3e2ee-6756-4eea-8d55-f1e30be4dd1a",
+      "kwargs": {
+        "column": "DistanceFromHome",
+        "type_list": [
+          "int64",
+          "int32",
+          "float64",
+          "float32",
+          "Int64",
+          "Float64"
+        ]
+      },
+      "meta": {},
+      "severity": "critical",
+      "type": "expect_column_values_to_be_in_type_list"
+    },
+    {
+      "id": "556dc04b-5e23-411c-ac7c-fea30b4ba72d",
+      "kwargs": {
+        "column": "HourlyRate"
+      },
+      "meta": {},
+      "severity": "critical",
+      "type": "expect_column_values_to_not_be_null"
+    },
+    {
+      "id": "e07485e9-d8f6-4a31-83df-43562ba8381b",
+      "kwargs": {
+        "column": "HourlyRate",
+        "type_list": [
+          "int64",
+          "int32",
+          "float64",
+          "float32",
+          "Int64",
+          "Float64"
+        ]
+      },
+      "meta": {},
+      "severity": "critical",
+      "type": "expect_column_values_to_be_in_type_list"
+    },
+    {
+      "id": "18309dc4-c727-4e0b-87ab-cefeadfaccc6",
+      "kwargs": {
+        "column": "MonthlyIncome"
+      },
+      "meta": {},
+      "severity": "critical",
+      "type": "expect_column_values_to_not_be_null"
+    },
+    {
+      "id": "3b5a4a5f-270a-417c-b364-888a9fd6345a",
+      "kwargs": {
+        "column": "MonthlyIncome",
+        "type_list": [
+          "int64",
+          "int32",
+          "float64",
+          "float32",
+          "Int64",
+          "Float64"
+        ]
+      },
+      "meta": {},
+      "severity": "critical",
+      "type": "expect_column_values_to_be_in_type_list"
+    },
+    {
+      "id": "091dfc4c-4523-48e3-ab15-38e941be9e57",
+      "kwargs": {
+        "column": "MonthlyRate"
+      },
+      "meta": {},
+      "severity": "critical",
+      "type": "expect_column_values_to_not_be_null"
+    },
+    {
+      "id": "266c46e3-def4-4674-b701-5ead282549d7",
+      "kwargs": {
+        "column": "MonthlyRate",
+        "type_list": [
+          "int64",
+          "int32",
+          "float64",
+          "float32",
+          "Int64",
+          "Float64"
+        ]
+      },
+      "meta": {},
+      "severity": "critical",
+      "type": "expect_column_values_to_be_in_type_list"
+    },
+    {
+      "id": "3de36076-2f71-4c5a-a19e-6f6b0af7eff9",
+      "kwargs": {
+        "column": "NumCompaniesWorked"
+      },
+      "meta": {},
+      "severity": "critical",
+      "type": "expect_column_values_to_not_be_null"
+    },
+    {
+      "id": "38ee455f-8d93-4484-a719-3df809cd4abd",
+      "kwargs": {
+        "column": "NumCompaniesWorked",
+        "type_list": [
+          "int64",
+          "int32",
+          "float64",
+          "float32",
+          "Int64",
+          "Float64"
+        ]
+      },
+      "meta": {},
+      "severity": "critical",
+      "type": "expect_column_values_to_be_in_type_list"
+    },
+    {
+      "id": "d1863f7d-ea49-4364-8c73-e6060c7cbe72",
+      "kwargs": {
+        "column": "PercentSalaryHike"
+      },
+      "meta": {},
+      "severity": "critical",
+      "type": "expect_column_values_to_not_be_null"
+    },
+    {
+      "id": "55819b34-e2f9-4d1a-96b4-15a9b3766ea7",
+      "kwargs": {
+        "column": "PercentSalaryHike",
+        "type_list": [
+          "int64",
+          "int32",
+          "float64",
+          "float32",
+          "Int64",
+          "Float64"
+        ]
+      },
+      "meta": {},
+      "severity": "critical",
+      "type": "expect_column_values_to_be_in_type_list"
+    },
+    {
+      "id": "824a6665-302e-4c01-8b37-1d8afb34b6eb",
+      "kwargs": {
+        "column": "TotalWorkingYears"
+      },
+      "meta": {},
+      "severity": "critical",
+      "type": "expect_column_values_to_not_be_null"
+    },
+    {
+      "id": "9e225ac7-7e22-45c3-8bcd-1d7283fbb598",
+      "kwargs": {
+        "column": "TotalWorkingYears",
+        "type_list": [
+          "int64",
+          "int32",
+          "float64",
+          "float32",
+          "Int64",
+          "Float64"
+        ]
+      },
+      "meta": {},
+      "severity": "critical",
+      "type": "expect_column_values_to_be_in_type_list"
+    },
+    {
+      "id": "497d4df6-9444-4db3-857d-1de36b3f9462",
+      "kwargs": {
+        "column": "TrainingTimesLastYear"
+      },
+      "meta": {},
+      "severity": "critical",
+      "type": "expect_column_values_to_not_be_null"
+    },
+    {
+      "id": "37e3220b-fc2f-4ad6-9665-c0143e86ec2f",
+      "kwargs": {
+        "column": "TrainingTimesLastYear",
+        "type_list": [
+          "int64",
+          "int32",
+          "float64",
+          "float32",
+          "Int64",
+          "Float64"
+        ]
+      },
+      "meta": {},
+      "severity": "critical",
+      "type": "expect_column_values_to_be_in_type_list"
+    },
+    {
+      "id": "962705bf-17d9-4858-94a7-18aab935ebc7",
+      "kwargs": {
+        "column": "YearsAtCompany"
+      },
+      "meta": {},
+      "severity": "critical",
+      "type": "expect_column_values_to_not_be_null"
+    },
+    {
+      "id": "1d24130b-f73b-45a1-89c3-6a0512385f07",
+      "kwargs": {
+        "column": "YearsAtCompany",
+        "type_list": [
+          "int64",
+          "int32",
+          "float64",
+          "float32",
+          "Int64",
+          "Float64"
+        ]
+      },
+      "meta": {},
+      "severity": "critical",
+      "type": "expect_column_values_to_be_in_type_list"
+    },
+    {
+      "id": "24a0fd3d-6511-42b1-b904-b30b7659068c",
+      "kwargs": {
+        "column": "YearsInCurrentRole"
+      },
+      "meta": {},
+      "severity": "critical",
+      "type": "expect_column_values_to_not_be_null"
+    },
+    {
+      "id": "f5e30db7-40a0-42d4-bd0e-c4e46b248089",
+      "kwargs": {
+        "column": "YearsInCurrentRole",
+        "type_list": [
+          "int64",
+          "int32",
+          "float64",
+          "float32",
+          "Int64",
+          "Float64"
+        ]
+      },
+      "meta": {},
+      "severity": "critical",
+      "type": "expect_column_values_to_be_in_type_list"
+    },
+    {
+      "id": "5d84418f-19a8-47c4-a7d0-1448171c926f",
+      "kwargs": {
+        "column": "YearsSinceLastPromotion"
+      },
+      "meta": {},
+      "severity": "critical",
+      "type": "expect_column_values_to_not_be_null"
+    },
+    {
+      "id": "983d086b-2104-4897-b29f-1303d3fc0e0b",
+      "kwargs": {
+        "column": "YearsSinceLastPromotion",
+        "type_list": [
+          "int64",
+          "int32",
+          "float64",
+          "float32",
+          "Int64",
+          "Float64"
+        ]
+      },
+      "meta": {},
+      "severity": "critical",
+      "type": "expect_column_values_to_be_in_type_list"
+    },
+    {
+      "id": "5ff96a2e-037c-495e-9837-4ffe6e513f3e",
+      "kwargs": {
+        "column": "YearsWithCurrManager"
+      },
+      "meta": {},
+      "severity": "critical",
+      "type": "expect_column_values_to_not_be_null"
+    },
+    {
+      "id": "85eb63e6-40d8-4da5-896a-f7cae2912806",
+      "kwargs": {
+        "column": "YearsWithCurrManager",
+        "type_list": [
+          "int64",
+          "int32",
+          "float64",
+          "float32",
+          "Int64",
+          "Float64"
+        ]
+      },
+      "meta": {},
+      "severity": "critical",
+      "type": "expect_column_values_to_be_in_type_list"
+    },
+    {
+      "id": "ca1e54f9-e26a-4fc4-94e8-4fdd4777c95c",
+      "kwargs": {
+        "column": "BusinessTravel"
+      },
+      "meta": {},
+      "severity": "critical",
+      "type": "expect_column_values_to_not_be_null"
+    },
+    {
+      "id": "031737cf-e2f1-4470-8d0d-3d6d47d23d32",
+      "kwargs": {
+        "column": "BusinessTravel",
+        "type_list": [
+          "object",
+          "str",
+          "string",
+          "category"
+        ]
+      },
+      "meta": {},
+      "severity": "critical",
+      "type": "expect_column_values_to_be_in_type_list"
+    },
+    {
+      "id": "3b983490-9889-4bb0-bd6a-62e64a48855b",
+      "kwargs": {
+        "column": "Department"
+      },
+      "meta": {},
+      "severity": "critical",
+      "type": "expect_column_values_to_not_be_null"
+    },
+    {
+      "id": "f9d6dcd3-b764-450e-968c-c7368f4e1604",
+      "kwargs": {
+        "column": "Department",
+        "type_list": [
+          "object",
+          "str",
+          "string",
+          "category"
+        ]
+      },
+      "meta": {},
+      "severity": "critical",
+      "type": "expect_column_values_to_be_in_type_list"
+    },
+    {
+      "id": "0496c55a-e4da-40d6-b9b6-db48f1126383",
+      "kwargs": {
+        "column": "EducationField"
+      },
+      "meta": {},
+      "severity": "critical",
+      "type": "expect_column_values_to_not_be_null"
+    },
+    {
+      "id": "609f7b73-503d-4f20-beb5-d3e553a7d9ae",
+      "kwargs": {
+        "column": "EducationField",
+        "type_list": [
+          "object",
+          "str",
+          "string",
+          "category"
+        ]
+      },
+      "meta": {},
+      "severity": "critical",
+      "type": "expect_column_values_to_be_in_type_list"
+    },
+    {
+      "id": "c296451b-3e6f-4c2f-af73-122ba5d483a0",
+      "kwargs": {
+        "column": "JobRole"
+      },
+      "meta": {},
+      "severity": "critical",
+      "type": "expect_column_values_to_not_be_null"
+    },
+    {
+      "id": "ec89df50-268b-45f1-a163-7dc4d3cf1f7b",
+      "kwargs": {
+        "column": "JobRole",
+        "type_list": [
+          "object",
+          "str",
+          "string",
+          "category"
+        ]
+      },
+      "meta": {},
+      "severity": "critical",
+      "type": "expect_column_values_to_be_in_type_list"
+    },
+    {
+      "id": "d535e75b-b8ef-451f-8f61-8d7ddce26157",
+      "kwargs": {
+        "column": "OverTime"
+      },
+      "meta": {},
+      "severity": "critical",
+      "type": "expect_column_values_to_not_be_null"
+    },
+    {
+      "id": "03ba479e-4484-4988-a882-7e6667f27b30",
+      "kwargs": {
+        "column": "OverTime",
+        "type_list": [
+          "object",
+          "str",
+          "string",
+          "category"
+        ]
+      },
+      "meta": {},
+      "severity": "critical",
+      "type": "expect_column_values_to_be_in_type_list"
+    },
+    {
+      "id": "015e383d-f3a6-4a7d-a8f2-327c46b28435",
+      "kwargs": {
+        "column": "Education"
+      },
+      "meta": {},
+      "severity": "critical",
+      "type": "expect_column_values_to_not_be_null"
+    },
+    {
+      "id": "a296d9f1-d22a-499e-92b8-94011bfcda4a",
+      "kwargs": {
+        "column": "Education",
+        "type_list": [
+          "object",
+          "str",
+          "string",
+          "category"
+        ]
+      },
+      "meta": {},
+      "severity": "critical",
+      "type": "expect_column_values_to_be_in_type_list"
+    },
+    {
+      "id": "98be188a-f069-4209-b9ce-b017acb578b8",
+      "kwargs": {
+        "column": "EnvironmentSatisfaction"
+      },
+      "meta": {},
+      "severity": "critical",
+      "type": "expect_column_values_to_not_be_null"
+    },
+    {
+      "id": "3f88eac4-920d-4a14-8359-44d0efee9c65",
+      "kwargs": {
+        "column": "EnvironmentSatisfaction",
+        "type_list": [
+          "object",
+          "str",
+          "string",
+          "category"
+        ]
+      },
+      "meta": {},
+      "severity": "critical",
+      "type": "expect_column_values_to_be_in_type_list"
+    },
+    {
+      "id": "3568a05e-4b9b-49fd-8cb1-71979ba39549",
+      "kwargs": {
+        "column": "JobInvolvement"
+      },
+      "meta": {},
+      "severity": "critical",
+      "type": "expect_column_values_to_not_be_null"
+    },
+    {
+      "id": "3649d489-68b6-444f-9dc3-00b6b85b7709",
+      "kwargs": {
+        "column": "JobInvolvement",
+        "type_list": [
+          "object",
+          "str",
+          "string",
+          "category"
+        ]
+      },
+      "meta": {},
+      "severity": "critical",
+      "type": "expect_column_values_to_be_in_type_list"
+    },
+    {
+      "id": "051b2524-a412-4774-938c-53a1c548ce6b",
+      "kwargs": {
+        "column": "JobLevel"
+      },
+      "meta": {},
+      "severity": "critical",
+      "type": "expect_column_values_to_not_be_null"
+    },
+    {
+      "id": "7e87f5fa-e1db-4cc6-86e3-74bbaacaa624",
+      "kwargs": {
+        "column": "JobLevel",
+        "type_list": [
+          "object",
+          "str",
+          "string",
+          "category"
+        ]
+      },
+      "meta": {},
+      "severity": "critical",
+      "type": "expect_column_values_to_be_in_type_list"
+    },
+    {
+      "id": "a0e35125-7fb6-4f7b-a885-840f1de8276e",
+      "kwargs": {
+        "column": "JobSatisfaction"
+      },
+      "meta": {},
+      "severity": "critical",
+      "type": "expect_column_values_to_not_be_null"
+    },
+    {
+      "id": "754d2814-211e-4fe9-878d-13e583a97fa4",
+      "kwargs": {
+        "column": "JobSatisfaction",
+        "type_list": [
+          "object",
+          "str",
+          "string",
+          "category"
+        ]
+      },
+      "meta": {},
+      "severity": "critical",
+      "type": "expect_column_values_to_be_in_type_list"
+    },
+    {
+      "id": "e1566e6a-a0e6-45ba-ba52-f3527aeee5f4",
+      "kwargs": {
+        "column": "PerformanceRating"
+      },
+      "meta": {},
+      "severity": "critical",
+      "type": "expect_column_values_to_not_be_null"
+    },
+    {
+      "id": "e3009ae2-6162-4dc5-9fbe-459a18486583",
+      "kwargs": {
+        "column": "PerformanceRating",
+        "type_list": [
+          "object",
+          "str",
+          "string",
+          "category"
+        ]
+      },
+      "meta": {},
+      "severity": "critical",
+      "type": "expect_column_values_to_be_in_type_list"
+    },
+    {
+      "id": "ded5a80c-7e56-45c5-b0d7-ffc66221a9f2",
+      "kwargs": {
+        "column": "RelationshipSatisfaction"
+      },
+      "meta": {},
+      "severity": "critical",
+      "type": "expect_column_values_to_not_be_null"
+    },
+    {
+      "id": "5f46df76-1cb2-4d99-881b-7520884ae089",
+      "kwargs": {
+        "column": "RelationshipSatisfaction",
+        "type_list": [
+          "object",
+          "str",
+          "string",
+          "category"
+        ]
+      },
+      "meta": {},
+      "severity": "critical",
+      "type": "expect_column_values_to_be_in_type_list"
+    },
+    {
+      "id": "f43814e0-68b9-4341-a3ce-802c4f9d3fc4",
+      "kwargs": {
+        "column": "StockOptionLevel"
+      },
+      "meta": {},
+      "severity": "critical",
+      "type": "expect_column_values_to_not_be_null"
+    },
+    {
+      "id": "363079b0-6769-477a-bdfd-6dfdebd8c9cc",
+      "kwargs": {
+        "column": "StockOptionLevel",
+        "type_list": [
+          "object",
+          "str",
+          "string",
+          "category"
+        ]
+      },
+      "meta": {},
+      "severity": "critical",
+      "type": "expect_column_values_to_be_in_type_list"
+    },
+    {
+      "id": "c68b6da5-ac31-4bf6-bf7b-0a15caa3f2b5",
+      "kwargs": {
+        "column": "WorkLifeBalance"
+      },
+      "meta": {},
+      "severity": "critical",
+      "type": "expect_column_values_to_not_be_null"
+    },
+    {
+      "id": "0bc9312c-9b7f-426f-b054-728d4da40d9f",
+      "kwargs": {
+        "column": "WorkLifeBalance",
+        "type_list": [
+          "object",
+          "str",
+          "string",
+          "category"
+        ]
+      },
+      "meta": {},
+      "severity": "critical",
+      "type": "expect_column_values_to_be_in_type_list"
+    },
+    {
+      "id": "b79cba48-09fb-42d7-8398-3597bffe0018",
+      "kwargs": {
+        "column": "Age"
+      },
+      "meta": {},
+      "severity": "critical",
+      "type": "expect_column_values_to_not_be_null"
+    },
+    {
+      "id": "73b35989-6dab-4c7e-a696-9005e35c394a",
+      "kwargs": {
+        "column": "Age",
+        "type_list": [
+          "int64",
+          "int32",
+          "float64",
+          "float32",
+          "Int64",
+          "Float64"
+        ]
+      },
+      "meta": {},
+      "severity": "critical",
+      "type": "expect_column_values_to_be_in_type_list"
+    },
+    {
+      "id": "f7293598-0363-4029-80dd-0a9895da4e13",
+      "kwargs": {
+        "column": "Gender"
+      },
+      "meta": {},
+      "severity": "critical",
+      "type": "expect_column_values_to_not_be_null"
+    },
+    {
+      "id": "1c803d37-3188-4276-9445-e1485fa7d258",
+      "kwargs": {
+        "column": "Gender",
+        "type_list": [
+          "object",
+          "str",
+          "string",
+          "category"
+        ]
+      },
+      "meta": {},
+      "severity": "critical",
+      "type": "expect_column_values_to_be_in_type_list"
+    },
+    {
+      "id": "637e2c28-cfaf-4dd0-9328-c3cb4f7bd473",
+      "kwargs": {
+        "column": "MaritalStatus"
+      },
+      "meta": {},
+      "severity": "critical",
+      "type": "expect_column_values_to_not_be_null"
+    },
+    {
+      "id": "fdd52ddb-c633-4def-bdb1-796836d7b36f",
+      "kwargs": {
+        "column": "MaritalStatus",
+        "type_list": [
+          "object",
+          "str",
+          "string",
+          "category"
+        ]
+      },
+      "meta": {},
+      "severity": "critical",
+      "type": "expect_column_values_to_be_in_type_list"
+    },
+    {
+      "id": "8baa9e3f-0e9e-40b9-bce3-f5e997c2fc1f",
+      "kwargs": {
+        "column": "Attrition"
+      },
+      "meta": {},
+      "severity": "critical",
+      "type": "expect_column_values_to_not_be_null"
+    },
+    {
+      "id": "11fdcb38-bc86-4f6f-a154-142a0294557f",
+      "kwargs": {
+        "column": "Attrition",
+        "type_list": [
+          "object",
+          "str",
+          "string",
+          "category"
+        ]
+      },
+      "meta": {},
+      "severity": "critical",
+      "type": "expect_column_values_to_be_in_type_list"
+    },
+    {
+      "id": "615bd4c7-7885-46c0-807f-1eb45b57e56e",
+      "kwargs": {
+        "column": "DailyRate",
+        "max_value": 2895.0,
+        "min_value": 0.0,
+        "mostly": 0.99
+      },
+      "meta": {},
+      "severity": "critical",
+      "type": "expect_column_values_to_be_between"
+    },
+    {
+      "id": "934497d3-4623-4a6c-b851-5643f77df6ff",
+      "kwargs": {
+        "column": "DistanceFromHome",
+        "max_value": 57.0,
+        "min_value": 0.0,
+        "mostly": 0.99
+      },
+      "meta": {},
+      "severity": "critical",
+      "type": "expect_column_values_to_be_between"
+    },
+    {
+      "id": "610d7eea-afb8-49f6-8851-27756f74d372",
+      "kwargs": {
+        "column": "HourlyRate",
+        "max_value": 170.0,
+        "min_value": 0.0,
+        "mostly": 0.99
+      },
+      "meta": {},
+      "severity": "critical",
+      "type": "expect_column_values_to_be_between"
+    },
+    {
+      "id": "9b4ed07e-b513-4081-b73c-0c54bc335d42",
+      "kwargs": {
+        "column": "MonthlyIncome",
+        "max_value": 38937.0,
+        "min_value": 0.0,
+        "mostly": 0.99
+      },
+      "meta": {},
+      "severity": "critical",
+      "type": "expect_column_values_to_be_between"
+    },
+    {
+      "id": "cf0d2672-bf64-4c1d-b3d9-98031b4ae352",
+      "kwargs": {
+        "column": "MonthlyRate",
+        "max_value": 51904.0,
+        "min_value": 0.0,
+        "mostly": 0.99
+      },
+      "meta": {},
+      "severity": "critical",
+      "type": "expect_column_values_to_be_between"
+    },
+    {
+      "id": "e8b3a9a8-d179-4afc-92d5-344e8d0876ec",
+      "kwargs": {
+        "column": "NumCompaniesWorked",
+        "max_value": 18.0,
+        "min_value": 0.0,
+        "mostly": 0.99
+      },
+      "meta": {},
+      "severity": "critical",
+      "type": "expect_column_values_to_be_between"
+    },
+    {
+      "id": "9ea88b2b-929a-4f62-9a7f-f3a3c91758ff",
+      "kwargs": {
+        "column": "PercentSalaryHike",
+        "max_value": 39.0,
+        "min_value": 0.0,
+        "mostly": 0.99
+      },
+      "meta": {},
+      "severity": "critical",
+      "type": "expect_column_values_to_be_between"
+    },
+    {
+      "id": "46804878-87bf-4aad-8bae-ab41ee3c17cc",
+      "kwargs": {
+        "column": "TotalWorkingYears",
+        "max_value": 80.0,
+        "min_value": 0.0,
+        "mostly": 0.99
+      },
+      "meta": {},
+      "severity": "critical",
+      "type": "expect_column_values_to_be_between"
+    },
+    {
+      "id": "34131002-4231-48fd-ba65-20bde97e56f2",
+      "kwargs": {
+        "column": "TrainingTimesLastYear",
+        "max_value": 12.0,
+        "min_value": 0.0,
+        "mostly": 0.99
+      },
+      "meta": {},
+      "severity": "critical",
+      "type": "expect_column_values_to_be_between"
+    },
+    {
+      "id": "0fdb8768-e553-4391-af07-653c21f0e689",
+      "kwargs": {
+        "column": "YearsAtCompany",
+        "max_value": 74.0,
+        "min_value": 0.0,
+        "mostly": 0.99
+      },
+      "meta": {},
+      "severity": "critical",
+      "type": "expect_column_values_to_be_between"
+    },
+    {
+      "id": "83873c60-1dee-4e7a-a20b-6ab7d4afb68e",
+      "kwargs": {
+        "column": "YearsInCurrentRole",
+        "max_value": 34.0,
+        "min_value": 0.0,
+        "mostly": 0.99
+      },
+      "meta": {},
+      "severity": "critical",
+      "type": "expect_column_values_to_be_between"
+    },
+    {
+      "id": "6739466f-a89c-49ee-a11c-650380bbf00a",
+      "kwargs": {
+        "column": "YearsSinceLastPromotion",
+        "max_value": 30.0,
+        "min_value": 0.0,
+        "mostly": 0.99
+      },
+      "meta": {},
+      "severity": "critical",
+      "type": "expect_column_values_to_be_between"
+    },
+    {
+      "id": "69624dd4-7560-499e-9ec4-16e9989a6824",
+      "kwargs": {
+        "column": "YearsWithCurrManager",
+        "max_value": 34.0,
+        "min_value": 0.0,
+        "mostly": 0.99
+      },
+      "meta": {},
+      "severity": "critical",
+      "type": "expect_column_values_to_be_between"
+    },
+    {
+      "id": "7ed80a40-3f0c-4b86-bd37-291c9644f0fd",
+      "kwargs": {
+        "column": "Age",
+        "max_value": 102.0,
+        "min_value": 0.0,
+        "mostly": 0.99
+      },
+      "meta": {},
+      "severity": "critical",
+      "type": "expect_column_values_to_be_between"
+    },
+    {
+      "id": "03090c5b-7ea0-4ca6-a945-1fe0e45e198a",
+      "kwargs": {
+        "column": "BusinessTravel",
+        "mostly": 0.99,
+        "value_set": [
+          "Non-Travel",
+          "Travel_Frequently",
+          "Travel_Rarely"
+        ]
+      },
+      "meta": {},
+      "severity": "critical",
+      "type": "expect_column_values_to_be_in_set"
+    },
+    {
+      "id": "64ebf1e1-49ea-4c0e-b1f5-0392a4c0147d",
+      "kwargs": {
+        "column": "Department",
+        "mostly": 0.99,
+        "value_set": [
+          "Human Resources",
+          "Research & Development",
+          "Sales"
+        ]
+      },
+      "meta": {},
+      "severity": "critical",
+      "type": "expect_column_values_to_be_in_set"
+    },
+    {
+      "id": "739b66de-b505-42aa-a1d9-7f35d2023a52",
+      "kwargs": {
+        "column": "EducationField",
+        "mostly": 0.99,
+        "value_set": [
+          "Human Resources",
+          "Life Sciences",
+          "Marketing",
+          "Medical",
+          "Other",
+          "Technical Degree"
+        ]
+      },
+      "meta": {},
+      "severity": "critical",
+      "type": "expect_column_values_to_be_in_set"
+    },
+    {
+      "id": "e3b7b645-6fc0-43b7-94ee-88d2f606c0a6",
+      "kwargs": {
+        "column": "JobRole",
+        "mostly": 0.99,
+        "value_set": [
+          "Healthcare Representative",
+          "Human Resources",
+          "Laboratory Technician",
+          "Manager",
+          "Manufacturing Director",
+          "Research Director",
+          "Research Scientist",
+          "Sales Executive",
+          "Sales Representative"
+        ]
+      },
+      "meta": {},
+      "severity": "critical",
+      "type": "expect_column_values_to_be_in_set"
+    },
+    {
+      "id": "71e7d39e-cecd-489d-ad66-22c4261b9b13",
+      "kwargs": {
+        "column": "OverTime",
+        "mostly": 0.99,
+        "value_set": [
+          "No",
+          "Yes"
+        ]
+      },
+      "meta": {},
+      "severity": "critical",
+      "type": "expect_column_values_to_be_in_set"
+    },
+    {
+      "id": "7967e5bf-c0af-43a3-b64e-79f3a8902db6",
+      "kwargs": {
+        "column": "Education",
+        "mostly": 0.99,
+        "value_set": [
+          "1: Below College",
+          "2: College",
+          "3: Bachelor",
+          "4: Master",
+          "5: Doctor"
+        ]
+      },
+      "meta": {},
+      "severity": "critical",
+      "type": "expect_column_values_to_be_in_set"
+    },
+    {
+      "id": "dd4edc52-7d33-4714-bb1a-61459472e803",
+      "kwargs": {
+        "column": "EnvironmentSatisfaction",
+        "mostly": 0.99,
+        "value_set": [
+          "1: Low",
+          "2: Medium",
+          "3: High",
+          "4: Very High"
+        ]
+      },
+      "meta": {},
+      "severity": "critical",
+      "type": "expect_column_values_to_be_in_set"
+    },
+    {
+      "id": "0efd8de4-7603-4fdc-9265-7cd13694ba4b",
+      "kwargs": {
+        "column": "JobInvolvement",
+        "mostly": 0.99,
+        "value_set": [
+          "1: Low",
+          "2: Medium",
+          "3: High",
+          "4: Very High"
+        ]
+      },
+      "meta": {},
+      "severity": "critical",
+      "type": "expect_column_values_to_be_in_set"
+    },
+    {
+      "id": "0eed29b2-4e91-4845-bc39-8be199c1dd70",
+      "kwargs": {
+        "column": "JobLevel",
+        "mostly": 0.99,
+        "value_set": [
+          "1: Level 1",
+          "2: Level 2",
+          "3: Level 3",
+          "4: Level 4",
+          "5: Level 5"
+        ]
+      },
+      "meta": {},
+      "severity": "critical",
+      "type": "expect_column_values_to_be_in_set"
+    },
+    {
+      "id": "8f9b738e-483a-455f-85bd-1496007c55b0",
+      "kwargs": {
+        "column": "JobSatisfaction",
+        "mostly": 0.99,
+        "value_set": [
+          "1: Low",
+          "2: Medium",
+          "3: High",
+          "4: Very High"
+        ]
+      },
+      "meta": {},
+      "severity": "critical",
+      "type": "expect_column_values_to_be_in_set"
+    },
+    {
+      "id": "9a7a01d0-283f-4848-878b-5a2c570db801",
+      "kwargs": {
+        "column": "PerformanceRating",
+        "mostly": 0.99,
+        "value_set": [
+          "3: Excellent",
+          "4: Outstanding"
+        ]
+      },
+      "meta": {},
+      "severity": "critical",
+      "type": "expect_column_values_to_be_in_set"
+    },
+    {
+      "id": "80863ae0-07ce-4eae-b70f-6e82dc6cf88c",
+      "kwargs": {
+        "column": "RelationshipSatisfaction",
+        "mostly": 0.99,
+        "value_set": [
+          "1: Low",
+          "2: Medium",
+          "3: High",
+          "4: Very High"
+        ]
+      },
+      "meta": {},
+      "severity": "critical",
+      "type": "expect_column_values_to_be_in_set"
+    },
+    {
+      "id": "a56b9014-06a8-4e63-90c9-a8133831ea3c",
+      "kwargs": {
+        "column": "StockOptionLevel",
+        "mostly": 0.99,
+        "value_set": [
+          "0: Level 0",
+          "1: Level 1",
+          "2: Level 2",
+          "3: Level 3"
+        ]
+      },
+      "meta": {},
+      "severity": "critical",
+      "type": "expect_column_values_to_be_in_set"
+    },
+    {
+      "id": "4a8a5c3f-d69f-47ee-b5d4-f4edcf1c7954",
+      "kwargs": {
+        "column": "WorkLifeBalance",
+        "mostly": 0.99,
+        "value_set": [
+          "1: Bad",
+          "2: Good",
+          "3: Better",
+          "4: Best"
+        ]
+      },
+      "meta": {},
+      "severity": "critical",
+      "type": "expect_column_values_to_be_in_set"
+    },
+    {
+      "id": "019839f0-85af-43ea-bd11-192d9715a6b2",
+      "kwargs": {
+        "column": "Gender",
+        "mostly": 0.99,
+        "value_set": [
+          "Female",
+          "Male"
+        ]
+      },
+      "meta": {},
+      "severity": "critical",
+      "type": "expect_column_values_to_be_in_set"
+    },
+    {
+      "id": "7f969db5-07a3-408d-9262-2b0f66e12796",
+      "kwargs": {
+        "column": "MaritalStatus",
+        "mostly": 0.99,
+        "value_set": [
+          "Divorced",
+          "Married",
+          "Single"
+        ]
+      },
+      "meta": {},
+      "severity": "critical",
+      "type": "expect_column_values_to_be_in_set"
+    },
+    {
+      "description": "R\u00e8gle m\u00e9tier : TotalWorkingYears >= YearsAtCompany",
+      "id": "683fac9c-76eb-4b73-aa24-f671c71d5cc3",
+      "kwargs": {
+        "column_A": "TotalWorkingYears",
+        "column_B": "YearsAtCompany",
+        "mostly": 0.99,
+        "or_equal": true
+      },
+      "meta": {},
+      "severity": "critical",
+      "type": "expect_column_pair_values_a_to_be_greater_than_b"
+    },
+    {
+      "description": "R\u00e8gle m\u00e9tier : YearsAtCompany >= YearsInCurrentRole",
+      "id": "e85d6419-edb5-48e0-9a33-6df51dd07a91",
+      "kwargs": {
+        "column_A": "YearsAtCompany",
+        "column_B": "YearsInCurrentRole",
+        "mostly": 0.99,
+        "or_equal": true
+      },
+      "meta": {},
+      "severity": "critical",
+      "type": "expect_column_pair_values_a_to_be_greater_than_b"
+    },
+    {
+      "description": "R\u00e8gle m\u00e9tier : YearsAtCompany >= YearsWithCurrManager",
+      "id": "7578214d-e1da-4b0e-99e9-d82fabd8dabd",
+      "kwargs": {
+        "column_A": "YearsAtCompany",
+        "column_B": "YearsWithCurrManager",
+        "mostly": 0.99,
+        "or_equal": true
+      },
+      "meta": {},
+      "severity": "critical",
+      "type": "expect_column_pair_values_a_to_be_greater_than_b"
+    },
+    {
+      "description": "R\u00e8gle m\u00e9tier : YearsAtCompany >= YearsSinceLastPromotion",
+      "id": "4d4c2fe3-7d9b-46a7-bbcb-fa69cbc11364",
+      "kwargs": {
+        "column_A": "YearsAtCompany",
+        "column_B": "YearsSinceLastPromotion",
+        "mostly": 0.99,
+        "or_equal": true
+      },
+      "meta": {},
+      "severity": "critical",
+      "type": "expect_column_pair_values_a_to_be_greater_than_b"
+    },
+    {
+      "description": "R\u00e8gle m\u00e9tier : Age >= TotalWorkingYears",
+      "id": "15815981-d7e3-40e2-a141-2dd12fed1446",
+      "kwargs": {
+        "column_A": "Age",
+        "column_B": "TotalWorkingYears",
+        "mostly": 0.99,
+        "or_equal": true
+      },
+      "meta": {},
+      "severity": "critical",
+      "type": "expect_column_pair_values_a_to_be_greater_than_b"
+    },
+    {
+      "id": "bf551af5-d4c6-4469-b778-a112dc117f03",
+      "kwargs": {
+        "column": "Attrition",
+        "value_set": [
+          "No",
+          "Yes"
+        ]
+      },
+      "meta": {},
+      "severity": "critical",
+      "type": "expect_column_values_to_be_in_set"
+    },
+    {
+      "description": "Au moins 8.1% de \u00ab Yes \u00bb",
+      "id": "1a8a0f11-581e-4c5f-a6cd-578fa46ece6c",
+      "kwargs": {
+        "column": "Attrition",
+        "mostly": 0.081,
+        "value_set": [
+          "Yes"
+        ]
+      },
+      "meta": {},
+      "severity": "critical",
+      "type": "expect_column_values_to_be_in_set"
+    },
+    {
+      "description": "Au plus 32.3% de \u00ab Yes \u00bb",
+      "id": "60e9d881-4975-48f0-bfc8-b4d97a96e398",
+      "kwargs": {
+        "column": "Attrition",
+        "mostly": 0.677,
+        "value_set": [
+          "No"
+        ]
+      },
+      "meta": {},
+      "severity": "critical",
+      "type": "expect_column_values_to_be_in_set"
+    }
+  ],
+  "id": "ffe62e61-8d61-45b4-8a22-89c9eabaa648",
+  "meta": {
+    "great_expectations_version": "1.23.2"
+  },
+  "name": "scoring_contract",
+  "notes": null
+}
