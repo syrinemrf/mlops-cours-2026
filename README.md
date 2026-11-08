@@ -62,9 +62,10 @@ seed 42. `EmployeeNumber` est une clé technique ; Age/Gender/MaritalStatus serv
 
 ## Modèle et résultats
 
-Champion v4 et modèle DVC : LR C=1 sans poids, ROC AUC 0,836851, seuil de décision 0,5,
-run `ef2d3f85ebe3432f9172275c34bbd6ac`. L’écart de l’étape 8.4 est résolu ;
-challenger v3 conservé. Exercices 8.5 et 10.3 vérifiés, replay d’Aziz 10.4 en attente.
+Modèle DVC : LR C=1 sans poids, ROC AUC 0,836851, seuil de décision 0,5,
+run `ef2d3f85ebe3432f9172275c34bbd6ac` (version 4 du registre). Au 2026-11-08,
+`@champion` est sur la v7 (même configuration, même ROC AUC de test) et `@challenger`
+sur la v8 créée par le pipeline à gates du Lab 3. L’écart de l’étape 8.4 est résolu. Exercices 8.5 et 10.3 vérifiés, replay d’Aziz 10.4 en attente.
 Ces scores du protocole A sont
 exploratoires sur test consulté à répétition, sans supériorité statistique démontrée.
 [Preuves techniques](reports/m1/final-validation.md) ;
