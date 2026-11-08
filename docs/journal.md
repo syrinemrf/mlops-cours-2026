@@ -141,3 +141,4 @@ Mode d'emploi (à garder en tête du fichier) :
 - **Correctif :** `pipelines/stage.py` recopie désormais les rapports d'une étape en échec. Sans cela, `check-m3` était à 19/20 (rapport de drift perdu au code retour 1). L'image 1.2.0 des runs enregistrés est antérieure à ce correctif.
 - **Vérifié :** check-m1 18/18 et check-m2 18/18 avec `@champion` sur v7 ; check-m3 20/20 (log reports/m3/check-m3.log). Les scripts check-m2/m3 sont en mode 644 : lancés via `bash`, mode inchangé.
 - **Suite :** revue d'Aziz en attente ; pas de push ni de PR sans accord. Les mentions « champion v4 » de README.md et NOTES.md décrivent l'état du 2026-10-20, à mettre à jour avec accord.
+- **Point ouvert (image/code) :** les runs enregistrés utilisent l'image 1.2.0 construite avant le correctif 036d5f6 (conservation du rapport d'une étape en échec) ; à reconstruire avant j1 si le temps le permet.
