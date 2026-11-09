@@ -1,0 +1,324 @@
+[KFP Executor 2026-11-08 18:15:32,855 INFO]: Looking for component `validate_data` in --component_module_path `/tmp/tmp.A7GFvEvOoh/ephemeral_component.py`
+[KFP Executor 2026-11-08 18:15:32,855 INFO]: Loading KFP component "validate_data" from /tmp/tmp.A7GFvEvOoh/ephemeral_component.py (directory "/tmp/tmp.A7GFvEvOoh" and module name "ephemeral_component")
+[KFP Executor 2026-11-08 18:15:32,859 INFO]: Got executor_input:
+{
+    "inputs": {
+        "artifacts": {
+            "raw_data": {
+                "artifacts": [
+                    {
+                        "name": "66",
+                        "type": {
+                            "instanceSchema": ""
+                        },
+                        "uri": "minio://mlpipeline/v2/artifacts/scoring-bad-data-test/f45e8973-1780-4285-9730-95443f141681/corrupt-data/0d972c10-0539-4042-b682-7939677266c0/corrupted",
+                        "metadata": {
+                            "display_name": "corrupted",
+                            "store_session_info": "{\"Provider\":\"minio\",\"Params\":{\"accessKeyKey\":\"accesskey\",\"disableSSL\":\"true\",\"endpoint\":\"seaweedfs.kubeflow:9000\",\"fromEnv\":\"false\",\"maxRetries\":\"5\",\"region\":\"minio\",\"secretKeyKey\":\"secretkey\",\"secretName\":\"mlpipeline-minio-artifact\"}}"
+                        }
+                    }
+                ]
+            }
+        }
+    },
+    "outputs": {
+        "artifacts": {
+            "checks": {
+                "artifacts": [
+                    {
+                        "name": "checks",
+                        "type": {
+                            "schemaTitle": "system.Metrics",
+                            "schemaVersion": "0.0.1"
+                        },
+                        "uri": "minio://mlpipeline/v2/artifacts/scoring-bad-data-test/f45e8973-1780-4285-9730-95443f141681/validate-data/d370564e-3cb8-4d81-95d9-a359cb2dfcaf/checks"
+                    }
+                ]
+            },
+            "executor-logs": {
+                "artifacts": [
+                    {
+                        "name": "executor-logs",
+                        "type": {
+                            "schemaTitle": "system.Artifact"
+                        },
+                        "uri": "minio://mlpipeline/v2/artifacts/scoring-bad-data-test/f45e8973-1780-4285-9730-95443f141681/validate-data/d370564e-3cb8-4d81-95d9-a359cb2dfcaf/executor-logs-0"
+                    }
+                ]
+            },
+            "html": {
+                "artifacts": [
+                    {
+                        "name": "html",
+                        "type": {
+                            "schemaTitle": "system.HTML",
+                            "schemaVersion": "0.0.1"
+                        },
+                        "uri": "minio://mlpipeline/v2/artifacts/scoring-bad-data-test/f45e8973-1780-4285-9730-95443f141681/validate-data/d370564e-3cb8-4d81-95d9-a359cb2dfcaf/html"
+                    }
+                ]
+            },
+            "report": {
+                "artifacts": [
+                    {
+                        "name": "report",
+                        "type": {
+                            "schemaTitle": "system.Artifact",
+                            "schemaVersion": "0.0.1"
+                        },
+                        "uri": "minio://mlpipeline/v2/artifacts/scoring-bad-data-test/f45e8973-1780-4285-9730-95443f141681/validate-data/d370564e-3cb8-4d81-95d9-a359cb2dfcaf/report"
+                    }
+                ]
+            }
+        },
+        "outputFile": "/minio/mlpipeline/v2/artifacts/scoring-bad-data-test/f45e8973-1780-4285-9730-95443f141681/validate-data/d370564e-3cb8-4d81-95d9-a359cb2dfcaf/output_metadata.json"
+    }
+}
+[KFP Executor 2026-11-08 18:15:34,877 INFO]: Skipping registering function get_context because it does not have a class
+[KFP Executor 2026-11-08 18:15:42,660 INFO]: Skipping registering function DataSourceManager._register_add_datasource.<locals>.crud_method_info because it is a closure
+[KFP Executor 2026-11-08 18:15:42,661 INFO]: Skipping registering function DataSourceManager._register_update_datasource.<locals>.crud_method_info because it is a closure
+[KFP Executor 2026-11-08 18:15:42,661 INFO]: Skipping registering function DataSourceManager._register_add_or_update_datasource.<locals>.crud_method_info because it is a closure
+[KFP Executor 2026-11-08 18:15:42,661 INFO]: Skipping registering function DataSourceManager._register_delete_datasource.<locals>.crud_method_info because it is a closure
+[KFP Executor 2026-11-08 18:15:42,678 INFO]: Skipping registering function DataSourceManager._register_add_datasource.<locals>.crud_method_info because it is a closure
+[KFP Executor 2026-11-08 18:15:42,679 INFO]: Skipping registering function DataSourceManager._register_update_datasource.<locals>.crud_method_info because it is a closure
+[KFP Executor 2026-11-08 18:15:42,679 INFO]: Skipping registering function DataSourceManager._register_add_or_update_datasource.<locals>.crud_method_info because it is a closure
+[KFP Executor 2026-11-08 18:15:42,679 INFO]: Skipping registering function DataSourceManager._register_delete_datasource.<locals>.crud_method_info because it is a closure
+[KFP Executor 2026-11-08 18:15:42,696 INFO]: Skipping registering function DataSourceManager._register_add_datasource.<locals>.crud_method_info because it is a closure
+[KFP Executor 2026-11-08 18:15:42,696 INFO]: Skipping registering function DataSourceManager._register_update_datasource.<locals>.crud_method_info because it is a closure
+[KFP Executor 2026-11-08 18:15:42,696 INFO]: Skipping registering function DataSourceManager._register_add_or_update_datasource.<locals>.crud_method_info because it is a closure
+[KFP Executor 2026-11-08 18:15:42,696 INFO]: Skipping registering function DataSourceManager._register_delete_datasource.<locals>.crud_method_info because it is a closure
+[KFP Executor 2026-11-08 18:15:42,713 INFO]: Skipping registering function DataSourceManager._register_add_datasource.<locals>.crud_method_info because it is a closure
+[KFP Executor 2026-11-08 18:15:42,713 INFO]: Skipping registering function DataSourceManager._register_update_datasource.<locals>.crud_method_info because it is a closure
+[KFP Executor 2026-11-08 18:15:42,713 INFO]: Skipping registering function DataSourceManager._register_add_or_update_datasource.<locals>.crud_method_info because it is a closure
+[KFP Executor 2026-11-08 18:15:42,713 INFO]: Skipping registering function DataSourceManager._register_delete_datasource.<locals>.crud_method_info because it is a closure
+[KFP Executor 2026-11-08 18:15:42,727 INFO]: Skipping registering function DataSourceManager._register_add_datasource.<locals>.crud_method_info because it is a closure
+[KFP Executor 2026-11-08 18:15:42,728 INFO]: Skipping registering function DataSourceManager._register_update_datasource.<locals>.crud_method_info because it is a closure
+[KFP Executor 2026-11-08 18:15:42,728 INFO]: Skipping registering function DataSourceManager._register_add_or_update_datasource.<locals>.crud_method_info because it is a closure
+[KFP Executor 2026-11-08 18:15:42,728 INFO]: Skipping registering function DataSourceManager._register_delete_datasource.<locals>.crud_method_info because it is a closure
+[KFP Executor 2026-11-08 18:15:43,022 INFO]: Skipping registering function DataSourceManager._register_add_datasource.<locals>.crud_method_info because it is a closure
+[KFP Executor 2026-11-08 18:15:43,023 INFO]: Skipping registering function DataSourceManager._register_update_datasource.<locals>.crud_method_info because it is a closure
+[KFP Executor 2026-11-08 18:15:43,023 INFO]: Skipping registering function DataSourceManager._register_add_or_update_datasource.<locals>.crud_method_info because it is a closure
+[KFP Executor 2026-11-08 18:15:43,023 INFO]: Skipping registering function DataSourceManager._register_delete_datasource.<locals>.crud_method_info because it is a closure
+[KFP Executor 2026-11-08 18:15:43,636 INFO]: Skipping registering function DataSourceManager._bind_asset_factory_method_if_not_present.<locals>._add_asset_factory because it is a closure
+[KFP Executor 2026-11-08 18:15:43,637 INFO]: Skipping registering function DataSourceManager._bind_asset_factory_method_if_not_present.<locals>._add_asset_factory because it is a closure
+[KFP Executor 2026-11-08 18:15:43,638 INFO]: Skipping registering function DataSourceManager._bind_asset_factory_method_if_not_present.<locals>._add_asset_factory because it is a closure
+[KFP Executor 2026-11-08 18:15:43,639 INFO]: Skipping registering function DataSourceManager._bind_asset_factory_method_if_not_present.<locals>._add_asset_factory because it is a closure
+[KFP Executor 2026-11-08 18:15:43,639 INFO]: Skipping registering function DataSourceManager._bind_asset_factory_method_if_not_present.<locals>._add_asset_factory because it is a closure
+[KFP Executor 2026-11-08 18:15:43,640 INFO]: Skipping registering function DataSourceManager._bind_asset_factory_method_if_not_present.<locals>._add_asset_factory because it is a closure
+[KFP Executor 2026-11-08 18:15:43,641 INFO]: Skipping registering function DataSourceManager._bind_asset_factory_method_if_not_present.<locals>._add_asset_factory because it is a closure
+[KFP Executor 2026-11-08 18:15:43,641 INFO]: Skipping registering function DataSourceManager._bind_asset_factory_method_if_not_present.<locals>._add_asset_factory because it is a closure
+[KFP Executor 2026-11-08 18:15:43,641 INFO]: Skipping registering function DataSourceManager._bind_asset_factory_method_if_not_present.<locals>._add_asset_factory because it is a closure
+[KFP Executor 2026-11-08 18:15:43,642 INFO]: Skipping registering function DataSourceManager._bind_asset_factory_method_if_not_present.<locals>._add_asset_factory because it is a closure
+[KFP Executor 2026-11-08 18:15:43,643 INFO]: Skipping registering function DataSourceManager._bind_asset_factory_method_if_not_present.<locals>._add_asset_factory because it is a closure
+[KFP Executor 2026-11-08 18:15:43,643 INFO]: Skipping registering function DataSourceManager._bind_asset_factory_method_if_not_present.<locals>._add_asset_factory because it is a closure
+[KFP Executor 2026-11-08 18:15:43,644 INFO]: Skipping registering function DataSourceManager._bind_asset_factory_method_if_not_present.<locals>._add_asset_factory because it is a closure
+[KFP Executor 2026-11-08 18:15:43,644 INFO]: Skipping registering function DataSourceManager._bind_asset_factory_method_if_not_present.<locals>._add_asset_factory because it is a closure
+[KFP Executor 2026-11-08 18:15:43,644 INFO]: Skipping registering function DataSourceManager._register_add_datasource.<locals>.crud_method_info because it is a closure
+[KFP Executor 2026-11-08 18:15:43,644 INFO]: Skipping registering function DataSourceManager._register_update_datasource.<locals>.crud_method_info because it is a closure
+[KFP Executor 2026-11-08 18:15:43,645 INFO]: Skipping registering function DataSourceManager._register_add_or_update_datasource.<locals>.crud_method_info because it is a closure
+[KFP Executor 2026-11-08 18:15:43,645 INFO]: Skipping registering function DataSourceManager._register_delete_datasource.<locals>.crud_method_info because it is a closure
+[KFP Executor 2026-11-08 18:15:43,653 INFO]: Skipping registering function DataSourceManager._register_add_datasource.<locals>.crud_method_info because it is a closure
+[KFP Executor 2026-11-08 18:15:43,653 INFO]: Skipping registering function DataSourceManager._register_update_datasource.<locals>.crud_method_info because it is a closure
+[KFP Executor 2026-11-08 18:15:43,653 INFO]: Skipping registering function DataSourceManager._register_add_or_update_datasource.<locals>.crud_method_info because it is a closure
+[KFP Executor 2026-11-08 18:15:43,654 INFO]: Skipping registering function DataSourceManager._register_delete_datasource.<locals>.crud_method_info because it is a closure
+[KFP Executor 2026-11-08 18:15:43,662 INFO]: Skipping registering function DataSourceManager._bind_asset_factory_method_if_not_present.<locals>._add_asset_factory because it is a closure
+[KFP Executor 2026-11-08 18:15:43,662 INFO]: Skipping registering function DataSourceManager._bind_asset_factory_method_if_not_present.<locals>._add_asset_factory because it is a closure
+[KFP Executor 2026-11-08 18:15:43,663 INFO]: Skipping registering function DataSourceManager._bind_asset_factory_method_if_not_present.<locals>._add_asset_factory because it is a closure
+[KFP Executor 2026-11-08 18:15:43,663 INFO]: Skipping registering function DataSourceManager._bind_asset_factory_method_if_not_present.<locals>._add_asset_factory because it is a closure
+[KFP Executor 2026-11-08 18:15:43,663 INFO]: Skipping registering function DataSourceManager._bind_asset_factory_method_if_not_present.<locals>._add_asset_factory because it is a closure
+[KFP Executor 2026-11-08 18:15:43,663 INFO]: Skipping registering function DataSourceManager._bind_asset_factory_method_if_not_present.<locals>._add_asset_factory because it is a closure
+[KFP Executor 2026-11-08 18:15:43,663 INFO]: Skipping registering function DataSourceManager._bind_asset_factory_method_if_not_present.<locals>._add_asset_factory because it is a closure
+[KFP Executor 2026-11-08 18:15:43,664 INFO]: Skipping registering function DataSourceManager._bind_asset_factory_method_if_not_present.<locals>._add_asset_factory because it is a closure
+[KFP Executor 2026-11-08 18:15:43,664 INFO]: Skipping registering function DataSourceManager._bind_asset_factory_method_if_not_present.<locals>._add_asset_factory because it is a closure
+[KFP Executor 2026-11-08 18:15:43,664 INFO]: Skipping registering function DataSourceManager._bind_asset_factory_method_if_not_present.<locals>._add_asset_factory because it is a closure
+[KFP Executor 2026-11-08 18:15:43,665 INFO]: Skipping registering function DataSourceManager._bind_asset_factory_method_if_not_present.<locals>._add_asset_factory because it is a closure
+[KFP Executor 2026-11-08 18:15:43,665 INFO]: Skipping registering function DataSourceManager._bind_asset_factory_method_if_not_present.<locals>._add_asset_factory because it is a closure
+[KFP Executor 2026-11-08 18:15:43,665 INFO]: Skipping registering function DataSourceManager._bind_asset_factory_method_if_not_present.<locals>._add_asset_factory because it is a closure
+[KFP Executor 2026-11-08 18:15:43,665 INFO]: Skipping registering function DataSourceManager._bind_asset_factory_method_if_not_present.<locals>._add_asset_factory because it is a closure
+[KFP Executor 2026-11-08 18:15:43,665 INFO]: Skipping registering function DataSourceManager._register_add_datasource.<locals>.crud_method_info because it is a closure
+[KFP Executor 2026-11-08 18:15:43,665 INFO]: Skipping registering function DataSourceManager._register_update_datasource.<locals>.crud_method_info because it is a closure
+[KFP Executor 2026-11-08 18:15:43,665 INFO]: Skipping registering function DataSourceManager._register_add_or_update_datasource.<locals>.crud_method_info because it is a closure
+[KFP Executor 2026-11-08 18:15:43,665 INFO]: Skipping registering function DataSourceManager._register_delete_datasource.<locals>.crud_method_info because it is a closure
+[KFP Executor 2026-11-08 18:15:43,675 INFO]: Skipping registering function DataSourceManager._bind_asset_factory_method_if_not_present.<locals>._add_asset_factory because it is a closure
+[KFP Executor 2026-11-08 18:15:43,676 INFO]: Skipping registering function DataSourceManager._bind_asset_factory_method_if_not_present.<locals>._add_asset_factory because it is a closure
+[KFP Executor 2026-11-08 18:15:43,677 INFO]: Skipping registering function DataSourceManager._bind_asset_factory_method_if_not_present.<locals>._add_asset_factory because it is a closure
+[KFP Executor 2026-11-08 18:15:43,677 INFO]: Skipping registering function DataSourceManager._bind_asset_factory_method_if_not_present.<locals>._add_asset_factory because it is a closure
+[KFP Executor 2026-11-08 18:15:43,678 INFO]: Skipping registering function DataSourceManager._bind_asset_factory_method_if_not_present.<locals>._add_asset_factory because it is a closure
+[KFP Executor 2026-11-08 18:15:43,679 INFO]: Skipping registering function DataSourceManager._bind_asset_factory_method_if_not_present.<locals>._add_asset_factory because it is a closure
+[KFP Executor 2026-11-08 18:15:43,679 INFO]: Skipping registering function DataSourceManager._bind_asset_factory_method_if_not_present.<locals>._add_asset_factory because it is a closure
+[KFP Executor 2026-11-08 18:15:43,679 INFO]: Skipping registering function DataSourceManager._bind_asset_factory_method_if_not_present.<locals>._add_asset_factory because it is a closure
+[KFP Executor 2026-11-08 18:15:43,680 INFO]: Skipping registering function DataSourceManager._bind_asset_factory_method_if_not_present.<locals>._add_asset_factory because it is a closure
+[KFP Executor 2026-11-08 18:15:43,680 INFO]: Skipping registering function DataSourceManager._bind_asset_factory_method_if_not_present.<locals>._add_asset_factory because it is a closure
+[KFP Executor 2026-11-08 18:15:43,680 INFO]: Skipping registering function DataSourceManager._bind_asset_factory_method_if_not_present.<locals>._add_asset_factory because it is a closure
+[KFP Executor 2026-11-08 18:15:43,681 INFO]: Skipping registering function DataSourceManager._bind_asset_factory_method_if_not_present.<locals>._add_asset_factory because it is a closure
+[KFP Executor 2026-11-08 18:15:43,681 INFO]: Skipping registering function DataSourceManager._bind_asset_factory_method_if_not_present.<locals>._add_asset_factory because it is a closure
+[KFP Executor 2026-11-08 18:15:43,681 INFO]: Skipping registering function DataSourceManager._bind_asset_factory_method_if_not_present.<locals>._add_asset_factory because it is a closure
+[KFP Executor 2026-11-08 18:15:43,681 INFO]: Skipping registering function DataSourceManager._register_add_datasource.<locals>.crud_method_info because it is a closure
+[KFP Executor 2026-11-08 18:15:43,681 INFO]: Skipping registering function DataSourceManager._register_update_datasource.<locals>.crud_method_info because it is a closure
+[KFP Executor 2026-11-08 18:15:43,681 INFO]: Skipping registering function DataSourceManager._register_add_or_update_datasource.<locals>.crud_method_info because it is a closure
+[KFP Executor 2026-11-08 18:15:43,682 INFO]: Skipping registering function DataSourceManager._register_delete_datasource.<locals>.crud_method_info because it is a closure
+[KFP Executor 2026-11-08 18:15:43,691 INFO]: Skipping registering function DataSourceManager._bind_asset_factory_method_if_not_present.<locals>._add_asset_factory because it is a closure
+[KFP Executor 2026-11-08 18:15:43,691 INFO]: Skipping registering function DataSourceManager._bind_asset_factory_method_if_not_present.<locals>._add_asset_factory because it is a closure
+[KFP Executor 2026-11-08 18:15:43,691 INFO]: Skipping registering function DataSourceManager._bind_asset_factory_method_if_not_present.<locals>._add_asset_factory because it is a closure
+[KFP Executor 2026-11-08 18:15:43,692 INFO]: Skipping registering function DataSourceManager._bind_asset_factory_method_if_not_present.<locals>._add_asset_factory because it is a closure
+[KFP Executor 2026-11-08 18:15:43,692 INFO]: Skipping registering function DataSourceManager._bind_asset_factory_method_if_not_present.<locals>._add_asset_factory because it is a closure
+[KFP Executor 2026-11-08 18:15:43,692 INFO]: Skipping registering function DataSourceManager._bind_asset_factory_method_if_not_present.<locals>._add_asset_factory because it is a closure
+[KFP Executor 2026-11-08 18:15:43,692 INFO]: Skipping registering function DataSourceManager._bind_asset_factory_method_if_not_present.<locals>._add_asset_factory because it is a closure
+[KFP Executor 2026-11-08 18:15:43,692 INFO]: Skipping registering function DataSourceManager._bind_asset_factory_method_if_not_present.<locals>._add_asset_factory because it is a closure
+[KFP Executor 2026-11-08 18:15:43,693 INFO]: Skipping registering function DataSourceManager._bind_asset_factory_method_if_not_present.<locals>._add_asset_factory because it is a closure
+[KFP Executor 2026-11-08 18:15:43,693 INFO]: Skipping registering function DataSourceManager._bind_asset_factory_method_if_not_present.<locals>._add_asset_factory because it is a closure
+[KFP Executor 2026-11-08 18:15:43,693 INFO]: Skipping registering function DataSourceManager._bind_asset_factory_method_if_not_present.<locals>._add_asset_factory because it is a closure
+[KFP Executor 2026-11-08 18:15:43,693 INFO]: Skipping registering function DataSourceManager._bind_asset_factory_method_if_not_present.<locals>._add_asset_factory because it is a closure
+[KFP Executor 2026-11-08 18:15:43,693 INFO]: Skipping registering function DataSourceManager._bind_asset_factory_method_if_not_present.<locals>._add_asset_factory because it is a closure
+[KFP Executor 2026-11-08 18:15:43,693 INFO]: Skipping registering function DataSourceManager._bind_asset_factory_method_if_not_present.<locals>._add_asset_factory because it is a closure
+[KFP Executor 2026-11-08 18:15:43,694 INFO]: Skipping registering function DataSourceManager._register_add_datasource.<locals>.crud_method_info because it is a closure
+[KFP Executor 2026-11-08 18:15:43,694 INFO]: Skipping registering function DataSourceManager._register_update_datasource.<locals>.crud_method_info because it is a closure
+[KFP Executor 2026-11-08 18:15:43,694 INFO]: Skipping registering function DataSourceManager._register_add_or_update_datasource.<locals>.crud_method_info because it is a closure
+[KFP Executor 2026-11-08 18:15:43,694 INFO]: Skipping registering function DataSourceManager._register_delete_datasource.<locals>.crud_method_info because it is a closure
+[KFP Executor 2026-11-08 18:15:43,722 INFO]: Skipping registering function DataSourceManager._register_add_datasource.<locals>.crud_method_info because it is a closure
+[KFP Executor 2026-11-08 18:15:43,722 INFO]: Skipping registering function DataSourceManager._register_update_datasource.<locals>.crud_method_info because it is a closure
+[KFP Executor 2026-11-08 18:15:43,722 INFO]: Skipping registering function DataSourceManager._register_add_or_update_datasource.<locals>.crud_method_info because it is a closure
+[KFP Executor 2026-11-08 18:15:43,722 INFO]: Skipping registering function DataSourceManager._register_delete_datasource.<locals>.crud_method_info because it is a closure
+[KFP Executor 2026-11-08 18:15:43,746 INFO]: Skipping registering function DataSourceManager._register_add_datasource.<locals>.crud_method_info because it is a closure
+[KFP Executor 2026-11-08 18:15:43,746 INFO]: Skipping registering function DataSourceManager._register_update_datasource.<locals>.crud_method_info because it is a closure
+[KFP Executor 2026-11-08 18:15:43,746 INFO]: Skipping registering function DataSourceManager._register_add_or_update_datasource.<locals>.crud_method_info because it is a closure
+[KFP Executor 2026-11-08 18:15:43,746 INFO]: Skipping registering function DataSourceManager._register_delete_datasource.<locals>.crud_method_info because it is a closure
+[KFP Executor 2026-11-08 18:15:43,760 INFO]: Skipping registering function DataSourceManager._register_add_datasource.<locals>.crud_method_info because it is a closure
+[KFP Executor 2026-11-08 18:15:43,760 INFO]: Skipping registering function DataSourceManager._register_update_datasource.<locals>.crud_method_info because it is a closure
+[KFP Executor 2026-11-08 18:15:43,760 INFO]: Skipping registering function DataSourceManager._register_add_or_update_datasource.<locals>.crud_method_info because it is a closure
+[KFP Executor 2026-11-08 18:15:43,760 INFO]: Skipping registering function DataSourceManager._register_delete_datasource.<locals>.crud_method_info because it is a closure
+[KFP Executor 2026-11-08 18:15:43,772 INFO]: Skipping registering function DataSourceManager._register_add_datasource.<locals>.crud_method_info because it is a closure
+[KFP Executor 2026-11-08 18:15:43,772 INFO]: Skipping registering function DataSourceManager._register_update_datasource.<locals>.crud_method_info because it is a closure
+[KFP Executor 2026-11-08 18:15:43,772 INFO]: Skipping registering function DataSourceManager._register_add_or_update_datasource.<locals>.crud_method_info because it is a closure
+[KFP Executor 2026-11-08 18:15:43,773 INFO]: Skipping registering function DataSourceManager._register_delete_datasource.<locals>.crud_method_info because it is a closure
+[KFP Executor 2026-11-08 18:15:43,787 INFO]: Skipping registering function DataSourceManager._register_add_datasource.<locals>.crud_method_info because it is a closure
+[KFP Executor 2026-11-08 18:15:43,787 INFO]: Skipping registering function DataSourceManager._register_update_datasource.<locals>.crud_method_info because it is a closure
+[KFP Executor 2026-11-08 18:15:43,787 INFO]: Skipping registering function DataSourceManager._register_add_or_update_datasource.<locals>.crud_method_info because it is a closure
+[KFP Executor 2026-11-08 18:15:43,787 INFO]: Skipping registering function DataSourceManager._register_delete_datasource.<locals>.crud_method_info because it is a closure
+[KFP Executor 2026-11-08 18:15:44,029 INFO]: Multiple declarations of metric table.column_types for engine PandasExecutionEngine.
+[KFP Executor 2026-11-08 18:15:44,029 INFO]: Multiple declarations of metric table.column_types for engine SparkDFExecutionEngine.
+[KFP Executor 2026-11-08 18:15:44,050 INFO]: Skipping registering function DataSourceManager._register_add_datasource.<locals>.crud_method_info because it is a closure
+[KFP Executor 2026-11-08 18:15:44,051 INFO]: Skipping registering function DataSourceManager._register_update_datasource.<locals>.crud_method_info because it is a closure
+[KFP Executor 2026-11-08 18:15:44,051 INFO]: Skipping registering function DataSourceManager._register_add_or_update_datasource.<locals>.crud_method_info because it is a closure
+[KFP Executor 2026-11-08 18:15:44,051 INFO]: Skipping registering function DataSourceManager._register_delete_datasource.<locals>.crud_method_info because it is a closure
+[KFP Executor 2026-11-08 18:15:44,073 INFO]: Skipping registering function DataSourceManager._register_add_datasource.<locals>.crud_method_info because it is a closure
+[KFP Executor 2026-11-08 18:15:44,074 INFO]: Skipping registering function DataSourceManager._register_update_datasource.<locals>.crud_method_info because it is a closure
+[KFP Executor 2026-11-08 18:15:44,074 INFO]: Skipping registering function DataSourceManager._register_add_or_update_datasource.<locals>.crud_method_info because it is a closure
+[KFP Executor 2026-11-08 18:15:44,075 INFO]: Skipping registering function DataSourceManager._register_delete_datasource.<locals>.crud_method_info because it is a closure
+[KFP Executor 2026-11-08 18:15:44,378 INFO]: Skipping registering function DataSourceManager._bind_asset_factory_method_if_not_present.<locals>._add_asset_factory because it is a closure
+[KFP Executor 2026-11-08 18:15:44,379 INFO]: Skipping registering function DataSourceManager._bind_asset_factory_method_if_not_present.<locals>._add_asset_factory because it is a closure
+[KFP Executor 2026-11-08 18:15:44,379 INFO]: Skipping registering function DataSourceManager._bind_asset_factory_method_if_not_present.<locals>._add_asset_factory because it is a closure
+[KFP Executor 2026-11-08 18:15:44,379 INFO]: Skipping registering function DataSourceManager._bind_asset_factory_method_if_not_present.<locals>._add_asset_factory because it is a closure
+[KFP Executor 2026-11-08 18:15:44,380 INFO]: Skipping registering function DataSourceManager._bind_asset_factory_method_if_not_present.<locals>._add_asset_factory because it is a closure
+[KFP Executor 2026-11-08 18:15:44,380 INFO]: Skipping registering function DataSourceManager._bind_asset_factory_method_if_not_present.<locals>._add_asset_factory because it is a closure
+[KFP Executor 2026-11-08 18:15:44,380 INFO]: Skipping registering function DataSourceManager._bind_asset_factory_method_if_not_present.<locals>._add_asset_factory because it is a closure
+[KFP Executor 2026-11-08 18:15:44,380 INFO]: Skipping registering function DataSourceManager._bind_asset_factory_method_if_not_present.<locals>._add_asset_factory because it is a closure
+[KFP Executor 2026-11-08 18:15:44,380 INFO]: Skipping registering function DataSourceManager._bind_asset_factory_method_if_not_present.<locals>._add_asset_factory because it is a closure
+[KFP Executor 2026-11-08 18:15:44,380 INFO]: Skipping registering function DataSourceManager._bind_asset_factory_method_if_not_present.<locals>._add_asset_factory because it is a closure
+[KFP Executor 2026-11-08 18:15:44,381 INFO]: Skipping registering function DataSourceManager._bind_asset_factory_method_if_not_present.<locals>._add_asset_factory because it is a closure
+[KFP Executor 2026-11-08 18:15:44,381 INFO]: Skipping registering function DataSourceManager._bind_asset_factory_method_if_not_present.<locals>._add_asset_factory because it is a closure
+[KFP Executor 2026-11-08 18:15:44,381 INFO]: Skipping registering function DataSourceManager._register_add_datasource.<locals>.crud_method_info because it is a closure
+[KFP Executor 2026-11-08 18:15:44,381 INFO]: Skipping registering function DataSourceManager._register_update_datasource.<locals>.crud_method_info because it is a closure
+[KFP Executor 2026-11-08 18:15:44,381 INFO]: Skipping registering function DataSourceManager._register_add_or_update_datasource.<locals>.crud_method_info because it is a closure
+[KFP Executor 2026-11-08 18:15:44,381 INFO]: Skipping registering function DataSourceManager._register_delete_datasource.<locals>.crud_method_info because it is a closure
+[KFP Executor 2026-11-08 18:15:44,396 INFO]: Skipping registering function DataSourceManager._register_add_datasource.<locals>.crud_method_info because it is a closure
+[KFP Executor 2026-11-08 18:15:44,397 INFO]: Skipping registering function DataSourceManager._register_update_datasource.<locals>.crud_method_info because it is a closure
+[KFP Executor 2026-11-08 18:15:44,397 INFO]: Skipping registering function DataSourceManager._register_add_or_update_datasource.<locals>.crud_method_info because it is a closure
+[KFP Executor 2026-11-08 18:15:44,397 INFO]: Skipping registering function DataSourceManager._register_delete_datasource.<locals>.crud_method_info because it is a closure
+[KFP Executor 2026-11-08 18:15:44,413 INFO]: Skipping registering function DataSourceManager._bind_asset_factory_method_if_not_present.<locals>._add_asset_factory because it is a closure
+[KFP Executor 2026-11-08 18:15:44,414 INFO]: Skipping registering function DataSourceManager._bind_asset_factory_method_if_not_present.<locals>._add_asset_factory because it is a closure
+[KFP Executor 2026-11-08 18:15:44,414 INFO]: Skipping registering function DataSourceManager._bind_asset_factory_method_if_not_present.<locals>._add_asset_factory because it is a closure
+[KFP Executor 2026-11-08 18:15:44,415 INFO]: Skipping registering function DataSourceManager._bind_asset_factory_method_if_not_present.<locals>._add_asset_factory because it is a closure
+[KFP Executor 2026-11-08 18:15:44,415 INFO]: Skipping registering function DataSourceManager._bind_asset_factory_method_if_not_present.<locals>._add_asset_factory because it is a closure
+[KFP Executor 2026-11-08 18:15:44,415 INFO]: Skipping registering function DataSourceManager._bind_asset_factory_method_if_not_present.<locals>._add_asset_factory because it is a closure
+[KFP Executor 2026-11-08 18:15:44,415 INFO]: Skipping registering function DataSourceManager._bind_asset_factory_method_if_not_present.<locals>._add_asset_factory because it is a closure
+[KFP Executor 2026-11-08 18:15:44,415 INFO]: Skipping registering function DataSourceManager._bind_asset_factory_method_if_not_present.<locals>._add_asset_factory because it is a closure
+[KFP Executor 2026-11-08 18:15:44,416 INFO]: Skipping registering function DataSourceManager._bind_asset_factory_method_if_not_present.<locals>._add_asset_factory because it is a closure
+[KFP Executor 2026-11-08 18:15:44,416 INFO]: Skipping registering function DataSourceManager._bind_asset_factory_method_if_not_present.<locals>._add_asset_factory because it is a closure
+[KFP Executor 2026-11-08 18:15:44,416 INFO]: Skipping registering function DataSourceManager._bind_asset_factory_method_if_not_present.<locals>._add_asset_factory because it is a closure
+[KFP Executor 2026-11-08 18:15:44,416 INFO]: Skipping registering function DataSourceManager._bind_asset_factory_method_if_not_present.<locals>._add_asset_factory because it is a closure
+[KFP Executor 2026-11-08 18:15:44,416 INFO]: Skipping registering function DataSourceManager._register_add_datasource.<locals>.crud_method_info because it is a closure
+[KFP Executor 2026-11-08 18:15:44,416 INFO]: Skipping registering function DataSourceManager._register_update_datasource.<locals>.crud_method_info because it is a closure
+[KFP Executor 2026-11-08 18:15:44,416 INFO]: Skipping registering function DataSourceManager._register_add_or_update_datasource.<locals>.crud_method_info because it is a closure
+[KFP Executor 2026-11-08 18:15:44,416 INFO]: Skipping registering function DataSourceManager._register_delete_datasource.<locals>.crud_method_info because it is a closure
+[KFP Executor 2026-11-08 18:15:44,429 INFO]: Skipping registering function DataSourceManager._bind_asset_factory_method_if_not_present.<locals>._add_asset_factory because it is a closure
+[KFP Executor 2026-11-08 18:15:44,430 INFO]: Skipping registering function DataSourceManager._bind_asset_factory_method_if_not_present.<locals>._add_asset_factory because it is a closure
+[KFP Executor 2026-11-08 18:15:44,430 INFO]: Skipping registering function DataSourceManager._bind_asset_factory_method_if_not_present.<locals>._add_asset_factory because it is a closure
+[KFP Executor 2026-11-08 18:15:44,430 INFO]: Skipping registering function DataSourceManager._bind_asset_factory_method_if_not_present.<locals>._add_asset_factory because it is a closure
+[KFP Executor 2026-11-08 18:15:44,431 INFO]: Skipping registering function DataSourceManager._bind_asset_factory_method_if_not_present.<locals>._add_asset_factory because it is a closure
+[KFP Executor 2026-11-08 18:15:44,431 INFO]: Skipping registering function DataSourceManager._bind_asset_factory_method_if_not_present.<locals>._add_asset_factory because it is a closure
+[KFP Executor 2026-11-08 18:15:44,431 INFO]: Skipping registering function DataSourceManager._bind_asset_factory_method_if_not_present.<locals>._add_asset_factory because it is a closure
+[KFP Executor 2026-11-08 18:15:44,431 INFO]: Skipping registering function DataSourceManager._bind_asset_factory_method_if_not_present.<locals>._add_asset_factory because it is a closure
+[KFP Executor 2026-11-08 18:15:44,431 INFO]: Skipping registering function DataSourceManager._bind_asset_factory_method_if_not_present.<locals>._add_asset_factory because it is a closure
+[KFP Executor 2026-11-08 18:15:44,431 INFO]: Skipping registering function DataSourceManager._bind_asset_factory_method_if_not_present.<locals>._add_asset_factory because it is a closure
+[KFP Executor 2026-11-08 18:15:44,432 INFO]: Skipping registering function DataSourceManager._bind_asset_factory_method_if_not_present.<locals>._add_asset_factory because it is a closure
+[KFP Executor 2026-11-08 18:15:44,432 INFO]: Skipping registering function DataSourceManager._bind_asset_factory_method_if_not_present.<locals>._add_asset_factory because it is a closure
+[KFP Executor 2026-11-08 18:15:44,432 INFO]: Skipping registering function DataSourceManager._register_add_datasource.<locals>.crud_method_info because it is a closure
+[KFP Executor 2026-11-08 18:15:44,432 INFO]: Skipping registering function DataSourceManager._register_update_datasource.<locals>.crud_method_info because it is a closure
+[KFP Executor 2026-11-08 18:15:44,432 INFO]: Skipping registering function DataSourceManager._register_add_or_update_datasource.<locals>.crud_method_info because it is a closure
+[KFP Executor 2026-11-08 18:15:44,432 INFO]: Skipping registering function DataSourceManager._register_delete_datasource.<locals>.crud_method_info because it is a closure
+[KFP Executor 2026-11-08 18:15:44,449 INFO]: Skipping registering function DataSourceManager._bind_asset_factory_method_if_not_present.<locals>._add_asset_factory because it is a closure
+[KFP Executor 2026-11-08 18:15:44,450 INFO]: Skipping registering function DataSourceManager._bind_asset_factory_method_if_not_present.<locals>._add_asset_factory because it is a closure
+[KFP Executor 2026-11-08 18:15:44,451 INFO]: Skipping registering function DataSourceManager._bind_asset_factory_method_if_not_present.<locals>._add_asset_factory because it is a closure
+[KFP Executor 2026-11-08 18:15:44,452 INFO]: Skipping registering function DataSourceManager._bind_asset_factory_method_if_not_present.<locals>._add_asset_factory because it is a closure
+[KFP Executor 2026-11-08 18:15:44,452 INFO]: Skipping registering function DataSourceManager._bind_asset_factory_method_if_not_present.<locals>._add_asset_factory because it is a closure
+[KFP Executor 2026-11-08 18:15:44,453 INFO]: Skipping registering function DataSourceManager._bind_asset_factory_method_if_not_present.<locals>._add_asset_factory because it is a closure
+[KFP Executor 2026-11-08 18:15:44,453 INFO]: Skipping registering function DataSourceManager._bind_asset_factory_method_if_not_present.<locals>._add_asset_factory because it is a closure
+[KFP Executor 2026-11-08 18:15:44,454 INFO]: Skipping registering function DataSourceManager._bind_asset_factory_method_if_not_present.<locals>._add_asset_factory because it is a closure
+[KFP Executor 2026-11-08 18:15:44,454 INFO]: Skipping registering function DataSourceManager._bind_asset_factory_method_if_not_present.<locals>._add_asset_factory because it is a closure
+[KFP Executor 2026-11-08 18:15:44,454 INFO]: Skipping registering function DataSourceManager._bind_asset_factory_method_if_not_present.<locals>._add_asset_factory because it is a closure
+[KFP Executor 2026-11-08 18:15:44,454 INFO]: Skipping registering function DataSourceManager._bind_asset_factory_method_if_not_present.<locals>._add_asset_factory because it is a closure
+[KFP Executor 2026-11-08 18:15:44,455 INFO]: Skipping registering function DataSourceManager._bind_asset_factory_method_if_not_present.<locals>._add_asset_factory because it is a closure
+[KFP Executor 2026-11-08 18:15:44,455 INFO]: Skipping registering function DataSourceManager._register_add_datasource.<locals>.crud_method_info because it is a closure
+[KFP Executor 2026-11-08 18:15:44,455 INFO]: Skipping registering function DataSourceManager._register_update_datasource.<locals>.crud_method_info because it is a closure
+[KFP Executor 2026-11-08 18:15:44,455 INFO]: Skipping registering function DataSourceManager._register_add_or_update_datasource.<locals>.crud_method_info because it is a closure
+[KFP Executor 2026-11-08 18:15:44,455 INFO]: Skipping registering function DataSourceManager._register_delete_datasource.<locals>.crud_method_info because it is a closure
+[KFP Executor 2026-11-08 18:15:44,458 INFO]: Multiple declarations of metric column.standard_deviation for engine PandasExecutionEngine.
+[KFP Executor 2026-11-08 18:15:44,458 INFO]: Multiple declarations of metric column.standard_deviation.aggregate_fn for engine SparkDFExecutionEngine.
+[KFP Executor 2026-11-08 18:15:44,458 INFO]: Multiple declarations of metric column.standard_deviation for engine SparkDFExecutionEngine.
+[KFP Executor 2026-11-08 18:15:44,481 INFO]: Skipping registering function DataSourceManager._register_add_datasource.<locals>.crud_method_info because it is a closure
+[KFP Executor 2026-11-08 18:15:44,482 INFO]: Skipping registering function DataSourceManager._register_update_datasource.<locals>.crud_method_info because it is a closure
+[KFP Executor 2026-11-08 18:15:44,482 INFO]: Skipping registering function DataSourceManager._register_add_or_update_datasource.<locals>.crud_method_info because it is a closure
+[KFP Executor 2026-11-08 18:15:44,482 INFO]: Skipping registering function DataSourceManager._register_delete_datasource.<locals>.crud_method_info because it is a closure
+[KFP Executor 2026-11-08 18:15:44,506 INFO]: Skipping registering function DataSourceManager._register_add_datasource.<locals>.crud_method_info because it is a closure
+[KFP Executor 2026-11-08 18:15:44,507 INFO]: Skipping registering function DataSourceManager._register_update_datasource.<locals>.crud_method_info because it is a closure
+[KFP Executor 2026-11-08 18:15:44,507 INFO]: Skipping registering function DataSourceManager._register_add_or_update_datasource.<locals>.crud_method_info because it is a closure
+[KFP Executor 2026-11-08 18:15:44,508 INFO]: Skipping registering function DataSourceManager._register_delete_datasource.<locals>.crud_method_info because it is a closure
+[KFP Executor 2026-11-08 18:15:44,532 INFO]: Skipping registering function DataSourceManager._register_add_datasource.<locals>.crud_method_info because it is a closure
+[KFP Executor 2026-11-08 18:15:44,532 INFO]: Skipping registering function DataSourceManager._register_update_datasource.<locals>.crud_method_info because it is a closure
+[KFP Executor 2026-11-08 18:15:44,532 INFO]: Skipping registering function DataSourceManager._register_add_or_update_datasource.<locals>.crud_method_info because it is a closure
+[KFP Executor 2026-11-08 18:15:44,533 INFO]: Skipping registering function DataSourceManager._register_delete_datasource.<locals>.crud_method_info because it is a closure
++ /usr/local/bin/python3 -m src.validate_data
+{
+  "success": false,
+  "n_checks": 103,
+  "n_failed": 3,
+  "failed": [
+    "expect_column_values_to_be_between(MonthlyIncome)",
+    "expect_column_values_to_be_in_set(Department)",
+    "expect_column_values_to_not_be_null(Attrition)"
+  ],
+  "rows": 1470,
+  "positive_rate": 0.1544,
+  "suite": "scoring_contract"
+}
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/usr/local/lib/python3.12/site-packages/kfp/dsl/executor_main.py", line 109, in <module>
+    executor_main()
+  File "/usr/local/lib/python3.12/site-packages/kfp/dsl/executor_main.py", line 101, in executor_main
+    output_file = executor.execute()
+                  ^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/kfp/dsl/executor.py", line 453, in execute
+    result = self.func(**func_kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/tmp/tmp.A7GFvEvOoh/ephemeral_component.py", line 22, in validate_data
+    run_stage(
+  File "/app/pipelines/stage.py", line 66, in run_stage
+    execute(module, args, work, env)
+  File "/app/pipelines/stage.py", line 52, in execute
+    subprocess.run(cmd, cwd=workdir, env=run_env, check=True)
+  File "/usr/local/lib/python3.12/subprocess.py", line 571, in run
+    raise CalledProcessError(retcode, process.args,
+subprocess.CalledProcessError: Command '['/usr/local/bin/python3', '-m', 'src.validate_data']' returned non-zero exit status 1.

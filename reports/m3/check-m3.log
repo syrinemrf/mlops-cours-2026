@@ -1,0 +1,26 @@
+# make check-m3 (lancé via : bash labs/m3-validation/check.sh, script en mode 644) — 2026-11-08T18:24:56Z, HEAD a58b265
+Lab 3 — vérification (KFP : http://localhost:8080, MLflow : http://localhost:5000)
+
+✅ Suite GX générée depuis dataset.yaml (gx/ : suite, validation, checkpoint)
+✅ Suite GX versionnée dans Git, gx/uncommitted/ ignoré
+✅ Suite GX verte sur les données courantes (rapport HTML produit)
+✅ Gate GX : les données corrompues (src/simulate.py) sont refusées
+✅ Drift : rien entre entraînement et test, rapport Evidently produit
+✅ Drift : le scénario simulé de params.yaml est détecté
+✅ Modèle et données locaux (models/model, data/processed)
+✅ tests/behavior.yaml : invariance et directionnels sur des colonnes de dataset.yaml
+✅ pytest tests/test_model_behavior.py vert
+✅ src/validate_model.py vert (Evidently + comportemental), rapport HTML
+✅ Image du pipeline (PIPELINE_IMAGE, nouveau tag) dans le registry local
+✅ 8 composants sur l'image du projet, 3 gates avec rapport HTML
+✅ Pipelines compilés : gates avant prepare, train et register ; tests et démo de drift
+✅ Aucun identifiant S3 ni nom de colonne en dur (pipelines/, dags/, src/, tests/)
+✅ KFP : API joignable (http://localhost:8080)
+✅ KFP : run réussi de 'scoring-pipeline' avec les 3 gates
+✅ KFP : run de 'scoring-bad-data-test' en échec, bloqué par validate-data
+✅ KFP : run réussi de 'scoring-drift-demo'
+✅ MLflow : http://localhost:5000/health = OK
+✅ Registry : une version de 'scoring-model' enregistrée par un run à gates
+
+🎉 20/20 vérifications OK — Lab 3 validé.
+exit=0
