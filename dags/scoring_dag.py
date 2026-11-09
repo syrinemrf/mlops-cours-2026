@@ -66,6 +66,7 @@ with DAG(
         "src.promote",
         "--run-id",
         "{{ ti.xcom_pull(task_ids='train')['mlflow_run_id'] }}",
+        "--challenger-only",
     )
 
     ingest >> validate >> prepare >> train >> evaluate >> register
