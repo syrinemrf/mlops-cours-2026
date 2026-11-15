@@ -1,0 +1,13 @@
+# Tests de l'ISVC v1 via la passerelle Kourier (localhost:30080, relais socat) — 2026-11-08T19:25:17Z
+## GET /health
+{"status":"ok","model_loaded":true}
+## POST /predict (2 lignes réelles de test.csv)
+{"model_version":"7","positive_class":"Yes","threshold":0.5,"predictions":[{"probability":0.05473947525024414,"prediction":0},{"probability":0.004567891359329224,"prediction":0}]}
+## POST /predict colonne manquante
+HTTP 422
+## GET /metadata (seuil et modèle servis)
+{"api_version": "1.0.0", "threshold": 0.5, "model": {"model_name": "scoring-model", "model_alias": "champion", "model_version": "7", "run_id": "ef5f2ec9031741e682eb435c35e419e5", "onnx_sha256": "0a6f76c1df2a382b2dd3cf02075b211633c631b263951d2a57eb61cf22803520", "exported_at": "2026-11-08T18:39:53+00:00"}}
+## Champion MLflow (lecture)
+champion version 7 decision_threshold 0.5
+## Depuis un pod du cluster (busybox)
+{"status":"ok","model_loaded":true} (wget http://scoring-model-predictor.scoring.svc.cluster.local/health, voir journal)

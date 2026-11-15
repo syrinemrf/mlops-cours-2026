@@ -153,3 +153,15 @@ Mode d'emploi (à garder en tête du fichier) :
 - **Incidents :** le credential helper `desktop.exe` de Docker ne répondait pas. Images publiques tirées en anonyme via un DOCKER_CONFIG temporaire, `~/.docker/config.json` non modifié. Aucun prune, aucune suppression d'images ou de volumes existants ; volume `trivy-cache` créé ; conteneurs de test arrêtés.
 - **Vérifié :** check-m4 16/16 (reports/m4/check-m4.log, script lancé via `bash`, mode 644 conservé comme dans le dépôt du cours) ; 153 tests ; lint vert ; dvc à jour.
 - **Points ouverts :** `packaging/model/` est hors Git par choix (pas de binaire de modèle dans Git), alors que le cours le versionne pour la CI du Lab 6, qui devra exporter le modèle ou le récupérer comme artefact. Le test Locust a tourné sur le build optimisé antérieur à la mise à jour de zlib1g. Revue d'Aziz en attente ; PR empilée, à fusionner après #4.
+
+## S15 — 2026-11-08 — Lab 5 : serving avec KServe
+
+- **Pilote :** Syrine avec assistance IA ; branche empilée `lab/m5-serving` depuis `lab/m4-packaging` ; solution `prof/solution/m5` lue puis adaptée.
+- **Préparation :** relevé avant installation (pods, mémoire) ; 12 déploiements KFP passés de 1 à 0 (liste exacte dans reports/m5/kfp-paused.md), sans toucher MySQL, SeaweedFS, les PVC ni MLflow. Restaurés en fin de lab à l'identique (diff vide), API KFP sur 8080 OK, check-m3 toujours 20/20.
+- **Installation :** `make kserve` refusé (script en mode 644), lancé via `bash`. Arrêt du script sur une configuration LLM refusée par le webhook de KServe v0.21.0 ; les 15 runtimes sont appliqués et les 2 dernières étapes du script sont complétées avec les mêmes commandes. Nœuds Ready, aucun pod OOM ou Pending. Cluster non recréé.
+- **Écart d'infrastructure :** le cluster ne mappe pas le port 30080 (créé avant ce mappage). Contournement par un relais socat (`serving/kourier-relay.sh`), arrêté en fin de lab.
+- **Service :** ISVC `scoring-model` (Knative) sur l'image 1.0.0, seuil servi 0,5 = `decision_threshold` du champion v7. KPA rps 200, de 0 à 5 pods ; 0 pod 57 s après le début de l'observation, démarrage à froid 19,8 s.
+- **Charge (garde-fou mémoire 500 Mio, jamais déclenché ; minimum 1 990 Mio) :** 100 utilisateurs 161,7 req/s, P99 3,1 s ; 500 : 139,8 req/s, P99 20 s ; 1 000 : 58,3 req/s, P99 108 s ; erreurs 502 entre 0,03 et 0,61 %. Pods à environ 0,12 CPU en moyenne : goulot en amont des pods (chemin réseau du poste suspecté, non confirmé). Comptage des pods sous charge peu fiable (voir le rapport).
+- **Canary :** image 2.0.0 (nouveau tag, route /version, digest de 1.0.0 inchangé). Mesure à 10 % : 891/109 sur 1 000 requêtes. Prédictions identiques sur 50 lignes, puis promotion à 100 % (200/200 en 2.0.0).
+- **Vérifié :** check-m5 14/14 (via `bash`) ; 155 tests ; lint vert ; dvc à jour ; registre inchangé (@champion v7, @challenger v8). Preuves exportées, puis ISVC et namespace `scoring` supprimés ; KServe laissé installé. Étape optionnelle Triton/BentoML non réalisée (ni écriture S3, ni secret).
+- **Points ouverts :** capacité réelle du service non mesurée hors du goulot du poste ; revue d'Aziz en attente ; PR empilée, à fusionner après #5.

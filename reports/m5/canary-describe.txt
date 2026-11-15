@@ -1,0 +1,115 @@
+Name:         scoring-model
+Namespace:    scoring
+Labels:       <none>
+Annotations:  autoscaling.knative.dev/scale-down-delay: 30s
+              autoscaling.knative.dev/window: 60s
+              serving.kserve.io/deploymentMode: Knative
+              serving.kserve.io/enable-tag-routing: true
+API Version:  serving.kserve.io/v1beta1
+Kind:         InferenceService
+Metadata:
+  Creation Timestamp:  2026-11-08T19:23:58Z
+  Finalizers:
+    inferenceservice.finalizers
+  Generation:        3
+  Resource Version:  389699
+  UID:               652adb01-7637-47a2-aa34-9963238b2af0
+Spec:
+  Predictor:
+    Canary Traffic Percent:  10
+    Containers:
+      Image:              localhost:5001/scoring-api:2.0.0
+      Image Pull Policy:  IfNotPresent
+      Name:               kserve-container
+      Ports:
+        Container Port:  8000
+        Protocol:        TCP
+      Readiness Probe:
+        Http Get:
+          Path:  /health
+          Port:  8000
+      Resources:
+        Limits:
+          Cpu:     1
+          Memory:  512Mi
+        Requests:
+          Cpu:     200m
+          Memory:  256Mi
+    Max Replicas:  5
+    Min Replicas:  1
+    Scale Metric:  rps
+    Scale Target:  200
+Status:
+  Address:
+    URL:  http://scoring-model-predictor.scoring.svc.cluster.local
+  Components:
+    Predictor:
+      Address:
+        URL:                        http://scoring-model-predictor.scoring.svc.cluster.local
+      Latest Created Revision:      scoring-model-predictor-00003
+      Latest Ready Revision:        scoring-model-predictor-00003
+      Latest Rolledout Revision:    scoring-model-predictor-00002
+      Previous Rolledout Revision:  scoring-model-predictor-00001
+      Traffic:
+        Latest Revision:  true
+        Percent:          10
+        Revision Name:    scoring-model-predictor-00003
+        Tag:              latest
+        URL:              http://latest-scoring-model-predictor.scoring.example.com
+        Latest Revision:  false
+        Percent:          90
+        Revision Name:    scoring-model-predictor-00002
+        Tag:              prev
+        URL:              http://prev-scoring-model-predictor.scoring.example.com
+      URL:                http://scoring-model-predictor.scoring.example.com
+  Conditions:
+    Last Transition Time:  2026-11-08T19:24:17Z
+    Status:                True
+    Type:                  IngressReady
+    Last Transition Time:  2026-11-08T20:05:44Z
+    Severity:              Info
+    Status:                True
+    Type:                  LatestDeploymentReady
+    Last Transition Time:  2026-11-08T20:05:44Z
+    Severity:              Info
+    Status:                True
+    Type:                  PredictorConfigurationReady
+    Last Transition Time:  2026-11-08T20:05:45Z
+    Status:                True
+    Type:                  PredictorReady
+    Last Transition Time:  2026-11-08T20:05:45Z
+    Severity:              Info
+    Status:                True
+    Type:                  PredictorRouteReady
+    Last Transition Time:  2026-11-08T20:05:45Z
+    Status:                True
+    Type:                  Ready
+    Last Transition Time:  2026-11-08T20:05:45Z
+    Severity:              Info
+    Status:                True
+    Type:                  RoutesReady
+    Last Transition Time:  2026-11-08T19:23:58Z
+    Severity:              Info
+    Status:                False
+    Type:                  Stopped
+  Deployment Mode:         Knative
+  Model Status:
+    Copies:
+      Failed Copies:  0
+      Total Copies:   1
+    States:
+      Active Model State:  Loaded
+      Target Model State:  Loaded
+    Transition Status:     UpToDate
+  Observed Generation:     3
+  URL:                     http://scoring-model-predictor.scoring.example.com
+Events:
+  Type     Reason                    Age                  From                Message
+  ----     ------                    ----                 ----                -------
+  Warning  UpdateFailed              14m (x2 over 42m)    v1beta1Controllers  Failed to update status for InferenceService "scoring-model": Operation cannot be fulfilled on inferenceservices.serving.kserve.io "scoring-model": the object has been modified; please apply your changes to the latest version and try again
+  Warning  InternalError             14m (x2 over 42m)    v1beta1Controllers  fails to update InferenceService status: Operation cannot be fulfilled on inferenceservices.serving.kserve.io "scoring-model": the object has been modified; please apply your changes to the latest version and try again
+  Normal   InferenceServiceReady     14m (x2 over 42m)    v1beta1Controllers  InferenceService [scoring-model] is Ready
+  Warning  InferenceServiceNotReady  3m30s                v1beta1Controllers  InferenceService [scoring-model] is no longer Ready because of: LatestDeploymentReady, PredictorConfigurationReady, PredictorReady, PredictorRouteReady, Ready, RoutesReady, Stopped
+  Warning  InternalError             71s                  v1beta1Controllers  fails to reconcile predictor: fails to reconcile knative service: Operation cannot be fulfilled on services.serving.knative.dev "scoring-model-predictor": the object has been modified; please apply your changes to the latest version and try again
+  Warning  InferenceServiceNotReady  71s                  v1beta1Controllers  InferenceService [scoring-model] is no longer Ready because of: PredictorReady, Ready, Stopped
+  Normal   InferenceServiceReady     54s (x2 over 2m12s)  v1beta1Controllers  InferenceService [scoring-model] is Ready

@@ -1,0 +1,11 @@
+# Scale-to-zero (minReplicas 0, window 60s, scale-down-delay 30s). Observation lancée à 19:52:35Z ; le pod était déjà inactif avant (dernières requêtes vers 19:25Z), le délai ci-dessous part du début de l observation, pas de la dernière requête.
++0s pods_running=1 kpa=1/1
++12s pods_running=1 kpa=1/1
++23s pods_running=1 kpa=1/1
++34s pods_running=1 kpa=1/1
++46s pods_running=1 kpa=1/1
++57s pods_running=0 kpa=0/0
+done after 57s, pods_running=0
+## Démarrage à froid : 1re requête après scale-to-zero (19:53:38Z)
+cold start: HTTP 200, total 19.756101s
+warm: HTTP 200, total 0.076848s

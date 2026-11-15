@@ -1,0 +1,72 @@
+# CPU pendant le palier 1000 : relais socat (docker stats), kourier, activator, pods predictor (kubectl top)
+## 20:00:54Z
+relay 0.00% 1.387MiB / 7.758GiB
+3scale-kourier-gateway-78f5db85b-5xmb2   12m   58Mi   
+activator-7d4c55bdc6-zml7j                2m    210Mi   
+scoring-model-predictor-00002-deployment-778ccf5c89-ht2r2   kserve-container   2m    98Mi    
+scoring-model-predictor-00002-deployment-778ccf5c89-mjp8n   kserve-container   4m    102Mi   
+scoring-model-predictor-00002-deployment-778ccf5c89-ttv22   kserve-container   39m   98Mi    
+## 20:01:08Z
+relay 9.32% 16.23MiB / 7.758GiB
+3scale-kourier-gateway-78f5db85b-5xmb2   7m    46Mi   
+activator-7d4c55bdc6-zml7j                3m    210Mi   
+scoring-model-predictor-00002-deployment-778ccf5c89-ht2r2   kserve-container   10m   89Mi    
+scoring-model-predictor-00002-deployment-778ccf5c89-mjp8n   kserve-container   11m   114Mi   
+scoring-model-predictor-00002-deployment-778ccf5c89-ttv22   kserve-container   2m    96Mi    
+## 20:01:22Z
+relay 8.76% 38.04MiB / 7.758GiB
+3scale-kourier-gateway-78f5db85b-5xmb2   100m   51Mi   
+activator-7d4c55bdc6-zml7j                4m    210Mi   
+scoring-model-predictor-00002-deployment-778ccf5c89-ht2r2   kserve-container   188m   90Mi    
+scoring-model-predictor-00002-deployment-778ccf5c89-mjp8n   kserve-container   217m   103Mi   
+scoring-model-predictor-00002-deployment-778ccf5c89-ttv22   kserve-container   103m   105Mi   
+## 20:01:36Z
+relay 7.14% 59.88MiB / 7.758GiB
+3scale-kourier-gateway-78f5db85b-5xmb2   166m   46Mi   
+activator-7d4c55bdc6-zml7j                6m    219Mi   
+scoring-model-predictor-00002-deployment-778ccf5c89-ht2r2   kserve-container   202m   104Mi   
+scoring-model-predictor-00002-deployment-778ccf5c89-mjp8n   kserve-container   154m   103Mi   
+scoring-model-predictor-00002-deployment-778ccf5c89-ttv22   kserve-container   208m   109Mi   
+## 20:01:52Z
+relay 4.16% 91.61MiB / 7.758GiB
+3scale-kourier-gateway-78f5db85b-5xmb2   143m   60Mi   
+activator-7d4c55bdc6-zml7j                35m   224Mi   
+scoring-model-predictor-00002-deployment-778ccf5c89-ht2r2   kserve-container   163m   100Mi   
+scoring-model-predictor-00002-deployment-778ccf5c89-mjp8n   kserve-container   167m   103Mi   
+scoring-model-predictor-00002-deployment-778ccf5c89-ttv22   kserve-container   217m   103Mi   
+## 20:02:06Z
+relay 1.67% 113.2MiB / 7.758GiB
+3scale-kourier-gateway-78f5db85b-5xmb2   85m   62Mi   
+activator-7d4c55bdc6-zml7j                149m   251Mi   
+scoring-model-predictor-00002-deployment-778ccf5c89-ht2r2   kserve-container   3m     90Mi    
+scoring-model-predictor-00002-deployment-778ccf5c89-mjp8n   kserve-container   6m     99Mi    
+scoring-model-predictor-00002-deployment-778ccf5c89-ttv22   kserve-container   173m   106Mi   
+## 20:02:42Z
+relay 5.07% 132.1MiB / 7.758GiB
+3scale-kourier-gateway-78f5db85b-5xmb2   50m   109Mi   
+activator-7d4c55bdc6-zml7j                149m   251Mi   
+scoring-model-predictor-00002-deployment-778ccf5c89-ttv22   kserve-container   132m   103Mi   
+## 20:02:56Z
+relay 5.49% 132.4MiB / 7.758GiB
+3scale-kourier-gateway-78f5db85b-5xmb2   78m   87Mi   
+activator-7d4c55bdc6-zml7j                573m   270Mi   
+scoring-model-predictor-00002-deployment-778ccf5c89-ttv22   kserve-container   355m   105Mi   
+## 20:03:11Z
+relay 0.44% 127.3MiB / 7.758GiB
+3scale-kourier-gateway-78f5db85b-5xmb2   112m   76Mi   
+activator-7d4c55bdc6-zml7j                245m   261Mi   
+scoring-model-predictor-00002-deployment-778ccf5c89-ttv22   kserve-container   129m   106Mi   
+## 20:03:39Z
+relay 1.47% 126.2MiB / 7.758GiB
+3scale-kourier-gateway-78f5db85b-5xmb2   45m   95Mi   
+activator-7d4c55bdc6-zml7j                145m   241Mi   
+scoring-model-predictor-00002-deployment-778ccf5c89-ttv22   kserve-container   129m   106Mi   
+## 20:04:00Z
+relay 0.00% 123.8MiB / 7.758GiB
+3scale-kourier-gateway-78f5db85b-5xmb2   68m   81Mi   
+activator-7d4c55bdc6-8rh26                29m   37Mi    
+activator-7d4c55bdc6-zml7j                51m   253Mi   
+scoring-model-predictor-00002-deployment-778ccf5c89-2x7vp   kserve-container   121m   81Mi    
+scoring-model-predictor-00002-deployment-778ccf5c89-ttv22   kserve-container   136m   107Mi   
+## 20:04:30Z
+relay 0.00% 1.57MiB / 7.758GiB

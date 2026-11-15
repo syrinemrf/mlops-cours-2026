@@ -1,0 +1,2 @@
+Method,Name,Error,Occurrences,First Seen,Last Seen
+POST,/predict,HTTPError('502 Server Error: Bad Gateway for url: /predict'),8,2026-11-08T19:58:28Z,2026-11-08T19:58:47Z
