@@ -48,7 +48,7 @@ ONNX vs scikit-learn, P50 sur 1 ligne : ×50,4. Un lot de 100 lignes coûte 0,66
 soit environ 6,6 µs par ligne.
 
 **Test de charge (Locust)** sur le conteneur `optimized` (un seul worker uvicorn), 100
-utilisateurs, 30 s, Locust sur la même machine : 9 469 requêtes, **0 échec**, ≈ 349 req/s,
+utilisateurs, 30 s, Locust sur la même machine : 9 410 requêtes, **0 échec**, ≈ 349 req/s,
 P50 220 ms, P95 360 ms, P99 430 ms (`reports/m4/locust_stats.csv`). Ces latences mesurent la
 file d'attente d'un worker saturé par 100 utilisateurs, pas le coût de l'inférence (0,23 ms).
 Ce test a tourné sur le build d'`optimized` antérieur à la mise à jour de zlib1g ; les deux
