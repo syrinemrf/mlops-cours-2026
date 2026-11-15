@@ -42,7 +42,9 @@ reports/kfp/
 
 # --- Lab 4 : packaging ---
 # Pickles malveillants de démonstration (ModelScan) — regénérés, jamais commités.
-# packaging/model/ (modèle ONNX figé) EST versionné : la CI du Lab 6 en a besoin.
+# packaging/model/ : modèle ONNX exporté, laissé HORS Git par choix du binôme (pas de modèle
+# binaire dans Git ; regénéré par packaging/app/export_onnx.py). À revoir pour la CI du Lab 6.
+packaging/model/
 packaging/scan-demo/*.pkl
 
 # --- Lab 5 : serving ---

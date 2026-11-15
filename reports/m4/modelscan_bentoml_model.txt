@@ -1,0 +1,20 @@
+# ModelScan — modèle embarqué par l'image BentoML (model store scoring_model)
+# ATTENTION : le scanner PickleUnsafeOpScan a levé une erreur sur saved_model.pkl ;
+# « No issues found » ci-dessous ne vaut donc PAS vérification de ce pickle.
+No settings file detected at ~/mlops-cours-2026/modelscan-settings.toml. Using defaults. 
+
+Error encountered from scanner modelscan.scanners.PickleUnsafeOpScan with path ~/bentoml/models/scoring_model/e4qtezw3uwpql3je/saved_model.pkl: argument of type 'NoneType' is not iterable
+
+--- Summary ---
+
+ No issues found! 🎉
+
+--- Errors --- 
+
+Error 1:
+The following error was raised during a modelscan.scanners.PickleUnsafeOpScan scan: 
+argument of type 'NoneType' is not iterable
+
+--- Skipped --- 
+
+Total skipped: 2 - run with --show-skipped to see the full list.

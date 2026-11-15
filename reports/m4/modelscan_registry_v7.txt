@@ -1,0 +1,112 @@
+# ModelScan — scoring-model v7 (registre MLflow, téléchargé le 2026-11-08)
+No settings file detected at ~/mlops-cours-2026/modelscan-settings.toml. Using defaults. 
+
+Error encountered from scanner modelscan.scanners.NumpyUnsafeOpScan with path <champion-v7>/model.skops:131472603771024.npy: module 'numpy.lib.format' has no attribute '_check_version'
+Error encountered from scanner modelscan.scanners.NumpyUnsafeOpScan with path <champion-v7>/model.skops:131472603770448.npy: module 'numpy.lib.format' has no attribute '_check_version'
+Error encountered from scanner modelscan.scanners.NumpyUnsafeOpScan with path <champion-v7>/model.skops:131472711642704.npy: module 'numpy.lib.format' has no attribute '_check_version'
+Error encountered from scanner modelscan.scanners.NumpyUnsafeOpScan with path <champion-v7>/model.skops:131472731817232.npy: module 'numpy.lib.format' has no attribute '_check_version'
+Error encountered from scanner modelscan.scanners.NumpyUnsafeOpScan with path <champion-v7>/model.skops:131472711644144.npy: module 'numpy.lib.format' has no attribute '_check_version'
+Error encountered from scanner modelscan.scanners.NumpyUnsafeOpScan with path <champion-v7>/model.skops:131472711644432.npy: module 'numpy.lib.format' has no attribute '_check_version'
+Error encountered from scanner modelscan.scanners.NumpyUnsafeOpScan with path <champion-v7>/model.skops:131472711644240.npy: module 'numpy.lib.format' has no attribute '_check_version'
+Error encountered from scanner modelscan.scanners.NumpyUnsafeOpScan with path <champion-v7>/model.skops:131472711641840.npy: module 'numpy.lib.format' has no attribute '_check_version'
+Error encountered from scanner modelscan.scanners.NumpyUnsafeOpScan with path <champion-v7>/model.skops:131472711643664.npy: module 'numpy.lib.format' has no attribute '_check_version'
+Error encountered from scanner modelscan.scanners.NumpyUnsafeOpScan with path <champion-v7>/model.skops:131472711638864.npy: module 'numpy.lib.format' has no attribute '_check_version'
+Error encountered from scanner modelscan.scanners.NumpyUnsafeOpScan with path <champion-v7>/model.skops:131472711640400.npy: module 'numpy.lib.format' has no attribute '_check_version'
+
+--- Summary ---
+
+ No issues found! 🎉
+
+--- Errors --- 
+
+Error 1:
+The following error was raised during a modelscan.scanners.NumpyUnsafeOpScan scan: 
+module 'numpy.lib.format' has no attribute '_check_version'
+
+Error 2:
+The following error was raised during a modelscan.scanners.NumpyUnsafeOpScan scan: 
+module 'numpy.lib.format' has no attribute '_check_version'
+
+Error 3:
+The following error was raised during a modelscan.scanners.NumpyUnsafeOpScan scan: 
+module 'numpy.lib.format' has no attribute '_check_version'
+
+Error 4:
+The following error was raised during a modelscan.scanners.NumpyUnsafeOpScan scan: 
+module 'numpy.lib.format' has no attribute '_check_version'
+
+Error 5:
+The following error was raised during a modelscan.scanners.NumpyUnsafeOpScan scan: 
+module 'numpy.lib.format' has no attribute '_check_version'
+
+Error 6:
+The following error was raised during a modelscan.scanners.NumpyUnsafeOpScan scan: 
+module 'numpy.lib.format' has no attribute '_check_version'
+
+Error 7:
+The following error was raised during a modelscan.scanners.NumpyUnsafeOpScan scan: 
+module 'numpy.lib.format' has no attribute '_check_version'
+
+Error 8:
+The following error was raised during a modelscan.scanners.NumpyUnsafeOpScan scan: 
+module 'numpy.lib.format' has no attribute '_check_version'
+
+Error 9:
+The following error was raised during a modelscan.scanners.NumpyUnsafeOpScan scan: 
+module 'numpy.lib.format' has no attribute '_check_version'
+
+Error 10:
+The following error was raised during a modelscan.scanners.NumpyUnsafeOpScan scan: 
+module 'numpy.lib.format' has no attribute '_check_version'
+
+Error 11:
+The following error was raised during a modelscan.scanners.NumpyUnsafeOpScan scan: 
+module 'numpy.lib.format' has no attribute '_check_version'
+
+--- Skipped --- 
+
+Total skipped: 19 - run with --show-skipped to see the full list.
+
+Skipped files list:
+
+The following file <champion-v7>/python_env.yaml was skipped during a ModelScan scan: 
+Model Scan did not scan file
+The following file <champion-v7>/conda.yaml was skipped during a ModelScan scan: 
+Model Scan did not scan file
+The following file <champion-v7>/registered_model_meta was skipped during a ModelScan scan: 
+Model Scan did not scan file
+The following file <champion-v7>/MLmodel was skipped during a ModelScan scan: 
+Model Scan did not scan file
+The following file <champion-v7>/serving_input_example.json was skipped during a ModelScan scan: 
+Model Scan did not scan file
+The following file <champion-v7>/model.skops:131472603771024.npy was skipped during a ModelScan scan: 
+Model Scan did not scan file
+The following file <champion-v7>/model.skops:131472603770448.npy was skipped during a ModelScan scan: 
+Model Scan did not scan file
+The following file <champion-v7>/model.skops:131472711642704.npy was skipped during a ModelScan scan: 
+Model Scan did not scan file
+The following file <champion-v7>/model.skops:131472731817232.npy was skipped during a ModelScan scan: 
+Model Scan did not scan file
+The following file <champion-v7>/model.skops:131472711644144.npy was skipped during a ModelScan scan: 
+Model Scan did not scan file
+The following file <champion-v7>/model.skops:131472711644432.npy was skipped during a ModelScan scan: 
+Model Scan did not scan file
+The following file <champion-v7>/model.skops:131472711644240.npy was skipped during a ModelScan scan: 
+Model Scan did not scan file
+The following file <champion-v7>/model.skops:131472711641840.npy was skipped during a ModelScan scan: 
+Model Scan did not scan file
+The following file <champion-v7>/model.skops:131472711643664.npy was skipped during a ModelScan scan: 
+Model Scan did not scan file
+The following file <champion-v7>/model.skops:131472711638864.npy was skipped during a ModelScan scan: 
+Model Scan did not scan file
+The following file <champion-v7>/model.skops:131472711640400.npy was skipped during a ModelScan scan: 
+Model Scan did not scan file
+The following file <champion-v7>/model.skops:schema.json was skipped during a ModelScan scan: 
+Model Scan did not scan file
+The following file <champion-v7>/input_example.json was skipped during a ModelScan scan: 
+Model Scan did not scan file
+The following file <champion-v7>/requirements.txt was skipped during a ModelScan scan: 
+Model Scan did not scan file
+
+# skops : types hors liste de confiance demandés par model.skops
+['numpy.dtype']

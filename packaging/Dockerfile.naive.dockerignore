@@ -1,0 +1,14 @@
+# .dockerignore de la baseline naïve. Le cours n'exclut que .venv/ pour montrer ce qu'une
+# image naïve embarque. Choix du binôme : on exclut AUSSI les secrets et les données, pour ne
+# jamais les mettre dans une image ni dans un rapport de scan commité (Trivy cherche aussi
+# les secrets). L'image reste volontairement lourde : .git, rapports, tout le code, python:3.12.
+.venv/
+.env
+.envrc
+.dvc/config.local
+.dvc/cache/
+.dvc/tmp/
+data/
+models/
+mlruns/
+features/data/

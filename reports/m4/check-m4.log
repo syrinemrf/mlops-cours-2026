@@ -1,0 +1,22 @@
+# check-m4 (lancé via : bash labs/m4-packaging/check.sh, script en mode 644 comme dans le dépôt du cours) — 2026-11-08T19:04:58Z, HEAD 8dc9e1f
+Lab 4 — Packaging du modèle (localhost:5001/scoring-api:1.0.0)
+✅ Modèle ONNX exporté (packaging/model/)
+✅ Image 1.0.0 présente dans le registry local
+✅ Image récupérable (docker pull)
+✅ Taille de l'image < 500 Mo
+   ↳ taille mesurée : 125 Mo
+✅ Utilisateur non-root
+✅ HEALTHCHECK déclaré
+✅ Conteneur démarré, /health répond
+✅ Conteneur healthy (docker inspect)
+✅ /predict sur une ligne de test.csv + 422 si colonne manquante
+✅ Rapport de benchmark (3 backends)
+✅ Rapports Trivy (naive + optimized)
+✅ ModelScan : ONNX sans problème
+✅ ModelScan : pickle piégé détecté
+✅ Image naïve construite (scoring-api:naive)
+✅ Image BentoML construite (scoring-api:bentoml)
+✅ Rapport rédigé (reports/rapport-m4.md, 5 sections)
+
+Résultat : 16/16 vérifications OK
+exit=0
