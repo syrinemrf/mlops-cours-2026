@@ -1,0 +1,156 @@
+[KFP Executor 2026-11-08 18:17:23,254 INFO]: Looking for component `detect_drift` in --component_module_path `/tmp/tmp.Z9Jxms9rUV/ephemeral_component.py`
+[KFP Executor 2026-11-08 18:17:23,254 INFO]: Loading KFP component "detect_drift" from /tmp/tmp.Z9Jxms9rUV/ephemeral_component.py (directory "/tmp/tmp.Z9Jxms9rUV" and module name "ephemeral_component")
+[KFP Executor 2026-11-08 18:17:23,257 INFO]: Got executor_input:
+{
+    "inputs": {
+        "artifacts": {
+            "current_data": {
+                "artifacts": [
+                    {
+                        "name": "74",
+                        "type": {
+                            "instanceSchema": ""
+                        },
+                        "uri": "minio://mlpipeline/v2/artifacts/scoring-drift-demo/d73fd533-9b35-4fdf-b304-5b5a564bd8b3/simulate-drift/75d8835c-875b-4760-b08b-d4640413c71e/drifted",
+                        "metadata": {
+                            "display_name": "drifted",
+                            "store_session_info": "{\"Provider\":\"minio\",\"Params\":{\"accessKeyKey\":\"accesskey\",\"disableSSL\":\"true\",\"endpoint\":\"seaweedfs.kubeflow:9000\",\"fromEnv\":\"false\",\"maxRetries\":\"5\",\"region\":\"minio\",\"secretKeyKey\":\"secretkey\",\"secretName\":\"mlpipeline-minio-artifact\"}}"
+                        }
+                    }
+                ]
+            },
+            "reference_data": {
+                "artifacts": [
+                    {
+                        "name": "73",
+                        "type": {
+                            "instanceSchema": ""
+                        },
+                        "uri": "minio://mlpipeline/v2/artifacts/scoring-drift-demo/d73fd533-9b35-4fdf-b304-5b5a564bd8b3/prepare-features/8ee1fa1a-0ad4-4b70-8f19-45a08238b37f/train_data",
+                        "metadata": {
+                            "display_name": "train_data",
+                            "positive_rate": 0.1616,
+                            "rows": 1176,
+                            "store_session_info": "{\"Provider\":\"minio\",\"Params\":{\"accessKeyKey\":\"accesskey\",\"disableSSL\":\"true\",\"endpoint\":\"seaweedfs.kubeflow:9000\",\"fromEnv\":\"false\",\"maxRetries\":\"5\",\"region\":\"minio\",\"secretKeyKey\":\"secretkey\",\"secretName\":\"mlpipeline-minio-artifact\"}}"
+                        }
+                    }
+                ]
+            }
+        },
+        "parameterValues": {
+            "drift_share": 0.1,
+            "fail_on_drift": false,
+            "ks_alpha": 0.05,
+            "psi_threshold": 0.25
+        }
+    },
+    "outputs": {
+        "parameters": {
+            "Output": {
+                "outputFile": "/tmp/kfp/outputs/Output"
+            }
+        },
+        "artifacts": {
+            "drift": {
+                "artifacts": [
+                    {
+                        "name": "drift",
+                        "type": {
+                            "schemaTitle": "system.Metrics",
+                            "schemaVersion": "0.0.1"
+                        },
+                        "uri": "minio://mlpipeline/v2/artifacts/scoring-drift-demo/d73fd533-9b35-4fdf-b304-5b5a564bd8b3/detect-drift/c4e0c912-c3c6-4b19-b350-54fb9c08341c/drift"
+                    }
+                ]
+            },
+            "executor-logs": {
+                "artifacts": [
+                    {
+                        "name": "executor-logs",
+                        "type": {
+                            "schemaTitle": "system.Artifact"
+                        },
+                        "uri": "minio://mlpipeline/v2/artifacts/scoring-drift-demo/d73fd533-9b35-4fdf-b304-5b5a564bd8b3/detect-drift/c4e0c912-c3c6-4b19-b350-54fb9c08341c/executor-logs-0"
+                    }
+                ]
+            },
+            "html": {
+                "artifacts": [
+                    {
+                        "name": "html",
+                        "type": {
+                            "schemaTitle": "system.HTML",
+                            "schemaVersion": "0.0.1"
+                        },
+                        "uri": "minio://mlpipeline/v2/artifacts/scoring-drift-demo/d73fd533-9b35-4fdf-b304-5b5a564bd8b3/detect-drift/c4e0c912-c3c6-4b19-b350-54fb9c08341c/html"
+                    }
+                ]
+            },
+            "report": {
+                "artifacts": [
+                    {
+                        "name": "report",
+                        "type": {
+                            "schemaTitle": "system.Artifact",
+                            "schemaVersion": "0.0.1"
+                        },
+                        "uri": "minio://mlpipeline/v2/artifacts/scoring-drift-demo/d73fd533-9b35-4fdf-b304-5b5a564bd8b3/detect-drift/c4e0c912-c3c6-4b19-b350-54fb9c08341c/report"
+                    }
+                ]
+            },
+            "table": {
+                "artifacts": [
+                    {
+                        "name": "table",
+                        "type": {
+                            "schemaTitle": "system.Markdown",
+                            "schemaVersion": "0.0.1"
+                        },
+                        "uri": "minio://mlpipeline/v2/artifacts/scoring-drift-demo/d73fd533-9b35-4fdf-b304-5b5a564bd8b3/detect-drift/c4e0c912-c3c6-4b19-b350-54fb9c08341c/table"
+                    }
+                ]
+            }
+        },
+        "outputFile": "/minio/mlpipeline/v2/artifacts/scoring-drift-demo/d73fd533-9b35-4fdf-b304-5b5a564bd8b3/detect-drift/c4e0c912-c3c6-4b19-b350-54fb9c08341c/output_metadata.json"
+    }
+}
++ /usr/local/bin/python3 -m src.detect_drift data/drift/reference.csv data/drift/current.csv --ks-alpha 0.05 --psi-threshold 0.25 --drift-share 0.1 --no-fail
+### Drift : 4/31 colonnes (DRIFT)
+
+| Colonne | Test | p-value | PSI | Wasserstein | Verdict |
+|---|---|---|---|---|---|
+| DistanceFromHome | KS | 0.0000 | 1.516 | 0.429 | DRIFT |
+| Age | KS | 0.0000 | 0.524 | 0.680 | DRIFT |
+| MonthlyIncome | KS | 0.0000 | 0.301 | 0.317 | DRIFT |
+| OverTime | chi2 | 0.0000 | 0.282 |  | DRIFT |
+| NumCompaniesWorked | KS | 0.9940 | 0.063 | 0.050 | OK |
+| TotalWorkingYears | KS | 0.4023 | 0.059 | 0.061 | OK |
+| MonthlyRate | KS | 0.3019 | 0.057 | 0.079 | OK |
+| TrainingTimesLastYear | KS | 0.1393 | 0.052 | 0.191 | OK |
+| JobRole | chi2 | 0.1309 | 0.052 |  | OK |
+| JobLevel | chi2 | 0.0337 | 0.044 |  | OK |
+| EducationField | chi2 | 0.1523 | 0.038 |  | OK |
+| YearsAtCompany | KS | 0.3668 | 0.038 | 0.055 | OK |
+| RelationshipSatisfaction | chi2 | 0.0437 | 0.036 |  | OK |
+| HourlyRate | KS | 0.3498 | 0.035 | 0.097 | OK |
+| DailyRate | KS | 0.7372 | 0.026 | 0.039 | OK |
+| YearsInCurrentRole | KS | 0.9708 | 0.025 | 0.071 | OK |
+| YearsWithCurrManager | KS | 0.4594 | 0.021 | 0.116 | OK |
+| EnvironmentSatisfaction | chi2 | 0.1987 | 0.020 |  | OK |
+| WorkLifeBalance | chi2 | 0.3005 | 0.018 |  | OK |
+| JobSatisfaction | chi2 | 0.3727 | 0.013 |  | OK |
+| PercentSalaryHike | KS | 0.9960 | 0.012 | 0.043 | OK |
+| JobInvolvement | chi2 | 0.5615 | 0.009 |  | OK |
+| Department | chi2 | 0.4849 | 0.006 |  | OK |
+| Education | chi2 | 0.9076 | 0.004 |  | OK |
+| BusinessTravel | chi2 | 0.6436 | 0.004 |  | OK |
+| YearsSinceLastPromotion | KS | 1.0000 | 0.004 | 0.021 | OK |
+| StockOptionLevel | chi2 | 0.8762 | 0.003 |  | OK |
+| PerformanceRating | chi2 | 0.5036 | 0.003 |  | OK |
+| MaritalStatus | chi2 | 0.9135 | 0.001 |  | OK |
+| Gender | chi2 | 0.8836 | 0.000 |  | OK |
+| Attrition | chi2 | 1.0000 | 0.000 |  | OK |
+
+Evidently (p-value seule) : 6 colonne(s)
+DRIFT DÉTECTÉ : ['DistanceFromHome', 'MonthlyIncome', 'OverTime', 'Age'] (13% des colonnes, seuil 10%)
+[KFP Executor 2026-11-08 18:17:38,338 INFO]: Wrote executor output file to /minio/mlpipeline/v2/artifacts/scoring-drift-demo/d73fd533-9b35-4fdf-b304-5b5a564bd8b3/detect-drift/c4e0c912-c3c6-4b19-b350-54fb9c08341c/output_metadata.json.

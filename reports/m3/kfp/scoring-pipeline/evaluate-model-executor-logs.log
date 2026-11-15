@@ -1,0 +1,108 @@
+[KFP Executor 2026-11-08 18:10:30,206 INFO]: Looking for component `evaluate_model` in --component_module_path `/tmp/tmp.Z7sGiO31HF/ephemeral_component.py`
+[KFP Executor 2026-11-08 18:10:30,206 INFO]: Loading KFP component "evaluate_model" from /tmp/tmp.Z7sGiO31HF/ephemeral_component.py (directory "/tmp/tmp.Z7sGiO31HF" and module name "ephemeral_component")
+[KFP Executor 2026-11-08 18:10:30,209 INFO]: Got executor_input:
+{
+    "inputs": {
+        "artifacts": {
+            "model": {
+                "artifacts": [
+                    {
+                        "name": "52",
+                        "type": {
+                            "instanceSchema": ""
+                        },
+                        "uri": "minio://mlpipeline/v2/artifacts/scoring-pipeline/2e33d31b-8dca-4269-ab82-42194ef57094/train-model/434be2e3-c151-487e-b3c6-5d55915c7783/model",
+                        "metadata": {
+                            "decision_threshold": 0.5,
+                            "display_name": "model",
+                            "mlflow_run_id": "432c8310a0714df6856a31fff40f579d",
+                            "model_type": "logistic_regression",
+                            "store_session_info": "{\"Provider\":\"minio\",\"Params\":{\"accessKeyKey\":\"accesskey\",\"disableSSL\":\"true\",\"endpoint\":\"seaweedfs.kubeflow:9000\",\"fromEnv\":\"false\",\"maxRetries\":\"5\",\"region\":\"minio\",\"secretKeyKey\":\"secretkey\",\"secretName\":\"mlpipeline-minio-artifact\"}}"
+                        }
+                    }
+                ]
+            },
+            "test_data": {
+                "artifacts": [
+                    {
+                        "name": "44",
+                        "type": {
+                            "instanceSchema": ""
+                        },
+                        "uri": "minio://mlpipeline/v2/artifacts/scoring-pipeline/2e33d31b-8dca-4269-ab82-42194ef57094/prepare-features/bd04b302-3f6a-450a-9c35-fffc46ef0641/test_data",
+                        "metadata": {
+                            "display_name": "test_data",
+                            "positive_rate": 0.1599,
+                            "rows": 294,
+                            "store_session_info": "{\"Provider\":\"minio\",\"Params\":{\"accessKeyKey\":\"accesskey\",\"disableSSL\":\"true\",\"endpoint\":\"seaweedfs.kubeflow:9000\",\"fromEnv\":\"false\",\"maxRetries\":\"5\",\"region\":\"minio\",\"secretKeyKey\":\"secretkey\",\"secretName\":\"mlpipeline-minio-artifact\"}}"
+                        }
+                    }
+                ]
+            }
+        },
+        "parameterValues": {
+            "mlflow_uri": "http://mlflow.mlflow:5000",
+            "run_id": "432c8310a0714df6856a31fff40f579d"
+        }
+    },
+    "outputs": {
+        "parameters": {
+            "Output": {
+                "outputFile": "/tmp/kfp/outputs/Output"
+            }
+        },
+        "artifacts": {
+            "confusion": {
+                "artifacts": [
+                    {
+                        "name": "confusion",
+                        "type": {
+                            "schemaTitle": "system.ClassificationMetrics",
+                            "schemaVersion": "0.0.1"
+                        },
+                        "uri": "minio://mlpipeline/v2/artifacts/scoring-pipeline/2e33d31b-8dca-4269-ab82-42194ef57094/evaluate-model/436d5c5b-10c1-4e8e-946d-d37dfdaa0048/confusion"
+                    }
+                ]
+            },
+            "executor-logs": {
+                "artifacts": [
+                    {
+                        "name": "executor-logs",
+                        "type": {
+                            "schemaTitle": "system.Artifact"
+                        },
+                        "uri": "minio://mlpipeline/v2/artifacts/scoring-pipeline/2e33d31b-8dca-4269-ab82-42194ef57094/evaluate-model/436d5c5b-10c1-4e8e-946d-d37dfdaa0048/executor-logs-0"
+                    }
+                ]
+            },
+            "metrics": {
+                "artifacts": [
+                    {
+                        "name": "metrics",
+                        "type": {
+                            "schemaTitle": "system.Metrics",
+                            "schemaVersion": "0.0.1"
+                        },
+                        "uri": "minio://mlpipeline/v2/artifacts/scoring-pipeline/2e33d31b-8dca-4269-ab82-42194ef57094/evaluate-model/436d5c5b-10c1-4e8e-946d-d37dfdaa0048/metrics"
+                    }
+                ]
+            },
+            "report": {
+                "artifacts": [
+                    {
+                        "name": "report",
+                        "type": {
+                            "schemaTitle": "system.Artifact",
+                            "schemaVersion": "0.0.1"
+                        },
+                        "uri": "minio://mlpipeline/v2/artifacts/scoring-pipeline/2e33d31b-8dca-4269-ab82-42194ef57094/evaluate-model/436d5c5b-10c1-4e8e-946d-d37dfdaa0048/report"
+                    }
+                ]
+            }
+        },
+        "outputFile": "/minio/mlpipeline/v2/artifacts/scoring-pipeline/2e33d31b-8dca-4269-ab82-42194ef57094/evaluate-model/436d5c5b-10c1-4e8e-946d-d37dfdaa0048/output_metadata.json"
+    }
+}
++ /usr/local/bin/python3 -m src.evaluate
+roc_auc = 0.8369 -> reports/metrics.json
+[KFP Executor 2026-11-08 18:10:46,055 INFO]: Wrote executor output file to /minio/mlpipeline/v2/artifacts/scoring-pipeline/2e33d31b-8dca-4269-ab82-42194ef57094/evaluate-model/436d5c5b-10c1-4e8e-946d-d37dfdaa0048/output_metadata.json.

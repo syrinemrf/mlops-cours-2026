@@ -36,6 +36,7 @@ drift_demo.yaml
 reports/validation.html
 reports/drift.*
 reports/model_validation.*
+reports/model_validation_pr.html
 reports/model_behavior.xml
 reports/kfp/
 

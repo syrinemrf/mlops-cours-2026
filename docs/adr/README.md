@@ -38,3 +38,4 @@ pour le socle (une seule suffit, mais choisissez une vraie décision) :
 | [0002](0002-dataset-rh-et-attributs-sensibles.md) | Dataset/sensibles, variante Aziz renumérotée | Proposé, contexte historique explicité | Socle M1 | @MohamedAzizKouch |
 | [0003](0003-metrique-seuil-et-selection-du-modele.md) | AP/gate/seuil, variante Aziz renumérotée | Proposé, non substitué au contrat commun | Socle M1 | @MohamedAzizKouch |
 | [0004](0004-isolate-train-only-diagnostics.md) | Diagnostics train-only indépendants | Mis en œuvre, revue GitHub en attente | Socle M1 | @syrinemrf, contributions source Aziz |
+| [0005](0005-data-drift-vs-concept-drift.md) | Data drift ≠ concept drift (gate de drift) | Mis en œuvre, revue du binôme en attente | Socle M3 | @syrinemrf |

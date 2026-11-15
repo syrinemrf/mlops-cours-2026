@@ -1,0 +1,38 @@
+[KFP Executor 2026-11-08 18:07:10,923 INFO]: Looking for component `ingest_data` in --component_module_path `/tmp/tmp.8H5SCZvR51/ephemeral_component.py`
+[KFP Executor 2026-11-08 18:07:10,923 INFO]: Loading KFP component "ingest_data" from /tmp/tmp.8H5SCZvR51/ephemeral_component.py (directory "/tmp/tmp.8H5SCZvR51" and module name "ephemeral_component")
+[KFP Executor 2026-11-08 18:07:10,926 INFO]: Got executor_input:
+{
+    "inputs": {},
+    "outputs": {
+        "artifacts": {
+            "executor-logs": {
+                "artifacts": [
+                    {
+                        "name": "executor-logs",
+                        "type": {
+                            "schemaTitle": "system.Artifact"
+                        },
+                        "uri": "minio://mlpipeline/v2/artifacts/scoring-pipeline/2e33d31b-8dca-4269-ab82-42194ef57094/ingest-data/e5a19028-b7aa-4487-93fe-bc26d2d647ef/executor-logs-0"
+                    }
+                ]
+            },
+            "raw_data": {
+                "artifacts": [
+                    {
+                        "name": "raw_data",
+                        "type": {
+                            "schemaTitle": "system.Dataset",
+                            "schemaVersion": "0.0.1"
+                        },
+                        "uri": "minio://mlpipeline/v2/artifacts/scoring-pipeline/2e33d31b-8dca-4269-ab82-42194ef57094/ingest-data/e5a19028-b7aa-4487-93fe-bc26d2d647ef/raw_data"
+                    }
+                ]
+            }
+        },
+        "outputFile": "/minio/mlpipeline/v2/artifacts/scoring-pipeline/2e33d31b-8dca-4269-ab82-42194ef57094/ingest-data/e5a19028-b7aa-4487-93fe-bc26d2d647ef/output_metadata.json"
+    }
+}
++ /usr/local/bin/python3 -m src.download
+Source: 1470 x 35; export: 1470 x 32 -> data/raw/dataset.csv
+Predictors: 27; Attrition=Yes: 237/1470; SHA-256: 27e7bebda91c7e6d0b77e80128c2d9383d70a19a185b51ecfe3bb90f761d2a78
+[KFP Executor 2026-11-08 18:07:23,669 INFO]: Wrote executor output file to /minio/mlpipeline/v2/artifacts/scoring-pipeline/2e33d31b-8dca-4269-ab82-42194ef57094/ingest-data/e5a19028-b7aa-4487-93fe-bc26d2d647ef/output_metadata.json.

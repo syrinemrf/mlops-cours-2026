@@ -1,0 +1,24 @@
+{
+  "tn": 239.0,
+  "fp": 8.0,
+  "fn": 27.0,
+  "tp": 20.0,
+  "pr_auc_trapezoidal": 0.6444,
+  "brier_score": 0.091,
+  "log_loss": 0.3278,
+  "roc_auc": 0.8369,
+  "average_precision": 0.647,
+  "f1": 0.5333,
+  "precision": 0.7143,
+  "recall": 0.4255,
+  "accuracy": 0.881,
+  "business_cost": 35.0,
+  "decision_threshold": 0.5,
+  "confusion": {
+    "tn": 239,
+    "fp": 8,
+    "fn": 27,
+    "tp": 20
+  },
+  "n_test": 294
+}

@@ -1,0 +1,62 @@
+# Attentes comportementales du modèle IBM HR (attrition), lues par
+# tests/test_model_behavior.py. Changer de dataset = réécrire ce fichier.
+# Attentes fixées a priori d'après le domaine RH (pas d'après les sorties du modèle),
+# puis mesurées le 2026-11-08 sur le modèle DVC local (run ef2d3f85, version 4 du registre,
+# LR C=1, seuil 0,5) : toutes tenues. @champion est sur la v7, même configuration et même
+# ROC AUC de test (0,8368507193) que la v4.
+# Rien ici n'est causal : on teste la cohérence du modèle, pas un effet RH réel.
+
+# Seuil de décision : coûts 1:1 (dataset.yaml) => seuil analytique 0,5 ; il voyage dans
+# les métadonnées du modèle (decision_threshold) et il est distinct du gate ROC AUC 0,70.
+decision_threshold: 0.5
+
+# Invariance : changer cet attribut ne devrait pas changer la décision. Les « taux » IBM HR
+# (HourlyRate, MonthlyRate) sont des colonnes synthétiques sans lien documenté avec le départ.
+# Tolérance : part maximale de décisions qui changent, parmi les salariés modifiés.
+invariance:
+- column: HourlyRate
+  max_flip_rate: 0.05
+- column: MonthlyRate
+  max_flip_rate: 0.05
+
+# Directionnels : la modification ne doit pas déplacer le risque prédit (probabilité de
+# départ) dans le mauvais sens.
+# - numérique : colonne x factor, sur tous les salariés ;
+# - catégorielle : salariés à la modalité `from`, passés à `to` (monotonie de l'ordinal).
+directional:
+- column: OverTime  # faire des heures supplémentaires n'aide pas à rester
+  from: "No"
+  to: "Yes"
+  expect: increase
+- column: BusinessTravel
+  from: Non-Travel
+  to: Travel_Frequently
+  expect: increase
+- column: EnvironmentSatisfaction
+  from: "1: Low"
+  to: "4: Very High"
+  expect: decrease
+- column: JobSatisfaction
+  from: "1: Low"
+  to: "4: Very High"
+  expect: decrease
+- column: MonthlyIncome  # +50 % de salaire ne pousse pas au départ
+  factor: 1.5
+  expect: decrease
+- column: TotalWorkingYears
+  factor: 1.5
+  expect: decrease
+- column: DistanceFromHome  # habiter deux fois plus loin
+  factor: 2.0
+  expect: increase
+# Une variation de probabilité plus petite que `tolerance` est ignorée ; au plus
+# `max_violation_rate` des salariés modifiés peuvent violer l'attente.
+tolerance: 0.05
+max_violation_rate: 0.05
+
+# Sous-groupes sensibles de dataset.yaml : chaque groupe d'au moins `min_group_size`
+# salariés ET `min_positives` départs doit atteindre promotion_threshold. Sous 5 départs,
+# une ROC AUC n'est pas interprétable (ex. Divorced : 4 départs sur 64 dans le test).
+# L'équité au sens strict (écarts, mitigation) est l'objet du Lab 8.
+min_group_size: 30
+min_positives: 5

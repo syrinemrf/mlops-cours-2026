@@ -217,3 +217,42 @@ exploratoires, avec coût optimiste quand elles choisissent/évaluent sur les m�
 Aucun coût économique, effet causal, statut juridique du seuil d’âge40 ou nouveauté
 scientifique n’est établi par ces ajouts. Accord dataset par courriel selon Syrine,
 référence/date du message restant à consigner. Voir le rapport d’intégration M1.
+
+
+## 8. Contrat de données exécutable (Lab 3, 2026-11-08)
+
+Le contrat de cette fiche est **exécuté** à chaque run par une suite Great Expectations
+versionnée (`gx/expectations/scoring_contract.json`, checkpoint `scoring_gate`), lancée par
+`python -m src.validate_data`. Un échec renvoie le code 1 et arrête le pipeline avant
+`prepare` (DVC, KFP, Airflow).
+
+| Bloc | Expectations | Origine |
+|---|---|---|
+| Structure | colonnes du contrat présentes ; ≥ 117 lignes (10 % du train) ; `EmployeeNumber` unique | `dataset.yaml`, `params.yaml` |
+| Complétude et type | 31 non-nul + 31 type, selon le **rôle** déclaré (pas le dtype) | `dataset.yaml` |
+| Numériques (14, dont Age) | bornes larges : ≥ 0, ≤ max + étendue du train ; `mostly` 0,99 | train |
+| Catégorielles et ordinales (16) | modalités vues au train ; « 2: Level 2 » ≠ « 2 » | train |
+| Règles métier (5) | TotalWorkingYears ≥ YearsAtCompany ≥ YearsInCurrentRole, YearsWithCurrManager, YearsSinceLastPromotion ; Age ≥ TotalWorkingYears | `params.yaml` (validation) |
+| Cible | modalités {No, Yes} ; part de « Yes » entre la moitié et le double de celle du train (16,2 %) | train |
+
+Total : 103 expectations, 8 types. Constat du 2026-11-08 : 0 échec sur les 1470 lignes
+brutes ; les 5 règles métier n'ont aucune violation dans les données d'origine.
+
+**Pas de fuite.** La suite est construite sur `data/processed/train.csv` uniquement,
+après le split stratifié (`random_state` 42). Le test vérifie que la reconstruction depuis
+le train redonne exactement la suite commitée, et que train et test ne partagent aucun
+`EmployeeNumber` (`tests/test_validate_data.py`).
+
+**Ce que le contrat ne fait pas.** Les bornes sont volontairement larges : elles arrêtent
+les erreurs grossières (unité, recodage, cible manquante), pas les déplacements naturels de
+population, qui relèvent de la détection de drift (`src/detect_drift.py`). Les modalités
+absentes du train (ex. PerformanceRating 1–2) seraient refusées : régénérer la suite est
+une décision versionnée, pas un ajustement silencieux.
+
+**État du registre au 2026-11-08 (lecture MLflow).** `@champion` est sur la **v7** de
+`scoring-model` (run `ef5f2ec9…`, tag `launched_by=airflow`), pas sur la v4 citée par les
+sections datées du 2026-10-20 et du 2026-10-27, qui restent vraies à leur date. La v7 a la
+même configuration (LR C=1 sans poids, seuil 0,5) et la même ROC AUC de test
+(0,8368507193) que la v4 ; l'identité binaire des deux modèles n'a pas été vérifiée. Le run
+`scoring-pipeline` du Lab 3 a enregistré la v8 en `@challenger` seulement
+(`challenger_only=True`), sans déplacer `@champion`.

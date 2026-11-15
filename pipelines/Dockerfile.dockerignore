@@ -5,6 +5,9 @@
 !dataset.yaml
 !params.yaml
 !src/
+!gx/
+!tests/
+gx/uncommitted/
 !pipelines/requirements.txt
 !pipelines/__init__.py
 !pipelines/stage.py

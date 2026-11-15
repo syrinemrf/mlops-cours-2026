@@ -1,0 +1,167 @@
+[KFP Executor 2026-11-08 18:12:14,830 INFO]: Looking for component `validate_model` in --component_module_path `/tmp/tmp.o6Q38qTdcQ/ephemeral_component.py`
+[KFP Executor 2026-11-08 18:12:14,830 INFO]: Loading KFP component "validate_model" from /tmp/tmp.o6Q38qTdcQ/ephemeral_component.py (directory "/tmp/tmp.o6Q38qTdcQ" and module name "ephemeral_component")
+[KFP Executor 2026-11-08 18:12:14,833 INFO]: Got executor_input:
+{
+    "inputs": {
+        "artifacts": {
+            "model": {
+                "artifacts": [
+                    {
+                        "name": "52",
+                        "type": {
+                            "instanceSchema": ""
+                        },
+                        "uri": "minio://mlpipeline/v2/artifacts/scoring-pipeline/2e33d31b-8dca-4269-ab82-42194ef57094/train-model/434be2e3-c151-487e-b3c6-5d55915c7783/model",
+                        "metadata": {
+                            "decision_threshold": 0.5,
+                            "display_name": "model",
+                            "mlflow_run_id": "432c8310a0714df6856a31fff40f579d",
+                            "model_type": "logistic_regression",
+                            "store_session_info": "{\"Provider\":\"minio\",\"Params\":{\"accessKeyKey\":\"accesskey\",\"disableSSL\":\"true\",\"endpoint\":\"seaweedfs.kubeflow:9000\",\"fromEnv\":\"false\",\"maxRetries\":\"5\",\"region\":\"minio\",\"secretKeyKey\":\"secretkey\",\"secretName\":\"mlpipeline-minio-artifact\"}}"
+                        }
+                    }
+                ]
+            },
+            "test_data": {
+                "artifacts": [
+                    {
+                        "name": "44",
+                        "type": {
+                            "instanceSchema": ""
+                        },
+                        "uri": "minio://mlpipeline/v2/artifacts/scoring-pipeline/2e33d31b-8dca-4269-ab82-42194ef57094/prepare-features/bd04b302-3f6a-450a-9c35-fffc46ef0641/test_data",
+                        "metadata": {
+                            "display_name": "test_data",
+                            "positive_rate": 0.1599,
+                            "rows": 294,
+                            "store_session_info": "{\"Provider\":\"minio\",\"Params\":{\"accessKeyKey\":\"accesskey\",\"disableSSL\":\"true\",\"endpoint\":\"seaweedfs.kubeflow:9000\",\"fromEnv\":\"false\",\"maxRetries\":\"5\",\"region\":\"minio\",\"secretKeyKey\":\"secretkey\",\"secretName\":\"mlpipeline-minio-artifact\"}}"
+                        }
+                    }
+                ]
+            },
+            "train_data": {
+                "artifacts": [
+                    {
+                        "name": "45",
+                        "type": {
+                            "instanceSchema": ""
+                        },
+                        "uri": "minio://mlpipeline/v2/artifacts/scoring-pipeline/2e33d31b-8dca-4269-ab82-42194ef57094/prepare-features/bd04b302-3f6a-450a-9c35-fffc46ef0641/train_data",
+                        "metadata": {
+                            "display_name": "train_data",
+                            "positive_rate": 0.1616,
+                            "rows": 1176,
+                            "store_session_info": "{\"Provider\":\"minio\",\"Params\":{\"accessKeyKey\":\"accesskey\",\"disableSSL\":\"true\",\"endpoint\":\"seaweedfs.kubeflow:9000\",\"fromEnv\":\"false\",\"maxRetries\":\"5\",\"region\":\"minio\",\"secretKeyKey\":\"secretkey\",\"secretName\":\"mlpipeline-minio-artifact\"}}"
+                        }
+                    }
+                ]
+            }
+        }
+    },
+    "outputs": {
+        "artifacts": {
+            "checks": {
+                "artifacts": [
+                    {
+                        "name": "checks",
+                        "type": {
+                            "schemaTitle": "system.Metrics",
+                            "schemaVersion": "0.0.1"
+                        },
+                        "uri": "minio://mlpipeline/v2/artifacts/scoring-pipeline/2e33d31b-8dca-4269-ab82-42194ef57094/validate-model/cadd7c2d-5235-48d3-a754-495af78b1a7e/checks"
+                    }
+                ]
+            },
+            "executor-logs": {
+                "artifacts": [
+                    {
+                        "name": "executor-logs",
+                        "type": {
+                            "schemaTitle": "system.Artifact"
+                        },
+                        "uri": "minio://mlpipeline/v2/artifacts/scoring-pipeline/2e33d31b-8dca-4269-ab82-42194ef57094/validate-model/cadd7c2d-5235-48d3-a754-495af78b1a7e/executor-logs-0"
+                    }
+                ]
+            },
+            "html": {
+                "artifacts": [
+                    {
+                        "name": "html",
+                        "type": {
+                            "schemaTitle": "system.HTML",
+                            "schemaVersion": "0.0.1"
+                        },
+                        "uri": "minio://mlpipeline/v2/artifacts/scoring-pipeline/2e33d31b-8dca-4269-ab82-42194ef57094/validate-model/cadd7c2d-5235-48d3-a754-495af78b1a7e/html"
+                    }
+                ]
+            },
+            "pr_curve": {
+                "artifacts": [
+                    {
+                        "name": "pr_curve",
+                        "type": {
+                            "schemaTitle": "system.HTML",
+                            "schemaVersion": "0.0.1"
+                        },
+                        "uri": "minio://mlpipeline/v2/artifacts/scoring-pipeline/2e33d31b-8dca-4269-ab82-42194ef57094/validate-model/cadd7c2d-5235-48d3-a754-495af78b1a7e/pr_curve"
+                    }
+                ]
+            },
+            "report": {
+                "artifacts": [
+                    {
+                        "name": "report",
+                        "type": {
+                            "schemaTitle": "system.Artifact",
+                            "schemaVersion": "0.0.1"
+                        },
+                        "uri": "minio://mlpipeline/v2/artifacts/scoring-pipeline/2e33d31b-8dca-4269-ab82-42194ef57094/validate-model/cadd7c2d-5235-48d3-a754-495af78b1a7e/report"
+                    }
+                ]
+            },
+            "table": {
+                "artifacts": [
+                    {
+                        "name": "table",
+                        "type": {
+                            "schemaTitle": "system.Markdown",
+                            "schemaVersion": "0.0.1"
+                        },
+                        "uri": "minio://mlpipeline/v2/artifacts/scoring-pipeline/2e33d31b-8dca-4269-ab82-42194ef57094/validate-model/cadd7c2d-5235-48d3-a754-495af78b1a7e/table"
+                    }
+                ]
+            }
+        },
+        "outputFile": "/minio/mlpipeline/v2/artifacts/scoring-pipeline/2e33d31b-8dca-4269-ab82-42194ef57094/validate-model/cadd7c2d-5235-48d3-a754-495af78b1a7e/output_metadata.json"
+    }
+}
++ /usr/local/bin/python3 -m src.validate_model
+................                                                         [100%]
+16 passed in 6.51s
+### Validation du modèle : 0 échec(s) sur 18
+
+ROC AUC 0.8369 ; AP 0.647 (taux de base 0.1599) ; seuil 0.5
+
+| Famille | Test | Statut |
+|---|---|---|
+| evidently | RocAuc metric: Equal 0.894 ± 0.179 | OK |
+| evidently | RocAuc metric: Greater or Equal 0.700 | OK |
+| behavior | test_metrique_primaire_au_gate | OK |
+| behavior | test_precision_moyenne_au_dessus_du_taux_de_base | OK |
+| behavior | test_seuil_de_decision_documente | OK |
+| behavior | test_cout_metier_inferieur_aux_politiques_naives | OK |
+| behavior | test_performance_par_sous_groupe[Age] | OK |
+| behavior | test_performance_par_sous_groupe[Gender] | OK |
+| behavior | test_performance_par_sous_groupe[MaritalStatus] | OK |
+| behavior | test_invariance[HourlyRate] | OK |
+| behavior | test_invariance[MonthlyRate] | OK |
+| behavior | test_directionnel[OverTime:No->Yes] | OK |
+| behavior | test_directionnel[BusinessTravel:Non-Travel->Travel_Frequently] | OK |
+| behavior | test_directionnel[EnvironmentSatisfaction:1: Low->4: Very High] | OK |
+| behavior | test_directionnel[JobSatisfaction:1: Low->4: Very High] | OK |
+| behavior | test_directionnel[MonthlyIncome:x1.5] | OK |
+| behavior | test_directionnel[TotalWorkingYears:x1.5] | OK |
+| behavior | test_directionnel[DistanceFromHome:x2.0] | OK |
+
+Modèle VALIDÉ
+[KFP Executor 2026-11-08 18:12:42,082 INFO]: Wrote executor output file to /minio/mlpipeline/v2/artifacts/scoring-pipeline/2e33d31b-8dca-4269-ab82-42194ef57094/validate-model/cadd7c2d-5235-48d3-a754-495af78b1a7e/output_metadata.json.

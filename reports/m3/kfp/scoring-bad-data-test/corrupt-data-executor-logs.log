@@ -1,0 +1,58 @@
+[KFP Executor 2026-11-08 18:15:03,104 INFO]: Looking for component `corrupt_data` in --component_module_path `/tmp/tmp.xu6chTSClV/ephemeral_component.py`
+[KFP Executor 2026-11-08 18:15:03,105 INFO]: Loading KFP component "corrupt_data" from /tmp/tmp.xu6chTSClV/ephemeral_component.py (directory "/tmp/tmp.xu6chTSClV" and module name "ephemeral_component")
+[KFP Executor 2026-11-08 18:15:03,107 INFO]: Got executor_input:
+{
+    "inputs": {
+        "artifacts": {
+            "raw_data": {
+                "artifacts": [
+                    {
+                        "name": "65",
+                        "type": {
+                            "instanceSchema": ""
+                        },
+                        "uri": "minio://mlpipeline/v2/artifacts/scoring-bad-data-test/f45e8973-1780-4285-9730-95443f141681/ingest-data/ca23cda2-c096-4a8c-b6c8-40e54dba449e/raw_data",
+                        "metadata": {
+                            "dataset": "ibm-hr-attrition",
+                            "display_name": "raw_data",
+                            "md5": "16e6acc1f69d648c4ec1d3b44efc0179",
+                            "rows": 1470,
+                            "store_session_info": "{\"Provider\":\"minio\",\"Params\":{\"accessKeyKey\":\"accesskey\",\"disableSSL\":\"true\",\"endpoint\":\"seaweedfs.kubeflow:9000\",\"fromEnv\":\"false\",\"maxRetries\":\"5\",\"region\":\"minio\",\"secretKeyKey\":\"secretkey\",\"secretName\":\"mlpipeline-minio-artifact\"}}"
+                        }
+                    }
+                ]
+            }
+        }
+    },
+    "outputs": {
+        "artifacts": {
+            "corrupted": {
+                "artifacts": [
+                    {
+                        "name": "corrupted",
+                        "type": {
+                            "schemaTitle": "system.Dataset",
+                            "schemaVersion": "0.0.1"
+                        },
+                        "uri": "minio://mlpipeline/v2/artifacts/scoring-bad-data-test/f45e8973-1780-4285-9730-95443f141681/corrupt-data/0d972c10-0539-4042-b682-7939677266c0/corrupted"
+                    }
+                ]
+            },
+            "executor-logs": {
+                "artifacts": [
+                    {
+                        "name": "executor-logs",
+                        "type": {
+                            "schemaTitle": "system.Artifact"
+                        },
+                        "uri": "minio://mlpipeline/v2/artifacts/scoring-bad-data-test/f45e8973-1780-4285-9730-95443f141681/corrupt-data/0d972c10-0539-4042-b682-7939677266c0/executor-logs-0"
+                    }
+                ]
+            }
+        },
+        "outputFile": "/minio/mlpipeline/v2/artifacts/scoring-bad-data-test/f45e8973-1780-4285-9730-95443f141681/corrupt-data/0d972c10-0539-4042-b682-7939677266c0/output_metadata.json"
+    }
+}
++ /usr/local/bin/python3 -m src.simulate corrupt data/raw/clean.csv data/raw/corrupted.csv
+corrupt : 1470 lignes -> data/raw/corrupted.csv
+[KFP Executor 2026-11-08 18:15:04,849 INFO]: Wrote executor output file to /minio/mlpipeline/v2/artifacts/scoring-bad-data-test/f45e8973-1780-4285-9730-95443f141681/corrupt-data/0d972c10-0539-4042-b682-7939677266c0/output_metadata.json.
