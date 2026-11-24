@@ -1,0 +1,53 @@
+{
+  "dataset": "ibm-hr-attrition",
+  "model_name": "scoring-model",
+  "model_alias": "champion",
+  "model_version": "9",
+  "run_id": "2f05f4cea27949509c2bb6e60ad47980",
+  "target": "Attrition",
+  "positive_class": "Yes",
+  "threshold": 0.5,
+  "threshold_source": "param decision_threshold du run",
+  "launched_by": "airflow",
+  "run_metrics": {
+    "roc_auc": 0.8368507192695321,
+    "average_precision": 0.647036187132107,
+    "business_cost": 35.0
+  },
+  "features": {
+    "numeric": [
+      "DailyRate",
+      "DistanceFromHome",
+      "HourlyRate",
+      "MonthlyIncome",
+      "MonthlyRate",
+      "NumCompaniesWorked",
+      "PercentSalaryHike",
+      "TotalWorkingYears",
+      "TrainingTimesLastYear",
+      "YearsAtCompany",
+      "YearsInCurrentRole",
+      "YearsSinceLastPromotion",
+      "YearsWithCurrManager"
+    ],
+    "categorical": [
+      "BusinessTravel",
+      "Department",
+      "EducationField",
+      "JobRole",
+      "OverTime",
+      "Education",
+      "EnvironmentSatisfaction",
+      "JobInvolvement",
+      "JobLevel",
+      "JobSatisfaction",
+      "PerformanceRating",
+      "RelationshipSatisfaction",
+      "StockOptionLevel",
+      "WorkLifeBalance"
+    ]
+  },
+  "onnx_opset": 17,
+  "onnx_sha256": "f790d31c6cac7604ab5bca091f634a6bbc1cf80538cf4b3cb7e405027158c54e",
+  "exported_at": "2026-11-10T18:15:47+00:00"
+}
